@@ -156,7 +156,7 @@ export const LikedArtPanel = observer(function LikedArtPanel({ isOpen, onClose }
         {missingCount > 0 && (
           <p className="liked-panel__hint">
             {missingCount === 1
-              ? "One liked artwork isn\'t loaded in this feed yet. Keep scrolling to see it."
+              ? "One liked artwork isn't loaded in this feed yet. Keep scrolling to see it."
               : `${missingCount} liked artworks aren't loaded in this feed yet. Keep scrolling to see them.`}
           </p>
         )}
