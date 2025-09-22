@@ -32,50 +32,29 @@ const ShareIcon = () => (
   </svg>
 );
 
-const EyeIcon = () => (
+const ExpandIcon = () => (
   <svg
     className="art-card__action-svg"
     viewBox="0 0 24 24"
     aria-hidden="true"
     focusable="false"
   >
-    <path d="M12 4.5C6.75 4.5 2.23 8 1 12c1.23 4 5.75 7.5 11 7.5s9.77-3.5 11-7.5c-1.23-4-5.75-7.5-11-7.5zm0 12c-2.5 0-4.5-2.01-4.5-4.5S9.5 7.5 12 7.5s4.5 2.01 4.5 4.5-2 4.5-4.5 4.5zm0-7c-1.38 0-2.5 1.12-2.5 2.5S10.62 14.5 12 14.5s2.5-1.12 2.5-2.5S13.38 9.5 12 9.5z" />
+    <path d="M20 3h-6v2h2.59L13 8.59 14.41 10 18 6.41V9h2z" />
+    <path d="M10 13.41 8.59 12 5 15.59V13H3v6h6v-2H6.41z" />
   </svg>
 );
 
-const formatMetric = (value: number) => {
-  if (value >= 1_000_000) {
-    const rounded = value >= 10_000_000 ? Math.round(value / 1_000_000) : value / 1_000_000;
-    return `${rounded.toFixed(rounded >= 10 ? 0 : 1)}M`;
-  }
-
-  if (value >= 1_000) {
-    const rounded = value >= 10_000 ? Math.round(value / 1_000) : value / 1_000;
-    return `${rounded.toFixed(rounded >= 10 ? 0 : 1)}K`;
-  }
-
-  return value.toString();
-};
-
-const createHandle = (value: string | undefined) => {
-  if (!value) {
-    return "@unknown";
-  }
-
-  const sanitized = value.replace(/[^a-z0-9]+/gi, "").toLowerCase();
-  if (!sanitized) {
-    return "@unknown";
-  }
-
-  return `@${sanitized.slice(0, 18)}`;
-};
+interface Fact {
+  label: string;
+  value: string;
+}
 
 export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) => {
   const { isLiked, toggleLike } = useLikedArt(art.id);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
-  const [isFollowing, setIsFollowing] = useState(false);
   const [showTapLike, setShowTapLike] = useState(false);
+  const [areDetailsExpanded, setAreDetailsExpanded] = useState(false);
   const feedbackTimeoutRef = useRef<number | null>(null);
   const likeBurstTimeoutRef = useRef<number | null>(null);
   const lastTapRef = useRef<number>(0);
@@ -170,26 +149,31 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
     }, 2000);
   }, [art.artist, art.title, art.url]);
 
-  const handleFollowToggle = useCallback(() => {
-    setIsFollowing((previous) => !previous);
-  }, []);
+  const detailFacts = useMemo(() => {
+    const facts: Fact[] = [];
+    const addFact = (label: string, value: string | undefined) => {
+      if (!value) {
+        return;
+      }
+      const trimmed = value.trim();
+      if (!trimmed) {
+        return;
+      }
+      facts.push({ label, value: trimmed });
+    };
 
-  const metaDetails = useMemo(() => {
-    const meta: string[] = [];
-    if (art.culture) {
-      meta.push(art.culture);
-    }
-    if (art.dated) {
-      meta.push(art.dated);
-    }
-    if (art.medium) {
-      meta.push(art.medium);
-    }
-    if (art.classification) {
-      meta.push(art.classification);
-    }
-    return meta;
-  }, [art.classification, art.culture, art.dated, art.medium]);
+    addFact("Created", art.dated);
+    addFact("Culture", art.culture);
+    addFact("Classification", art.classification);
+    addFact("Medium", art.medium);
+    addFact("Dimensions", art.dimensions);
+
+    return facts;
+  }, [art.classification, art.culture, art.dated, art.dimensions, art.medium]);
+
+  const quickFacts = useMemo(() => {
+    return detailFacts.filter((fact) => fact.value.length <= 42).slice(0, 3);
+  }, [detailFacts]);
 
   const accentStyle = useMemo(() => {
     const hue = Math.abs(art.id) % 360;
@@ -204,7 +188,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
     } as CSSProperties;
   }, [art.id]);
 
-  const artistHandle = useMemo(() => createHandle(art.artist), [art.artist]);
+  const detailsId = useMemo(() => `art-details-${art.id}`, [art.id]);
 
   const trendingLabel = useMemo(() => {
     const highlight = art.culture || art.classification || art.medium || art.dated;
@@ -224,25 +208,6 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
     return condensed ? `#${condensed}` : `#${trendingLabel.replace(/\s+/g, "")}`;
   }, [trendingLabel]);
 
-  const { likeCount, shareCount, viewCount } = useMemo(() => {
-    const base = Math.abs(art.id);
-    return {
-      likeCount: 1_200 + ((base * 73) % 12_000),
-      shareCount: 40 + ((base * 19) % 800),
-      viewCount: 4_000 + ((base * 101) % 60_000),
-    };
-  }, [art.id]);
-
-  const soundLabel = useMemo(() => {
-    const medium = art.medium || art.classification || art.culture;
-    const dated = art.dated ? ` • ${art.dated}` : "";
-    if (medium) {
-      return `${medium}${dated}`;
-    }
-
-    return art.dated ? `Timeless • ${art.dated}` : "ArtTok mix";
-  }, [art.classification, art.culture, art.dated, art.medium]);
-
   const handleDoubleTapLike = useCallback(() => {
     if (!isLiked) {
       toggleLike();
@@ -257,6 +222,10 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
     }
     lastTapRef.current = now;
   }, [handleDoubleTapLike]);
+
+  const toggleDetails = useCallback(() => {
+    setAreDetailsExpanded((previous) => !previous);
+  }, []);
 
   return (
     <article className="art-card" ref={ref} style={accentStyle}>
@@ -280,25 +249,9 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
       </div>
 
       <div className="art-card__info">
-        <div className="art-card__header">
-          <div className="art-card__title-group">
-            <h2 className="art-card__title">{art.title}</h2>
-            <p className="art-card__artist">
-              <span className="art-card__artist-handle">{artistHandle}</span>
-              <span className="art-card__artist-separator" aria-hidden="true">
-                •
-              </span>
-              <span className="art-card__artist-name">{art.artist}</span>
-            </p>
-          </div>
-          <button
-            type="button"
-            className={`art-card__follow ${isFollowing ? "is-following" : ""}`.trim()}
-            aria-pressed={isFollowing}
-            onClick={handleFollowToggle}
-          >
-            {isFollowing ? "Following" : "Follow"}
-          </button>
+        <div className="art-card__title-group">
+          <h2 className="art-card__title">{art.title}</h2>
+          <p className="art-card__artist">{art.artist}</p>
         </div>
 
         {displayDescription && (
@@ -316,21 +269,50 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
           </p>
         )}
 
-        <div className="art-card__sound" aria-label="Artwork medium and era">
-          <div className="art-card__sound-disc">
-            <img src={art.imageUrl} alt="" aria-hidden="true" loading="lazy" />
-          </div>
-          <p className="art-card__sound-text">{soundLabel}</p>
-        </div>
-
-        {metaDetails.length > 0 && (
-          <ul className="art-card__meta">
-            {metaDetails.map((detail) => (
-              <li key={detail} title={detail}>
-                #{detail.replace(/\s+/g, "").toLowerCase()}
+        {quickFacts.length > 0 && (
+          <ul className="art-card__quick-facts">
+            {quickFacts.map((fact) => (
+              <li key={`${fact.label}-${fact.value}`}>
+                <span className="art-card__quick-facts-label">{fact.label}</span>
+                <span className="art-card__quick-facts-value">{fact.value}</span>
               </li>
             ))}
           </ul>
+        )}
+
+        {detailFacts.length > 0 && (
+          <section className={`art-card__details ${areDetailsExpanded ? "is-open" : ""}`}>
+            <button
+              type="button"
+              className="art-card__details-toggle"
+              aria-expanded={areDetailsExpanded}
+              aria-controls={detailsId}
+              onClick={toggleDetails}
+            >
+              {areDetailsExpanded ? "Hide artwork details" : "Artwork details"}
+            </button>
+            {areDetailsExpanded && (
+              <dl className="art-card__details-grid" id={detailsId}>
+                {detailFacts.map((fact) => (
+                  <div key={`${fact.label}-${fact.value}`} className="art-card__details-item">
+                    <dt>{fact.label}</dt>
+                    <dd>{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </section>
+        )}
+
+        {art.url && (
+          <a
+            className="art-card__museum-link"
+            href={art.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View at Harvard Art Museums
+          </a>
         )}
       </div>
 
@@ -345,7 +327,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
           >
             <HeartIcon />
           </button>
-          <span className="art-card__action-count">{formatMetric(likeCount)}</span>
+          <span className="art-card__action-label">{isLiked ? "Saved" : "Save"}</span>
         </div>
 
         <div className="art-card__action">
@@ -357,16 +339,21 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
           >
             <ShareIcon />
           </button>
-          <span className="art-card__action-count">{formatMetric(shareCount)}</span>
+          <span className="art-card__action-label">Share</span>
           {shareFeedback && <span className="art-card__share-feedback">{shareFeedback}</span>}
         </div>
 
-        <div className="art-card__action art-card__action--static" aria-hidden="true">
-          <div className="art-card__action-button is-static">
-            <EyeIcon />
-          </div>
-          <span className="art-card__action-count">{formatMetric(viewCount)}</span>
-          <span className="art-card__action-label">Views</span>
+        <div className="art-card__action">
+          <a
+            className="art-card__action-button art-card__action-button--link"
+            href={art.imageUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open artwork image in a new tab"
+          >
+            <ExpandIcon />
+          </a>
+          <span className="art-card__action-label">Full size</span>
         </div>
       </div>
     </article>
