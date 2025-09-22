@@ -1,19 +1,307 @@
-* {
-    margin: 0;
-    padding: 0;
+.art-feed {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #050505;
+  color: #f5f5f5;
 }
 
-body {
-    height: 100vh;
+.art-feed__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0) 100%);
+}
+
+.art-feed__brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.art-feed__refresh {
+  border: 1px solid rgba(245, 245, 245, 0.24);
+  background: rgba(40, 40, 40, 0.6);
+  color: inherit;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.art-feed__refresh:hover {
+  background: rgba(60, 60, 60, 0.8);
+}
+
+.art-feed__refresh:active {
+  transform: scale(0.97);
+}
+
+.art-feed__scroller {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 4.75rem;
+  padding-bottom: 4rem;
+}
+
+.art-feed__scroller::-webkit-scrollbar {
+  width: 6px;
+}
+
+.art-feed__scroller::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+.art-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 5.5rem);
+  margin: 0 auto 1.5rem;
+  width: clamp(280px, 100%, 820px);
+  scroll-snap-align: start;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #090909;
+}
+
+.art-card__media {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.85));
+}
+
+.art-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.art-card__info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.8rem 2rem 2.2rem;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.88) 40%, rgba(5, 5, 5, 0.95) 100%);
+}
+
+.art-card__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+}
+
+.art-card__artist {
+  font-size: 1rem;
+  opacity: 0.82;
+  margin-bottom: 0.75rem;
+}
+
+.art-card__description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  color: rgba(245, 245, 245, 0.9);
+}
+
+.art-card__description button {
+  margin-left: 0.5rem;
+}
+
+.art-card__description-toggle {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.art-card__meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.art-card__meta li {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.art-card__actions {
+  position: absolute;
+  right: 1.4rem;
+  bottom: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  align-items: center;
+}
+
+.art-card__action-button {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.55);
+  color: inherit;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+}
+
+.art-card__action-button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.art-card__action-button:active {
+  transform: scale(0.97);
+}
+
+.art-card__action-button.is-active {
+  background: rgba(227, 73, 91, 0.9);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.art-card__action-svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.art-card__share-feedback {
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.art-feed__status {
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  color: rgba(245, 245, 245, 0.78);
+}
+
+.art-feed__status--floating {
+  position: sticky;
+  bottom: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.art-feed__error {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 20, 20, 0.85);
+  padding: 1.75rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.art-feed__error button {
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+.art-feed__sentinel {
+  width: 100%;
+  height: 1px;
+}
+
+@media (max-width: 768px) {
+  .art-feed__header {
+    padding: 0.75rem 1.1rem;
+  }
+
+  .art-feed__brand {
+    font-size: 1.2rem;
+  }
+
+  .art-feed__refresh {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .art-card {
     width: 100%;
+    border-radius: 0;
+    margin-bottom: 0;
+    min-height: calc(100vh - 4.5rem);
+  }
+
+  .art-card__info {
+    padding: 1.2rem 1.25rem 1.8rem;
+  }
+
+  .art-card__title {
+    font-size: 1.45rem;
+  }
+
+  .art-card__artist {
+    font-size: 0.95rem;
+  }
+
+  .art-card__description {
+    font-size: 0.9rem;
+  }
+
+  .art-card__actions {
+    right: 0.75rem;
+    bottom: 7rem;
+  }
+
+  .art-card__action-button {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+
+  .art-card__action-svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
 }
 
-.list {
-    display: flex;
-    flex-direction: column;
-}
+@media (prefers-reduced-motion: reduce) {
+  .art-feed__scroller {
+    scroll-behavior: auto;
+  }
 
-.images {
-    height: 100%;
-    width: 100%;
+  .art-card__action-button,
+  .art-feed__refresh {
+    transition: none;
+  }
 }
