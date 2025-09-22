@@ -1,45 +1,38 @@
 import { useCallback, useEffect, useState } from "react";
-
-const STORAGE_KEY = "arttok-liked-art";
-
-function readLikedSet(): Set<number> {
-  if (typeof window === "undefined") {
-    return new Set();
-  }
-
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      return new Set();
-    }
-    const parsed: unknown = JSON.parse(raw);
-    if (Array.isArray(parsed)) {
-      return new Set(parsed.filter((value) => typeof value === "number"));
-    }
-  } catch (error) {
-    console.warn("Failed to read liked art from storage", error);
-  }
-
-  return new Set();
-}
-
-function writeLikedSet(set: Set<number>) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(set)));
-  } catch (error) {
-    console.warn("Failed to persist liked art to storage", error);
-  }
-}
+import {
+  LIKED_ART_STORAGE_EVENT,
+  LIKED_ART_STORAGE_KEY,
+  readLikedSet,
+  writeLikedSet,
+} from "../utils/likedArtStorage";
 
 export function useLikedArt(id: number) {
   const [isLiked, setIsLiked] = useState(() => readLikedSet().has(id));
 
   useEffect(() => {
-    setIsLiked(readLikedSet().has(id));
+    const syncLikeState = () => {
+      setIsLiked(readLikedSet().has(id));
+    };
+
+    syncLikeState();
+
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handleStorage = (event: StorageEvent) => {
+      if (event.key === LIKED_ART_STORAGE_KEY) {
+        syncLikeState();
+      }
+    };
+
+    window.addEventListener(LIKED_ART_STORAGE_EVENT, syncLikeState);
+    window.addEventListener("storage", handleStorage);
+
+    return () => {
+      window.removeEventListener(LIKED_ART_STORAGE_EVENT, syncLikeState);
+      window.removeEventListener("storage", handleStorage);
+    };
   }, [id]);
 
   const toggleLike = useCallback(() => {

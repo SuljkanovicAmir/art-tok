@@ -26,8 +26,8 @@ const ShareIcon = () => (
     aria-hidden="true"
     focusable="false"
   >
-    <path d="M14 2l7 7-1.41 1.41L15 6.83V16h-2V6.83L8.41 10.41 7 9z" />
-    <path d="M5 20h14v-6h2v8H3v-8h2z" />
+    <path d="M12 3l5.05 5.05-1.41 1.41L13 6.83V17h-2V6.83L8.36 9.46 6.95 8.05z" />
+    <path d="M5 19h14v-2H5z" />
   </svg>
 );
 
