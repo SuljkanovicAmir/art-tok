@@ -1,7 +1,7 @@
 import type { HarvardArtResponse } from "../types/art";
 
 const API_ENDPOINT = "https://api.harvardartmuseums.org/object";
-const API_KEY = "6c508855-dcac-4b25-a405-42f8581b8070";
+const API_KEY = import.meta.env.VITE_HARVARD_API_KEY as string;
 const DEFAULT_PAGE_SIZE = 8;
 const DEFAULT_QUERY = "verificationlevel:4";
 const FIELDS = [
