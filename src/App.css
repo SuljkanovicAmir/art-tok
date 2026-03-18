@@ -1159,3 +1159,133 @@
     animation: none;
   }
 }
+
+/* ── Liked Page ── */
+.liked-page {
+  min-height: 100vh;
+  background: #050505;
+  color: #f5f5f5;
+}
+
+.liked-page__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem 1.25rem;
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.liked-page__back {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.liked-page__heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.liked-page__count {
+  background: rgba(245, 245, 245, 0.12);
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: rgba(245, 245, 245, 0.7);
+}
+
+.liked-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.liked-page__empty {
+  padding: 4rem 1.25rem;
+  text-align: center;
+  color: rgba(245, 245, 245, 0.5);
+}
+
+.liked-page__empty a {
+  color: #f5f5f5;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.liked-page__status {
+  padding: 4rem 1.25rem;
+  text-align: center;
+  color: rgba(245, 245, 245, 0.5);
+}
+
+/* Liked card */
+.liked-card {
+  background: rgba(245, 245, 245, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.liked-card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.liked-card__info {
+  padding: 0.75rem;
+}
+
+.liked-card__title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.liked-card__title a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.liked-card__artist {
+  font-size: 0.75rem;
+  color: rgba(245, 245, 245, 0.6);
+  margin: 0;
+}
+
+.liked-card__unlike {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #ff4757;
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+}
+
+.liked-card__unlike svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+@media (min-width: 768px) {
+  .liked-page__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .liked-page__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
