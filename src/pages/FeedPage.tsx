@@ -1,10 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { observer } from "mobx-react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-import artImagesStore from "../stores/ArtImagesStore";
 import { ArtCard } from "../components/ArtCard";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
-import { LikedArtPanel } from "../components/LikedArtPanel";
+import { useFeedQuery, flattenFeedPages } from "../hooks/useFeedQuery";
 
 const RefreshIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -25,91 +23,31 @@ const SearchIcon = () => (
   </svg>
 );
 
-const CollectionIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path
-      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 9.24 3 10.91 3.81 12 5.09 13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+export default function FeedPage() {
+  const {
+    data,
+    isLoading,
+    isFetchingNextPage,
+    hasNextPage,
+    fetchNextPage,
+    error,
+    refetch,
+  } = useFeedQuery();
 
-const FeedPage = observer(function FeedPage() {
-  const { artPieces, isLoading, isInitialLoad, hasMore, error } = artImagesStore;
-  const [isLikedPanelOpen, setIsLikedPanelOpen] = useState(false);
+  const artPieces = flattenFeedPages(data);
+  const isInitialLoad = isLoading && !data;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
-  const closeLikedPanel = useCallback(() => setIsLikedPanelOpen(false), []);
-
-  const togglePanelFromSwipe = useCallback(
-    (direction: "left" | "right") => {
-      if (direction === "left" && !isLikedPanelOpen) {
-        setIsLikedPanelOpen(true);
-      } else if (direction === "right" && isLikedPanelOpen) {
-        setIsLikedPanelOpen(false);
-      }
-    },
-    [isLikedPanelOpen],
-  );
-
-  useEffect(() => {
-    if (!artImagesStore.artPieces.length) {
-      artImagesStore.fetchNextPage();
-    }
-  }, []);
-
-  useEffect(() => {
-    const scroller = scrollerRef.current;
-
-    if (!scroller) {
-      return;
-    }
-
-    let touchStartX: number | null = null;
-    let touchStartY: number | null = null;
-
-    const handleTouchStart = (event: TouchEvent) => {
-      const touch = event.touches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-    };
-
-    const handleTouchEnd = (event: TouchEvent) => {
-      if (touchStartX === null || touchStartY === null) {
-        return;
-      }
-
-      const touch = event.changedTouches[0];
-      const deltaX = touch.clientX - touchStartX;
-      const deltaY = Math.abs(touch.clientY - touchStartY);
-
-      if (Math.abs(deltaX) > 70 && deltaY < 60) {
-        togglePanelFromSwipe(deltaX < 0 ? "left" : "right");
-      }
-
-      touchStartX = null;
-      touchStartY = null;
-    };
-
-    scroller.addEventListener("touchstart", handleTouchStart);
-    scroller.addEventListener("touchend", handleTouchEnd);
-
-    return () => {
-      scroller.removeEventListener("touchstart", handleTouchStart);
-      scroller.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, [togglePanelFromSwipe]);
-
   const loadMoreRef = useInfiniteScroll({
-    isLoading,
-    hasMore,
-    onIntersect: artImagesStore.fetchNextPage,
+    isLoading: isLoading || isFetchingNextPage,
+    hasMore: hasNextPage,
+    onIntersect: () => fetchNextPage(),
   });
 
-  const showEmptyState = !isLoading && !isInitialLoad && artPieces.length === 0;
+  const showEmptyState = !isLoading && !isInitialLoad && artPieces.length === 0 && !error;
 
   return (
-    <div className={`art-feed ${isLikedPanelOpen ? "has-liked-panel" : ""}`.trim()}>
+    <div className="art-feed">
       <header className="art-feed__header">
         <div className="art-feed__brand">ArtTok</div>
         <div className="art-feed__header-actions">
@@ -120,16 +58,10 @@ const FeedPage = observer(function FeedPage() {
             type="button"
             className="art-feed__icon-button"
             aria-label="Refresh feed"
-            onClick={() => {
-              artImagesStore.resetFeed();
-              artImagesStore.fetchNextPage();
-            }}
+            onClick={() => refetch()}
           >
             <RefreshIcon />
           </button>
-          <Link to="/liked" className="art-feed__icon-button" aria-label="Liked art collection">
-            <CollectionIcon />
-          </Link>
         </div>
       </header>
 
@@ -138,7 +70,7 @@ const FeedPage = observer(function FeedPage() {
           <ArtCard key={piece.id} art={piece} />
         ))}
 
-        {(isLoading && isInitialLoad) && (
+        {isInitialLoad && (
           <div className="art-feed__status">Loading artworks...</div>
         )}
 
@@ -148,8 +80,8 @@ const FeedPage = observer(function FeedPage() {
 
         {error && !isLoading && (
           <div className="art-feed__error">
-            <p>{error}</p>
-            <button type="button" onClick={artImagesStore.fetchNextPage}>
+            <p>{error instanceof Error ? error.message : "Unable to load art right now."}</p>
+            <button type="button" onClick={() => fetchNextPage()}>
               Try again
             </button>
           </div>
@@ -157,26 +89,14 @@ const FeedPage = observer(function FeedPage() {
 
         <div className="art-feed__sentinel" ref={loadMoreRef} />
 
-        {isLoading && !isInitialLoad && (
+        {isFetchingNextPage && (
           <div className="art-feed__status art-feed__status--floating">Loading more art...</div>
         )}
 
-        {!hasMore && !isLoading && artPieces.length > 0 && (
-          <div className="art-feed__status">You\'re all caught up for now!</div>
+        {!hasNextPage && !isLoading && artPieces.length > 0 && (
+          <div className="art-feed__status">You're all caught up for now!</div>
         )}
       </main>
-
-      {isLikedPanelOpen && (
-        <button
-          type="button"
-          className="liked-panel__backdrop"
-          aria-label="Close liked art overlay"
-          onClick={closeLikedPanel}
-        />
-      )}
-      <LikedArtPanel isOpen={isLikedPanelOpen} onClose={closeLikedPanel} />
     </div>
   );
-});
-
-export default FeedPage;
+}
