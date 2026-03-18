@@ -1,6 +1,7 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import ArtImagesService from "../services/ArtImagesService";
-import type { ArtPiece, HarvardArtRecord } from "../types/art";
+import type { ArtPiece } from "../types/art";
+import { mapArtRecord } from "../utils/mapArtRecord";
 
 class ArtImagesStore {
   private artImagesService: ArtImagesService;
@@ -41,7 +42,7 @@ class ArtImagesStore {
 
       runInAction(() => {
         const mappedRecords = response.records
-          .map((record) => this.mapRecord(record))
+          .map((record) => mapArtRecord(record))
           .filter((piece): piece is ArtPiece => Boolean(piece));
 
         const existingIds = new Set(this.artPieces.map((piece) => piece.id));
@@ -71,32 +72,6 @@ class ArtImagesStore {
     }
   }
 
-  private mapRecord(record: HarvardArtRecord): ArtPiece | null {
-    if (!record.primaryimageurl) {
-      return null;
-    }
-
-    const artistNames = record.people
-      ?.map((person) => person.name)
-      .filter(Boolean)
-      .join(", ");
-
-    const description = record.description || record.labeltext || record.creditline;
-
-    return {
-      id: record.objectid,
-      imageUrl: record.primaryimageurl,
-      title: record.title || "Untitled",
-      artist: artistNames || "Unknown artist",
-      description: description || undefined,
-      culture: record.culture || undefined,
-      dated: record.dated || undefined,
-      classification: record.classification || undefined,
-      medium: record.medium || record.technique || undefined,
-      dimensions: record.dimensions || undefined,
-      url: record.url || undefined,
-    };
-  }
 }
 
 const artImagesStore = new ArtImagesStore();

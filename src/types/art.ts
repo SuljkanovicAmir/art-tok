@@ -33,6 +33,19 @@ export interface HarvardArtResponse {
   records: HarvardArtRecord[];
 }
 
+export interface ArtSearchParams {
+  keyword?: string;
+  artist?: string;
+  culture?: string;
+  classification?: string;
+  century?: string;
+  medium?: string;
+  page?: number;
+  size?: number;
+  sort?: string;
+  sortorder?: string;
+}
+
 export interface ArtPiece {
   id: number;
   imageUrl: string;
