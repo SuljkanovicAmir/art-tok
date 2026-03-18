@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { observer } from "mobx-react";
+import { Link } from "react-router-dom";
 import artImagesStore from "../stores/ArtImagesStore";
 import { ArtCard } from "../components/ArtCard";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
@@ -12,6 +13,15 @@ const RefreshIcon = () => (
       fill="currentColor"
     />
     <path d="M12 20a8 8 0 0 0 7.45-5H22l-3.89-3.89h-0.07L14 15h3.74A6 6 0 0 1 12 18a6 6 0 0 1-4.24-10.24L6.34 6.34A8 8 0 0 0 12 20Z" fill="currentColor" />
+  </svg>
+);
+
+const SearchIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z"
+      fill="currentColor"
+    />
   </svg>
 );
 
@@ -30,10 +40,6 @@ const FeedPage = observer(function FeedPage() {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
   const closeLikedPanel = useCallback(() => setIsLikedPanelOpen(false), []);
-  const toggleLikedPanel = useCallback(
-    () => setIsLikedPanelOpen((previous) => !previous),
-    [],
-  );
 
   const togglePanelFromSwipe = useCallback(
     (direction: "left" | "right") => {
@@ -107,6 +113,9 @@ const FeedPage = observer(function FeedPage() {
       <header className="art-feed__header">
         <div className="art-feed__brand">ArtTok</div>
         <div className="art-feed__header-actions">
+          <Link to="/search" className="art-feed__icon-button" aria-label="Search artworks">
+            <SearchIcon />
+          </Link>
           <button
             type="button"
             className="art-feed__icon-button"
@@ -118,15 +127,9 @@ const FeedPage = observer(function FeedPage() {
           >
             <RefreshIcon />
           </button>
-          <button
-            type="button"
-            className={`art-feed__icon-button ${isLikedPanelOpen ? "is-active" : ""}`.trim()}
-            aria-pressed={isLikedPanelOpen}
-            aria-label="Open liked art collection"
-            onClick={toggleLikedPanel}
-          >
+          <Link to="/liked" className="art-feed__icon-button" aria-label="Liked art collection">
             <CollectionIcon />
-          </button>
+          </Link>
         </div>
       </header>
 
