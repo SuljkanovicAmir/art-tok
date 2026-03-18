@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
 
@@ -250,7 +251,11 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
 
       <div className="art-card__info">
         <div className="art-card__title-group">
-          <h2 className="art-card__title">{art.title}</h2>
+          <h2 className="art-card__title">
+            <Link to={`/artwork/${art.id}`} className="art-card__title-link">
+              {art.title}
+            </Link>
+          </h2>
           <p className="art-card__artist">{art.artist}</p>
         </div>
 
