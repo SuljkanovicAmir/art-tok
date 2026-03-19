@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ArtImagesService from "../services/ArtImagesService";
-
-interface FacetItem {
-  name: string;
-  count: number;
-}
+import { artRegistry } from "../services/registry";
+import type { FacetItem } from "../services/types";
 
 interface FacetSection {
   label: string;
   facet: "culture" | "classification" | "century";
   items: FacetItem[];
 }
-
-const service = new ArtImagesService();
 
 export default function CategoriesPage() {
   const [sections, setSections] = useState<FacetSection[]>([]);
@@ -29,9 +23,9 @@ export default function CategoriesPage() {
 
       try {
         const [cultures, classifications, centuries] = await Promise.all([
-          service.fetchFacet("culture", 40),
-          service.fetchFacet("classification", 40),
-          service.fetchFacet("century", 30),
+          artRegistry.fetchFacet("culture", 40),
+          artRegistry.fetchFacet("classification", 40),
+          artRegistry.fetchFacet("century", 30),
         ]);
 
         if (cancelled) return;

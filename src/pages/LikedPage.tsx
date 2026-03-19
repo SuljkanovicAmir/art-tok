@@ -1,12 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ArtImagesService from "../services/ArtImagesService";
-import { mapArtRecord } from "../utils/mapArtRecord";
+import { artRegistry } from "../services/registry";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { readLikedSet, LIKED_ART_STORAGE_EVENT } from "../utils/likedArtStorage";
 import type { ArtPiece } from "../types/art";
-
-const artService = new ArtImagesService();
 
 function LikedCard({ piece, onUnlike }: { piece: ArtPiece; onUnlike: () => void }) {
   const { toggleLike } = useLikedArt(piece.id);
@@ -61,16 +58,13 @@ export default function LikedPage() {
     setLoading(true);
 
     const results = await Promise.allSettled(
-      Array.from(likedIds).map((id) => artService.fetchArtworkById(id))
+      Array.from(likedIds).map((id) => artRegistry.fetchById(id))
     );
 
     const pieces: ArtPiece[] = [];
     for (const result of results) {
       if (result.status === "fulfilled" && result.value) {
-        const mapped = mapArtRecord(result.value);
-        if (mapped) {
-          pieces.push(mapped);
-        }
+        pieces.push(result.value);
       }
     }
 

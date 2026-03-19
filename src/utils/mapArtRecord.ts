@@ -17,6 +17,7 @@ export function mapArtRecord(record: HarvardArtRecord): ArtPiece | null {
     imageUrl: record.primaryimageurl,
     title: record.title || "Untitled",
     artist: artistNames || "Unknown artist",
+    source: 'harvard' as const,
     description: description || undefined,
     culture: record.culture || undefined,
     dated: record.dated || undefined,

@@ -30,6 +30,7 @@ describe('mapArtRecord', () => {
       imageUrl: 'https://example.com/img.jpg',
       title: 'Starry Night',
       artist: 'Vincent van Gogh',
+      source: 'harvard',
       description: 'A swirling sky',
       culture: 'Dutch',
       dated: '1889',
@@ -50,6 +51,7 @@ describe('mapArtRecord', () => {
 
     expect(result.title).toBe('Untitled');
     expect(result.artist).toBe('Unknown artist');
+    expect(result.source).toBe('harvard');
     expect(result.description).toBeUndefined();
     expect(result.culture).toBeUndefined();
   });

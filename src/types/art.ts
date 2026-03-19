@@ -46,11 +46,14 @@ export interface ArtSearchParams {
   sortorder?: string;
 }
 
+export type ArtSourceId = 'harvard' | 'met' | 'artic' | 'rijks';
+
 export interface ArtPiece {
   id: number;
   imageUrl: string;
   title: string;
   artist: string;
+  source: ArtSourceId;
   description?: string;
   culture?: string;
   dated?: string;

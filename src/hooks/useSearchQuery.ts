@@ -1,22 +1,24 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import ArtImagesService from "../services/ArtImagesService";
+import { artRegistry } from "../services/registry";
 import type { ArtPiece, ArtSearchParams } from "../types/art";
-import { mapArtRecord } from "../utils/mapArtRecord";
-
-const service = new ArtImagesService();
 
 export function useSearchQuery(params: ArtSearchParams | null) {
   return useInfiniteQuery({
     queryKey: ["search", params],
     queryFn: async ({ pageParam }) => {
-      const response = await service.searchArtworks({ ...params!, page: pageParam });
-      const pieces = response.records
-        .map((r) => mapArtRecord(r))
-        .filter((p): p is ArtPiece => p !== null);
+      const result = await artRegistry.search({
+        keyword: params!.keyword,
+        culture: params!.culture,
+        classification: params!.classification,
+        century: params!.century,
+        medium: params!.medium,
+        page: pageParam,
+        size: params!.size || 8,
+      });
       return {
-        pieces,
-        totalResults: response.info.totalrecords,
-        hasNext: Boolean(response.info.next),
+        pieces: result.pieces,
+        totalResults: result.total ?? 0,
+        hasNext: result.hasNext,
       };
     },
     initialPageParam: 1,

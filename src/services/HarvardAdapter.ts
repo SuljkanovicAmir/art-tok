@@ -1,8 +1,9 @@
-import type { ArtSearchParams, HarvardArtRecord, HarvardArtResponse } from "../types/art";
+import type { ArtSource, ArtSourceFeedOptions, ArtSourceFeedResult, ArtSourceSearchOptions, FacetItem } from "./types";
+import type { ArtPiece, HarvardArtResponse } from "../types/art";
+import { mapArtRecord } from "../utils/mapArtRecord";
 
 const API_ENDPOINT = "https://api.harvardartmuseums.org/object";
 const API_KEY = import.meta.env.VITE_HARVARD_API_KEY as string;
-const DEFAULT_PAGE_SIZE = 8;
 const DEFAULT_QUERY = "verificationlevel:4";
 const FIELDS = [
   "objectid",
@@ -21,17 +22,15 @@ const FIELDS = [
   "url",
 ];
 
-interface FetchParams {
-  page?: number;
-  size?: number;
-}
+export class HarvardAdapter implements ArtSource {
+  readonly name = "Harvard Art Museums";
+  readonly id = "harvard" as const;
 
-export default class ArtImagesService {
-  public async fetchImages({ page = 1, size = DEFAULT_PAGE_SIZE }: FetchParams = {}): Promise<HarvardArtResponse> {
+  async fetchFeed(options: ArtSourceFeedOptions): Promise<ArtSourceFeedResult> {
     const params = new URLSearchParams({
       apikey: API_KEY,
-      size: String(size),
-      page: String(page),
+      size: String(options.size),
+      page: String(options.page),
       sort: "random",
       hasimage: "1",
       q: DEFAULT_QUERY,
@@ -45,45 +44,45 @@ export default class ArtImagesService {
     }
 
     const data: HarvardArtResponse = await response.json();
-    return data;
+    const pieces = data.records
+      .map((r) => mapArtRecord(r))
+      .filter((p): p is ArtPiece => p !== null);
+
+    return {
+      pieces,
+      hasNext: Boolean(data.info?.next) || pieces.length > 0,
+      total: data.info?.totalrecords,
+    };
   }
 
-  public async searchArtworks(searchParams: ArtSearchParams): Promise<HarvardArtResponse> {
+  async search(options: ArtSourceSearchOptions): Promise<ArtSourceFeedResult> {
     const params = new URLSearchParams({
       apikey: API_KEY,
-      size: String(searchParams.size || DEFAULT_PAGE_SIZE),
-      page: String(searchParams.page || 1),
+      size: String(options.size),
+      page: String(options.page),
       hasimage: "1",
       fields: FIELDS.join(","),
     });
 
     const queryParts: string[] = [DEFAULT_QUERY];
 
-    if (searchParams.keyword) {
-      params.set("keyword", searchParams.keyword);
+    if (options.keyword) {
+      params.set("keyword", options.keyword);
     }
-    if (searchParams.artist) {
-      queryParts.push(`person:${searchParams.artist}`);
+    if (options.culture) {
+      params.set("culture", options.culture);
     }
-    if (searchParams.culture) {
-      params.set("culture", searchParams.culture);
+    if (options.classification) {
+      params.set("classification", options.classification);
     }
-    if (searchParams.classification) {
-      params.set("classification", searchParams.classification);
+    if (options.century) {
+      params.set("century", options.century);
     }
-    if (searchParams.century) {
-      params.set("century", searchParams.century);
-    }
-    if (searchParams.medium) {
-      params.set("medium", searchParams.medium);
+    if (options.medium) {
+      params.set("medium", options.medium);
     }
 
     params.set("q", queryParts.join(" AND "));
-
-    if (searchParams.sort) {
-      params.set("sort", searchParams.sort);
-      params.set("sortorder", searchParams.sortorder || "desc");
-    }
 
     const response = await fetch(`${API_ENDPOINT}?${params.toString()}`);
 
@@ -91,10 +90,19 @@ export default class ArtImagesService {
       throw new Error(`Search failed: ${response.status}`);
     }
 
-    return response.json();
+    const data: HarvardArtResponse = await response.json();
+    const pieces = data.records
+      .map((r) => mapArtRecord(r))
+      .filter((p): p is ArtPiece => p !== null);
+
+    return {
+      pieces,
+      hasNext: Boolean(data.info?.next),
+      total: data.info?.totalrecords,
+    };
   }
 
-  public async fetchArtworkById(id: number): Promise<HarvardArtRecord | null> {
+  async fetchById(id: number): Promise<ArtPiece | null> {
     const params = new URLSearchParams({
       apikey: API_KEY,
       fields: FIELDS.join(","),
@@ -107,13 +115,11 @@ export default class ArtImagesService {
       throw new Error(`Failed to fetch artwork: ${response.status}`);
     }
 
-    return response.json();
+    const record = await response.json();
+    return mapArtRecord(record);
   }
 
-  public async fetchFacet(
-    facet: "classification" | "culture" | "century" | "medium",
-    size = 50
-  ): Promise<{ name: string; count: number }[]> {
+  async fetchFacet(facet: string, size: number): Promise<FacetItem[]> {
     const params = new URLSearchParams({
       apikey: API_KEY,
       size: String(size),
