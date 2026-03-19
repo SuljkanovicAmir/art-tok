@@ -1,17 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { artRegistry } from "../services/registry";
 import { useLikedArt } from "../hooks/useLikedArt";
-import { readLikedSet, LIKED_ART_STORAGE_EVENT } from "../utils/likedArtStorage";
+import { useLikedArtQuery } from "../hooks/useLikedArtQuery";
+import { readLikedSet } from "../utils/likedArtStorage";
 import type { ArtPiece } from "../types/art";
 
-function LikedCard({ piece, onUnlike }: { piece: ArtPiece; onUnlike: () => void }) {
+function LikedCard({ piece }: { piece: ArtPiece }) {
   const { toggleLike } = useLikedArt(piece.id);
-
-  const handleUnlike = () => {
-    toggleLike();
-    onUnlike();
-  };
 
   return (
     <div className="liked-card">
@@ -23,7 +17,7 @@ function LikedCard({ piece, onUnlike }: { piece: ArtPiece; onUnlike: () => void 
       />
       <button
         className="liked-card__unlike"
-        onClick={handleUnlike}
+        onClick={toggleLike}
         aria-label={`Unlike ${piece.title}`}
       >
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -41,59 +35,8 @@ function LikedCard({ piece, onUnlike }: { piece: ArtPiece; onUnlike: () => void 
 }
 
 export default function LikedPage() {
-  const [artworks, setArtworks] = useState<ArtPiece[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [likedCount, setLikedCount] = useState(0);
-
-  const fetchLikedArtworks = useCallback(async () => {
-    const likedIds = readLikedSet();
-    setLikedCount(likedIds.size);
-
-    if (likedIds.size === 0) {
-      setArtworks([]);
-      setLoading(false);
-      return;
-    }
-
-    setLoading(true);
-
-    const results = await Promise.allSettled(
-      Array.from(likedIds).map((id) => artRegistry.fetchById(id))
-    );
-
-    const pieces: ArtPiece[] = [];
-    for (const result of results) {
-      if (result.status === "fulfilled" && result.value) {
-        pieces.push(result.value);
-      }
-    }
-
-    setArtworks(pieces);
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    fetchLikedArtworks();
-  }, [fetchLikedArtworks]);
-
-  useEffect(() => {
-    const handleLikeChange = () => {
-      const currentLiked = readLikedSet();
-      setLikedCount(currentLiked.size);
-      setArtworks((prev) =>
-        prev.filter((piece) => currentLiked.has(piece.id))
-      );
-    };
-
-    window.addEventListener(LIKED_ART_STORAGE_EVENT, handleLikeChange);
-    return () => {
-      window.removeEventListener(LIKED_ART_STORAGE_EVENT, handleLikeChange);
-    };
-  }, []);
-
-  const handleUnlike = () => {
-    /* Handled by the storage event listener above */
-  };
+  const { data: artworks, isLoading } = useLikedArtQuery();
+  const likedCount = readLikedSet().size;
 
   return (
     <div className="liked-page">
@@ -105,9 +48,9 @@ export default function LikedPage() {
         <span className="liked-page__count">{likedCount}</span>
       </header>
 
-      {loading ? (
+      {isLoading ? (
         <div className="liked-page__status">Loading liked artworks...</div>
-      ) : artworks.length === 0 ? (
+      ) : !artworks || artworks.length === 0 ? (
         <div className="liked-page__empty">
           <p>No liked artworks yet. Go discover some art!</p>
           <Link to="/">Browse the feed</Link>
@@ -115,7 +58,7 @@ export default function LikedPage() {
       ) : (
         <div className="liked-page__grid">
           {artworks.map((piece) => (
-            <LikedCard key={piece.id} piece={piece} onUnlike={handleUnlike} />
+            <LikedCard key={piece.id} piece={piece} />
           ))}
         </div>
       )}
