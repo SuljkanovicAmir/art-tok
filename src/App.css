@@ -1939,6 +1939,110 @@
   font-family: var(--font-body);
 }
 
+/* Categories filter input */
+.categories-page__filter {
+  padding: 0.75rem 1.25rem;
+}
+
+.categories-page__filter-input {
+  width: 100%;
+  background: var(--glass-l2-bg);
+  backdrop-filter: blur(var(--glass-l2-blur));
+  -webkit-backdrop-filter: blur(var(--glass-l2-blur));
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-pill);
+  padding: 0.65rem 1rem;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--duration-normal) var(--ease-glass),
+    box-shadow var(--duration-normal) var(--ease-glass);
+}
+
+.categories-page__filter-input:focus {
+  border-color: var(--glass-l3-border-bright);
+  box-shadow: 0 0 0 2px hsla(var(--accent-h), 80%, 60%, 0.25);
+}
+
+.categories-page__filter-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Hero cards */
+.categories-page__heroes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.categories-page__hero-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  min-height: 100px;
+  border-radius: var(--radius-card);
+  background: var(--glass-l2-bg);
+  backdrop-filter: blur(var(--glass-l2-blur));
+  -webkit-backdrop-filter: blur(var(--glass-l2-blur));
+  border: 1px solid var(--glass-l2-border);
+  text-decoration: none;
+  color: var(--text-primary);
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+  transition: transform var(--duration-normal) var(--ease-glass),
+    box-shadow var(--duration-normal) var(--ease-glass),
+    border-color var(--duration-normal) var(--ease-glass);
+}
+
+.categories-page__hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--glass-specular);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.categories-page__hero-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--glass-l3-border);
+  box-shadow: var(--glass-shadow-elevated), var(--accent-glow);
+}
+
+.categories-page__hero-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.categories-page__hero-count {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  position: relative;
+  z-index: 2;
+}
+
+/* Sized chip variants */
+.categories-page__chip--lg {
+  font-size: 0.92rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.categories-page__chip--sm {
+  font-size: 0.72rem;
+  padding: 0.35rem 0.7rem;
+  color: var(--text-secondary);
+}
+
 /* Search Page Filter Tag */
 .search-page__filter-tag {
   padding: 0.5rem 1.25rem;
