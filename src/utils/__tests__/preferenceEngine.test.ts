@@ -86,4 +86,23 @@ describe('preferenceEngine', () => {
     expect(vector.culture['French']).toBeGreaterThan(0);
     expect(vector.totalInteractions).toBe(1);
   });
+
+  it('ranks similar artworks higher than different ones', () => {
+    // Build up French Paintings preference
+    for (let i = 0; i < 12; i++) {
+      recordInteraction({ ...mockArtwork, id: i + 100 }, 'like');
+    }
+
+    const vector = getPreferenceVector();
+
+    const french = computeSimilarity(vector, { ...mockArtwork, id: 200, culture: 'French', classification: 'Paintings' });
+    const japanese = computeSimilarity(vector, { ...mockArtwork, id: 201, culture: 'Japanese', classification: 'Prints', medium: 'Woodblock' });
+    const partial = computeSimilarity(vector, { ...mockArtwork, id: 202, culture: 'French', classification: 'Prints' });
+
+    // French Paintings should score highest
+    expect(french).toBeGreaterThan(japanese);
+    // Partially matching should be in between
+    expect(partial).toBeGreaterThan(japanese);
+    expect(french).toBeGreaterThan(partial);
+  });
 });
