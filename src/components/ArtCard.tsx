@@ -10,7 +10,6 @@ interface ArtCardProps {
   ref?: React.Ref<HTMLDivElement>;
 }
 
-const MAX_DESCRIPTION_LENGTH = 160;
 
 const HeartIcon = () => (
   <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -32,31 +31,14 @@ const ExpandIcon = () => (
   </svg>
 );
 
-interface Fact {
-  label: string;
-  value: string;
-}
-
 export function ArtCard({ art, ref }: ArtCardProps) {
   const { isLiked, toggleLike } = useLikedArt(art.id);
   const { trackLike, trackShare, trackDetail } = useTrackInteraction(art);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
   const [showTapLike, setShowTapLike] = useState(false);
-  const [areDetailsExpanded, setAreDetailsExpanded] = useState(false);
   const feedbackTimeoutRef = useRef<number | null>(null);
   const likeBurstTimeoutRef = useRef<number | null>(null);
   const lastTapRef = useRef<number>(0);
-
-  const shouldTruncateDescription = Boolean(
-    art.description && art.description.length > MAX_DESCRIPTION_LENGTH,
-  );
-
-  const displayDescription = (() => {
-    if (!art.description) return null;
-    if (isDescriptionExpanded || !shouldTruncateDescription) return art.description;
-    return `${art.description.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd()}...`;
-  })();
 
   const triggerLikeBurst = () => {
     setShowTapLike(true);
@@ -106,27 +88,12 @@ export function ArtCard({ art, ref }: ArtCardProps) {
     feedbackTimeoutRef.current = window.setTimeout(() => setShareFeedback(null), 2000);
   };
 
-  const detailFacts: Fact[] = [];
-  const addFact = (label: string, value: string | undefined) => {
-    const trimmed = value?.trim();
-    if (trimmed) detailFacts.push({ label, value: trimmed });
-  };
-  addFact("Created", art.dated);
-  addFact("Culture", art.culture);
-  addFact("Classification", art.classification);
-  addFact("Medium", art.medium);
-  addFact("Dimensions", art.dimensions);
-
-  const quickFacts = detailFacts.filter((fact) => fact.value.length <= 42).slice(0, 3);
-
   const hue = Math.abs(art.id) % 360;
   const accentStyle = {
     "--accent-h": String(hue),
     "--accent-s": "74%",
     "--accent-l": "58%",
   } as CSSProperties;
-
-  const detailsId = `art-details-${art.id}`;
 
   const trendingLabel = (() => {
     const highlight = art.culture || art.classification || art.medium || art.dated;
@@ -187,65 +154,15 @@ export function ArtCard({ art, ref }: ArtCardProps) {
           <p className="art-card__artist">{art.artist}</p>
         </div>
 
-        {displayDescription && (
-          <p className={`art-card__description ${isDescriptionExpanded ? "is-expanded" : ""}`.trim()}>
-            {displayDescription}
-            {shouldTruncateDescription && (
-              <button
-                type="button"
-                className="art-card__description-toggle"
-                onClick={() => setIsDescriptionExpanded((prev) => !prev)}
-              >
-                {isDescriptionExpanded ? "Show less" : "Read more"}
-              </button>
+        {(art.classification || art.dated) && (
+          <div className="art-card__tags">
+            {art.classification && (
+              <span className="art-card__tag">{art.classification.split(",")[0].trim()}</span>
             )}
-          </p>
-        )}
-
-        {quickFacts.length > 0 && (
-          <ul className="art-card__quick-facts">
-            {quickFacts.map((fact) => (
-              <li key={`${fact.label}-${fact.value}`}>
-                <span className="art-card__quick-facts-label">{fact.label}</span>
-                <span className="art-card__quick-facts-value">{fact.value}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {detailFacts.length > 0 && (
-          <section className={`art-card__details ${areDetailsExpanded ? "is-open" : ""}`}>
-            <button
-              type="button"
-              className="art-card__details-toggle"
-              aria-expanded={areDetailsExpanded}
-              aria-controls={detailsId}
-              onClick={() => setAreDetailsExpanded((prev) => !prev)}
-            >
-              {areDetailsExpanded ? "Hide artwork details" : "Artwork details"}
-            </button>
-            {areDetailsExpanded && (
-              <dl className="art-card__details-grid" id={detailsId}>
-                {detailFacts.map((fact) => (
-                  <div key={`${fact.label}-${fact.value}`} className="art-card__details-item">
-                    <dt>{fact.label}</dt>
-                    <dd>{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
+            {art.dated && (
+              <span className="art-card__tag">{art.dated}</span>
             )}
-          </section>
-        )}
-
-        {art.url && (
-          <a
-            className="art-card__museum-link"
-            href={art.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View at Harvard Art Museums
-          </a>
+          </div>
         )}
       </div>
 

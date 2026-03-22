@@ -81,7 +81,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  overflow: hidden;
+  overflow: auto;
   overscroll-behavior-y: contain;
   touch-action: pan-y;
   -webkit-font-smoothing: antialiased;
