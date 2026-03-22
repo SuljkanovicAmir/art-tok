@@ -1,45 +1,32 @@
 import type { CSSProperties } from "react";
-import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
+import { useTrackInteraction } from "../hooks/useTrackInteraction";
 
 interface ArtCardProps {
   art: ArtPiece;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
 const MAX_DESCRIPTION_LENGTH = 160;
 
 const HeartIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.54 0 3.04 0.99 3.57 2.36h0.21C10.81 4.99 12.31 4 13.85 4 16.34 4 18.35 6 18.35 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
   </svg>
 );
 
 const ShareIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M12 3l5.05 5.05-1.41 1.41L13 6.83V17h-2V6.83L8.36 9.46 6.95 8.05z" />
     <path d="M5 19h14v-2H5z" />
   </svg>
 );
 
 const ExpandIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M20 3h-6v2h2.59L13 8.59 14.41 10 18 6.41V9h2z" />
     <path d="M10 13.41 8.59 12 5 15.59V13H3v6h6v-2H6.41z" />
   </svg>
@@ -50,8 +37,9 @@ interface Fact {
   value: string;
 }
 
-export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) => {
+export function ArtCard({ art, ref }: ArtCardProps) {
   const { isLiked, toggleLike } = useLikedArt(art.id);
+  const { trackLike, trackShare, trackDetail } = useTrackInteraction(art);
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
   const [showTapLike, setShowTapLike] = useState(false);
@@ -60,67 +48,36 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
   const likeBurstTimeoutRef = useRef<number | null>(null);
   const lastTapRef = useRef<number>(0);
 
-  useEffect(() => {
-    return () => {
-      if (feedbackTimeoutRef.current) {
-        window.clearTimeout(feedbackTimeoutRef.current);
-      }
-
-      if (likeBurstTimeoutRef.current) {
-        window.clearTimeout(likeBurstTimeoutRef.current);
-      }
-    };
-  }, []);
-
   const shouldTruncateDescription = Boolean(
     art.description && art.description.length > MAX_DESCRIPTION_LENGTH,
   );
 
-  const displayDescription = useMemo(() => {
-    if (!art.description) {
-      return null;
-    }
+  const displayDescription = (() => {
+    if (!art.description) return null;
+    if (isDescriptionExpanded || !shouldTruncateDescription) return art.description;
+    return `${art.description.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd()}...`;
+  })();
 
-    if (isDescriptionExpanded || !shouldTruncateDescription) {
-      return art.description;
-    }
-
-    const truncated = art.description.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd();
-    return `${truncated}...`;
-  }, [art.description, isDescriptionExpanded, shouldTruncateDescription]);
-
-  const handleToggleDescription = useCallback(() => {
-    setIsDescriptionExpanded((previous) => !previous);
-  }, []);
-
-  const triggerLikeBurst = useCallback(() => {
+  const triggerLikeBurst = () => {
     setShowTapLike(true);
-
     if (likeBurstTimeoutRef.current) {
       window.clearTimeout(likeBurstTimeoutRef.current);
     }
+    likeBurstTimeoutRef.current = window.setTimeout(() => setShowTapLike(false), 700);
+  };
 
-    likeBurstTimeoutRef.current = window.setTimeout(() => {
-      setShowTapLike(false);
-    }, 700);
-  }, []);
-
-  const handleLikeButtonClick = useCallback(() => {
+  const handleLikeButtonClick = () => {
     if (!isLiked) {
       toggleLike();
+      trackLike();
       triggerLikeBurst();
       return;
     }
-
     toggleLike();
     setShowTapLike(false);
-  }, [isLiked, toggleLike, triggerLikeBurst]);
+  };
 
-  const handleShare = useCallback(async () => {
-    if (typeof window === "undefined" || typeof navigator === "undefined") {
-      return;
-    }
-
+  const handleShare = async () => {
     if (feedbackTimeoutRef.current) {
       window.clearTimeout(feedbackTimeoutRef.current);
       feedbackTimeoutRef.current = null;
@@ -134,7 +91,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
       if (navigator.share) {
         await navigator.share({ title: shareTitle, text: shareText, url: urlToShare });
         setShareFeedback("Shared");
-      } else if (navigator.clipboard && navigator.clipboard.writeText) {
+      } else if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(urlToShare);
         setShareFeedback("Link copied");
       } else {
@@ -145,88 +102,59 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
       setShareFeedback("Share canceled");
     }
 
-    feedbackTimeoutRef.current = window.setTimeout(() => {
-      setShareFeedback(null);
-    }, 2000);
-  }, [art.artist, art.title, art.url]);
+    trackShare();
+    feedbackTimeoutRef.current = window.setTimeout(() => setShareFeedback(null), 2000);
+  };
 
-  const detailFacts = useMemo(() => {
-    const facts: Fact[] = [];
-    const addFact = (label: string, value: string | undefined) => {
-      if (!value) {
-        return;
-      }
-      const trimmed = value.trim();
-      if (!trimmed) {
-        return;
-      }
-      facts.push({ label, value: trimmed });
-    };
+  const detailFacts: Fact[] = [];
+  const addFact = (label: string, value: string | undefined) => {
+    const trimmed = value?.trim();
+    if (trimmed) detailFacts.push({ label, value: trimmed });
+  };
+  addFact("Created", art.dated);
+  addFact("Culture", art.culture);
+  addFact("Classification", art.classification);
+  addFact("Medium", art.medium);
+  addFact("Dimensions", art.dimensions);
 
-    addFact("Created", art.dated);
-    addFact("Culture", art.culture);
-    addFact("Classification", art.classification);
-    addFact("Medium", art.medium);
-    addFact("Dimensions", art.dimensions);
+  const quickFacts = detailFacts.filter((fact) => fact.value.length <= 42).slice(0, 3);
 
-    return facts;
-  }, [art.classification, art.culture, art.dated, art.dimensions, art.medium]);
+  const hue = Math.abs(art.id) % 360;
+  const accentStyle = {
+    "--art-card-accent": `hsl(${hue}, 74%, 58%)`,
+    "--art-card-accent-soft": `hsla(${hue}, 86%, 62%, 0.32)`,
+    "--art-card-accent-surface": `hsla(${hue}, 92%, 68%, 0.16)`,
+  } as CSSProperties;
 
-  const quickFacts = useMemo(() => {
-    return detailFacts.filter((fact) => fact.value.length <= 42).slice(0, 3);
-  }, [detailFacts]);
+  const detailsId = `art-details-${art.id}`;
 
-  const accentStyle = useMemo(() => {
-    const hue = Math.abs(art.id) % 360;
-    const accent = `hsl(${hue}, 74%, 58%)`;
-    const accentSoft = `hsla(${hue}, 86%, 62%, 0.32)`;
-    const accentSurface = `hsla(${hue}, 92%, 68%, 0.16)`;
-
-    return {
-      "--art-card-accent": accent,
-      "--art-card-accent-soft": accentSoft,
-      "--art-card-accent-surface": accentSurface,
-    } as CSSProperties;
-  }, [art.id]);
-
-  const detailsId = useMemo(() => `art-details-${art.id}`, [art.id]);
-
-  const trendingLabel = useMemo(() => {
+  const trendingLabel = (() => {
     const highlight = art.culture || art.classification || art.medium || art.dated;
-    if (!highlight) {
-      return null;
-    }
-
+    if (!highlight) return null;
     return highlight.split(",")[0].trim();
-  }, [art.classification, art.culture, art.dated, art.medium]);
+  })();
 
-  const trendingTag = useMemo(() => {
-    if (!trendingLabel) {
-      return null;
-    }
-
+  const trendingTag = (() => {
+    if (!trendingLabel) return null;
     const condensed = trendingLabel.replace(/[^a-z0-9]+/gi, "");
     return condensed ? `#${condensed}` : `#${trendingLabel.replace(/\s+/g, "")}`;
-  }, [trendingLabel]);
+  })();
 
-  const handleDoubleTapLike = useCallback(() => {
+  const handleDoubleTapLike = () => {
     if (!isLiked) {
       toggleLike();
+      trackLike();
     }
     triggerLikeBurst();
-  }, [isLiked, toggleLike, triggerLikeBurst]);
+  };
 
-  const handleMediaTouchEnd = useCallback(() => {
+  const handleMediaTouchEnd = () => {
     const now = Date.now();
     if (now - lastTapRef.current < 280) {
       handleDoubleTapLike();
     }
     lastTapRef.current = now;
-  }, [handleDoubleTapLike]);
-
-  const toggleDetails = useCallback(() => {
-    setAreDetailsExpanded((previous) => !previous);
-  }, []);
+  };
 
   return (
     <article className="art-card" ref={ref} style={accentStyle}>
@@ -252,7 +180,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
       <div className="art-card__info">
         <div className="art-card__title-group">
           <h2 className="art-card__title">
-            <Link to={`/artwork/${art.id}`} className="art-card__title-link">
+            <Link to={`/artwork/${art.id}`} className="art-card__title-link" onClick={trackDetail}>
               {art.title}
             </Link>
           </h2>
@@ -266,7 +194,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
               <button
                 type="button"
                 className="art-card__description-toggle"
-                onClick={handleToggleDescription}
+                onClick={() => setIsDescriptionExpanded((prev) => !prev)}
               >
                 {isDescriptionExpanded ? "Show less" : "Read more"}
               </button>
@@ -292,7 +220,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
               className="art-card__details-toggle"
               aria-expanded={areDetailsExpanded}
               aria-controls={detailsId}
-              onClick={toggleDetails}
+              onClick={() => setAreDetailsExpanded((prev) => !prev)}
             >
               {areDetailsExpanded ? "Hide artwork details" : "Artwork details"}
             </button>
@@ -363,6 +291,4 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
       </div>
     </article>
   );
-});
-
-ArtCard.displayName = "ArtCard";
+}
