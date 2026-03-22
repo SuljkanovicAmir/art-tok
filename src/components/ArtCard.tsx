@@ -24,10 +24,15 @@ const ShareIcon = () => (
   </svg>
 );
 
+const InfoIcon = () => (
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v-5h-2zm0-7h2V7h-2z" />
+  </svg>
+);
+
 const ExpandIcon = () => (
   <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M20 3h-6v2h2.59L13 8.59 14.41 10 18 6.41V9h2z" />
-    <path d="M10 13.41 8.59 12 5 15.59V13H3v6h6v-2H6.41z" />
+    <path d="M21 3h-6v2h2.59L14 8.59 15.41 10 19 6.41V9h2zM3 3v6h2V6.41L8.59 10 10 8.59 6.41 5H9V3zm0 18h6v-2H6.41L10 15.41 8.59 14 5 17.59V15H3zM21 21v-6h-2v2.59L15.41 14 14 15.41 17.59 19H15v2z" />
   </svg>
 );
 
@@ -194,16 +199,28 @@ export function ArtCard({ art, ref }: ArtCardProps) {
         </div>
 
         <div className="art-card__action">
+          <Link
+            className="art-card__action-button art-card__action-button--link"
+            to={`/artwork/${art.id}`}
+            aria-label="View artwork details"
+            onClick={trackDetail}
+          >
+            <InfoIcon />
+          </Link>
+          <span className="art-card__action-label">Info</span>
+        </div>
+
+        <div className="art-card__action">
           <a
             className="art-card__action-button art-card__action-button--link"
             href={art.imageUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open artwork image in a new tab"
+            aria-label="Expand artwork full screen"
           >
             <ExpandIcon />
           </a>
-          <span className="art-card__action-label">Full size</span>
+          <span className="art-card__action-label">Expand</span>
         </div>
       </div>
     </article>

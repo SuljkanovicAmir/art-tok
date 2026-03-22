@@ -8,87 +8,57 @@
   --feed-header-height: 4rem;
 }
 
+/* ── Feed header — transparent, centered brand ── */
 .art-feed__header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: var(--feed-header-height);
-  padding: 0.75rem 1.15rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 20;
-  background: var(--glass-l1-bg);
-  backdrop-filter: blur(var(--glass-l1-blur));
-  -webkit-backdrop-filter: blur(var(--glass-l1-blur));
-  border-bottom: 1px solid var(--glass-l1-border);
-  box-shadow: var(--glass-shadow);
+  background: transparent;
 }
 
 .art-feed__brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.28rem;
-  letter-spacing: 0.1em;
+  font-style: italic;
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  text-shadow: 0 0 20px hsla(var(--accent-h), 80%, 60%, 0.3);
+  color: var(--text-primary);
 }
 
-.art-feed__header-actions {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.art-feed__icon-button {
-  background: var(--glass-l3-bg);
-  backdrop-filter: blur(var(--glass-l3-blur));
-  -webkit-backdrop-filter: blur(var(--glass-l3-blur));
-  border: 1px solid var(--glass-l3-border);
-  box-shadow: var(--glass-shadow);
-  color: inherit;
-  border-radius: 50%;
-  width: 2.6rem;
-  height: 2.6rem;
+/* ── Header icon — bare, no background ── */
+.art-feed__header-icon {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  width: 2.4rem;
+  height: 2.4rem;
   display: grid;
   place-items: center;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-  position: relative;
-  overflow: hidden;
+  transition: opacity var(--duration-fast) var(--ease-glass),
+    transform var(--duration-fast) var(--ease-glass);
+  text-decoration: none;
 }
 
-.art-feed__icon-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--glass-specular);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.art-feed__icon-button svg {
-  width: 1.1rem;
-  height: 1.1rem;
+.art-feed__header-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
   fill: currentColor;
-  position: relative;
-  z-index: 2;
 }
 
-.art-feed__icon-button:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: var(--glass-l3-border-bright);
-  box-shadow: var(--glass-shadow), var(--accent-glow);
+.art-feed__header-icon:hover {
+  opacity: 0.7;
 }
 
-.art-feed__icon-button:active {
-  transform: scale(0.96);
-}
-
-.art-feed__icon-button.is-active {
-  background: var(--accent);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: var(--glass-shadow-elevated), var(--accent-glow-strong);
+.art-feed__header-icon:active {
+  transform: scale(0.92);
 }
 
 .art-feed__scroller {
