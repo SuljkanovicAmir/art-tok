@@ -121,9 +121,9 @@ export function ArtCard({ art, ref }: ArtCardProps) {
 
   const hue = Math.abs(art.id) % 360;
   const accentStyle = {
-    "--art-card-accent": `hsl(${hue}, 74%, 58%)`,
-    "--art-card-accent-soft": `hsla(${hue}, 86%, 62%, 0.32)`,
-    "--art-card-accent-surface": `hsla(${hue}, 92%, 68%, 0.16)`,
+    "--accent-h": String(hue),
+    "--accent-s": "74%",
+    "--accent-l": "58%",
   } as CSSProperties;
 
   const detailsId = `art-details-${art.id}`;
@@ -253,7 +253,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
         <div className="art-card__action">
           <button
             type="button"
-            className={`art-card__action-button ${isLiked ? "is-active" : ""}`.trim()}
+            className={`art-card__action-button art-card__action-button--like ${isLiked ? "is-active" : ""}`.trim()}
             aria-pressed={isLiked}
             aria-label={isLiked ? "Unlike artwork" : "Like artwork"}
             onClick={handleLikeButtonClick}
