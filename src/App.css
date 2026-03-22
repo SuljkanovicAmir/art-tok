@@ -446,18 +446,12 @@
 }
 
 .art-card__action-label {
-  font-family: var(--font-body);
-  font-size: 0.55rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  display: none;
 }
 
 .art-card__action-button {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: var(--radius-button);
   border: none;
   background: transparent;
@@ -495,8 +489,8 @@
 }
 
 .art-card__action-svg {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.75rem;
+  height: 1.75rem;
   fill: currentColor;
   position: relative;
   z-index: 2;
