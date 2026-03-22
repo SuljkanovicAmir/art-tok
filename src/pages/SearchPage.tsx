@@ -126,7 +126,19 @@ export default function SearchPage() {
 
       {!error && !hasSearched && (
         <div className="search-page__empty">
-          Discover artworks by keyword, artist, or culture
+          <p className="search-page__empty-title">Discover masterpieces</p>
+          <div className="search-page__suggestions">
+            {["Impressionism", "Japanese", "Rembrandt", "Sculpture", "Renaissance"].map((term) => (
+              <button
+                key={term}
+                type="button"
+                className="search-page__suggestion"
+                onClick={() => { setInput(term); setKeywordParams({ keyword: term }); }}
+              >
+                {term}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
@@ -144,8 +156,8 @@ export default function SearchPage() {
 
       {results.length > 0 && (
         <div className="search-page__results">
-          {results.map((art) => (
-            <div className="search-result-card" key={art.id}>
+          {results.map((art, index) => (
+            <div className="search-result-card" key={art.id} style={{ animationDelay: `${index * 50}ms` }}>
               <img
                 className="search-result-card__image"
                 src={art.imageUrl}
