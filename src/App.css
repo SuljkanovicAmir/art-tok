@@ -978,6 +978,52 @@
   text-decoration: underline;
 }
 
+/* === Color Palette === */
+.color-palette {
+  padding: 0.75rem 0;
+}
+
+.color-palette__swatches {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.color-palette__swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid rgba(245, 245, 245, 0.12);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.color-palette__swatch:hover {
+  transform: scale(1.15);
+  border-color: rgba(245, 245, 245, 0.4);
+}
+
+.color-palette__swatch.is-copied {
+  border-color: rgba(245, 245, 245, 0.8);
+}
+
+.color-palette__copied {
+  position: absolute;
+  bottom: -1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.55rem;
+  color: rgba(245, 245, 245, 0.7);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .color-palette__swatch {
+    transition: none;
+  }
+}
+
 /* ArtCard title link */
 .art-card__title-link {
   color: inherit;
@@ -1382,6 +1428,49 @@
   letter-spacing: 0.05em;
   font-size: 0.75rem;
   color: rgba(245, 245, 245, 0.5);
+}
+
+/* === Scale Reference === */
+.scale-ref {
+  padding: 1rem 0;
+}
+
+.scale-ref__visual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.scale-ref__human {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.scale-ref__human svg {
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+.scale-ref__artwork {
+  border: 2px dashed rgba(245, 245, 245, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  flex-shrink: 0;
+}
+
+.scale-ref__label {
+  font-size: 0.65rem;
+  color: rgba(245, 245, 245, 0.5);
+  text-align: center;
+  margin-top: 0.25rem;
+  white-space: nowrap;
 }
 
 /* Bottom Navigation */

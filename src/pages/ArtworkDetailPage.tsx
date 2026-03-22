@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import ArtImagesService from "../services/ArtImagesService";
-import { mapArtRecord } from "../utils/mapArtRecord";
 import { useLikedArt } from "../hooks/useLikedArt";
+import { useArtworkQuery } from "../hooks/useArtworkQuery";
+import { ScaleReference } from "../components/ScaleReference";
+import { ColorPalette } from "../components/ColorPalette";
 import type { ArtPiece } from "../types/art";
 import type { CSSProperties } from "react";
-
-const service = new ArtImagesService();
 
 const HeartIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="20" height="20" fill="currentColor">
@@ -28,53 +26,21 @@ interface MetaField {
 
 export default function ArtworkDetailPage() {
   const { id } = useParams<{ id: string }>();
-  const [art, setArt] = useState<ArtPiece | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const numericId = id ? Number(id) : undefined;
+  const { data: art, isLoading, error } = useArtworkQuery(numericId);
 
-  useEffect(() => {
-    if (!id) {
-      setError("No artwork ID provided");
-      setLoading(false);
-      return;
-    }
+  if (!id) {
+    return (
+      <div className="detail-page">
+        <div className="detail-page__status">
+          <p>No artwork ID provided</p>
+          <Link to="/" className="detail-page__status-link">Back to feed</Link>
+        </div>
+      </div>
+    );
+  }
 
-    let cancelled = false;
-
-    const fetchArtwork = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const record = await service.fetchArtworkById(Number(id));
-        if (cancelled) return;
-        if (!record) {
-          setError("Artwork not found");
-          setLoading(false);
-          return;
-        }
-        const mapped = mapArtRecord(record);
-        if (!mapped) {
-          setError("Artwork has no image available");
-          setLoading(false);
-          return;
-        }
-        setArt(mapped);
-      } catch (err) {
-        if (cancelled) return;
-        setError(err instanceof Error ? err.message : "Failed to load artwork");
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
-    };
-
-    fetchArtwork();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [id]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="detail-page">
         <div className="detail-page__status">
@@ -88,7 +54,7 @@ export default function ArtworkDetailPage() {
     return (
       <div className="detail-page">
         <div className="detail-page__status">
-          <p>{error || "Artwork not found"}</p>
+          <p>{error instanceof Error ? error.message : "Artwork not found"}</p>
           <Link to="/" className="detail-page__status-link">Back to feed</Link>
         </div>
       </div>
@@ -101,30 +67,24 @@ export default function ArtworkDetailPage() {
 function ArtworkDetailContent({ art }: { art: ArtPiece }) {
   const { isLiked, toggleLike } = useLikedArt(art.id);
 
-  const accentStyle = useMemo(() => {
-    const hue = Math.abs(art.id) % 360;
-    return {
-      "--art-card-accent": `hsl(${hue}, 74%, 58%)`,
-    } as CSSProperties;
-  }, [art.id]);
+  const hue = Math.abs(art.id) % 360;
+  const accentStyle = {
+    "--art-card-accent": `hsl(${hue}, 74%, 58%)`,
+  } as CSSProperties;
 
-  const metaFields = useMemo(() => {
-    const fields: MetaField[] = [];
-    const add = (label: string, value: string | undefined) => {
-      if (value?.trim()) fields.push({ label, value: value.trim() });
-    };
-    add("Created", art.dated);
-    add("Culture", art.culture);
-    add("Classification", art.classification);
-    add("Medium", art.medium);
-    add("Dimensions", art.dimensions);
-    return fields;
-  }, [art.dated, art.culture, art.classification, art.medium, art.dimensions]);
+  const metaFields: MetaField[] = [];
+  const add = (label: string, value: string | undefined) => {
+    if (value?.trim()) metaFields.push({ label, value: value.trim() });
+  };
+  add("Created", art.dated);
+  add("Culture", art.culture);
+  add("Classification", art.classification);
+  add("Medium", art.medium);
+  add("Dimensions", art.dimensions);
 
-  const handleShare = useCallback(async () => {
+  const handleShare = async () => {
     const urlToShare = art.url || window.location.href;
     const shareText = `Check out "${art.title}" by ${art.artist}`;
-
     try {
       if (navigator.share) {
         await navigator.share({ title: art.title, text: shareText, url: urlToShare });
@@ -134,7 +94,7 @@ function ArtworkDetailContent({ art }: { art: ArtPiece }) {
     } catch {
       // share cancelled or not supported
     }
-  }, [art.artist, art.title, art.url]);
+  };
 
   return (
     <div className="detail-page" style={accentStyle}>
@@ -154,6 +114,15 @@ function ArtworkDetailContent({ art }: { art: ArtPiece }) {
             />
           </a>
         </div>
+
+        {art.dimensions && (
+          <ScaleReference
+            dimensions={art.dimensions}
+            accentColor={`hsl(${hue}, 74%, 58%)`}
+          />
+        )}
+
+        <ColorPalette imageUrl={art.imageUrl} />
 
         <h1 className="detail-page__title">{art.title}</h1>
         <p className="detail-page__artist">{art.artist}</p>
