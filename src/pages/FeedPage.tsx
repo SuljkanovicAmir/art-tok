@@ -48,7 +48,7 @@ export default function FeedPage() {
 
   return (
     <div className="art-feed">
-      <header className="art-feed__header">
+      <header className="art-feed__header glass-noise">
         <div className="art-feed__brand">ArtTok</div>
         <div className="art-feed__header-actions">
           <Link to="/search" className="art-feed__icon-button" aria-label="Search artworks">
