@@ -1,8 +1,68 @@
 :root {
   color-scheme: dark;
-  font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  background-color: #050505;
-  color: #f5f5f5;
+
+  /* ── Typography ── */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  /* ── Glass Level 1 — Background (nav, headers) ── */
+  --glass-l1-bg: rgba(255, 255, 255, 0.04);
+  --glass-l1-blur: 24px;
+  --glass-l1-border: rgba(255, 255, 255, 0.08);
+
+  /* ── Glass Level 2 — Surface (info strip, panels, cards) ── */
+  --glass-l2-bg: rgba(255, 255, 255, 0.08);
+  --glass-l2-blur: 32px;
+  --glass-l2-border: rgba(255, 255, 255, 0.15);
+
+  /* ── Glass Level 3 — Interactive (buttons, active states) ── */
+  --glass-l3-bg: rgba(255, 255, 255, 0.12);
+  --glass-l3-blur: 16px;
+  --glass-l3-border: rgba(255, 255, 255, 0.25);
+  --glass-l3-border-bright: rgba(255, 255, 255, 0.35);
+
+  /* ── Shared glass effects ── */
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --glass-shadow-elevated: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --glass-noise-opacity: 0.03;
+  --glass-specular: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 40%,
+    transparent 60%
+  );
+
+  /* ── Per-artwork accent (defaults, overridden per card) ── */
+  --accent-h: 0;
+  --accent-s: 74%;
+  --accent-l: 58%;
+  --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --accent-soft: hsla(var(--accent-h), 86%, 62%, 0.32);
+  --accent-surface: hsla(var(--accent-h), 92%, 68%, 0.16);
+  --accent-glow: 0 0 20px hsla(var(--accent-h), 80%, 60%, 0.3);
+  --accent-glow-strong: 0 0 32px hsla(var(--accent-h), 80%, 60%, 0.45);
+
+  /* ── Surfaces ── */
+  --bg-primary: #050505;
+  --text-primary: #f5f5f5;
+  --text-secondary: rgba(245, 245, 245, 0.7);
+  --text-tertiary: rgba(245, 245, 245, 0.45);
+
+  /* ── Radii ── */
+  --radius-panel: 24px;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-button: 50%;
+
+  /* ── Motion ── */
+  --ease-glass: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 * {
@@ -18,20 +78,87 @@ body,
 }
 
 body {
-  background-color: #050505;
-  color: #f5f5f5;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow: hidden;
   overscroll-behavior-y: contain;
   touch-action: pan-y;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button {
   font: inherit;
+  font-family: var(--font-body);
   cursor: pointer;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+/* ── Noise texture overlay (applied via .glass-noise class) ── */
+.glass-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: var(--glass-noise-opacity);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ── Shared keyframes ── */
+@keyframes glass-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glass-breathe {
+  0%, 100% {
+    box-shadow: var(--glass-shadow), 0 0 12px hsla(var(--accent-h), 80%, 60%, 0.15);
+  }
+  50% {
+    box-shadow: var(--glass-shadow), 0 0 24px hsla(var(--accent-h), 80%, 60%, 0.35);
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
