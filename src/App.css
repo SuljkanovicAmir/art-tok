@@ -431,7 +431,7 @@
   right: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
+  gap: 0.5rem;
   align-items: center;
   z-index: 4;
 }
@@ -896,7 +896,7 @@
   .art-card__actions {
     right: 2.1rem;
     bottom: 10rem;
-    gap: 1.2rem;
+    gap: 0.6rem;
   }
 
   .art-card__action-button {
@@ -968,7 +968,7 @@
   .art-card__actions {
     right: 0.65rem;
     bottom: 7rem;
-    gap: 0.8rem;
+    gap: 0.4rem;
   }
 
   .art-card__action-button {
