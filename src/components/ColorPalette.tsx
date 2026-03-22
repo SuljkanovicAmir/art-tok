@@ -29,7 +29,10 @@ export function ColorPalette({ imageUrl }: ColorPaletteProps) {
             key={swatch.hex}
             type="button"
             className={`color-palette__swatch ${copiedHex === swatch.hex ? "is-copied" : ""}`}
-            style={{ backgroundColor: swatch.hex }}
+            style={{
+              backgroundColor: swatch.hex,
+              boxShadow: `0 0 16px ${swatch.hex}66`,
+            }}
             onClick={() => handleCopy(swatch.hex)}
             aria-label={`Copy color ${swatch.hex} (${swatch.percentage}%)`}
             title={`${swatch.hex} · ${swatch.percentage}%`}

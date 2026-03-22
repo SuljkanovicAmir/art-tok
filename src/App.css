@@ -1255,18 +1255,16 @@
 .color-palette__swatch {
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  border: 2px solid rgba(245, 245, 245, 0.12);
+  border-radius: 50%;
+  border: 2px solid var(--glass-l3-border);
   cursor: pointer;
   position: relative;
   transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
-  box-shadow: 0 0 12px var(--swatch-color, transparent);
 }
 
 .color-palette__swatch:hover {
   transform: scale(1.15);
-  border-color: rgba(245, 245, 245, 0.4);
-  box-shadow: 0 0 18px var(--swatch-color, transparent);
+  border-color: var(--glass-l3-border-bright);
 }
 
 .color-palette__swatch.is-copied {

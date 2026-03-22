@@ -69,7 +69,9 @@ function ArtworkDetailContent({ art }: { art: ArtPiece }) {
 
   const hue = Math.abs(art.id) % 360;
   const accentStyle = {
-    "--art-card-accent": `hsl(${hue}, 74%, 58%)`,
+    "--accent-h": String(hue),
+    "--accent-s": "74%",
+    "--accent-l": "58%",
   } as CSSProperties;
 
   const metaFields: MetaField[] = [];
