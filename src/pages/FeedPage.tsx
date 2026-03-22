@@ -23,6 +23,24 @@ const SearchIcon = () => (
   </svg>
 );
 
+function FeedSkeleton() {
+  return (
+    <div className="skeleton">
+      <div className="skeleton__image" />
+      <div className="skeleton__info">
+        <div className="skeleton__line skeleton__line--title" />
+        <div className="skeleton__line skeleton__line--subtitle" />
+        <div className="skeleton__line" />
+        <div className="skeleton__pills">
+          <div className="skeleton__pill" />
+          <div className="skeleton__pill" />
+          <div className="skeleton__pill" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FeedPage() {
   const {
     data,
@@ -71,7 +89,7 @@ export default function FeedPage() {
         ))}
 
         {isInitialLoad && (
-          <div className="art-feed__status">Loading artworks...</div>
+          <FeedSkeleton />
         )}
 
         {showEmptyState && (
