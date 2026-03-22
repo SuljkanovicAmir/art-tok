@@ -79,9 +79,9 @@ export default function BottomNav() {
             to={item.path}
             className={`bottom-nav__item${isActive ? " is-active" : ""}`}
             aria-current={isActive ? "page" : undefined}
+            aria-label={item.label}
           >
             {isActive ? item.activeIcon : item.inactiveIcon}
-            <span>{item.label}</span>
           </Link>
         );
       })}

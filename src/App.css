@@ -2069,39 +2069,31 @@
 }
 
 /* Bottom Navigation */
+/* ── Bottom Nav — floating glass pill, icons only ── */
 .bottom-nav {
   position: fixed;
-  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
-  background: var(--glass-l1-bg);
-  backdrop-filter: blur(var(--glass-l1-blur));
-  -webkit-backdrop-filter: blur(var(--glass-l1-blur));
-  border: 1px solid var(--glass-l1-border);
-  border-top-color: var(--glass-l3-border);
-  border-radius: var(--radius-panel);
-  box-shadow: var(--glass-shadow-elevated);
+  background: rgba(20, 20, 20, 0.55);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-around;
-  padding: 0.45rem 0.5rem;
-  max-width: 400px;
-  width: calc(100% - 2rem);
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 1.75rem;
 }
 
 .bottom-nav__item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.15rem;
-  padding: 0.35rem 0.75rem;
-  color: var(--text-tertiary);
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.35);
   text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
   transition: color var(--duration-normal) var(--ease-glass),
     transform var(--duration-fast) var(--ease-glass);
   position: relative;
@@ -2114,21 +2106,20 @@
 .bottom-nav__item.is-active::after {
   content: "";
   position: absolute;
-  bottom: -0.15rem;
+  bottom: -0.45rem;
   left: 50%;
   transform: translateX(-50%);
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 8px hsla(var(--accent-h), 80%, 60%, 0.6);
+  background: var(--text-primary);
 }
 
 .bottom-nav__item:active {
-  transform: scale(0.9);
+  transform: scale(0.88);
 }
 
 .bottom-nav__item svg {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
