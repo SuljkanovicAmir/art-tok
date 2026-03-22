@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import {
   LIKED_ART_STORAGE_EVENT,
   LIKED_ART_STORAGE_KEY,
@@ -6,48 +6,43 @@ import {
   writeLikedSet,
 } from "../utils/likedArtStorage";
 
-export function useLikedArt(id: number) {
-  const [isLiked, setIsLiked] = useState(() => readLikedSet().has(id));
+function subscribe(callback: () => void) {
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key === LIKED_ART_STORAGE_KEY) callback();
+  };
 
-  useEffect(() => {
-    const syncLikeState = () => {
-      setIsLiked(readLikedSet().has(id));
-    };
+  window.addEventListener(LIKED_ART_STORAGE_EVENT, callback);
+  window.addEventListener("storage", handleStorage);
 
-    syncLikeState();
+  return () => {
+    window.removeEventListener(LIKED_ART_STORAGE_EVENT, callback);
+    window.removeEventListener("storage", handleStorage);
+  };
+}
 
-    if (typeof window === "undefined") {
-      return;
-    }
+function getServerSnapshot() {
+  return false;
+}
 
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key === LIKED_ART_STORAGE_KEY) {
-        syncLikeState();
-      }
-    };
+/**
+ * @param artKey Composite key: "harvard:12345", "met:678", etc.
+ */
+export function useLikedArt(artKey: string) {
+  const isLiked = useSyncExternalStore(
+    subscribe,
+    () => readLikedSet().has(artKey),
+    getServerSnapshot,
+  );
 
-    window.addEventListener(LIKED_ART_STORAGE_EVENT, syncLikeState);
-    window.addEventListener("storage", handleStorage);
-
-    return () => {
-      window.removeEventListener(LIKED_ART_STORAGE_EVENT, syncLikeState);
-      window.removeEventListener("storage", handleStorage);
-    };
-  }, [id]);
-
-  const toggleLike = useCallback(() => {
+  const toggleLike = () => {
     const nextSet = readLikedSet();
-
-    if (nextSet.has(id)) {
-      nextSet.delete(id);
-      setIsLiked(false);
+    if (nextSet.has(artKey)) {
+      nextSet.delete(artKey);
     } else {
-      nextSet.add(id);
-      setIsLiked(true);
+      nextSet.add(artKey);
     }
-
     writeLikedSet(nextSet);
-  }, [id]);
+  };
 
   return { isLiked, toggleLike };
 }

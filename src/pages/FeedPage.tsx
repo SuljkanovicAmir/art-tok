@@ -83,7 +83,7 @@ export default function FeedPage() {
 
       <main className="art-feed__scroller" ref={scrollerRef}>
         {artPieces.map((piece) => (
-          <ArtCard key={piece.id} art={piece} />
+          <ArtCard key={`${piece.source}:${piece.id}`} art={piece} />
         ))}
 
         {isInitialLoad && (

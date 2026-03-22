@@ -2,6 +2,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { artRegistry } from "../services/registry";
 import { readLikedSet, LIKED_ART_STORAGE_EVENT } from "../utils/likedArtStorage";
+import { parseArtKey } from "../utils/artKey";
 import type { ArtPiece } from "../types/art";
 
 export function useLikedArtQuery() {
@@ -19,11 +20,14 @@ export function useLikedArtQuery() {
   return useQuery({
     queryKey: ["liked-artworks", JSON.stringify(Array.from(readLikedSet()))],
     queryFn: async () => {
-      const likedIds = readLikedSet();
-      if (likedIds.size === 0) return [];
+      const likedKeys = readLikedSet();
+      if (likedKeys.size === 0) return [];
 
       const results = await Promise.allSettled(
-        Array.from(likedIds).map((id) => artRegistry.fetchById(id))
+        Array.from(likedKeys).map((key) => {
+          const { source, id } = parseArtKey(key);
+          return artRegistry.fetchById(id, source);
+        })
       );
 
       const pieces: ArtPiece[] = [];

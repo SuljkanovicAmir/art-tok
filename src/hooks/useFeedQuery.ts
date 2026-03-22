@@ -70,12 +70,13 @@ export function useFeedQuery() {
 
 export function flattenFeedPages(data: ReturnType<typeof useFeedQuery>["data"]) {
   if (!data) return [];
-  const seen = new Set<number>();
+  const seen = new Set<string>();
   const result: ArtPiece[] = [];
   for (const page of data.pages) {
     for (const piece of page.pieces) {
-      if (!seen.has(piece.id)) {
-        seen.add(piece.id);
+      const key = `${piece.source}:${piece.id}`;
+      if (!seen.has(key)) {
+        seen.add(key);
         result.push(piece);
       }
     }

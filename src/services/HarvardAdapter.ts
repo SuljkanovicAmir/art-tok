@@ -20,6 +20,15 @@ const FIELDS = [
   "technique",
   "dimensions",
   "url",
+  "images",
+  "datebegin",
+  "dateend",
+  "department",
+  "period",
+  "style",
+  "tags",
+  "colors",
+  "gallery",
 ];
 
 export class HarvardAdapter implements ArtSource {

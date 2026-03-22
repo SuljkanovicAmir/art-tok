@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { useTrackInteraction } from "../hooks/useTrackInteraction";
+import { artKey } from "../utils/artKey";
 
 interface ArtCardProps {
   art: ArtPiece;
@@ -37,7 +38,7 @@ const ExpandIcon = () => (
 );
 
 export function ArtCard({ art, ref }: ArtCardProps) {
-  const { isLiked, toggleLike } = useLikedArt(art.id);
+  const { isLiked, toggleLike } = useLikedArt(artKey(art));
   const { trackLike, trackShare, trackDetail } = useTrackInteraction(art);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
   const [showTapLike, setShowTapLike] = useState(false);
@@ -140,6 +141,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
           src={art.imageUrl}
           alt={`${art.title} by ${art.artist}`}
           loading="lazy"
+          style={art.lqip ? { backgroundImage: `url(${art.lqip})`, backgroundSize: "cover" } : undefined}
         />
         {trendingTag && <span className="art-card__badge">{trendingTag}</span>}
         {showTapLike && (
@@ -152,7 +154,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
       <div className="art-card__info">
         <div className="art-card__title-group">
           <h2 className="art-card__title">
-            <Link to={`/artwork/${art.id}`} className="art-card__title-link" onClick={trackDetail}>
+            <Link to={`/artwork/${art.source}/${art.id}`} className="art-card__title-link" onClick={trackDetail}>
               {art.title}
             </Link>
           </h2>
@@ -201,7 +203,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
         <div className="art-card__action">
           <Link
             className="art-card__action-button art-card__action-button--link"
-            to={`/artwork/${art.id}`}
+            to={`/artwork/${art.source}/${art.id}`}
             aria-label="View artwork details"
             onClick={trackDetail}
           >

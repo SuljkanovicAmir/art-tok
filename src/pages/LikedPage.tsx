@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { useLikedArtQuery } from "../hooks/useLikedArtQuery";
 import { readLikedSet } from "../utils/likedArtStorage";
+import { artKey } from "../utils/artKey";
 import type { ArtPiece } from "../types/art";
 
 function LikedCard({ piece, index }: { piece: ArtPiece; index: number }) {
-  const { toggleLike } = useLikedArt(piece.id);
+  const { toggleLike } = useLikedArt(artKey(piece));
 
   return (
     <div className="liked-card" style={{ animationDelay: `${index * 50}ms` }}>
@@ -26,7 +27,7 @@ function LikedCard({ piece, index }: { piece: ArtPiece; index: number }) {
       </button>
       <div className="liked-card__info">
         <p className="liked-card__title">
-          <Link to={`/artwork/${piece.id}`}>{piece.title}</Link>
+          <Link to={`/artwork/${piece.source}/${piece.id}`}>{piece.title}</Link>
         </p>
         <p className="liked-card__artist">{piece.artist}</p>
       </div>
@@ -62,7 +63,7 @@ export default function LikedPage() {
       ) : (
         <div className="liked-page__grid">
           {artworks.map((piece, index) => (
-            <LikedCard key={piece.id} piece={piece} index={index} />
+            <LikedCard key={`${piece.source}:${piece.id}`} piece={piece} index={index} />
           ))}
         </div>
       )}

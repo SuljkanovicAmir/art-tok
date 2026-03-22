@@ -12,7 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<FeedPage />} />
-        <Route path="/artwork/:id" element={<ArtworkDetailPage />} />
+        <Route path="/artwork/:source/:id" element={<ArtworkDetailPage />} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
