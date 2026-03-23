@@ -43,6 +43,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
   const { trackLike, trackShare, trackDetail } = useTrackInteraction(art);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
   const [showTapLike, setShowTapLike] = useState(false);
+  const [sharePreview, setSharePreview] = useState<{ url: string; file: File } | null>(null);
   const feedbackTimeoutRef = useRef<number | null>(null);
   const likeBurstTimeoutRef = useRef<number | null>(null);
   const lastTapRef = useRef<number>(0);
@@ -66,6 +67,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
     setShowTapLike(false);
   };
 
+  // Step 1: Generate story card and show preview overlay
   const handleShare = async () => {
     if (feedbackTimeoutRef.current) {
       window.clearTimeout(feedbackTimeoutRef.current);
@@ -74,65 +76,67 @@ export function ArtCard({ art, ref }: ArtCardProps) {
 
     setShareFeedback("Creating…");
 
-    let shared = false;
-
     try {
       const img = await loadShareImage(art.imageUrl);
       const blob = await renderStoryCard(art, img);
 
-      // Clean up blob URL from loadShareImage
       const objectUrl = (img as HTMLImageElement & { _objectUrl?: string })._objectUrl;
       if (objectUrl) URL.revokeObjectURL(objectUrl);
 
       const file = new File([blob], `arttok-${art.source}-${art.id}.png`, { type: "image/png" });
+      const previewUrl = URL.createObjectURL(blob);
 
-      if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file] });
-        setShareFeedback("Shared");
-        shared = true;
+      setShareFeedback(null);
+      setSharePreview({ url: previewUrl, file });
+    } catch {
+      setShareFeedback("Failed");
+      feedbackTimeoutRef.current = window.setTimeout(() => setShareFeedback(null), 2000);
+    }
+  };
+
+  // Step 2: User taps share in preview — fresh gesture → native share sheet
+  const handleShareConfirm = async () => {
+    if (!sharePreview) return;
+
+    const { file, url: previewUrl } = sharePreview;
+    // iOS Safari: files must be the ONLY property — no title/text/url alongside
+    const shareData = { files: [file] };
+
+    try {
+      if (navigator.canShare?.(shareData)) {
+        await navigator.share(shareData);
       } else if (navigator.share) {
-        // Device supports share but not file sharing — share with image URL
+        // Browser supports share but not files — share URL instead
         await navigator.share({
           title: art.title,
           text: `"${art.title}" by ${art.artist}`,
           url: art.url || window.location.href,
         });
-        setShareFeedback("Shared");
-        shared = true;
       } else {
-        // Desktop — download the image
-        const dlUrl = URL.createObjectURL(blob);
+        // No share API — download
         const a = document.createElement("a");
-        a.href = dlUrl;
+        a.href = previewUrl;
         a.download = file.name;
         a.click();
-        URL.revokeObjectURL(dlUrl);
-        setShareFeedback("Saved");
-        shared = true;
       }
-    } catch {
-      // Canvas tainted or user canceled — fall back to link share
-    }
-
-    if (!shared) {
-      const urlToShare = art.url || window.location.href;
-      try {
-        if (navigator.share) {
-          await navigator.share({ title: art.title, text: `"${art.title}" by ${art.artist}`, url: urlToShare });
-          setShareFeedback("Shared");
-        } else if (navigator.clipboard?.writeText) {
-          await navigator.clipboard.writeText(urlToShare);
-          setShareFeedback("Link copied");
-        } else {
-          setShareFeedback("Copy not supported");
-        }
-      } catch {
-        setShareFeedback("Share canceled");
+    } catch (e) {
+      if (e instanceof Error && e.name !== "AbortError") {
+        // Actual error (not user cancel) — download as fallback
+        const a = document.createElement("a");
+        a.href = previewUrl;
+        a.download = file.name;
+        a.click();
       }
     }
 
     trackShare();
-    feedbackTimeoutRef.current = window.setTimeout(() => setShareFeedback(null), 2000);
+    URL.revokeObjectURL(previewUrl);
+    setSharePreview(null);
+  };
+
+  const handleShareClose = () => {
+    if (sharePreview) URL.revokeObjectURL(sharePreview.url);
+    setSharePreview(null);
   };
 
   const hue = Math.abs(art.id) % 360;
@@ -273,6 +277,21 @@ export function ArtCard({ art, ref }: ArtCardProps) {
           <span className="art-card__action-label">Expand</span>
         </div>
       </div>
+      {sharePreview && (
+        <div className="art-card__share-overlay" onClick={handleShareClose}>
+          <div className="art-card__share-preview" onClick={(e) => e.stopPropagation()}>
+            <img src={sharePreview.url} alt="Story card preview" className="art-card__share-preview-img" />
+            <div className="art-card__share-preview-actions">
+              <button type="button" className="art-card__share-btn" onClick={handleShareConfirm}>
+                Share
+              </button>
+              <button type="button" className="art-card__share-btn art-card__share-btn--close" onClick={handleShareClose}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
 }

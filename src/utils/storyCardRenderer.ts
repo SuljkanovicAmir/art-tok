@@ -42,20 +42,33 @@ function truncateText(
   return lines;
 }
 
+// Referrer URLs for sources that require them (e.g. AIC IIIF)
+const REFERRERS: Record<string, string> = {
+  "www.artic.edu": "https://www.artic.edu/",
+};
+
+async function fetchAsBlob(url: string): Promise<HTMLImageElement> {
+  const hostname = new URL(url).hostname;
+  const referrer = REFERRERS[hostname];
+
+  const res = await fetch(url, referrer ? { referrer, referrerPolicy: "origin" } : undefined);
+  if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+  const blob = await res.blob();
+  const objectUrl = URL.createObjectURL(blob);
+  const img = await loadImg(objectUrl, false);
+  (img as HTMLImageElement & { _objectUrl?: string })._objectUrl = objectUrl;
+  return img;
+}
+
 export async function loadShareImage(url: string): Promise<HTMLImageElement> {
-  // Fetch as blob first — avoids canvas tainting from cross-origin images
+  // 1. Fetch as blob with referrer spoofing for blocked sources (AIC)
   try {
-    const res = await fetch(url);
-    const blob = await res.blob();
-    const objectUrl = URL.createObjectURL(blob);
-    const img = await loadImg(objectUrl, false);
-    // Keep objectUrl alive — revoke after canvas draw in caller
-    (img as HTMLImageElement & { _objectUrl?: string })._objectUrl = objectUrl;
-    return img;
+    return await fetchAsBlob(url);
   } catch {
-    // fetch blocked (e.g. opaque redirect) — try crossOrigin
+    // fetch blocked
   }
 
+  // 2. crossOrigin attribute — works if server sends CORS headers
   try {
     return await loadImg(url, true);
   } catch {

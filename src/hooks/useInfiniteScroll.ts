@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useRef } from "react";
 
 interface InfiniteScrollOptions {
   isLoading: boolean;
@@ -15,34 +15,31 @@ export function useInfiniteScroll({
 }: InfiniteScrollOptions) {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    return () => observerRef.current?.disconnect();
-  }, []);
+  const setObserverTarget = (node: Element | null) => {
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+      observerRef.current = null;
+    }
 
-  const setObserverTarget = useCallback(
-    (node: Element | null) => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+    if (!node || isLoading) return;
 
-      if (!node || isLoading) {
-        return;
-      }
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting && hasMore) {
+          onIntersect();
+        }
+      },
+      { rootMargin },
+    );
 
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          const [entry] = entries;
-          if (entry?.isIntersecting && hasMore) {
-            onIntersect();
-          }
-        },
-        { rootMargin }
-      );
+    observerRef.current.observe(node);
 
-      observerRef.current.observe(node);
-    },
-    [hasMore, isLoading, onIntersect, rootMargin]
-  );
+    // React 19 ref cleanup — returned function runs when ref detaches
+    return () => {
+      observerRef.current?.disconnect();
+      observerRef.current = null;
+    };
+  };
 
   return setObserverTarget;
 }
