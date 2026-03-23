@@ -3,8 +3,8 @@ import { artRegistry } from "../services/registry";
 import type { ArtPiece } from "../types/art";
 import { getPreferenceVector, computeSimilarity } from "../utils/preferenceEngine";
 
-const FETCH_SIZE = 20;
-const DISPLAY_SIZE = 8;
+const FETCH_SIZE = 12;
+const DISPLAY_SIZE = 12;
 const SERENDIPITY_RATIO = 0.2;
 const MIN_INTERACTIONS_FOR_RANKING = 10;
 
