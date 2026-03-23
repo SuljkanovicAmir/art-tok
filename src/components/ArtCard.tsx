@@ -5,6 +5,7 @@ import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { useTrackInteraction } from "../hooks/useTrackInteraction";
 import { artKey } from "../utils/artKey";
+import { loadShareImage, renderStoryCard } from "../utils/storyCardRenderer";
 
 interface ArtCardProps {
   art: ArtPiece;
@@ -71,23 +72,63 @@ export function ArtCard({ art, ref }: ArtCardProps) {
       feedbackTimeoutRef.current = null;
     }
 
-    const urlToShare = art.url || window.location.href;
-    const shareTitle = art.title;
-    const shareText = `Check out "${art.title}" by ${art.artist}`;
+    setShareFeedback("Creating…");
+
+    let shared = false;
 
     try {
-      if (navigator.share) {
-        await navigator.share({ title: shareTitle, text: shareText, url: urlToShare });
+      const img = await loadShareImage(art.imageUrl);
+      const blob = await renderStoryCard(art, img);
+
+      // Clean up blob URL from loadShareImage
+      const objectUrl = (img as HTMLImageElement & { _objectUrl?: string })._objectUrl;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+
+      const file = new File([blob], `arttok-${art.source}-${art.id}.png`, { type: "image/png" });
+
+      if (navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file] });
         setShareFeedback("Shared");
-      } else if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(urlToShare);
-        setShareFeedback("Link copied");
+        shared = true;
+      } else if (navigator.share) {
+        // Device supports share but not file sharing — share with image URL
+        await navigator.share({
+          title: art.title,
+          text: `"${art.title}" by ${art.artist}`,
+          url: art.url || window.location.href,
+        });
+        setShareFeedback("Shared");
+        shared = true;
       } else {
-        setShareFeedback("Copy not supported");
+        // Desktop — download the image
+        const dlUrl = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = dlUrl;
+        a.download = file.name;
+        a.click();
+        URL.revokeObjectURL(dlUrl);
+        setShareFeedback("Saved");
+        shared = true;
       }
-    } catch (error) {
-      console.error("Share action failed", error);
-      setShareFeedback("Share canceled");
+    } catch {
+      // Canvas tainted or user canceled — fall back to link share
+    }
+
+    if (!shared) {
+      const urlToShare = art.url || window.location.href;
+      try {
+        if (navigator.share) {
+          await navigator.share({ title: art.title, text: `"${art.title}" by ${art.artist}`, url: urlToShare });
+          setShareFeedback("Shared");
+        } else if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(urlToShare);
+          setShareFeedback("Link copied");
+        } else {
+          setShareFeedback("Copy not supported");
+        }
+      } catch {
+        setShareFeedback("Share canceled");
+      }
     }
 
     trackShare();
@@ -136,6 +177,13 @@ export function ArtCard({ art, ref }: ArtCardProps) {
         onDoubleClick={handleDoubleTapLike}
         onTouchEnd={handleMediaTouchEnd}
       >
+        <img
+          className="art-card__image-bg"
+          src={art.imageUrl}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
         <img
           className="art-card__image"
           src={art.imageUrl}
