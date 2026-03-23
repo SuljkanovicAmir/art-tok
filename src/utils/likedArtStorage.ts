@@ -1,7 +1,11 @@
 export const LIKED_ART_STORAGE_KEY = "arttok-liked-art";
 export const LIKED_ART_STORAGE_EVENT = "liked-art:updated";
 
-export function readLikedSet(): Set<number> {
+/**
+ * Read liked art keys. Keys are composite strings: "harvard:12345".
+ * Migrates legacy numeric-only data to "harvard:{id}" on first read.
+ */
+export function readLikedSet(): Set<string> {
   if (typeof window === "undefined") {
     return new Set();
   }
@@ -14,7 +18,25 @@ export function readLikedSet(): Set<number> {
 
     const parsed: unknown = JSON.parse(raw);
     if (Array.isArray(parsed)) {
-      return new Set(parsed.filter((value) => typeof value === "number"));
+      const migrated = new Set<string>();
+      let needsMigration = false;
+
+      for (const value of parsed) {
+        if (typeof value === "string") {
+          migrated.add(value);
+        } else if (typeof value === "number") {
+          // Legacy: numeric IDs are from Harvard
+          migrated.add(`harvard:${value}`);
+          needsMigration = true;
+        }
+      }
+
+      // Persist migrated data
+      if (needsMigration) {
+        writeLikedSet(migrated);
+      }
+
+      return migrated;
     }
   } catch (error) {
     console.warn("Failed to read liked art from storage", error);
@@ -23,7 +45,7 @@ export function readLikedSet(): Set<number> {
   return new Set();
 }
 
-export function writeLikedSet(set: Set<number>) {
+export function writeLikedSet(set: Set<string>) {
   if (typeof window === "undefined") {
     return;
   }

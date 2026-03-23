@@ -1,231 +1,178 @@
 import type { CSSProperties } from "react";
-import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
+import { useTrackInteraction } from "../hooks/useTrackInteraction";
+import { artKey } from "../utils/artKey";
+import { loadShareImage, renderStoryCard } from "../utils/storyCardRenderer";
 
 interface ArtCardProps {
   art: ArtPiece;
+  ref?: React.Ref<HTMLDivElement>;
 }
 
-const MAX_DESCRIPTION_LENGTH = 160;
 
 const HeartIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.54 0 3.04 0.99 3.57 2.36h0.21C10.81 4.99 12.31 4 13.85 4 16.34 4 18.35 6 18.35 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
   </svg>
 );
 
 const ShareIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
     <path d="M12 3l5.05 5.05-1.41 1.41L13 6.83V17h-2V6.83L8.36 9.46 6.95 8.05z" />
     <path d="M5 19h14v-2H5z" />
   </svg>
 );
 
-const ExpandIcon = () => (
-  <svg
-    className="art-card__action-svg"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <path d="M20 3h-6v2h2.59L13 8.59 14.41 10 18 6.41V9h2z" />
-    <path d="M10 13.41 8.59 12 5 15.59V13H3v6h6v-2H6.41z" />
+const InfoIcon = () => (
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v-5h-2zm0-7h2V7h-2z" />
   </svg>
 );
 
-interface Fact {
-  label: string;
-  value: string;
-}
+const ExpandIcon = () => (
+  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M21 3h-6v2h2.59L14 8.59 15.41 10 19 6.41V9h2zM3 3v6h2V6.41L8.59 10 10 8.59 6.41 5H9V3zm0 18h6v-2H6.41L10 15.41 8.59 14 5 17.59V15H3zM21 21v-6h-2v2.59L15.41 14 14 15.41 17.59 19H15v2z" />
+  </svg>
+);
 
-export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) => {
-  const { isLiked, toggleLike } = useLikedArt(art.id);
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+export function ArtCard({ art, ref }: ArtCardProps) {
+  const { isLiked, toggleLike } = useLikedArt(artKey(art));
+  const { trackLike, trackShare, trackDetail } = useTrackInteraction(art);
   const [shareFeedback, setShareFeedback] = useState<string | null>(null);
   const [showTapLike, setShowTapLike] = useState(false);
-  const [areDetailsExpanded, setAreDetailsExpanded] = useState(false);
+  const [sharePreview, setSharePreview] = useState<{ url: string; file: File } | null>(null);
   const feedbackTimeoutRef = useRef<number | null>(null);
   const likeBurstTimeoutRef = useRef<number | null>(null);
   const lastTapRef = useRef<number>(0);
 
-  useEffect(() => {
-    return () => {
-      if (feedbackTimeoutRef.current) {
-        window.clearTimeout(feedbackTimeoutRef.current);
-      }
-
-      if (likeBurstTimeoutRef.current) {
-        window.clearTimeout(likeBurstTimeoutRef.current);
-      }
-    };
-  }, []);
-
-  const shouldTruncateDescription = Boolean(
-    art.description && art.description.length > MAX_DESCRIPTION_LENGTH,
-  );
-
-  const displayDescription = useMemo(() => {
-    if (!art.description) {
-      return null;
-    }
-
-    if (isDescriptionExpanded || !shouldTruncateDescription) {
-      return art.description;
-    }
-
-    const truncated = art.description.slice(0, MAX_DESCRIPTION_LENGTH).trimEnd();
-    return `${truncated}...`;
-  }, [art.description, isDescriptionExpanded, shouldTruncateDescription]);
-
-  const handleToggleDescription = useCallback(() => {
-    setIsDescriptionExpanded((previous) => !previous);
-  }, []);
-
-  const triggerLikeBurst = useCallback(() => {
+  const triggerLikeBurst = () => {
     setShowTapLike(true);
-
     if (likeBurstTimeoutRef.current) {
       window.clearTimeout(likeBurstTimeoutRef.current);
     }
+    likeBurstTimeoutRef.current = window.setTimeout(() => setShowTapLike(false), 700);
+  };
 
-    likeBurstTimeoutRef.current = window.setTimeout(() => {
-      setShowTapLike(false);
-    }, 700);
-  }, []);
-
-  const handleLikeButtonClick = useCallback(() => {
+  const handleLikeButtonClick = () => {
     if (!isLiked) {
       toggleLike();
+      trackLike();
       triggerLikeBurst();
       return;
     }
-
     toggleLike();
     setShowTapLike(false);
-  }, [isLiked, toggleLike, triggerLikeBurst]);
+  };
 
-  const handleShare = useCallback(async () => {
-    if (typeof window === "undefined" || typeof navigator === "undefined") {
-      return;
-    }
-
+  // Step 1: Generate story card and show preview overlay
+  const handleShare = async () => {
     if (feedbackTimeoutRef.current) {
       window.clearTimeout(feedbackTimeoutRef.current);
       feedbackTimeoutRef.current = null;
     }
 
-    const urlToShare = art.url || window.location.href;
-    const shareTitle = art.title;
-    const shareText = `Check out "${art.title}" by ${art.artist}`;
+    setShareFeedback("Creating…");
 
     try {
-      if (navigator.share) {
-        await navigator.share({ title: shareTitle, text: shareText, url: urlToShare });
-        setShareFeedback("Shared");
-      } else if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(urlToShare);
-        setShareFeedback("Link copied");
-      } else {
-        setShareFeedback("Copy not supported");
-      }
-    } catch (error) {
-      console.error("Share action failed", error);
-      setShareFeedback("Share canceled");
-    }
+      const img = await loadShareImage(art.imageUrl);
+      const blob = await renderStoryCard(art, img);
 
-    feedbackTimeoutRef.current = window.setTimeout(() => {
+      const objectUrl = (img as HTMLImageElement & { _objectUrl?: string })._objectUrl;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+
+      const file = new File([blob], `arttok-${art.source}-${art.id}.png`, { type: "image/png" });
+      const previewUrl = URL.createObjectURL(blob);
+
       setShareFeedback(null);
-    }, 2000);
-  }, [art.artist, art.title, art.url]);
+      setSharePreview({ url: previewUrl, file });
+    } catch {
+      setShareFeedback("Failed");
+      feedbackTimeoutRef.current = window.setTimeout(() => setShareFeedback(null), 2000);
+    }
+  };
 
-  const detailFacts = useMemo(() => {
-    const facts: Fact[] = [];
-    const addFact = (label: string, value: string | undefined) => {
-      if (!value) {
-        return;
+  // Step 2: User taps share in preview — fresh gesture → native share sheet
+  const handleShareConfirm = async () => {
+    if (!sharePreview) return;
+
+    const { file, url: previewUrl } = sharePreview;
+    // iOS Safari: files must be the ONLY property — no title/text/url alongside
+    const shareData = { files: [file] };
+
+    try {
+      if (navigator.canShare?.(shareData)) {
+        await navigator.share(shareData);
+      } else if (navigator.share) {
+        // Browser supports share but not files — share URL instead
+        await navigator.share({
+          title: art.title,
+          text: `"${art.title}" by ${art.artist}`,
+          url: art.url || window.location.href,
+        });
+      } else {
+        // No share API — download
+        const a = document.createElement("a");
+        a.href = previewUrl;
+        a.download = file.name;
+        a.click();
       }
-      const trimmed = value.trim();
-      if (!trimmed) {
-        return;
+    } catch (e) {
+      if (e instanceof Error && e.name !== "AbortError") {
+        // Actual error (not user cancel) — download as fallback
+        const a = document.createElement("a");
+        a.href = previewUrl;
+        a.download = file.name;
+        a.click();
       }
-      facts.push({ label, value: trimmed });
-    };
+    }
 
-    addFact("Created", art.dated);
-    addFact("Culture", art.culture);
-    addFact("Classification", art.classification);
-    addFact("Medium", art.medium);
-    addFact("Dimensions", art.dimensions);
+    trackShare();
+    URL.revokeObjectURL(previewUrl);
+    setSharePreview(null);
+  };
 
-    return facts;
-  }, [art.classification, art.culture, art.dated, art.dimensions, art.medium]);
+  const handleShareClose = () => {
+    if (sharePreview) URL.revokeObjectURL(sharePreview.url);
+    setSharePreview(null);
+  };
 
-  const quickFacts = useMemo(() => {
-    return detailFacts.filter((fact) => fact.value.length <= 42).slice(0, 3);
-  }, [detailFacts]);
+  const hue = Math.abs(art.id) % 360;
+  const accentStyle = {
+    "--accent-h": String(hue),
+    "--accent-s": "74%",
+    "--accent-l": "58%",
+  } as CSSProperties;
 
-  const accentStyle = useMemo(() => {
-    const hue = Math.abs(art.id) % 360;
-    const accent = `hsl(${hue}, 74%, 58%)`;
-    const accentSoft = `hsla(${hue}, 86%, 62%, 0.32)`;
-    const accentSurface = `hsla(${hue}, 92%, 68%, 0.16)`;
-
-    return {
-      "--art-card-accent": accent,
-      "--art-card-accent-soft": accentSoft,
-      "--art-card-accent-surface": accentSurface,
-    } as CSSProperties;
-  }, [art.id]);
-
-  const detailsId = useMemo(() => `art-details-${art.id}`, [art.id]);
-
-  const trendingLabel = useMemo(() => {
+  const trendingLabel = (() => {
     const highlight = art.culture || art.classification || art.medium || art.dated;
-    if (!highlight) {
-      return null;
-    }
-
+    if (!highlight) return null;
     return highlight.split(",")[0].trim();
-  }, [art.classification, art.culture, art.dated, art.medium]);
+  })();
 
-  const trendingTag = useMemo(() => {
-    if (!trendingLabel) {
-      return null;
-    }
-
+  const trendingTag = (() => {
+    if (!trendingLabel) return null;
     const condensed = trendingLabel.replace(/[^a-z0-9]+/gi, "");
     return condensed ? `#${condensed}` : `#${trendingLabel.replace(/\s+/g, "")}`;
-  }, [trendingLabel]);
+  })();
 
-  const handleDoubleTapLike = useCallback(() => {
+  const handleDoubleTapLike = () => {
     if (!isLiked) {
       toggleLike();
+      trackLike();
     }
     triggerLikeBurst();
-  }, [isLiked, toggleLike, triggerLikeBurst]);
+  };
 
-  const handleMediaTouchEnd = useCallback(() => {
+  const handleMediaTouchEnd = () => {
     const now = Date.now();
     if (now - lastTapRef.current < 280) {
       handleDoubleTapLike();
     }
     lastTapRef.current = now;
-  }, [handleDoubleTapLike]);
-
-  const toggleDetails = useCallback(() => {
-    setAreDetailsExpanded((previous) => !previous);
-  }, []);
+  };
 
   return (
     <article className="art-card" ref={ref} style={accentStyle}>
@@ -235,10 +182,18 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
         onTouchEnd={handleMediaTouchEnd}
       >
         <img
+          className="art-card__image-bg"
+          src={art.imageUrl}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
           className="art-card__image"
           src={art.imageUrl}
           alt={`${art.title} by ${art.artist}`}
           loading="lazy"
+          style={art.lqip ? { backgroundImage: `url(${art.lqip})`, backgroundSize: "cover" } : undefined}
         />
         {trendingTag && <span className="art-card__badge">{trendingTag}</span>}
         {showTapLike && (
@@ -250,69 +205,23 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
 
       <div className="art-card__info">
         <div className="art-card__title-group">
-          <h2 className="art-card__title">{art.title}</h2>
+          <h2 className="art-card__title">
+            <Link to={`/artwork/${art.source}/${art.id}`} className="art-card__title-link" onClick={trackDetail}>
+              {art.title}
+            </Link>
+          </h2>
           <p className="art-card__artist">{art.artist}</p>
         </div>
 
-        {displayDescription && (
-          <p className={`art-card__description ${isDescriptionExpanded ? "is-expanded" : ""}`.trim()}>
-            {displayDescription}
-            {shouldTruncateDescription && (
-              <button
-                type="button"
-                className="art-card__description-toggle"
-                onClick={handleToggleDescription}
-              >
-                {isDescriptionExpanded ? "Show less" : "Read more"}
-              </button>
+        {(art.classification || art.dated) && (
+          <div className="art-card__tags">
+            {art.classification && (
+              <span className="art-card__tag">{art.classification.split(",")[0].trim()}</span>
             )}
-          </p>
-        )}
-
-        {quickFacts.length > 0 && (
-          <ul className="art-card__quick-facts">
-            {quickFacts.map((fact) => (
-              <li key={`${fact.label}-${fact.value}`}>
-                <span className="art-card__quick-facts-label">{fact.label}</span>
-                <span className="art-card__quick-facts-value">{fact.value}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {detailFacts.length > 0 && (
-          <section className={`art-card__details ${areDetailsExpanded ? "is-open" : ""}`}>
-            <button
-              type="button"
-              className="art-card__details-toggle"
-              aria-expanded={areDetailsExpanded}
-              aria-controls={detailsId}
-              onClick={toggleDetails}
-            >
-              {areDetailsExpanded ? "Hide artwork details" : "Artwork details"}
-            </button>
-            {areDetailsExpanded && (
-              <dl className="art-card__details-grid" id={detailsId}>
-                {detailFacts.map((fact) => (
-                  <div key={`${fact.label}-${fact.value}`} className="art-card__details-item">
-                    <dt>{fact.label}</dt>
-                    <dd>{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
+            {art.dated && (
+              <span className="art-card__tag">{art.dated}</span>
             )}
-          </section>
-        )}
-
-        {art.url && (
-          <a
-            className="art-card__museum-link"
-            href={art.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View at Harvard Art Museums
-          </a>
+          </div>
         )}
       </div>
 
@@ -320,7 +229,7 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
         <div className="art-card__action">
           <button
             type="button"
-            className={`art-card__action-button ${isLiked ? "is-active" : ""}`.trim()}
+            className={`art-card__action-button art-card__action-button--like ${isLiked ? "is-active" : ""}`.trim()}
             aria-pressed={isLiked}
             aria-label={isLiked ? "Unlike artwork" : "Like artwork"}
             onClick={handleLikeButtonClick}
@@ -344,20 +253,45 @@ export const ArtCard = forwardRef<HTMLDivElement, ArtCardProps>(({ art }, ref) =
         </div>
 
         <div className="art-card__action">
+          <Link
+            className="art-card__action-button art-card__action-button--link"
+            to={`/artwork/${art.source}/${art.id}`}
+            aria-label="View artwork details"
+            onClick={trackDetail}
+          >
+            <InfoIcon />
+          </Link>
+          <span className="art-card__action-label">Info</span>
+        </div>
+
+        <div className="art-card__action">
           <a
             className="art-card__action-button art-card__action-button--link"
             href={art.imageUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open artwork image in a new tab"
+            aria-label="Expand artwork full screen"
           >
             <ExpandIcon />
           </a>
-          <span className="art-card__action-label">Full size</span>
+          <span className="art-card__action-label">Expand</span>
         </div>
       </div>
+      {sharePreview && (
+        <div className="art-card__share-overlay" onClick={handleShareClose}>
+          <div className="art-card__share-preview" onClick={(e) => e.stopPropagation()}>
+            <img src={sharePreview.url} alt="Story card preview" className="art-card__share-preview-img" />
+            <div className="art-card__share-preview-actions">
+              <button type="button" className="art-card__share-btn" onClick={handleShareConfirm}>
+                Share
+              </button>
+              <button type="button" className="art-card__share-btn art-card__share-btn--close" onClick={handleShareClose}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
-});
-
-ArtCard.displayName = "ArtCard";
+}

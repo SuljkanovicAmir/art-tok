@@ -1,0 +1,225 @@
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useLikedArt } from "../hooks/useLikedArt";
+import { useArtworkQuery } from "../hooks/useArtworkQuery";
+import { ColorPalette } from "../components/ColorPalette";
+import { artKey, sourceName, sourceUrl } from "../utils/artKey";
+import type { ArtPiece, ArtSourceId } from "../types/art";
+import type { CSSProperties } from "react";
+
+interface MetaField {
+  label: string;
+  value: string;
+}
+
+export default function ArtworkDetailPage() {
+  const { source, id } = useParams<{ source: string; id: string }>();
+  const numericId = id ? Number(id) : undefined;
+  const sourceId = source as ArtSourceId | undefined;
+  const { data: art, isLoading, error } = useArtworkQuery(numericId, sourceId);
+
+  if (!id) {
+    return (
+      <div className="detail-page">
+        <div className="detail-page__status">
+          <p>No artwork ID provided</p>
+          <Link to="/" className="detail-page__status-link">Back to feed</Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="detail-page">
+        <div className="detail-page__status">
+          <div className="detail-page__loading-dots">
+            <span /><span /><span />
+          </div>
+          <p>Loading artwork...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !art) {
+    return (
+      <div className="detail-page">
+        <div className="detail-page__status">
+          <p>{error instanceof Error ? error.message : "Artwork not found"}</p>
+          <Link to="/" className="detail-page__status-link">Back to feed</Link>
+        </div>
+      </div>
+    );
+  }
+
+  return <ArtworkDetailContent art={art} />;
+}
+
+function ArtworkDetailContent({ art }: { art: ArtPiece }) {
+  const navigate = useNavigate();
+  const { isLiked, toggleLike } = useLikedArt(artKey(art));
+
+  const hue = Math.abs(art.id) % 360;
+  const accentStyle = {
+    "--accent-h": String(hue),
+    "--accent-s": "74%",
+    "--accent-l": "58%",
+  } as CSSProperties;
+
+  const metaFields: MetaField[] = [];
+  const add = (label: string, value: string | undefined) => {
+    if (value?.trim()) metaFields.push({ label, value: value.trim() });
+  };
+  add("Created", art.dated);
+  add("Culture", art.culture);
+  add("Classification", art.classification);
+  add("Medium", art.medium);
+  add("Dimensions", art.dimensions);
+  add("Style", art.styleTitle);
+  add("Department", art.department);
+  add("Credit", art.creditLine);
+  if (art.galleryInfo) {
+    add("Location", art.isOnView ? `${art.galleryInfo} (on view)` : art.galleryInfo);
+  }
+  add("Source", sourceName(art.source));
+
+  const museumUrl = sourceUrl(art);
+
+  const handleShare = async () => {
+    const urlToShare = museumUrl || window.location.href;
+    const shareText = `Check out "${art.title}" by ${art.artist}`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: art.title, text: shareText, url: urlToShare });
+      } else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(urlToShare);
+      }
+    } catch {
+      // share cancelled or not supported
+    }
+  };
+
+  return (
+    <div className="detail-page" style={accentStyle}>
+      {/* Fixed transparent header */}
+      <header className="detail-page__topbar">
+        <div className="detail-page__topbar-left">
+          <button
+            className="detail-page__topbar-icon"
+            onClick={() => navigate(-1)}
+            aria-label="Go back"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <span className="detail-page__brand">ARTTOK</span>
+        </div>
+      </header>
+
+      <div className="detail-page__content">
+        {/* Hero image */}
+        <div className="detail-page__image-container">
+          <a href={art.imageUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              className="detail-page__image"
+              src={art.imageUrl}
+              alt={`${art.title} by ${art.artist}`}
+            />
+          </a>
+        </div>
+
+        {/* Additional images */}
+        {art.additionalImages && art.additionalImages.length > 0 && (
+          <div className="detail-page__gallery">
+            {art.additionalImages.slice(0, 6).map((imgUrl) => (
+              <a key={imgUrl} href={imgUrl} target="_blank" rel="noopener noreferrer">
+                <img className="detail-page__gallery-image" src={imgUrl} alt="Additional view" loading="lazy" />
+              </a>
+            ))}
+          </div>
+        )}
+
+        {/* Color palette */}
+        <ColorPalette imageUrl={art.imageUrl} />
+
+        {/* Title & artist */}
+        <h1 className="detail-page__title">{art.title}</h1>
+        <p className="detail-page__artist">{art.artist}</p>
+        {art.artistBio && (
+          <p className="detail-page__artist-bio">{art.artistBio}</p>
+        )}
+
+        {/* Description */}
+        {art.description && (
+          <p className="detail-page__description">{art.description}</p>
+        )}
+
+        {/* Tags */}
+        {art.tags && art.tags.length > 0 && (
+          <div className="detail-page__tags">
+            {art.tags.map((tag) => (
+              <span key={tag} className="detail-page__tag">{tag}</span>
+            ))}
+          </div>
+        )}
+
+        {/* Metadata glass card */}
+        {metaFields.length > 0 && (
+          <dl className="detail-page__meta">
+            {metaFields.map((field) => (
+              <div key={field.label} className="detail-page__meta-pair">
+                <dt>{field.label}</dt>
+                <dd>{field.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        {/* Actions bar */}
+        <div className="detail-page__actions">
+          <button
+            type="button"
+            className={`detail-page__action-btn ${isLiked ? "is-active" : ""}`.trim()}
+            aria-pressed={isLiked}
+            aria-label={isLiked ? "Unlike artwork" : "Like artwork"}
+            onClick={toggleLike}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.54 0 3.04 0.99 3.57 2.36h0.21C10.81 4.99 12.31 4 13.85 4 16.34 4 18.35 6 18.35 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
+            </svg>
+            <span>{isLiked ? "Saved" : "Save"}</span>
+          </button>
+
+          <button
+            type="button"
+            className="detail-page__action-btn"
+            aria-label="Share artwork"
+            onClick={handleShare}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M12 3l5.05 5.05-1.41 1.41L13 6.83V17h-2V6.83L8.36 9.46 6.95 8.05z" />
+              <path d="M5 19h14v-2H5z" />
+            </svg>
+            <span>Share</span>
+          </button>
+
+          {museumUrl && (
+            <a
+              className="detail-page__action-btn detail-page__action-btn--museum"
+              href={museumUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{sourceName(art.source)}</span>
+            </a>
+          )}
+
+          {art.isPublicDomain && (
+            <span className="detail-page__pd-badge">Public Domain</span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,46 +1,42 @@
-import { useEffect, useState } from "react";
-import artImagesStore from "../stores/ArtImagesStore";
+import { useSyncExternalStore } from "react";
 import type { ArtPiece } from "../types/art";
+import { artKey } from "../utils/artKey";
 import {
   LIKED_ART_STORAGE_EVENT,
   LIKED_ART_STORAGE_KEY,
   readLikedSet,
 } from "../utils/likedArtStorage";
 
-export function useLikedArtCollection() {
-  const [likedIds, setLikedIds] = useState<number[]>(() => Array.from(readLikedSet()));
+function subscribe(callback: () => void) {
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key === LIKED_ART_STORAGE_KEY) callback();
+  };
 
-  useEffect(() => {
-    const syncFromStorage = () => {
-      setLikedIds(Array.from(readLikedSet()));
-    };
+  window.addEventListener(LIKED_ART_STORAGE_EVENT, callback);
+  window.addEventListener("storage", handleStorage);
 
-    if (typeof window === "undefined") {
-      return;
-    }
+  return () => {
+    window.removeEventListener(LIKED_ART_STORAGE_EVENT, callback);
+    window.removeEventListener("storage", handleStorage);
+  };
+}
 
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key === LIKED_ART_STORAGE_KEY) {
-        syncFromStorage();
-      }
-    };
+function getSnapshot() {
+  return JSON.stringify(Array.from(readLikedSet()));
+}
 
-    window.addEventListener(LIKED_ART_STORAGE_EVENT, syncFromStorage);
-    window.addEventListener("storage", handleStorage);
+function getServerSnapshot() {
+  return "[]";
+}
 
-    return () => {
-      window.removeEventListener(LIKED_ART_STORAGE_EVENT, syncFromStorage);
-      window.removeEventListener("storage", handleStorage);
-    };
-  }, []);
+export function useLikedArtCollection(availablePieces: ArtPiece[]) {
+  const likedKeysJson = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const likedKeys: string[] = JSON.parse(likedKeysJson);
 
-  const piecesById = new Map(artImagesStore.artPieces.map((piece) => [piece.id, piece]));
-  const likedPieces = likedIds
-    .map((id) => piecesById.get(id) ?? null)
+  const piecesByKey = new Map(availablePieces.map((piece) => [artKey(piece), piece]));
+  const likedPieces = likedKeys
+    .map((key) => piecesByKey.get(key) ?? null)
     .filter((piece): piece is ArtPiece => Boolean(piece));
 
-  return {
-    likedPieces,
-    likedIds,
-  };
+  return { likedPieces, likedKeys };
 }
