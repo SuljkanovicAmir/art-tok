@@ -74,6 +74,15 @@
 
 - `VITE_HARVARD_API_KEY` — Harvard Art Museums API key (NEVER hardcode)
 
+## Git Branching (Gitflow)
+
+- **`main`** — production, deploys to GitHub Pages. Never commit directly.
+- **`develop`** — integration branch. All feature branches merge here first.
+- **`feat/<name>`**, **`fix/<name>`**, **`chore/<name>`** — short-lived branches off `develop`
+- **Flow:** `feat/x` → PR into `develop` → PR `develop` into `main` (triggers deploy)
+- ALWAYS create a new branch from `develop` for every feature or change
+- NEVER push directly to `main` or `develop` — always use PRs
+
 ## Build & Test
 
 ```bash
