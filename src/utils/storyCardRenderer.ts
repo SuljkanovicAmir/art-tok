@@ -508,9 +508,9 @@ export async function renderStoryCard(
 
   // Subtle shadow behind artwork
   ctx.save();
-  ctx.shadowColor = "rgba(0, 0, 0, 0.15)";
-  ctx.shadowBlur = 32;
-  ctx.shadowOffsetY = 8;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.10)";
+  ctx.shadowBlur = 20;
+  ctx.shadowOffsetY = 5;
   ctx.drawImage(img, artX, artY, artW, artH);
   ctx.restore();
 
@@ -560,8 +560,8 @@ export async function renderStoryCard(
 /** Instagram post format — 1080 × 1350 (4:5) */
 const POST_W = 1080;
 const POST_H = 1350;
-const POST_PADDING = 70;
-const POST_CAPTION_HEIGHT = 180;
+const POST_PADDING = 100;
+const POST_CAPTION_HEIGHT = 240;
 
 export async function renderPostCard(
   art: ArtPiece,
@@ -588,9 +588,9 @@ export async function renderPostCard(
 
   // Subtle shadow behind artwork
   ctx.save();
-  ctx.shadowColor = "rgba(0, 0, 0, 0.15)";
-  ctx.shadowBlur = 28;
-  ctx.shadowOffsetY = 6;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.10)";
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetY = 4;
   ctx.drawImage(img, artX, artY, artW, artH);
   ctx.restore();
 
