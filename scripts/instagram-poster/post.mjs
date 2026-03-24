@@ -1021,11 +1021,24 @@ async function main() {
     }
   }
 
-  // 4. Dry-run: save card + print caption + hashtags separately, exit
+  // 4. Dry-run: save card + optional reel video, print caption + hashtags, exit
   if (DRY_RUN) {
-    const filename = `arttok-${art.source}-${art.id}-${mode}.jpg`;
-    writeFileSync(filename, pngBuffer);
-    console.log(`\nSaved to ${filename}`);
+    const basename = `arttok-${art.source}-${art.id}-${mode}`;
+    writeFileSync(`${basename}.png`, pngBuffer);
+    console.log(`\nSaved to ${basename}.png`);
+
+    if (mode === "reel") {
+      try {
+        console.log("\nCreating reel video (dry-run)...");
+        const videoBuffer = await createReelVideo(art);
+        writeFileSync(`${basename}.mp4`, videoBuffer);
+        console.log(`Saved to ${basename}.mp4 (${(videoBuffer.length / 1024 / 1024).toFixed(1)} MB)`);
+      } catch (err) {
+        console.warn(`Reel video failed: ${err.message}`);
+        console.warn("Install ffmpeg to test reel creation locally");
+      }
+    }
+
     console.log(`\nCaption:\n${buildCaption(art)}`);
     console.log(`\nHashtags:\n${buildHashtags(art)}`);
     return;
