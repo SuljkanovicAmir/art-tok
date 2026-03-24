@@ -1,0 +1,53 @@
+name: Instagram Auto-Post
+
+on:
+  schedule:
+    # Every hour at minute 0
+    - cron: "0 * * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Post type"
+        required: false
+        default: "post"
+        type: choice
+        options:
+          - post
+          - story
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # node-canvas native dependencies
+      - name: Install canvas system deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev \
+            libjpeg-dev libgif-dev librsvg2-dev fonts-liberation fonts-dejavu
+
+      - name: Install npm dependencies
+        working-directory: scripts/instagram-poster
+        run: npm install
+
+      - name: Post to Instagram
+        working-directory: scripts/instagram-poster
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
+        run: |
+          if [ "${{ inputs.mode }}" = "story" ]; then
+            node post.mjs --story
+          else
+            node post.mjs
+          fi

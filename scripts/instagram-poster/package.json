@@ -1,0 +1,15 @@
+{
+  "name": "arttok-instagram-poster",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "post": "node post.mjs",
+    "post:story": "node post.mjs --story",
+    "post:dry-run": "node post.mjs --dry-run"
+  },
+  "dependencies": {
+    "canvas": "^3.1.0",
+    "dotenv": "^16.5.0"
+  }
+}
