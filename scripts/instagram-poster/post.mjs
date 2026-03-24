@@ -504,18 +504,30 @@ async function main() {
   console.log(`ArtTok Instagram Poster — ${IS_STORY ? "Story" : "Post"} mode${DRY_RUN ? " (dry run)" : ""}`);
   console.log("─".repeat(50));
 
-  // 1. Fetch artwork (specific or random, skip previously posted)
+  // 1. Fetch artwork + render card (retry if image fetch fails)
   const history = loadHistory();
   console.log(`History: ${history.size} previously posted artworks`);
-  const art = SPECIFIC_ART
-    ? await fetchSpecificArtwork(SPECIFIC_ART)
-    : await fetchRandomArtwork(history);
-
-  // 2. Render card
-  console.log(`Rendering ${IS_STORY ? "story" : "post"} card...`);
   const renderFn = IS_STORY ? renderStoryCard : renderPostCard;
-  const pngBuffer = await renderFn(art, art.imageUrl);
-  console.log(`Card rendered: ${(pngBuffer.length / 1024).toFixed(0)} KB`);
+
+  let art;
+  let pngBuffer;
+  const MAX_RETRIES = 5;
+
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      art = SPECIFIC_ART
+        ? await fetchSpecificArtwork(SPECIFIC_ART)
+        : await fetchRandomArtwork(history);
+
+      console.log(`Rendering ${IS_STORY ? "story" : "post"} card...`);
+      pngBuffer = await renderFn(art, art.imageUrl);
+      console.log(`Card rendered: ${(pngBuffer.length / 1024).toFixed(0)} KB`);
+      break;
+    } catch (err) {
+      console.warn(`Attempt ${attempt}/${MAX_RETRIES} failed: ${err.message}`);
+      if (attempt === MAX_RETRIES || SPECIFIC_ART) throw err;
+    }
+  }
 
   // In dry-run mode, save locally and exit
   if (DRY_RUN) {
