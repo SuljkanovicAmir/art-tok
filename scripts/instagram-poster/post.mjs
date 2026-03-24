@@ -50,10 +50,14 @@ function artKey(art) {
 // ── Config ──────────────────────────────────────────────────────────────────
 
 const {
-  INSTAGRAM_ACCESS_TOKEN,
   INSTAGRAM_USER_ID,
   HARVARD_API_KEY,
+  META_APP_ID,
+  META_APP_SECRET,
+  FACEBOOK_PAGE_ID,
 } = process.env;
+
+let INSTAGRAM_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 
 const args = process.argv.slice(2);
 const IS_STORY = args.includes("--story");
@@ -397,9 +401,65 @@ async function deleteFromDropbox(path, token) {
   }
 }
 
-// ── Instagram Graph API publishing ──────────────────────────────────────────
+// ── Token auto-refresh ───────────────────────────────────────────────────────
 
 const IG_GRAPH = "https://graph.facebook.com/v21.0";
+
+async function refreshTokenIfNeeded() {
+  if (!META_APP_ID || !META_APP_SECRET || !FACEBOOK_PAGE_ID) {
+    // Can't auto-refresh without app credentials — use existing token
+    return;
+  }
+
+  try {
+    // Check if current token is still valid
+    const debugRes = await fetch(
+      `${IG_GRAPH}/debug_token?input_token=${INSTAGRAM_ACCESS_TOKEN}&access_token=${META_APP_ID}|${META_APP_SECRET}`,
+    );
+    const debugData = await debugRes.json();
+
+    if (debugData.data?.is_valid) {
+      const expiresAt = debugData.data.expires_at;
+      const now = Math.floor(Date.now() / 1000);
+      const daysLeft = expiresAt ? (expiresAt - now) / 86400 : Infinity;
+
+      if (daysLeft > 7) {
+        console.log(`Token valid (${Math.floor(daysLeft)} days remaining)`);
+        return;
+      }
+      console.log(`Token expiring soon (${Math.floor(daysLeft)} days) — refreshing...`);
+    } else {
+      console.log("Token invalid — attempting refresh...");
+    }
+
+    // Exchange current token for a fresh long-lived user token
+    const exchangeRes = await fetch(
+      `${IG_GRAPH}/oauth/access_token?grant_type=fb_exchange_token&client_id=${META_APP_ID}&client_secret=${META_APP_SECRET}&fb_exchange_token=${INSTAGRAM_ACCESS_TOKEN}`,
+    );
+    const exchangeData = await exchangeRes.json();
+
+    if (exchangeData.access_token) {
+      // Get fresh page token
+      const accountsRes = await fetch(
+        `${IG_GRAPH}/me/accounts?access_token=${exchangeData.access_token}`,
+      );
+      const accountsData = await accountsRes.json();
+      const page = accountsData.data?.find((p) => p.id === FACEBOOK_PAGE_ID);
+
+      if (page?.access_token) {
+        INSTAGRAM_ACCESS_TOKEN = page.access_token;
+        console.log("Token refreshed successfully");
+        return;
+      }
+    }
+
+    console.warn("Token refresh failed — using existing token");
+  } catch (err) {
+    console.warn(`Token refresh error: ${err.message} — using existing token`);
+  }
+}
+
+// ── Instagram Graph API publishing ──────────────────────────────────────────
 
 async function publishToInstagram(imageUrl, caption, isStory = false) {
   if (!INSTAGRAM_ACCESS_TOKEN) throw new Error("INSTAGRAM_ACCESS_TOKEN not set");
@@ -538,12 +598,15 @@ async function main() {
     return;
   }
 
-  // 3. Upload for public URL
+  // 3. Refresh Instagram token if expiring soon
+  await refreshTokenIfNeeded();
+
+  // 4. Upload for public URL
   console.log("Uploading image...");
   const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(pngBuffer);
   console.log(`Hosted at: ${publicUrl}`);
 
-  // 4. Publish to Instagram
+  // 5. Publish to Instagram
   console.log("Publishing to Instagram...");
   const caption = buildCaption(art);
   const mediaId = await publishToInstagram(publicUrl, caption, IS_STORY);
