@@ -2,8 +2,8 @@ name: Instagram Auto-Post
 
 on:
   schedule:
-    # Every hour at minute 0
-    - cron: "0 * * * *"
+    # Every 3 hours (8 posts/day) — optimized for engagement rate over volume
+    - cron: "0 0,3,6,9,12,15,18,21 * * *"
   workflow_dispatch:
     inputs:
       mode:

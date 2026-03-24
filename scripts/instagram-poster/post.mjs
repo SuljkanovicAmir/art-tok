@@ -532,28 +532,88 @@ async function waitForContainer(containerId, maxAttempts = 10) {
 
 // ── Caption builder ─────────────────────────────────────────────────────────
 
+// ── Hashtag pools (rotate 5-8 targeted tags per post) ────────────────────────
+
+const CORE_TAGS = ["#arttok", "#fineart", "#arthistory"];
+
+const ROTATING_TAGS = [
+  "#classicalart", "#museumlife", "#masterpiece", "#artdiscovery",
+  "#paintingoftheday", "#artappreciation", "#artcollector", "#fineartphotography",
+  "#artgallery", "#culturalheritage", "#artistsoninstagram", "#artworld",
+];
+
+const MOVEMENT_TAGS = {
+  painting: "#painting", paintings: "#painting",
+  oil: "#oilpainting", watercolor: "#watercolor",
+  sculpture: "#sculpture", photograph: "#photography",
+  print: "#printmaking", drawing: "#drawing",
+  ceramic: "#ceramics", textile: "#textileart",
+};
+
+const MUSEUM_TAGS = {
+  harvard: "#harvardartmuseums",
+  met: "#themet",
+  artic: "#artinstituteofchicago",
+};
+
+function pickRandom(arr, n) {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, n);
+}
+
+function buildHashtags(art) {
+  const tags = [...CORE_TAGS];
+
+  // Museum tag
+  tags.push(MUSEUM_TAGS[art.source] || "#museum");
+
+  // Medium/movement-specific tag
+  if (art.medium) {
+    const mediumLower = art.medium.toLowerCase();
+    for (const [keyword, tag] of Object.entries(MOVEMENT_TAGS)) {
+      if (mediumLower.includes(keyword)) {
+        tags.push(tag);
+        break;
+      }
+    }
+  }
+
+  // Culture-specific tag
+  if (art.culture) {
+    const clean = art.culture.replace(/[^a-zA-Z]/g, "").toLowerCase();
+    if (clean.length > 2 && clean.length < 30) tags.push(`#${clean}`);
+  }
+
+  // Fill remaining slots from rotating pool (target 7-8 total)
+  const remaining = 8 - tags.length;
+  if (remaining > 0) tags.push(...pickRandom(ROTATING_TAGS, remaining));
+
+  return tags.join(" ");
+}
+
+// ── Caption builder ─────────────────────────────────────────────────────────
+
 function buildCaption(art) {
   const lines = [];
 
-  lines.push(`\uD83C\uDFA8 ${art.title}`);
-  if (art.artist !== "Unknown artist") lines.push(`\u270F\uFE0F ${art.artist}`);
-  if (art.dated) lines.push(`\uD83D\uDCC5 ${art.dated}`);
-  lines.push(`\uD83C\uDFDB\uFE0F ${art.museumName}`);
-  lines.push("");
-  if (art.medium) lines.push(art.medium);
-  lines.push("");
-  lines.push(`\uD83D\uDD17 ${art.url}`);
+  // Title block — authoritative, museum-label style
+  lines.push(art.title);
+  if (art.artist !== "Unknown artist") lines.push(art.artist);
+
+  const details = [];
+  if (art.dated) details.push(art.dated);
+  if (art.medium) details.push(art.medium);
+  if (details.length) lines.push(details.join(" · "));
+
+  lines.push(art.museumName);
   lines.push("");
 
-  lines.push("Follow @arttok.art for daily masterworks from the world's greatest museums.");
+  // CTA
+  lines.push("Follow @arttok.art for masterworks from the world's greatest museums.");
   lines.push("");
 
-  // Hashtags
-  const tags = ["#arttok", "#art", "#museum", "#artwork", "#fineart", "#dailyart", "#arthistory", "#classicart", "#masterpiece", "#artlovers"];
-  if (art.culture) tags.push(`#${art.culture.replace(/\s+/g, "").toLowerCase()}`);
-  if (art.classification) tags.push(`#${art.classification.replace(/[\s,]+/g, "").toLowerCase()}`);
-  tags.push(`#${art.source === "harvard" ? "harvardartmuseums" : art.source === "met" ? "themet" : "artinstituteofchicago"}`);
-  lines.push(tags.join(" "));
+  // Hashtags (5-8 targeted, rotated)
+  lines.push(buildHashtags(art));
 
   return lines.join("\n");
 }
