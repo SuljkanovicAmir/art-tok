@@ -2,18 +2,20 @@ name: Instagram Auto-Post
 
 on:
   schedule:
-    # Every 3 hours (8 posts/day) — optimized for engagement rate over volume
-    - cron: "0 0,3,6,9,12,15,18,21 * * *"
+    # 4 posts/day — optimal times for art/culture audience (UTC)
+    - cron: "0 7,12,18,1 * * *"
   workflow_dispatch:
     inputs:
       mode:
-        description: "Post type"
+        description: "Post type (auto = follows mode cycle)"
         required: false
-        default: "post"
+        default: "auto"
         type: choice
         options:
+          - auto
           - post
           - story
+          - reel
 
 jobs:
   post:
@@ -25,12 +27,12 @@ jobs:
         with:
           node-version: 20
 
-      # node-canvas native dependencies
-      - name: Install canvas system deps
+      # node-canvas native dependencies + ffmpeg for reels
+      - name: Install system deps
         run: |
           sudo apt-get update
           sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev \
-            libjpeg-dev libgif-dev librsvg2-dev fonts-liberation fonts-dejavu
+            libjpeg-dev libgif-dev librsvg2-dev fonts-liberation fonts-dejavu ffmpeg
 
       - name: Install npm dependencies
         working-directory: scripts/instagram-poster
@@ -49,8 +51,18 @@ jobs:
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
         run: |
-          if [ "${{ inputs.mode }}" = "story" ]; then
+          MODE="${{ inputs.mode }}"
+          if [ "$MODE" = "story" ]; then
             node post.mjs --story
+          elif [ "$MODE" = "reel" ]; then
+            node post.mjs --reel
           else
             node post.mjs
           fi
+
+      - name: Commit updated history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/instagram-poster/posted-history.json
+          git diff --staged --quiet || git commit -m "chore: update posted history" && git push
