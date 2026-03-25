@@ -37,7 +37,8 @@ export default function FeedPage() {
   } = useFeedQuery();
 
   const { data: aotd } = useArtOfTheDay();
-  const [aotdVisible, setAotdVisible] = useState(true);
+  const [aotdExpanded, setAotdExpanded] = useState(false);
+  const [aotdDismissed, setAotdDismissed] = useState(false);
 
   const artPieces = flattenFeedPages(data);
   const isInitialLoad = isLoading && !data;
@@ -55,7 +56,8 @@ export default function FeedPage() {
     e.preventDefault();
     e.stopPropagation();
     dismissArtOfTheDay();
-    setAotdVisible(false);
+    setAotdDismissed(true);
+    setAotdExpanded(false);
   };
 
   return (
@@ -75,31 +77,45 @@ export default function FeedPage() {
         </button>
       </header>
 
-      <main className="art-feed__scroller" ref={scrollerRef}>
-        {aotd && aotdVisible && (
-          <Link
-            to={`/artwork/${aotd.source}/${aotd.id}`}
-            className="aotd-banner"
-            aria-label={`Art of the Day: ${aotd.title}`}
+      {aotd && !aotdDismissed && (
+        <>
+          <button
+            type="button"
+            className="aotd-fab"
+            onClick={() => setAotdExpanded(!aotdExpanded)}
+            aria-label="Art of the Day"
           >
-            <img className="aotd-banner__thumb" src={aotd.imageUrl} alt="" />
-            <div className="aotd-banner__text">
-              <span className="aotd-banner__label">Art of the Day</span>
-              <span className="aotd-banner__title">{aotd.title}</span>
-              <span className="aotd-banner__artist">{aotd.artist} · {sourceName(aotd.source)}</span>
-            </div>
-            <button
-              type="button"
-              className="aotd-banner__close"
-              onClick={handleDismissAotd}
-              aria-label="Dismiss"
+            <img className="aotd-fab__thumb" src={aotd.imageUrl} alt="" />
+          </button>
+
+          {aotdExpanded && (
+            <Link
+              to={`/artwork/${aotd.source}/${aotd.id}`}
+              className="aotd-banner"
+              aria-label={`Art of the Day: ${aotd.title}`}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 6L6 18M6 6l12 12" />
-              </svg>
-            </button>
-          </Link>
-        )}
+              <img className="aotd-banner__thumb" src={aotd.imageUrl} alt="" />
+              <div className="aotd-banner__text">
+                <span className="aotd-banner__label">Art of the Day</span>
+                <span className="aotd-banner__title">{aotd.title}</span>
+                <span className="aotd-banner__artist">{aotd.artist} · {sourceName(aotd.source)}</span>
+              </div>
+              <button
+                type="button"
+                className="aotd-banner__close"
+                onClick={handleDismissAotd}
+                aria-label="Dismiss"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+              </button>
+            </Link>
+          )}
+        </>
+      )}
+
+      <main className="art-feed__scroller" ref={scrollerRef}>
         {artPieces.map((piece) => (
           <ArtCard key={`${piece.source}:${piece.id}`} art={piece} />
         ))}
