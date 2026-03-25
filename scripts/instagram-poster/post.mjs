@@ -156,7 +156,7 @@ async function main() {
       if (err.message.includes("403") && art?.source) {
         const sourceName = art.source === "artic" ? "aic" : art.source;
         failedSources.add(sourceName);
-        console.warn(`Excluding ${sourceName} (image 403) — remaining: ${SOURCES.filter((s) => !failedSources.has(s.name.toLowerCase())).map((s) => s.name).join(", ") || "none"}`);
+        console.warn(`Excluding ${sourceName} (image 403) — ${failedSources.size} source(s) excluded`);
       }
       if (attempt === MAX_RETRIES || SPECIFIC_ART) throw err;
       art = null; // Reset so seasonal fallback can retry
