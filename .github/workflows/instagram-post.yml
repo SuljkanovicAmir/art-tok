@@ -16,6 +16,8 @@ on:
           - post
           - story
           - reel
+          - seasonal-post
+          - seasonal-reel
 
 jobs:
   post:
@@ -56,6 +58,10 @@ jobs:
             node post.mjs --story
           elif [ "$MODE" = "reel" ]; then
             node post.mjs --reel
+          elif [ "$MODE" = "seasonal-post" ]; then
+            node post.mjs --seasonal
+          elif [ "$MODE" = "seasonal-reel" ]; then
+            node post.mjs --seasonal --reel
           else
             node post.mjs
           fi

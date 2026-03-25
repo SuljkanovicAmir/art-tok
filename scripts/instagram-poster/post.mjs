@@ -10,6 +10,8 @@
  *   node post.mjs              # auto-cycles: post → post → reel → post …
  *   node post.mjs --story      # story (1080x1920, disappears in 24h)
  *   node post.mjs --reel       # reel (30s video with audio)
+ *   node post.mjs --seasonal   # force seasonal artwork (post)
+ *   node post.mjs --seasonal --reel  # force seasonal reel
  *   node post.mjs --dry-run    # generate card locally, skip Instagram publish
  *
  * Required env vars (see .env.example):
@@ -40,6 +42,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const args = process.argv.slice(2);
 const IS_STORY = args.includes("--story");
 const IS_REEL = args.includes("--reel");
+const IS_SEASONAL = args.includes("--seasonal");
 const DRY_RUN = args.includes("--dry-run");
 const ART_ARG = args.find((a) => a.startsWith("--art="));
 const SPECIFIC_ART = ART_ARG ? ART_ARG.replace("--art=", "") : null; // e.g. "harvard:229060"
@@ -120,6 +123,15 @@ async function main() {
     try {
       if (SPECIFIC_ART) {
         art = await fetchSpecificArtwork(SPECIFIC_ART);
+      } else if (IS_SEASONAL) {
+        // Force seasonal content (use active season or fall back to nearest)
+        const season = getActiveSeason() || { key: "on-demand", keywords: ["spring", "flowers", "landscape", "garden", "nature"] };
+        console.log(`Seasonal (forced): ${season.key}`);
+        art = await fetchSeasonalArtwork(season, historySet);
+        if (!art) {
+          console.warn("No seasonal artwork found — falling back to random");
+          art = await fetchRandomArtwork(historySet, failedSources);
+        }
       } else {
         // Check for seasonal content
         const season = shouldPostSeasonal(historyData);
