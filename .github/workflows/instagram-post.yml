@@ -19,6 +19,9 @@ on:
           - seasonal-post
           - seasonal-reel
 
+permissions:
+  contents: write
+
 jobs:
   post:
     runs-on: ubuntu-latest
