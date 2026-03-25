@@ -17,8 +17,9 @@ dist-ssr
 .env.local
 .env.*.local
 
-# Instagram poster history
-scripts/instagram-poster/posted-history.json
+# Instagram poster output (cards, reels)
+scripts/instagram-poster/arttok-*.png
+scripts/instagram-poster/arttok-*.mp4
 
 # Editor directories and files
 .vscode/*
