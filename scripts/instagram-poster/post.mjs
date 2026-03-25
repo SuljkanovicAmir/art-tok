@@ -66,9 +66,11 @@ function pickAudioTrack() {
   return join(audioDir, pick(files));
 }
 
-async function createReelVideo(art) {
-  const cardBuffer = await renderStoryCard(art, art.imageUrl);
-  console.log(`Reel card rendered: ${(cardBuffer.length / 1024).toFixed(0)} KB`);
+async function createReelVideo(art, existingCardBuffer = null) {
+  const cardBuffer = existingCardBuffer || await renderStoryCard(art, art.imageUrl);
+  if (!existingCardBuffer) {
+    console.log(`Reel card rendered: ${(cardBuffer.length / 1024).toFixed(0)} KB`);
+  }
 
   const audioPath = pickAudioTrack();
   console.log(`Audio track: ${audioPath.split(/[\\/]/).pop()}`);
@@ -127,7 +129,7 @@ async function main() {
         // Force seasonal content (use active season or fall back to nearest)
         const season = getActiveSeason() || { key: "on-demand", keywords: ["spring", "flowers", "landscape", "garden", "nature"] };
         console.log(`Seasonal (forced): ${season.key}`);
-        art = await fetchSeasonalArtwork(season, historySet);
+        art = await fetchSeasonalArtwork(season, historySet, failedSources);
         if (!art) {
           console.warn("No seasonal artwork found — falling back to random");
           art = await fetchRandomArtwork(historySet, failedSources);
@@ -136,7 +138,7 @@ async function main() {
         // Check for seasonal content
         const season = shouldPostSeasonal(historyData);
         if (season) {
-          art = await fetchSeasonalArtwork(season, historySet);
+          art = await fetchSeasonalArtwork(season, historySet, failedSources);
         }
         if (!art) {
           art = await fetchRandomArtwork(historySet, failedSources);
@@ -172,7 +174,7 @@ async function main() {
     if (mode === "reel") {
       try {
         console.log("\nCreating reel video (dry-run)...");
-        const videoBuffer = await createReelVideo(art);
+        const videoBuffer = await createReelVideo(art, pngBuffer);
         writeFileSync(`${basename}.mp4`, videoBuffer);
         console.log(`Saved to ${basename}.mp4 (${(videoBuffer.length / 1024 / 1024).toFixed(1)} MB)`);
       } catch (err) {
@@ -198,7 +200,7 @@ async function main() {
   // 6. Publish based on mode
   if (mode === "reel") {
     console.log("Creating reel video...");
-    const videoBuffer = await createReelVideo(art);
+    const videoBuffer = await createReelVideo(art, pngBuffer);
     console.log("Publishing reel...");
     mediaId = await publishReel(token, videoBuffer, caption);
   } else if (mode === "story") {
@@ -224,12 +226,14 @@ async function main() {
   }
 
   // 8. Publish auto-story (not if already a story)
+  //    Reels already have a story-sized card (1080x1920) — reuse it
   if (mode !== "story") {
-    await publishAutoStory(token, art);
+    const storyCard = mode === "reel" ? pngBuffer : null;
+    await publishAutoStory(token, art, storyCard);
   }
 
   // 9. Update history
-  const wasSeasonal = getActiveSeason() !== null && SPECIFIC_ART === null;
+  const wasSeasonal = (IS_SEASONAL || getActiveSeason() !== null) && SPECIFIC_ART === null;
   historyData.posted.push(artKey(art));
   historyData.postsSinceLastSeasonal = wasSeasonal ? 0 : historyData.postsSinceLastSeasonal + 1;
   historyData.runIndex = (historyData.runIndex + 1) % MODE_CYCLE.length;
