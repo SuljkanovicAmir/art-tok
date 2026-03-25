@@ -383,6 +383,97 @@ function drawWatercolorBackground(ctx, seed, w, h, imagePalette) {
 
 // ── Card renderers ──────────────────────────────────────────────────────────
 
+const CARD_PRESETS = {
+  post: {
+    w: POST_W, h: POST_H,
+    padding: 70, captionHeight: 180, captionGap: 28,
+    shadowBlur: 28, shadowOffsetY: 6,
+    fadeStops: [0, 0.2, 0.5, 1],
+    titleFont: 'italic 38px "Georgia", "Liberation Serif", "Times New Roman", serif',
+    titleLineHeight: 48,
+    artistFont: '300 24px "Liberation Sans", "Helvetica Neue", Arial, sans-serif',
+    artistGap: 4,
+    brandFont: 'italic 800 22px "Georgia", "Liberation Serif", serif',
+    brandBottomOffset: 44,
+  },
+  story: {
+    w: STORY_W, h: STORY_H,
+    padding: 80, captionHeight: 200, captionGap: 40,
+    shadowBlur: 32, shadowOffsetY: 8,
+    fadeStops: [0, 0.15, 0.4, 1],
+    titleFont: 'italic 42px "Georgia", "Liberation Serif", "Times New Roman", serif',
+    titleLineHeight: 54,
+    artistFont: '300 28px "Liberation Sans", "Helvetica Neue", Arial, sans-serif',
+    artistGap: 8,
+    brandFont: 'italic 800 26px "Georgia", "Liberation Serif", serif',
+    brandBottomOffset: 60,
+  },
+};
+
+async function renderCard(art, imageUrl, preset) {
+  const { w, h, padding, captionHeight, captionGap, shadowBlur, shadowOffsetY,
+    fadeStops, titleFont, titleLineHeight, artistFont, artistGap,
+    brandFont, brandBottomOffset } = preset;
+
+  const img = await fetchImage(imageUrl);
+  const canvas = createCanvas(w, h);
+  const ctx = canvas.getContext("2d");
+
+  const imagePalette = extractPalette(img);
+  drawWatercolorBackground(ctx, Math.abs(art.id), w, h, imagePalette);
+
+  const availW = w - padding * 2;
+  const availH = h - padding * 2 - captionHeight;
+
+  const scale = Math.min(availW / img.width, availH / img.height, 1);
+  const artW = Math.round(img.width * scale);
+  const artH = Math.round(img.height * scale);
+  const artX = Math.round((w - artW) / 2);
+  const artY = padding + Math.round((availH - artH) / 2);
+
+  ctx.save();
+  ctx.shadowColor = "rgba(0, 0, 0, 0.15)";
+  ctx.shadowBlur = shadowBlur;
+  ctx.shadowOffsetY = shadowOffsetY;
+  ctx.drawImage(img, artX, artY, artW, artH);
+  ctx.restore();
+
+  const fadeTop = artY + artH - 10;
+  const fadeGrad = ctx.createLinearGradient(0, fadeTop, 0, h);
+  fadeGrad.addColorStop(fadeStops[0], "rgba(254, 252, 249, 0)");
+  fadeGrad.addColorStop(fadeStops[1], "rgba(254, 252, 249, 0.75)");
+  fadeGrad.addColorStop(fadeStops[2], "rgba(254, 252, 249, 0.92)");
+  fadeGrad.addColorStop(fadeStops[3], "rgba(254, 252, 249, 0.95)");
+  ctx.fillStyle = fadeGrad;
+  ctx.fillRect(0, fadeTop, w, h - fadeTop);
+
+  const captionY = artY + artH + captionGap;
+  const captionMaxW = w - padding * 2;
+
+  ctx.fillStyle = "#2a2a2a";
+  ctx.font = titleFont;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+
+  const titleLines = truncateText(ctx, art.title, captionMaxW, 2);
+  let lineY = captionY;
+  for (const line of titleLines) {
+    ctx.fillText(line, w / 2, lineY);
+    lineY += titleLineHeight;
+  }
+
+  ctx.fillStyle = "#888";
+  ctx.font = artistFont;
+  const artistText = art.artist.length > 50 ? art.artist.slice(0, 47) + "\u2026" : art.artist;
+  ctx.fillText(artistText, w / 2, lineY + artistGap);
+
+  ctx.fillStyle = "#555";
+  ctx.font = brandFont;
+  ctx.fillText("A R T T O K", w / 2, h - brandBottomOffset);
+
+  return canvas.toBuffer("image/jpeg", { quality: 0.95 });
+}
+
 /**
  * Render a 1080x1350 Instagram feed post card.
  * @param {object} art - ArtPiece-like object with { id, title, artist, imageUrl }
@@ -390,66 +481,7 @@ function drawWatercolorBackground(ctx, seed, w, h, imagePalette) {
  * @returns {Promise<Buffer>} PNG buffer
  */
 export async function renderPostCard(art, imageUrl) {
-  const img = await fetchImage(imageUrl);
-
-  const canvas = createCanvas(POST_W, POST_H);
-  const ctx = canvas.getContext("2d");
-
-  const imagePalette = extractPalette(img);
-  drawWatercolorBackground(ctx, Math.abs(art.id), POST_W, POST_H, imagePalette);
-
-  const padding = 70;
-  const captionHeight = 180;
-  const availW = POST_W - padding * 2;
-  const availH = POST_H - padding * 2 - captionHeight;
-
-  const scale = Math.min(availW / img.width, availH / img.height, 1);
-  const artW = Math.round(img.width * scale);
-  const artH = Math.round(img.height * scale);
-  const artX = Math.round((POST_W - artW) / 2);
-  const artY = padding + Math.round((availH - artH) / 2);
-
-  ctx.save();
-  ctx.shadowColor = "rgba(0, 0, 0, 0.15)";
-  ctx.shadowBlur = 28;
-  ctx.shadowOffsetY = 6;
-  ctx.drawImage(img, artX, artY, artW, artH);
-  ctx.restore();
-
-  const fadeTop = artY + artH - 10;
-  const fadeGrad = ctx.createLinearGradient(0, fadeTop, 0, POST_H);
-  fadeGrad.addColorStop(0, "rgba(254, 252, 249, 0)");
-  fadeGrad.addColorStop(0.2, "rgba(254, 252, 249, 0.75)");
-  fadeGrad.addColorStop(0.5, "rgba(254, 252, 249, 0.92)");
-  fadeGrad.addColorStop(1, "rgba(254, 252, 249, 0.95)");
-  ctx.fillStyle = fadeGrad;
-  ctx.fillRect(0, fadeTop, POST_W, POST_H - fadeTop);
-
-  const captionY = artY + artH + 28;
-  const captionMaxW = POST_W - padding * 2;
-
-  ctx.fillStyle = "#2a2a2a";
-  ctx.font = 'italic 38px "Georgia", "Liberation Serif", "Times New Roman", serif';
-  ctx.textAlign = "center";
-  ctx.textBaseline = "top";
-
-  const titleLines = truncateText(ctx, art.title, captionMaxW, 2);
-  let lineY = captionY;
-  for (const line of titleLines) {
-    ctx.fillText(line, POST_W / 2, lineY);
-    lineY += 48;
-  }
-
-  ctx.fillStyle = "#888";
-  ctx.font = '300 24px "Liberation Sans", "Helvetica Neue", Arial, sans-serif';
-  const artistText = art.artist.length > 50 ? art.artist.slice(0, 47) + "\u2026" : art.artist;
-  ctx.fillText(artistText, POST_W / 2, lineY + 4);
-
-  ctx.fillStyle = "#555";
-  ctx.font = 'italic 800 22px "Georgia", "Liberation Serif", serif';
-  ctx.fillText("A R T T O K", POST_W / 2, POST_H - 44);
-
-  return canvas.toBuffer("image/jpeg", { quality: 0.95 });
+  return renderCard(art, imageUrl, CARD_PRESETS.post);
 }
 
 /**
@@ -459,64 +491,5 @@ export async function renderPostCard(art, imageUrl) {
  * @returns {Promise<Buffer>} PNG buffer
  */
 export async function renderStoryCard(art, imageUrl) {
-  const img = await fetchImage(imageUrl);
-
-  const canvas = createCanvas(STORY_W, STORY_H);
-  const ctx = canvas.getContext("2d");
-
-  const imagePalette = extractPalette(img);
-  drawWatercolorBackground(ctx, Math.abs(art.id), STORY_W, STORY_H, imagePalette);
-
-  const padding = 80;
-  const captionHeight = 200;
-  const availW = STORY_W - padding * 2;
-  const availH = STORY_H - padding * 2 - captionHeight;
-
-  const scale = Math.min(availW / img.width, availH / img.height, 1);
-  const artW = Math.round(img.width * scale);
-  const artH = Math.round(img.height * scale);
-  const artX = Math.round((STORY_W - artW) / 2);
-  const artY = padding + Math.round((availH - artH) / 2);
-
-  ctx.save();
-  ctx.shadowColor = "rgba(0, 0, 0, 0.15)";
-  ctx.shadowBlur = 32;
-  ctx.shadowOffsetY = 8;
-  ctx.drawImage(img, artX, artY, artW, artH);
-  ctx.restore();
-
-  const fadeTop = artY + artH - 10;
-  const fadeGrad = ctx.createLinearGradient(0, fadeTop, 0, STORY_H);
-  fadeGrad.addColorStop(0, "rgba(254, 252, 249, 0)");
-  fadeGrad.addColorStop(0.15, "rgba(254, 252, 249, 0.75)");
-  fadeGrad.addColorStop(0.4, "rgba(254, 252, 249, 0.92)");
-  fadeGrad.addColorStop(1, "rgba(254, 252, 249, 0.95)");
-  ctx.fillStyle = fadeGrad;
-  ctx.fillRect(0, fadeTop, STORY_W, STORY_H - fadeTop);
-
-  const captionY = artY + artH + 40;
-  const captionMaxW = STORY_W - padding * 2;
-
-  ctx.fillStyle = "#2a2a2a";
-  ctx.font = 'italic 42px "Georgia", "Liberation Serif", "Times New Roman", serif';
-  ctx.textAlign = "center";
-  ctx.textBaseline = "top";
-
-  const titleLines = truncateText(ctx, art.title, captionMaxW, 2);
-  let lineY = captionY;
-  for (const line of titleLines) {
-    ctx.fillText(line, STORY_W / 2, lineY);
-    lineY += 54;
-  }
-
-  ctx.fillStyle = "#888";
-  ctx.font = '300 28px "Liberation Sans", "Helvetica Neue", Arial, sans-serif';
-  const artistText = art.artist.length > 50 ? art.artist.slice(0, 47) + "\u2026" : art.artist;
-  ctx.fillText(artistText, STORY_W / 2, lineY + 8);
-
-  ctx.fillStyle = "#555";
-  ctx.font = 'italic 800 26px "Georgia", "Liberation Serif", serif';
-  ctx.fillText("A R T T O K", STORY_W / 2, STORY_H - 60);
-
-  return canvas.toBuffer("image/jpeg", { quality: 0.95 });
+  return renderCard(art, imageUrl, CARD_PRESETS.story);
 }

@@ -382,7 +382,8 @@ function applyPaperTexture(ctx: CanvasRenderingContext2D, rng: RNG, w: number, h
   const tc = document.createElement("canvas");
   tc.width = tw;
   tc.height = th;
-  const tx = tc.getContext("2d")!;
+  const tx = tc.getContext("2d");
+  if (!tx) throw new Error("Failed to get 2d context for paper texture canvas");
   const img = tx.createImageData(tw, th);
 
   for (let i = 0; i < img.data.length; i += 4) {
@@ -490,7 +491,8 @@ export async function renderStoryCard(
   const canvas = document.createElement("canvas");
   canvas.width = W;
   canvas.height = H;
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Failed to get 2d context for story card canvas");
 
   // ── Watercolor background from artwork's own palette ──
   const imagePalette = extractPalette(img);
@@ -570,7 +572,8 @@ export async function renderPostCard(
   const canvas = document.createElement("canvas");
   canvas.width = POST_W;
   canvas.height = POST_H;
-  const ctx = canvas.getContext("2d")!;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("Failed to get 2d context for post card canvas");
 
   // ── Watercolor background from artwork's own palette ──
   const imagePalette = extractPalette(img);

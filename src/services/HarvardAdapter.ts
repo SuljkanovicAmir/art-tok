@@ -3,7 +3,8 @@ import type { ArtPiece, HarvardArtResponse } from "../types/art";
 import { mapArtRecord } from "../utils/mapArtRecord";
 
 const API_ENDPOINT = "https://api.harvardartmuseums.org/object";
-const API_KEY = import.meta.env.VITE_HARVARD_API_KEY as string;
+const API_KEY = import.meta.env.VITE_HARVARD_API_KEY;
+if (!API_KEY) throw new Error("VITE_HARVARD_API_KEY is not set");
 const DEFAULT_QUERY = "verificationlevel:4";
 const FIELDS = [
   "objectid",
