@@ -14,7 +14,7 @@ const AIC_API = "https://api.artic.edu/api/v1";
 const AIC_IIIF = "https://www.artic.edu/iiif/2";
 const AIC_FIELDS = [
   "id", "title", "artist_display", "image_id", "place_of_origin",
-  "date_display", "classification_title", "medium_display",
+  "date_display", "classification_title", "medium_display", "description",
 ].join(",");
 
 const { HARVARD_API_KEY } = process.env;
@@ -54,6 +54,7 @@ export async function fetchHarvardRandom() {
     dated: r.dated,
     classification: r.classification,
     medium: r.medium,
+    description: r.description || "",
     url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
     museumName: "Harvard Art Museums",
   };
@@ -121,6 +122,7 @@ export async function fetchAicRandom() {
     dated: r.date_display,
     classification: r.classification_title,
     medium: r.medium_display,
+    description: r.description || "",
     url: `https://www.artic.edu/artworks/${r.id}`,
     museumName: "Art Institute of Chicago",
   };
@@ -146,6 +148,7 @@ export async function fetchSpecificArtwork(sourceId) {
       id: r.objectid, title: r.title || "Untitled", artist,
       imageUrl, source: "harvard", culture: r.culture,
       dated: r.dated, classification: r.classification, medium: r.medium,
+      description: r.description || "",
       url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
       museumName: "Harvard Art Museums",
     };
@@ -175,6 +178,7 @@ export async function fetchSpecificArtwork(sourceId) {
       imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
       source: "artic", culture: r.place_of_origin, dated: r.date_display,
       classification: r.classification_title, medium: r.medium_display,
+      description: r.description || "",
       url: `https://www.artic.edu/artworks/${r.id}`,
       museumName: "Art Institute of Chicago",
     };
@@ -304,6 +308,7 @@ export async function fetchSeasonalArtwork(season, historySet) {
           id: r.objectid, title: r.title || "Untitled", artist,
           imageUrl, source: "harvard", culture: r.culture,
           dated: r.dated, classification: r.classification, medium: r.medium,
+          description: r.description || "",
           url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
           museumName: "Harvard Art Museums",
         };
@@ -342,6 +347,7 @@ export async function fetchSeasonalArtwork(season, historySet) {
           imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
           source: "artic", culture: r.place_of_origin, dated: r.date_display,
           classification: r.classification_title, medium: r.medium_display,
+          description: r.description || "",
           url: `https://www.artic.edu/artworks/${r.id}`,
           museumName: "Art Institute of Chicago",
         };

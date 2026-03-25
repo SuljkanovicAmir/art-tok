@@ -65,23 +65,100 @@ export function buildHashtags(art) {
   return tags.join(" ");
 }
 
-export function buildCaption(art) {
+function stripHtml(str) {
+  return str.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#?\w+;/g, "").replace(/\s+/g, " ").trim();
+}
+
+function truncate(str, maxLen) {
+  if (str.length <= maxLen) return str;
+  const cut = str.lastIndexOf(" ", maxLen);
+  return str.slice(0, cut > 0 ? cut : maxLen) + "...";
+}
+
+function cleanDescription(raw) {
+  if (!raw) return "";
+  const cleaned = stripHtml(raw);
+  if (cleaned.length < 20) return "";
+  return cleaned;
+}
+
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// ── Rotating engagement hooks (keeps feed fresh, drives comments + saves) ──
+
+// Curator's notes — short, observational, never asks for engagement.
+// Shown on ~1 in 3 posts to keep the feed clean.
+const CURATOR_NOTES = [
+  "Worth seeing in person.",
+  "A permanent collection favourite.",
+  "One of those pieces that shifts with the light.",
+  "Better the longer you look.",
+  "The kind of work rooms are built around.",
+  "Still striking after all these centuries.",
+  "Reproductions never quite capture it.",
+  "A masterclass in restraint.",
+];
+
+const SIGN_OFF = "Follow @arttok.art \u00B7 Masterworks, daily.";
+
+export function buildCaption(art, mode = "post") {
   const lines = [];
+  const desc = cleanDescription(art.description);
 
-  // Title block — authoritative, museum-label style
-  lines.push(art.title);
-  if (art.artist !== "Unknown artist") lines.push(art.artist);
+  if (mode === "reel") {
+    // ── Reel: compact, cinematic ──
+    lines.push(art.title);
+    if (art.artist !== "Unknown artist") {
+      const datePart = art.dated ? ` \u00B7 ${art.dated}` : "";
+      lines.push(`${art.artist}${datePart}`);
+    } else if (art.dated) {
+      lines.push(art.dated);
+    }
+    lines.push(art.museumName);
 
-  const details = [];
-  if (art.dated) details.push(art.dated);
-  if (art.medium) details.push(art.medium);
-  if (details.length) lines.push(details.join(" · "));
+    if (desc) {
+      lines.push("");
+      lines.push(truncate(desc, 200));
+    }
 
-  lines.push(art.museumName);
-  lines.push("");
+    // Curator's note ~1 in 3 reels
+    if (Math.random() < 0.125) {
+      lines.push("");
+      lines.push(pick(CURATOR_NOTES));
+    }
 
-  // CTA
-  lines.push("Follow @arttok.art for masterworks from the world's greatest museums.");
+    lines.push("");
+    lines.push(SIGN_OFF);
+  } else {
+    // ── Post: gallery wall label style ──
+    lines.push(art.title);
+    if (art.artist !== "Unknown artist") lines.push(art.artist);
+
+    const details = [];
+    if (art.dated) details.push(art.dated);
+    if (art.medium) details.push(art.medium);
+    if (details.length) lines.push(details.join(" \u00B7 "));
+
+    lines.push(art.museumName);
+
+    if (desc) {
+      lines.push("");
+      lines.push("───────");
+      lines.push("");
+      lines.push(truncate(desc, 400));
+    }
+
+    // Curator's note ~1 in 3 posts
+    if (Math.random() < 0.125) {
+      lines.push("");
+      lines.push(pick(CURATOR_NOTES));
+    }
+
+    lines.push("");
+    lines.push(SIGN_OFF);
+  }
 
   return lines.join("\n");
 }

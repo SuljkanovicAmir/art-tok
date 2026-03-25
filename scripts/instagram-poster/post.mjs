@@ -160,7 +160,7 @@ async function main() {
       }
     }
 
-    console.log(`\nCaption:\n${buildCaption(art)}`);
+    console.log(`\nCaption:\n${buildCaption(art, mode)}`);
     console.log(`\nHashtags:\n${buildHashtags(art)}`);
     return;
   }
@@ -169,7 +169,7 @@ async function main() {
   let token = process.env.INSTAGRAM_ACCESS_TOKEN;
   token = await refreshTokenIfNeeded(token);
 
-  const caption = buildCaption(art);
+  const caption = buildCaption(art, mode);
   const altText = buildAltText(art);
   const hashtags = buildHashtags(art);
   let mediaId;
