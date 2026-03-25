@@ -148,8 +148,15 @@ export class MetAdapter implements ArtSource {
     if (options.keyword) queryParts.push(options.keyword);
     if (options.culture) queryParts.push(options.culture);
     if (options.classification) queryParts.push(options.classification);
-    if (options.century) queryParts.push(options.century);
-    if (options.medium) queryParts.push(options.medium);
+    if (options.medium) params.set("medium", options.medium);
+    if (options.century) {
+      const match = options.century.match(/(\d+)/);
+      if (match) {
+        const c = parseInt(match[1], 10);
+        params.set("dateBegin", String((c - 1) * 100));
+        params.set("dateEnd", String(c * 100));
+      }
+    }
 
     params.set("q", queryParts.join(" ") || "*");
 

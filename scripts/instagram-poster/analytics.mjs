@@ -11,24 +11,15 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { fetchJson, IG_GRAPH } from "./lib/fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = join(__dirname, "..", "..", "docs", "analytics");
-const IG_GRAPH = "https://graph.facebook.com/v21.0";
 const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID } = process.env;
 
 if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
   console.error("INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID required");
   process.exit(1);
-}
-
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`HTTP ${res.status}: ${body.slice(0, 200)}`);
-  }
-  return res.json();
 }
 
 async function getProfile() {
@@ -64,7 +55,8 @@ async function getMediaInsights(mediaId) {
         metrics[m.name] = m.values?.[0]?.value ?? 0;
       }
       return metrics;
-    } catch {
+    } catch (err) {
+      console.warn(`Failed to fetch insights for ${mediaId}:`, err.message ?? err);
       return {};
     }
   }
@@ -102,17 +94,17 @@ async function main() {
   const thisWeek = media.filter((m) => new Date(m.timestamp) >= weekAgo);
   console.log(`Posts this week: ${thisWeek.length}`);
 
-  const enriched = [];
-  for (const m of thisWeek) {
-    const insights = await getMediaInsights(m.id);
-    enriched.push({
+  const insightsArr = await Promise.all(thisWeek.map((m) => getMediaInsights(m.id)));
+  const enriched = thisWeek.map((m, i) => {
+    const insights = insightsArr[i];
+    return {
       ...m,
       ...insights,
       source: extractSource(m.caption),
       hour: new Date(m.timestamp).getUTCHours(),
       engagement: (m.like_count || 0) + (m.comments_count || 0) + (insights.saved || 0) + (insights.shares || 0),
-    });
-  }
+    };
+  });
 
   enriched.sort((a, b) => b.engagement - a.engagement);
 

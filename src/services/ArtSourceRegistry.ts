@@ -66,9 +66,11 @@ export class ArtSourceRegistry {
       if (!source) return null;
       return source.fetchById(id);
     }
-    for (const source of this.sources.values()) {
-      const result = await source.fetchById(id);
-      if (result) return result;
+    const results = await Promise.allSettled(
+      [...this.sources.values()].map((s) => s.fetchById(id)),
+    );
+    for (const r of results) {
+      if (r.status === "fulfilled" && r.value) return r.value;
     }
     return null;
   }

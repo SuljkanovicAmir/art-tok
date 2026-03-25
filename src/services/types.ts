@@ -28,7 +28,7 @@ export interface FacetItem {
 
 export interface ArtSource {
   readonly name: string;
-  readonly id: 'harvard' | 'met' | 'artic' | 'rijks';
+  readonly id: 'harvard' | 'met' | 'artic';
   fetchFeed(options: ArtSourceFeedOptions): Promise<ArtSourceFeedResult>;
   search(options: ArtSourceSearchOptions): Promise<ArtSourceFeedResult>;
   fetchById(id: number): Promise<ArtPiece | null>;

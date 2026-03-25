@@ -27,8 +27,6 @@ export function sourceName(source: ArtSourceId): string {
       return "The Metropolitan Museum of Art";
     case "artic":
       return "Art Institute of Chicago";
-    case "rijks":
-      return "Rijksmuseum";
   }
 }
 
