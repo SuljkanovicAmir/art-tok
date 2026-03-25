@@ -290,11 +290,14 @@ export function shouldPostSeasonal(historyData) {
   return season;
 }
 
-export async function fetchSeasonalArtwork(season, historySet) {
+export async function fetchSeasonalArtwork(season, historySet, excludeSources = new Set()) {
   const keyword = pick(season.keywords);
   console.log(`Seasonal (${season.key}): searching for "${keyword}"...`);
 
-  const available = SOURCES.filter((s) => !s.needsKey || HARVARD_API_KEY);
+  const available = SOURCES.filter((s) =>
+    (!s.needsKey || HARVARD_API_KEY) && !excludeSources.has(s.name.toLowerCase()),
+  );
+  if (available.length === 0) return null;
   const ordered = rotateByTime(available);
 
   for (const source of ordered) {

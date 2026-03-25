@@ -113,11 +113,12 @@ export async function postFirstComment(token, mediaId, text) {
   }
 }
 
-export async function publishAutoStory(token, art) {
+export async function publishAutoStory(token, art, existingStoryBuffer = null) {
   try {
-    console.log("Rendering auto-story card...");
-    const storyBuffer = await renderStoryCard(art, art.imageUrl);
-    console.log(`Story card rendered: ${(storyBuffer.length / 1024).toFixed(0)} KB`);
+    const storyBuffer = existingStoryBuffer || await renderStoryCard(art, art.imageUrl);
+    if (!existingStoryBuffer) {
+      console.log(`Auto-story card rendered: ${(storyBuffer.length / 1024).toFixed(0)} KB`);
+    }
 
     const { url: storyUrl, path: storyPath, token: storyToken } = await uploadImage(storyBuffer);
     console.log("Publishing auto-story...");
