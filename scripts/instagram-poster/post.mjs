@@ -826,9 +826,7 @@ async function publishReel(videoBuffer, caption, altText) {
     access_token: INSTAGRAM_ACCESS_TOKEN,
   });
 
-  if (altText) {
-    containerParams.set("alt_text", altText);
-  }
+  // Note: alt_text is NOT supported for REELS media type
 
   const containerRes = await fetch(
     `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
