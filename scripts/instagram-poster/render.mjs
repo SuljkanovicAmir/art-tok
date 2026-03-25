@@ -9,18 +9,39 @@ const REFERRERS = {
   "www.artic.edu": "https://www.artic.edu/",
 };
 
-async function fetchImage(url) {
+async function fetchImage(url, retries = 3) {
   const hostname = new URL(url).hostname;
   const referrer = REFERRERS[hostname];
 
-  if (referrer) {
-    const res = await fetch(url, { headers: { Referer: referrer } });
-    if (!res.ok) throw new Error(`Image fetch failed: ${res.status}`);
-    const buffer = Buffer.from(await res.arrayBuffer());
-    return loadImage(buffer);
-  }
+  for (let i = 0; i <= retries; i++) {
+    try {
+      if (referrer) {
+        const res = await fetch(url, { headers: {
+          Referer: referrer,
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        } });
+        if (res.status === 429 && i < retries) {
+          const wait = (i + 1) * 2000;
+          console.log(`Image rate limited (${hostname}), retrying in ${wait / 1000}s...`);
+          await new Promise((r) => setTimeout(r, wait));
+          continue;
+        }
+        if (!res.ok) throw new Error(`Image fetch failed: ${res.status}`);
+        const buffer = Buffer.from(await res.arrayBuffer());
+        return loadImage(buffer);
+      }
 
-  return loadImage(url);
+      return await loadImage(url);
+    } catch (err) {
+      if (err.message?.includes("Server responded with 429") && i < retries) {
+        const wait = (i + 1) * 2000;
+        console.log(`Image rate limited (${hostname}), retrying in ${wait / 1000}s...`);
+        await new Promise((r) => setTimeout(r, wait));
+        continue;
+      }
+      throw err;
+    }
+  }
 }
 
 // ── Dimensions ──────────────────────────────────────────────────────────────

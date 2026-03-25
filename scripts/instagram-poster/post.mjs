@@ -102,10 +102,18 @@ const AIC_FIELDS = [
 
 // ── Fetch helpers ───────────────────────────────────────────────────────────
 
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-  return res.json();
+async function fetchJson(url, retries = 2) {
+  for (let i = 0; i <= retries; i++) {
+    const res = await fetch(url);
+    if (res.ok) return res.json();
+    if (res.status === 429 && i < retries) {
+      const wait = (i + 1) * 2000;
+      console.log(`Rate limited, retrying in ${wait / 1000}s...`);
+      await new Promise((r) => setTimeout(r, wait));
+      continue;
+    }
+    throw new Error(`HTTP ${res.status}: ${url}`);
+  }
 }
 
 function pick(arr) {
@@ -133,11 +141,15 @@ async function fetchHarvardRandom() {
   const r = pick(records);
   const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
 
+  // Prefer IIIF URL (ids.lib.harvard.edu) — nrs.harvard.edu rate-limits aggressively
+  const iiifUrl = r.images?.[0]?.iiifbaseuri;
+  const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
+
   return {
     id: r.objectid,
     title: r.title || "Untitled",
     artist,
-    imageUrl: r.primaryimageurl,
+    imageUrl,
     source: "harvard",
     culture: r.culture,
     dated: r.dated,
@@ -187,10 +199,10 @@ async function fetchMetRandom() {
 // ── AIC: random from search ────────────────────────────────────────────────
 
 async function fetchAicRandom() {
-  // Get total, pick random page
+  // Get total, pick random page (AIC returns 403 on deep pages, cap at 100)
   const countUrl = `${AIC_API}/artworks/search?q=*&limit=1&fields=id`;
   const countData = await fetchJson(countUrl);
-  const totalPages = Math.min(countData.pagination.total_pages, 200);
+  const totalPages = Math.min(countData.pagination.total_pages, 100);
 
   const page = Math.floor(Math.random() * totalPages) + 1;
   const url = `${AIC_API}/artworks/search?q=*&page=${page}&limit=10&fields=${AIC_FIELDS}`;
@@ -229,9 +241,11 @@ async function fetchSpecificArtwork(sourceId) {
     const r = await fetchJson(url);
     if (!r.primaryimageurl) throw new Error("This artwork has no image");
     const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
+    const iiifUrl = r.images?.[0]?.iiifbaseuri;
+    const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
     return {
       id: r.objectid, title: r.title || "Untitled", artist,
-      imageUrl: r.primaryimageurl, source: "harvard", culture: r.culture,
+      imageUrl, source: "harvard", culture: r.culture,
       dated: r.dated, classification: r.classification, medium: r.medium,
       url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
       museumName: "Harvard Art Museums",
@@ -370,9 +384,11 @@ async function fetchSeasonalArtwork(season, historySet) {
         if (records.length === 0) continue;
         const r = pick(records);
         const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
+        const iiifUrl = r.images?.[0]?.iiifbaseuri;
+        const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
         const art = {
           id: r.objectid, title: r.title || "Untitled", artist,
-          imageUrl: r.primaryimageurl, source: "harvard", culture: r.culture,
+          imageUrl, source: "harvard", culture: r.culture,
           dated: r.dated, classification: r.classification, medium: r.medium,
           url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
           museumName: "Harvard Art Museums",
@@ -641,25 +657,36 @@ async function publishToInstagram(imageUrl, caption, { isStory = false, altText 
   // Step 2: Wait for container to be ready (Instagram processes the image)
   await waitForContainer(containerId);
 
-  // Step 3: Publish
-  const publishRes = await fetch(
-    `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media_publish`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        creation_id: containerId,
-        access_token: INSTAGRAM_ACCESS_TOKEN,
-      }).toString(),
-    },
-  );
+  // Step 3: Publish (with retries — Instagram may report FINISHED before media is truly available)
+  let mediaId;
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    const publishRes = await fetch(
+      `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media_publish`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          creation_id: containerId,
+          access_token: INSTAGRAM_ACCESS_TOKEN,
+        }).toString(),
+      },
+    );
 
-  if (!publishRes.ok) {
+    if (publishRes.ok) {
+      ({ id: mediaId } = await publishRes.json());
+      break;
+    }
+
     const body = await publishRes.text();
+    // Error 9007 / subcode 2207027 = "Media ID is not available" — transient, retry after delay
+    if (publishRes.status === 400 && body.includes('"code":9007') && attempt < 5) {
+      console.log(`Publish not ready (attempt ${attempt}/5), waiting ${attempt * 3}s...`);
+      await new Promise((r) => setTimeout(r, attempt * 3000));
+      continue;
+    }
     throw new Error(`Instagram publish failed (${publishRes.status}): ${body}`);
   }
 
-  const { id: mediaId } = await publishRes.json();
   return mediaId;
 }
 
