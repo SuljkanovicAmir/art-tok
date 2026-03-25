@@ -207,9 +207,13 @@ function rotateByTime(sources) {
   return [...sources.slice(offset), ...sources.slice(0, offset)];
 }
 
-export async function fetchRandomArtwork(historySet) {
-  // Filter to sources we can use (Harvard needs API key)
-  const available = SOURCES.filter((s) => !s.needsKey || HARVARD_API_KEY);
+export async function fetchRandomArtwork(historySet, excludeSources = new Set()) {
+  // Filter to sources we can use (Harvard needs API key) and not excluded
+  const available = SOURCES.filter((s) =>
+    (!s.needsKey || HARVARD_API_KEY) && !excludeSources.has(s.name.toLowerCase()),
+  );
+
+  if (available.length === 0) throw new Error("All art sources excluded or unavailable");
 
   // Try up to 10 times across all sources to find a non-duplicate
   for (let round = 0; round < 10; round++) {
