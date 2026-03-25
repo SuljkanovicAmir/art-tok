@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Heart, Send, Info, Maximize } from "lucide-react";
 import type { ArtPiece } from "../types/art";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { useTrackInteraction } from "../hooks/useTrackInteraction";
@@ -12,31 +13,7 @@ interface ArtCardProps {
   ref?: React.Ref<HTMLDivElement>;
 }
 
-
-const HeartIcon = () => (
-  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.54 0 3.04 0.99 3.57 2.36h0.21C10.81 4.99 12.31 4 13.85 4 16.34 4 18.35 6 18.35 8.5c0 3.78-3.4 6.86-8.55 11.54z" />
-  </svg>
-);
-
-const ShareIcon = () => (
-  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M12 3l5.05 5.05-1.41 1.41L13 6.83V17h-2V6.83L8.36 9.46 6.95 8.05z" />
-    <path d="M5 19h14v-2H5z" />
-  </svg>
-);
-
-const InfoIcon = () => (
-  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-4h2v-5h-2zm0-7h2V7h-2z" />
-  </svg>
-);
-
-const ExpandIcon = () => (
-  <svg className="art-card__action-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M21 3h-6v2h2.59L14 8.59 15.41 10 19 6.41V9h2zM3 3v6h2V6.41L8.59 10 10 8.59 6.41 5H9V3zm0 18h6v-2H6.41L10 15.41 8.59 14 5 17.59V15H3zM21 21v-6h-2v2.59L15.41 14 14 15.41 17.59 19H15v2z" />
-  </svg>
-);
+const IC = { className: "art-card__action-svg" };
 
 export function ArtCard({ art, ref }: ArtCardProps) {
   const { isLiked, toggleLike } = useLikedArt(artKey(art));
@@ -198,7 +175,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
         {trendingTag && <span className="art-card__badge">{trendingTag}</span>}
         {showTapLike && (
           <span className="art-card__like-burst" aria-hidden="true">
-            <HeartIcon />
+            <Heart {...IC} />
           </span>
         )}
       </div>
@@ -234,7 +211,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
             aria-label={isLiked ? "Unlike artwork" : "Like artwork"}
             onClick={handleLikeButtonClick}
           >
-            <HeartIcon />
+            <Heart {...IC} />
           </button>
           <span className="art-card__action-label">{isLiked ? "Saved" : "Save"}</span>
         </div>
@@ -246,7 +223,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
             aria-label="Share artwork"
             onClick={handleShare}
           >
-            <ShareIcon />
+            <Send {...IC} />
           </button>
           <span className="art-card__action-label">Share</span>
           {shareFeedback && <span className="art-card__share-feedback">{shareFeedback}</span>}
@@ -259,7 +236,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
             aria-label="View artwork details"
             onClick={trackDetail}
           >
-            <InfoIcon />
+            <Info {...IC} />
           </Link>
           <span className="art-card__action-label">Info</span>
         </div>
@@ -272,7 +249,7 @@ export function ArtCard({ art, ref }: ArtCardProps) {
             rel="noopener noreferrer"
             aria-label="Expand artwork full screen"
           >
-            <ExpandIcon />
+            <Maximize {...IC} />
           </a>
           <span className="art-card__action-label">Expand</span>
         </div>

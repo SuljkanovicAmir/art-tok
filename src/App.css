@@ -48,9 +48,8 @@
 }
 
 .art-feed__header-icon svg {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: currentColor;
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .art-feed__header-icon:hover {
@@ -445,12 +444,13 @@
 .art-card__actions {
   position: absolute;
   bottom: 6rem;
-  right: 1rem;
+  right: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.1rem;
   align-items: center;
   z-index: 4;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.45));
 }
 
 .art-card__action {
@@ -467,17 +467,19 @@
 }
 
 .art-card__action-button {
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: var(--radius-button);
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
   border: none;
   background: transparent;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   display: grid;
   place-items: center;
   transition: transform var(--duration-fast) var(--ease-glass),
     color var(--duration-normal) var(--ease-glass);
   position: relative;
+  cursor: pointer;
+  padding: 0;
 }
 
 .art-card__action-button::before {
@@ -493,8 +495,13 @@
   transform: scale(0.9);
 }
 
-.art-card__action-button.is-active {
-  color: var(--accent);
+.art-card__action-button--like.is-active {
+  color: #fe2c55;
+}
+
+.art-card__action-button--like.is-active .art-card__action-svg {
+  fill: #fe2c55;
+  stroke: #fe2c55;
 }
 
 .art-card__action-button--like:not(.is-active) {
@@ -506,9 +513,11 @@
 }
 
 .art-card__action-svg {
-  width: 1.75rem;
-  height: 1.75rem;
-  fill: currentColor;
+  width: 1.65rem;
+  height: 1.65rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
   position: relative;
   z-index: 2;
 }
@@ -976,17 +985,17 @@
   .art-card__actions {
     right: 2.1rem;
     bottom: 10rem;
-    gap: 0.6rem;
+    gap: 1rem;
   }
 
   .art-card__action-button {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.6rem;
+    height: 2.6rem;
   }
 
   .art-card__action-svg {
-    width: 1.45rem;
-    height: 1.45rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .art-card__details-grid {
@@ -1037,19 +1046,19 @@
   }
 
   .art-card__actions {
-    right: 0.65rem;
+    right: 0.5rem;
     bottom: 7rem;
-    gap: 0.4rem;
+    gap: 0.9rem;
   }
 
   .art-card__action-button {
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .art-card__action-svg {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .liked-panel {
@@ -2575,4 +2584,257 @@
 .bottom-nav__item svg {
   width: 24px;
   height: 24px;
+}
+
+/* ============================================================
+   Art of the Day — banner at top of feed scroller
+   ============================================================ */
+.aotd-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: calc(var(--feed-header-height) + 0.5rem) 1rem 0;
+  padding: 0.65rem 0.75rem;
+  background: var(--glass-l2-bg);
+  backdrop-filter: blur(var(--glass-l2-blur));
+  -webkit-backdrop-filter: blur(var(--glass-l2-blur));
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: var(--text-primary);
+  animation: glass-reveal var(--duration-slow) var(--ease-glass);
+  position: relative;
+  z-index: 10;
+  scroll-snap-align: none;
+}
+
+.aotd-banner__thumb {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.aotd-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.aotd-banner__label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.aotd-banner__title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aotd-banner__artist {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aotd-banner__close {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+
+.aotd-banner__close svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.aotd-banner__close:hover {
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   Detail Page Skeleton
+   ============================================================ */
+.detail-skel__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.detail-skel__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.04) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.detail-skel__palette {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-skel__swatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-skel__swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.detail-skel__line {
+  height: 0.85rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-skel__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.detail-skel__line--title { width: 65%; height: 1.5rem; margin-bottom: 0.4rem; }
+.detail-skel__line--artist { width: 40%; height: 0.9rem; margin-bottom: 0.3rem; }
+.detail-skel__line--bio { width: 55%; height: 0.7rem; margin-bottom: 1rem; }
+.detail-skel__line--desc { width: 90%; height: 0.8rem; }
+
+.detail-skel__tags {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.detail-skel__pill {
+  width: 70px;
+  height: 1.6rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-skel__pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.detail-skel__meta {
+  width: 100%;
+  height: 10rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-skel__meta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ============================================================
+   Image Zoom Overlay
+   ============================================================ */
+.image-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: image-zoom-in var(--duration-normal) var(--ease-glass);
+  cursor: zoom-out;
+  touch-action: pinch-zoom;
+  overflow: auto;
+}
+
+@keyframes image-zoom-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.image-zoom__close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 201;
+}
+
+.image-zoom__close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.image-zoom__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.image-zoom__img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  cursor: default;
+  border-radius: 0.25rem;
 }

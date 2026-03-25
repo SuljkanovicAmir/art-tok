@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState, useCallback } from "react";
 import { useLikedArt } from "../hooks/useLikedArt";
 import { useArtworkQuery } from "../hooks/useArtworkQuery";
 import { ColorPalette } from "../components/ColorPalette";
@@ -31,11 +32,36 @@ export default function ArtworkDetailPage() {
   if (isLoading) {
     return (
       <div className="detail-page">
-        <div className="detail-page__status">
-          <div className="detail-page__loading-dots">
-            <span /><span /><span />
+        <header className="detail-page__topbar">
+          <div className="detail-page__topbar-left">
+            <Link to="/" className="detail-page__topbar-icon" aria-label="Go back">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+            </Link>
+            <span className="detail-page__brand">ARTTOK</span>
           </div>
-          <p>Loading artwork...</p>
+        </header>
+        <div className="detail-page__content">
+          <div className="detail-skel__image" />
+          <div className="detail-skel__palette">
+            <div className="detail-skel__swatch" />
+            <div className="detail-skel__swatch" />
+            <div className="detail-skel__swatch" />
+            <div className="detail-skel__swatch" />
+            <div className="detail-skel__swatch" />
+          </div>
+          <div className="detail-skel__line detail-skel__line--title" />
+          <div className="detail-skel__line detail-skel__line--artist" />
+          <div className="detail-skel__line detail-skel__line--bio" />
+          <div className="detail-skel__line detail-skel__line--desc" />
+          <div className="detail-skel__line detail-skel__line--desc" />
+          <div className="detail-skel__tags">
+            <div className="detail-skel__pill" />
+            <div className="detail-skel__pill" />
+            <div className="detail-skel__pill" />
+          </div>
+          <div className="detail-skel__meta" />
         </div>
       </div>
     );
@@ -55,9 +81,25 @@ export default function ArtworkDetailPage() {
   return <ArtworkDetailContent art={art} />;
 }
 
+function ImageZoomOverlay({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div className="image-zoom" onClick={onClose} role="dialog" aria-label="Zoomed artwork">
+      <button className="image-zoom__close" onClick={onClose} aria-label="Close zoom">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <img className="image-zoom__img" src={src} alt={alt} onClick={(e) => e.stopPropagation()} />
+    </div>
+  );
+}
+
 function ArtworkDetailContent({ art }: { art: ArtPiece }) {
   const navigate = useNavigate();
   const { isLiked, toggleLike } = useLikedArt(artKey(art));
+  const [zoomed, setZoomed] = useState(false);
+  const handleZoom = useCallback(() => setZoomed(true), []);
+  const handleCloseZoom = useCallback(() => setZoomed(false), []);
 
   const hue = Math.abs(art.id) % 360;
   const accentStyle = {
@@ -118,16 +160,23 @@ function ArtworkDetailContent({ art }: { art: ArtPiece }) {
       </header>
 
       <div className="detail-page__content">
-        {/* Hero image */}
+        {/* Hero image — tap to zoom */}
         <div className="detail-page__image-container">
-          <a href={art.imageUrl} target="_blank" rel="noopener noreferrer">
-            <img
-              className="detail-page__image"
-              src={art.imageUrl}
-              alt={`${art.title} by ${art.artist}`}
-            />
-          </a>
+          <img
+            className="detail-page__image"
+            src={art.imageUrl}
+            alt={`${art.title} by ${art.artist}`}
+            onClick={handleZoom}
+          />
         </div>
+
+        {zoomed && (
+          <ImageZoomOverlay
+            src={art.imageUrl}
+            alt={`${art.title} by ${art.artist}`}
+            onClose={handleCloseZoom}
+          />
+        )}
 
         {/* Additional images */}
         {art.additionalImages && art.additionalImages.length > 0 && (

@@ -1,0 +1,24 @@
+{
+  "name": "ArtTok — Discover Art",
+  "short_name": "ArtTok",
+  "description": "Swipe through masterpieces from the world's greatest museums",
+  "start_url": "/art-tok/",
+  "scope": "/art-tok/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

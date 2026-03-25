@@ -1,27 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Search, RefreshCw } from "lucide-react";
 import { ArtCard } from "../components/ArtCard";
 import { useInfiniteScroll } from "../hooks/useInfiniteScroll";
 import { useFeedQuery, flattenFeedPages } from "../hooks/useFeedQuery";
-
-const RefreshIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path
-      d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 0 0-7.45 5H2l3.89 3.89h0.07L10 9H6.26A6 6 0 0 1 12 6a6 6 0 0 1 4.24 10.24l1.42 1.42A8 8 0 0 0 17.65 6.35Z"
-      fill="currentColor"
-    />
-    <path d="M12 20a8 8 0 0 0 7.45-5H22l-3.89-3.89h-0.07L14 15h3.74A6 6 0 0 1 12 18a6 6 0 0 1-4.24-10.24L6.34 6.34A8 8 0 0 0 12 20Z" fill="currentColor" />
-  </svg>
-);
-
-const SearchIcon = () => (
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path
-      d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14Z"
-      fill="currentColor"
-    />
-  </svg>
-);
+import { useArtOfTheDay, dismissArtOfTheDay } from "../hooks/useArtOfTheDay";
+import { sourceName } from "../utils/artKey";
 
 function FeedSkeleton() {
   return (
@@ -52,6 +36,9 @@ export default function FeedPage() {
     refetch,
   } = useFeedQuery();
 
+  const { data: aotd } = useArtOfTheDay();
+  const [aotdVisible, setAotdVisible] = useState(true);
+
   const artPieces = flattenFeedPages(data);
   const isInitialLoad = isLoading && !data;
   const scrollerRef = useRef<HTMLDivElement | null>(null);
@@ -64,11 +51,18 @@ export default function FeedPage() {
 
   const showEmptyState = !isLoading && !isInitialLoad && artPieces.length === 0 && !error;
 
+  const handleDismissAotd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dismissArtOfTheDay();
+    setAotdVisible(false);
+  };
+
   return (
     <div className="art-feed">
       <header className="art-feed__header">
         <Link to="/search" className="art-feed__header-icon" aria-label="Search artworks">
-          <SearchIcon />
+          <Search size={22} strokeWidth={2} />
         </Link>
         <div className="art-feed__brand">ARTTOK</div>
         <button
@@ -77,11 +71,35 @@ export default function FeedPage() {
           aria-label="Refresh feed"
           onClick={() => refetch()}
         >
-          <RefreshIcon />
+          <RefreshCw size={22} strokeWidth={2} />
         </button>
       </header>
 
       <main className="art-feed__scroller" ref={scrollerRef}>
+        {aotd && aotdVisible && (
+          <Link
+            to={`/artwork/${aotd.source}/${aotd.id}`}
+            className="aotd-banner"
+            aria-label={`Art of the Day: ${aotd.title}`}
+          >
+            <img className="aotd-banner__thumb" src={aotd.imageUrl} alt="" />
+            <div className="aotd-banner__text">
+              <span className="aotd-banner__label">Art of the Day</span>
+              <span className="aotd-banner__title">{aotd.title}</span>
+              <span className="aotd-banner__artist">{aotd.artist} · {sourceName(aotd.source)}</span>
+            </div>
+            <button
+              type="button"
+              className="aotd-banner__close"
+              onClick={handleDismissAotd}
+              aria-label="Dismiss"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </Link>
+        )}
         {artPieces.map((piece) => (
           <ArtCard key={`${piece.source}:${piece.id}`} art={piece} />
         ))}
