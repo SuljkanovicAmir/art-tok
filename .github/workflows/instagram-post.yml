@@ -2,8 +2,8 @@ name: Instagram Auto-Post
 
 on:
   schedule:
-    # 4 posts/day — optimal times for art/culture audience (UTC)
-    - cron: "0 7,12,18,1 * * *"
+    # 4 posts/day — 08:00, 12:00, 18:00, 23:00 CET (UTC+1)
+    - cron: "0 7,11,17,22 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -64,5 +64,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/instagram-poster/posted-history.json
-          git diff --staged --quiet || (git commit -m "chore: update posted history" && git push)
+          git add scripts/instagram-poster/posted-history.json scripts/instagram-poster/post-quality-log.json
+          git diff --staged --quiet || (git commit -m "chore: update posted history + quality log" && git push)

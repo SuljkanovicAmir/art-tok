@@ -24,6 +24,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { loadHistoryData, saveHistoryData, artKey } from "./lib/history.mjs";
+import { loadQualityLog, saveQualityLog, buildQualityEntry } from "./lib/quality-log.mjs";
 import { fetchSpecificArtwork, fetchRandomArtwork, fetchSeasonalArtwork, shouldPostSeasonal, getActiveSeason } from "./lib/art-fetchers.mjs";
 import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
@@ -96,6 +97,7 @@ async function createReelVideo(art) {
 // ── Main ────────────────────────────────────────────────────────────────────
 
 const HISTORY_FILE = new URL("./posted-history.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
+const QUALITY_LOG_FILE = new URL("./post-quality-log.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 
 async function main() {
   // 1. Load history data (object format, auto-migrates from array)
@@ -215,6 +217,19 @@ async function main() {
 
   // 10. Save history
   saveHistoryData(HISTORY_FILE, historyData);
+
+  // 11. Log quality metrics
+  const qualityLog = loadQualityLog(QUALITY_LOG_FILE);
+  const entry = buildQualityEntry(art, {
+    mode,
+    caption,
+    cardSizeKB: pngBuffer.length / 1024,
+    mediaId,
+    wasSeasonal,
+  });
+  qualityLog.push(entry);
+  saveQualityLog(QUALITY_LOG_FILE, qualityLog);
+  console.log(`Quality logged: metadata ${entry.metadataScore}%, caption ${entry.captionLength} chars, card ${entry.cardSizeKB} KB`);
 
   console.log("─".repeat(50));
   console.log(`Published! Media ID: ${mediaId} (${mode})`);
