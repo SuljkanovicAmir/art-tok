@@ -114,6 +114,7 @@ async function main() {
   let art;
   let pngBuffer;
   const MAX_RETRIES = 5;
+  const failedSources = new Set(); // Exclude sources whose images 403
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -126,7 +127,7 @@ async function main() {
           art = await fetchSeasonalArtwork(season, historySet);
         }
         if (!art) {
-          art = await fetchRandomArtwork(historySet);
+          art = await fetchRandomArtwork(historySet, failedSources);
         }
       }
 
@@ -139,6 +140,12 @@ async function main() {
       break;
     } catch (err) {
       console.warn(`Attempt ${attempt}/${MAX_RETRIES} failed: ${err.message}`);
+      // If image fetch returned 403, exclude this source on future retries
+      if (err.message.includes("403") && art?.source) {
+        const sourceName = art.source === "artic" ? "aic" : art.source;
+        failedSources.add(sourceName);
+        console.warn(`Excluding ${sourceName} (image 403) — remaining: ${SOURCES.filter((s) => !failedSources.has(s.name.toLowerCase())).map((s) => s.name).join(", ") || "none"}`);
+      }
       if (attempt === MAX_RETRIES || SPECIFIC_ART) throw err;
       art = null; // Reset so seasonal fallback can retry
     }
