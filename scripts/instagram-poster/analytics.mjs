@@ -12,9 +12,11 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchJson, IG_GRAPH } from "./lib/fetch.mjs";
+import { loadQualityLog } from "./lib/quality-log.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = join(__dirname, "..", "..", "docs", "analytics");
+const QUALITY_LOG_FILE = join(__dirname, "post-quality-log.json");
 const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID } = process.env;
 
 if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
@@ -175,6 +177,78 @@ async function main() {
     report += `| ${hour.padStart(2, "0")}:00 | ${data.count} | ${(data.engagement / data.count).toFixed(1)} |\n`;
   }
   report += `\n`;
+
+  // ── Quality analysis (correlate engagement with post quality metrics) ──
+  const qualityLog = loadQualityLog(QUALITY_LOG_FILE);
+  const qualityByMediaId = new Map(qualityLog.map((q) => [q.mediaId, q]));
+
+  // Match this week's posts with their quality entries
+  const matched = enriched.filter((m) => qualityByMediaId.has(m.id));
+
+  if (matched.length > 0) {
+    report += `## Post Quality Analysis\n\n`;
+
+    // Average engagement by metadata score bracket
+    const brackets = { "90-100": [], "70-89": [], "50-69": [], "0-49": [] };
+    for (const m of matched) {
+      const q = qualityByMediaId.get(m.id);
+      const score = q.metadataScore;
+      if (score >= 90) brackets["90-100"].push(m.engagement);
+      else if (score >= 70) brackets["70-89"].push(m.engagement);
+      else if (score >= 50) brackets["50-69"].push(m.engagement);
+      else brackets["0-49"].push(m.engagement);
+    }
+
+    report += `### Engagement vs Metadata Completeness\n\n`;
+    report += `| Metadata Score | Posts | Avg Engagement |\n`;
+    report += `|----------------|-------|----------------|\n`;
+    for (const [bracket, engagements] of Object.entries(brackets)) {
+      if (engagements.length === 0) continue;
+      const avg = (engagements.reduce((a, b) => a + b, 0) / engagements.length).toFixed(1);
+      report += `| ${bracket}% | ${engagements.length} | ${avg} |\n`;
+    }
+    report += `\n`;
+
+    // Flag low-quality posts (below-average engagement + low metadata)
+    const avgEngagement = enriched.length > 0
+      ? enriched.reduce((sum, m) => sum + m.engagement, 0) / enriched.length
+      : 0;
+
+    const flagged = matched.filter((m) => {
+      const q = qualityByMediaId.get(m.id);
+      return m.engagement < avgEngagement * 0.5 || q.metadataScore < 50;
+    });
+
+    if (flagged.length > 0) {
+      report += `### Flagged Posts\n\n`;
+      report += `Posts with below-average engagement or low metadata quality:\n\n`;
+      report += `| Title | Engagement | Metadata | Caption Len | Issue |\n`;
+      report += `|-------|------------|----------|-------------|-------|\n`;
+      for (const m of flagged) {
+        const q = qualityByMediaId.get(m.id);
+        const title = (m.caption || "").split("\n")[0].slice(0, 30);
+        const issues = [];
+        if (m.engagement < avgEngagement * 0.5) issues.push("low engagement");
+        if (q.metadataScore < 50) issues.push("sparse metadata");
+        if (q.captionLength > 2100) issues.push("caption near limit");
+        if (!q.metadata.hasArtist) issues.push("unknown artist");
+        if (!q.metadata.hasDescription) issues.push("no description");
+        report += `| ${title} | ${m.engagement} | ${q.metadataScore}% | ${q.captionLength} | ${issues.join(", ")} |\n`;
+      }
+      report += `\n`;
+    }
+
+    // Quality summary stats
+    const avgMeta = Math.round(matched.reduce((s, m) => s + qualityByMediaId.get(m.id).metadataScore, 0) / matched.length);
+    const avgCaption = Math.round(matched.reduce((s, m) => s + qualityByMediaId.get(m.id).captionLength, 0) / matched.length);
+    const avgCard = Math.round(matched.reduce((s, m) => s + qualityByMediaId.get(m.id).cardSizeKB, 0) / matched.length);
+
+    report += `### Quality Summary\n\n`;
+    report += `- Avg metadata score: **${avgMeta}%**\n`;
+    report += `- Avg caption length: ${avgCaption} / 2,200 chars\n`;
+    report += `- Avg card file size: ${avgCard} KB\n`;
+    report += `- Posts with quality data: ${matched.length} / ${enriched.length}\n\n`;
+  }
 
   if (!existsSync(DOCS_DIR)) mkdirSync(DOCS_DIR, { recursive: true });
   const filename = `${dateStr}-weekly.md`;
