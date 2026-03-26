@@ -61,5 +61,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-26T19:03:16.529Z",
+    "mediaId": "18069214658319833",
+    "artKey": "met:436947",
+    "source": "met",
+    "mode": "post",
+    "title": "Boating",
+    "artist": "Edouard Manet",
+    "wasSeasonal": true,
+    "captionLength": 115,
+    "cardSizeKB": 350,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
