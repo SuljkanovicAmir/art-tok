@@ -415,7 +415,9 @@ async function renderCard(art, imageUrl, preset) {
     fadeStops, titleFont, titleLineHeight, artistFont, artistGap,
     brandFont, brandBottomOffset } = preset;
 
-  const img = await fetchImage(imageUrl);
+  const img = art.imageBuffer
+    ? await loadImage(art.imageBuffer)
+    : await fetchImage(imageUrl);
   const canvas = createCanvas(w, h);
   const ctx = canvas.getContext("2d");
 

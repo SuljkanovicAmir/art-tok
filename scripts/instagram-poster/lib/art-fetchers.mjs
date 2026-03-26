@@ -1,4 +1,4 @@
-import { fetchJson, pick } from "./fetch.mjs";
+import { fetchJson, pick, probeImage } from "./fetch.mjs";
 
 // ── Art source configs ──────────────────────────────────────────────────────
 
@@ -208,19 +208,22 @@ function rotateByTime(sources) {
 }
 
 export async function fetchRandomArtwork(historySet, excludeSources = new Set()) {
-  // Filter to sources we can use (Harvard needs API key) and not excluded
   const available = SOURCES.filter((s) =>
     (!s.needsKey || HARVARD_API_KEY) && !excludeSources.has(s.name.toLowerCase()),
   );
 
   if (available.length === 0) throw new Error("All art sources excluded or unavailable");
 
-  // Try up to 10 times across all sources to find a non-duplicate
+  // Track sources whose images fail (429/403) — shared across all rounds
+  const failedImageSources = new Set();
+
   for (let round = 0; round < 10; round++) {
-    // First round: rotate by time; later rounds: shuffle
+    const usable = available.filter((s) => !failedImageSources.has(s.name.toLowerCase()));
+    if (usable.length === 0) break; // All sources image-blacklisted
+
     const ordered = round === 0
-      ? rotateByTime(available)
-      : [...available].sort(() => Math.random() - 0.5);
+      ? rotateByTime(usable)
+      : [...usable].sort(() => Math.random() - 0.5);
 
     for (const source of ordered) {
       try {
@@ -233,10 +236,20 @@ export async function fetchRandomArtwork(historySet, excludeSources = new Set())
           continue;
         }
 
+        // Probe the image before returning — this is the key change
+        const imageBuffer = await probeImage(art.imageUrl);
+        art.imageBuffer = imageBuffer;
+
         console.log(`Got: "${art.title}" by ${art.artist} [${source.name}]`);
         return art;
       } catch (err) {
-        console.warn(`${source.name} failed: ${err.message}`);
+        if (err.statusCode === 429 || err.statusCode === 403) {
+          const sourceName = source.name.toLowerCase();
+          failedImageSources.add(sourceName);
+          console.warn(`${source.name} images ${err.statusCode} — blacklisted, trying next source`);
+        } else {
+          console.warn(`${source.name} failed: ${err.message}`);
+        }
       }
     }
   }
@@ -298,10 +311,15 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
     (!s.needsKey || HARVARD_API_KEY) && !excludeSources.has(s.name.toLowerCase()),
   );
   if (available.length === 0) return null;
+
+  const failedImageSources = new Set();
   const ordered = rotateByTime(available);
 
   for (const source of ordered) {
+    if (failedImageSources.has(source.name.toLowerCase())) continue;
     try {
+      let art = null;
+
       if (source.name === "Harvard") {
         const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&hasimage=1&keyword=${encodeURIComponent(keyword)}&fields=${HARVARD_FIELDS}`;
         const data = await fetchJson(url);
@@ -311,7 +329,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
         const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
         const iiifUrl = r.images?.[0]?.iiifbaseuri;
         const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
-        const art = {
+        art = {
           id: r.objectid, title: r.title || "Untitled", artist,
           imageUrl, source: "harvard", culture: r.culture,
           dated: r.dated, classification: r.classification, medium: r.medium,
@@ -319,7 +337,6 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
           url: r.url || `https://harvardartmuseums.org/collections/object/${r.objectid}`,
           museumName: "Harvard Art Museums",
         };
-        if (!historySet.has(`${art.source}:${art.id}`)) return art;
       } else if (source.name === "Met") {
         const searchUrl = `${MET_API}/search?hasImages=true&q=${encodeURIComponent(keyword)}`;
         const searchData = await fetchJson(searchUrl);
@@ -331,7 +348,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
             const obj = await fetchJson(`${MET_API}/objects/${id}`);
             const imageUrl = obj.primaryImage || obj.primaryImageSmall;
             if (!imageUrl) continue;
-            const art = {
+            const candidate = {
               id: obj.objectID, title: obj.title || "Untitled",
               artist: obj.artistDisplayName || "Unknown artist", imageUrl, source: "met",
               culture: obj.culture, dated: obj.objectDate, classification: obj.classification,
@@ -339,7 +356,10 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
               url: obj.objectURL || `https://www.metmuseum.org/art/collection/search/${obj.objectID}`,
               museumName: "The Metropolitan Museum of Art",
             };
-            if (!historySet.has(`${art.source}:${art.id}`)) return art;
+            if (!historySet.has(`${candidate.source}:${candidate.id}`)) {
+              art = candidate;
+              break;
+            }
           } catch { continue; }
         }
       } else if (source.name === "AIC") {
@@ -348,7 +368,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
         const records = data.data?.filter((r) => r.image_id) || [];
         if (records.length === 0) continue;
         const r = pick(records);
-        const art = {
+        art = {
           id: r.id, title: r.title || "Untitled",
           artist: r.artist_display || "Unknown artist",
           imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
@@ -358,10 +378,23 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
           url: `https://www.artic.edu/artworks/${r.id}`,
           museumName: "Art Institute of Chicago",
         };
-        if (!historySet.has(`${art.source}:${art.id}`)) return art;
       }
+
+      if (!art) continue;
+      if (historySet.has(`${art.source}:${art.id}`)) continue;
+
+      // Probe image — blacklist source on 429/403
+      const imageBuffer = await probeImage(art.imageUrl);
+      art.imageBuffer = imageBuffer;
+      return art;
+
     } catch (err) {
-      console.warn(`Seasonal search (${source.name}) failed: ${err.message}`);
+      if (err.statusCode === 429 || err.statusCode === 403) {
+        failedImageSources.add(source.name.toLowerCase());
+        console.warn(`Seasonal ${source.name} images ${err.statusCode} — blacklisted, trying next`);
+      } else {
+        console.warn(`Seasonal search (${source.name}) failed: ${err.message}`);
+      }
     }
   }
 
