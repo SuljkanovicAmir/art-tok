@@ -40,9 +40,11 @@ export async function fetchHarvardRandom() {
   const r = pick(records);
   const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
 
-  // Prefer IIIF URL (ids.lib.harvard.edu) — nrs.harvard.edu rate-limits aggressively
-  const iiifUrl = r.images?.[0]?.iiifbaseuri;
-  const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
+  // Use ids.lib.harvard.edu directly via idsid — nrs.harvard.edu rate-limits aggressively
+  const idsid = r.images?.[0]?.idsid;
+  const imageUrl = idsid
+    ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+    : r.primaryimageurl;
 
   return {
     id: r.objectid,
@@ -142,8 +144,10 @@ export async function fetchSpecificArtwork(sourceId) {
     const r = await fetchJson(url);
     if (!r.primaryimageurl) throw new Error("This artwork has no image");
     const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
-    const iiifUrl = r.images?.[0]?.iiifbaseuri;
-    const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
+    const idsid = r.images?.[0]?.idsid;
+    const imageUrl = idsid
+      ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+      : r.primaryimageurl;
     return {
       id: r.objectid, title: r.title || "Untitled", artist,
       imageUrl, source: "harvard", culture: r.culture,
@@ -327,8 +331,10 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
         if (records.length === 0) continue;
         const r = pick(records);
         const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
-        const iiifUrl = r.images?.[0]?.iiifbaseuri;
-        const imageUrl = iiifUrl ? `${iiifUrl}/full/843,/0/default.jpg` : r.primaryimageurl;
+        const idsid = r.images?.[0]?.idsid;
+        const imageUrl = idsid
+          ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+          : r.primaryimageurl;
         art = {
           id: r.objectid, title: r.title || "Untitled", artist,
           imageUrl, source: "harvard", culture: r.culture,
