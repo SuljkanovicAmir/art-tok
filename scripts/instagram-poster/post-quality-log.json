@@ -82,5 +82,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-26T22:36:12.475Z",
+    "mediaId": "18099562966982153",
+    "artKey": "met:437654",
+    "source": "met",
+    "mode": "post",
+    "title": "Circus Sideshow (Parade de cirque)",
+    "artist": "Georges Seurat",
+    "wasSeasonal": true,
+    "captionLength": 146,
+    "cardSizeKB": 458,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
