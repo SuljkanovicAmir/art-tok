@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-03-26T10:01:34.799Z",
+    "mediaId": "18085728482352952",
+    "artKey": "met:252890",
+    "source": "met",
+    "mode": "post",
+    "title": "Marble grave stele of a little girl",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 141,
+    "cardSizeKB": 291,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
+  }
+]
