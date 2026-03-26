@@ -40,5 +40,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-26T19:01:19.542Z",
+    "mediaId": "18070113254313881",
+    "artKey": "met:591830",
+    "source": "met",
+    "mode": "reel",
+    "title": "Architectura Curiosa Nova: Das ist, neue ergotzliche Sinn und Kunstreiche auch nutzliche Bau- und Wasser-Kunst . . .",
+    "artist": "Georg Andreas Böckler",
+    "wasSeasonal": true,
+    "captionLength": 218,
+    "cardSizeKB": 709,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
