@@ -1,0 +1,81 @@
+name: Test Image Servers
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test image server endpoints
+        env:
+          HARVARD_API_KEY: ${{ secrets.HARVARD_API_KEY }}
+        run: |
+          echo "=== Runner IP ==="
+          curl -s https://api.ipify.org
+          echo ""
+          echo ""
+
+          echo "=== 1. Harvard ids.lib.harvard.edu (new, should work) ==="
+          for i in 1 2 3 4 5; do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+              "https://ids.lib.harvard.edu/ids/iiif/47174896/full/843,/0/default.jpg" \
+              -H "User-Agent: Mozilla/5.0")
+            echo "  Request $i: HTTP $CODE"
+          done
+
+          echo ""
+          echo "=== 2. Harvard nrs.harvard.edu (old, likely 429) ==="
+          for i in 1 2 3; do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" -L \
+              "https://nrs.harvard.edu/urn-3:HUAM:DDC251942_dynmc/full/843,/0/default.jpg" \
+              -H "User-Agent: Mozilla/5.0")
+            echo "  Request $i: HTTP $CODE"
+          done
+
+          echo ""
+          echo "=== 3. AIC with Referer (should work) ==="
+          for i in 1 2 3 4 5; do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+              "https://www.artic.edu/iiif/2/e966799b-97ee-1cc6-bd2f-a94b4b8bb8f9/full/843,/0/default.jpg" \
+              -H "Referer: https://www.artic.edu/" \
+              -H "User-Agent: Mozilla/5.0")
+            echo "  Request $i: HTTP $CODE"
+          done
+
+          echo ""
+          echo "=== 4. AIC without Referer (should 403) ==="
+          CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://www.artic.edu/iiif/2/e966799b-97ee-1cc6-bd2f-a94b4b8bb8f9/full/843,/0/default.jpg" \
+            -H "User-Agent: Mozilla/5.0")
+          echo "  HTTP $CODE"
+
+          echo ""
+          echo "=== 5. Met Museum (should always work) ==="
+          for i in 1 2 3; do
+            CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+              "https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg" \
+              -H "User-Agent: Mozilla/5.0")
+            echo "  Request $i: HTTP $CODE"
+          done
+
+          echo ""
+          echo "=== 6. Harvard API fetch + ids.lib image (end-to-end) ==="
+          RESPONSE=$(curl -s "https://api.harvardartmuseums.org/object?apikey=${HARVARD_API_KEY}&size=3&hasimage=1&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=objectid,images,title")
+          echo "$RESPONSE" | node -e "
+            process.stdin.setEncoding('utf8');
+            let d='';
+            process.stdin.on('data',c=>d+=c);
+            process.stdin.on('end', async ()=>{
+              const data = JSON.parse(d);
+              for (const r of data.records) {
+                const idsid = r.images?.[0]?.idsid;
+                const title = r.title?.slice(0,40);
+                if (!idsid) { console.log('  ' + title + ': NO idsid!'); continue; }
+                const url = 'https://ids.lib.harvard.edu/ids/iiif/' + idsid + '/full/843,/0/default.jpg';
+                const res = await fetch(url, {headers:{'User-Agent':'Mozilla/5.0'}});
+                console.log('  ' + title + ': HTTP ' + res.status + ' (' + idsid + ')');
+              }
+            });
+          "
+
+          echo ""
+          echo "=== Done ==="
