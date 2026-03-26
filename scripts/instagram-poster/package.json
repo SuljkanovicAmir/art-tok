@@ -6,7 +6,8 @@
   "scripts": {
     "post": "node post.mjs",
     "post:story": "node post.mjs --story",
-    "post:dry-run": "node post.mjs --dry-run"
+    "post:dry-run": "node post.mjs --dry-run",
+    "test": "node --test tests/fallback.test.mjs"
   },
   "dependencies": {
     "canvas": "^3.1.0",

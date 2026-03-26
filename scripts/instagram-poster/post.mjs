@@ -115,33 +115,30 @@ async function main() {
   console.log("─".repeat(50));
   console.log(`History: ${historySet.size} previously posted artworks (run #${historyData.runIndex})`);
 
-  // 3. Fetch artwork with seasonal check + retry loop
+  // 3. Fetch artwork with retry loop
   let art;
   let pngBuffer;
-  const MAX_RETRIES = 5;
-  const failedSources = new Set(); // Exclude sources whose images 403
+  const MAX_RETRIES = 3;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
       if (SPECIFIC_ART) {
         art = await fetchSpecificArtwork(SPECIFIC_ART);
       } else if (IS_SEASONAL) {
-        // Force seasonal content (use active season or fall back to nearest)
         const season = getActiveSeason() || { key: "on-demand", keywords: ["spring", "flowers", "landscape", "garden", "nature"] };
         console.log(`Seasonal (forced): ${season.key}`);
-        art = await fetchSeasonalArtwork(season, historySet, failedSources);
+        art = await fetchSeasonalArtwork(season, historySet);
         if (!art) {
           console.warn("No seasonal artwork found — falling back to random");
-          art = await fetchRandomArtwork(historySet, failedSources);
+          art = await fetchRandomArtwork(historySet);
         }
       } else {
-        // Check for seasonal content
         const season = shouldPostSeasonal(historyData);
         if (season) {
-          art = await fetchSeasonalArtwork(season, historySet, failedSources);
+          art = await fetchSeasonalArtwork(season, historySet);
         }
         if (!art) {
-          art = await fetchRandomArtwork(historySet, failedSources);
+          art = await fetchRandomArtwork(historySet);
         }
       }
 
@@ -154,14 +151,8 @@ async function main() {
       break;
     } catch (err) {
       console.warn(`Attempt ${attempt}/${MAX_RETRIES} failed: ${err.message}`);
-      // If image fetch returned 403, exclude this source on future retries
-      if (err.message.includes("403") && art?.source) {
-        const sourceName = art.source === "artic" ? "aic" : art.source;
-        failedSources.add(sourceName);
-        console.warn(`Excluding ${sourceName} (image 403) — ${failedSources.size} source(s) excluded`);
-      }
       if (attempt === MAX_RETRIES || SPECIFIC_ART) throw err;
-      art = null; // Reset so seasonal fallback can retry
+      art = null;
     }
   }
 
