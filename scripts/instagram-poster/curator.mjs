@@ -122,7 +122,13 @@ async function main() {
   let oilCount = cache.filter((e) => /oil/i.test(e.medium || "")).length;
 
   for (const { name, source, fn, totalPages } of SOURCES) {
-    console.log(`\n\u2500\u2500 ${name} \u2500\u2500`);
+    // Skip source if it already has enough entries in cache
+    const existingForSource = cache.filter((e) => e.source === source).length;
+    if (existingForSource >= TARGET_PER_SOURCE) {
+      console.log(`\n\u2500\u2500 ${name} \u2500\u2500 (skipped, already ${existingForSource} cached)`);
+      continue;
+    }
+    console.log(`\n\u2500\u2500 ${name} (${existingForSource} existing, need ${TARGET_PER_SOURCE - existingForSource} more) \u2500\u2500`);
     let sourceAdded = 0;
     const pages = shuffledPages(totalPages);
     let pageIdx = 0;
