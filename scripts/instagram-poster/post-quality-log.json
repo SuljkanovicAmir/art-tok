@@ -145,5 +145,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-27T17:53:21.430Z",
+    "mediaId": "18105872650694690",
+    "artKey": "met:436579",
+    "source": "met",
+    "mode": "post",
+    "title": "Broken Eggs",
+    "artist": "Jean-Baptiste Greuze",
+    "wasSeasonal": true,
+    "captionLength": 126,
+    "cardSizeKB": 327,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
