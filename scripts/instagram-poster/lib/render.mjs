@@ -176,8 +176,8 @@ function extractPalette(img, count = 5) {
       else if (max === gf) h = ((bf - rf) / d + 2) / 6;
       else h = ((rf - gf) / d + 4) / 6;
     }
-    const boostedS = Math.min(s * 1.2, 0.85);
-    const boostedL = Math.min(l + (1 - l) * 0.1, 0.85);
+    const boostedS = Math.min(s * 1.5, 0.9);
+    const boostedL = Math.min(l + (1 - l) * 0.05, 0.85);
 
     const hue2rgb = (p, q, t) => {
       if (t < 0) t += 1; if (t > 1) t -= 1;
@@ -304,7 +304,7 @@ function applyPaperTexture(ctx, rng, w, h) {
   const img = tx.createImageData(tw, th);
 
   for (let i = 0; i < img.data.length; i += 4) {
-    const noise = 215 + rng() * 40;
+    const noise = 195 + rng() * 50;
     img.data[i] = noise;
     img.data[i + 1] = noise - 2;
     img.data[i + 2] = noise - 5;
@@ -314,7 +314,7 @@ function applyPaperTexture(ctx, rng, w, h) {
 
   ctx.save();
   ctx.globalCompositeOperation = "multiply";
-  ctx.globalAlpha = 0.6;
+  ctx.globalAlpha = 0.5;
   ctx.imageSmoothingEnabled = true;
   ctx.drawImage(tc, 0, 0, w, h);
   ctx.restore();
@@ -335,14 +335,14 @@ function drawWatercolorBackground(ctx, seed, w, h, imagePalette) {
   for (let i = 0; i < washCount; i++) {
     washes.push({
       cx: rng() * w, cy: rng() * h,
-      rx: 200 + rng() * 350, ry: 200 + rng() * 350,
+      rx: 240 + rng() * 380, ry: 240 + rng() * 380,
       color: palette[Math.floor(rng() * palette.length)],
     });
   }
 
   for (const ws of washes) {
     const poly = basePolygon(ws.cx, ws.cy, ws.rx, ws.ry, 12, rng);
-    watercolorWash(ctx, poly, ws.color, rng, 60, 0.018);
+    watercolorWash(ctx, poly, ws.color, rng, 60, 0.022);
   }
 
   for (let i = 0; i < washes.length; i++) {
@@ -352,7 +352,7 @@ function drawWatercolorBackground(ctx, seed, w, h, imagePalette) {
     const blendCy = (a.cy + b.cy) / 2 + (rng() - 0.5) * 200;
     const blendR = 120 + rng() * 180;
     const poly = basePolygon(blendCx, blendCy, blendR, blendR * (0.6 + rng() * 0.8), 10, rng);
-    watercolorWash(ctx, poly, rng() > 0.5 ? a.color : b.color, rng, 35, 0.014);
+    watercolorWash(ctx, poly, rng() > 0.5 ? a.color : b.color, rng, 35, 0.018);
   }
 
   for (let i = 0; i < 3; i++) {
@@ -407,6 +407,18 @@ const CARD_PRESETS = {
     artistGap: 8,
     brandFont: 'italic 800 26px "Georgia", "Liberation Serif", serif',
     brandBottomOffset: 60,
+  },
+  reel: {
+    w: STORY_W, h: STORY_H,
+    padding: 120, captionHeight: 220, captionGap: 44,
+    shadowBlur: 32, shadowOffsetY: 8,
+    fadeStops: [0, 0.15, 0.4, 1],
+    titleFont: 'italic 42px "Georgia", "Liberation Serif", "Times New Roman", serif',
+    titleLineHeight: 54,
+    artistFont: '300 28px "Liberation Sans", "Helvetica Neue", Arial, sans-serif',
+    artistGap: 8,
+    brandFont: 'italic 800 26px "Georgia", "Liberation Serif", serif',
+    brandBottomOffset: 64,
   },
 };
 
@@ -494,4 +506,11 @@ export async function renderPostCard(art, imageUrl) {
  */
 export async function renderStoryCard(art, imageUrl) {
   return renderCard(art, imageUrl, CARD_PRESETS.story);
+}
+
+/**
+ * Render a 1080x1920 Instagram reel card (more padding than story for smaller art image).
+ */
+export async function renderReelCard(art, imageUrl) {
+  return renderCard(art, imageUrl, CARD_PRESETS.reel);
 }

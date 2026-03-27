@@ -37,10 +37,11 @@ async function getRecentMedia(limit = 50) {
   return data.data || [];
 }
 
-async function getMediaInsights(mediaId) {
+async function getMediaInsights(mediaId, mediaType) {
+  const extra = mediaType === "VIDEO" ? ",plays" : ",impressions";
   try {
     const data = await fetchJson(
-      `${IG_GRAPH}/${mediaId}/insights?metric=reach,impressions,saved,shares&access_token=${INSTAGRAM_ACCESS_TOKEN}`,
+      `${IG_GRAPH}/${mediaId}/insights?metric=reach${extra},saved,shares&access_token=${INSTAGRAM_ACCESS_TOKEN}`,
     );
     const metrics = {};
     for (const m of data.data || []) {
@@ -50,7 +51,7 @@ async function getMediaInsights(mediaId) {
   } catch {
     try {
       const data = await fetchJson(
-        `${IG_GRAPH}/${mediaId}/insights?metric=reach,plays,saved,shares&access_token=${INSTAGRAM_ACCESS_TOKEN}`,
+        `${IG_GRAPH}/${mediaId}/insights?metric=reach,saved,shares&access_token=${INSTAGRAM_ACCESS_TOKEN}`,
       );
       const metrics = {};
       for (const m of data.data || []) {
@@ -96,7 +97,7 @@ async function main() {
   const thisWeek = media.filter((m) => new Date(m.timestamp) >= weekAgo);
   console.log(`Posts this week: ${thisWeek.length}`);
 
-  const insightsArr = await Promise.all(thisWeek.map((m) => getMediaInsights(m.id)));
+  const insightsArr = await Promise.all(thisWeek.map((m) => getMediaInsights(m.id, m.media_type)));
   const enriched = thisWeek.map((m, i) => {
     const insights = insightsArr[i];
     return {

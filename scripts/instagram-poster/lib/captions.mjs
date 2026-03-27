@@ -1,16 +1,24 @@
 const CORE_TAGS = ["#arttok", "#fineart", "#arthistory"];
 
 const ROTATING_TAGS = [
-  "#classicalart", "#museumlife", "#masterpiece", "#artdiscovery",
-  "#paintingoftheday", "#artappreciation", "#artcollector", "#fineartphotography",
-  "#artgallery", "#culturalheritage", "#artistsoninstagram", "#artworld",
-  "#arthistorynerd", "#classicalmasterpiece", "#museumlover", "#oilpaintingart",
-  "#artcurator", "#dailyart", "#arteducation", "#artlovers",
-  "#renaissanceart", "#impressionism", "#baroqueart", "#modernart",
-  "#artmuseum", "#contemporaryart", "#europeanart", "#portraitpainting",
-  "#landscapepainting", "#artoftheday", "#instaart", "#artexhibition",
-  "#gallerywall", "#oldmasters", "#fineartfriday", "#artcommunity",
-  "#artinspiration", "#worldofart", "#artdaily", "#artlover",
+  // Museum & gallery (on-brand core)
+  "#museumlife", "#museumlover", "#artmuseum", "#museumcollection",
+  "#museumvisit", "#museumsoftheworld", "#museumfromhome",
+  // Art history & education
+  "#arthistorynerd", "#arteducation", "#arthistorian", "#historyofart",
+  "#arthistory101", "#culturalheritage",
+  // Classical & period art
+  "#classicalart", "#classicalmasterpiece", "#oldmasters",
+  "#renaissanceart", "#baroqueart", "#impressionism", "#europeanart",
+  // Technique & medium
+  "#oilpaintingart", "#masterpiece", "#paintingoftheday",
+  "#portraitpainting", "#figurativeart",
+  // Curatorial & appreciation
+  "#artcurator", "#artappreciation", "#artdiscovery",
+  "#fineartfriday", "#artexhibition",
+  // Niche discovery (high engagement, low competition)
+  "#artdetail", "#closerlookatart", "#museumart", "#classicalpainting",
+  "#artfromthemuseums", "#askacurator", "#museumselfie", "#permanentcollection",
 ];
 
 const MOVEMENT_TAGS = {
@@ -19,6 +27,7 @@ const MOVEMENT_TAGS = {
   sculpture: "#sculpture", photograph: "#photography",
   print: "#printmaking", drawing: "#drawing",
   ceramic: "#ceramics", textile: "#textileart",
+  fresco: "#fresco", mosaic: "#mosaicart", engraving: "#engraving",
 };
 
 const MUSEUM_TAGS = {

@@ -32,7 +32,7 @@ import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
 import { publishToInstagram, postFirstComment, publishReel, publishAutoStory } from "./lib/instagram-api.mjs";
 import { buildCaption, buildHashtags, buildAltText } from "./lib/captions.mjs";
-import { renderPostCard, renderStoryCard } from "./lib/render.mjs";
+import { renderPostCard, renderStoryCard, renderReelCard } from "./lib/render.mjs";
 import { pick } from "./lib/fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -49,7 +49,7 @@ const SPECIFIC_ART = ART_ARG ? ART_ARG.replace("--art=", "") : null; // e.g. "ha
 
 // ── Mode cycle ──────────────────────────────────────────────────────────────
 
-const MODE_CYCLE = ["post", "post", "reel", "post"];
+const MODE_CYCLE = ["post", "post", "post", "post", "post", "post", "post", "post", "post", "reel"];
 
 function getRunMode(historyData) {
   if (IS_STORY) return "story";
@@ -143,8 +143,8 @@ async function main() {
       }
 
       // Render appropriate card
-      const isStoryRender = mode === "story" || mode === "reel";
-      const renderFn = isStoryRender ? renderStoryCard : renderPostCard;
+      const renderFn = mode === "reel" ? renderReelCard
+        : mode === "story" ? renderStoryCard : renderPostCard;
       console.log(`Rendering ${mode} card...`);
       pngBuffer = await renderFn(art, art.imageUrl);
       console.log(`Card rendered: ${(pngBuffer.length / 1024).toFixed(0)} KB`);
@@ -217,10 +217,8 @@ async function main() {
   }
 
   // 8. Publish auto-story (not if already a story)
-  //    Reels already have a story-sized card (1080x1920) — reuse it
   if (mode !== "story") {
-    const storyCard = mode === "reel" ? pngBuffer : null;
-    await publishAutoStory(token, art, storyCard);
+    await publishAutoStory(token, art, null);
   }
 
   // 9. Update history
