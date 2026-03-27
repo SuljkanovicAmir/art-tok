@@ -25,14 +25,14 @@ const { HARVARD_API_KEY } = process.env;
 export async function fetchHarvardRandom() {
   if (!HARVARD_API_KEY) throw new Error("HARVARD_API_KEY not set");
 
-  // First get total count
-  const countUrl = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=1&hasimage=1&q=verificationlevel:4&fields=objectid`;
+  // First get total count (paintings only)
+  const countUrl = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=1&hasimage=1&classification=Paintings&q=verificationlevel:4&fields=objectid`;
   const countData = await fetchJson(countUrl);
   const totalPages = Math.min(countData.info.pages, 200);
 
   // Random page
   const page = Math.floor(Math.random() * totalPages) + 1;
-  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${page}&hasimage=1&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=${HARVARD_FIELDS}`;
+  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${page}&hasimage=1&classification=Paintings&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=${HARVARD_FIELDS}`;
   const data = await fetchJson(url);
 
   const records = data.records.filter((r) => r.primaryimageurl);
@@ -66,18 +66,19 @@ export async function fetchHarvardRandom() {
 // ── Met: random from highlights ─────────────────────────────────────────────
 
 export async function fetchMetRandom() {
-  const searchUrl = `${MET_API}/search?hasImages=true&isHighlight=true&q=*`;
+  const searchUrl = `${MET_API}/search?hasImages=true&isHighlight=true&q=painting`;
   const data = await fetchJson(searchUrl);
   const ids = data.objectIDs;
-  if (!ids || ids.length === 0) throw new Error("No Met highlights found");
+  if (!ids || ids.length === 0) throw new Error("No Met painting highlights found");
 
-  // Try up to 5 random picks (some objects may lack images)
-  for (let attempt = 0; attempt < 5; attempt++) {
+  // Try up to 10 random picks (filter to Paintings classification)
+  for (let attempt = 0; attempt < 10; attempt++) {
     const id = pick(ids);
     try {
       const obj = await fetchJson(`${MET_API}/objects/${id}`);
       const imageUrl = obj.primaryImage || obj.primaryImageSmall;
       if (!imageUrl) continue;
+      if (obj.classification !== "Paintings") continue;
 
       return {
         id: obj.objectID,
@@ -102,17 +103,18 @@ export async function fetchMetRandom() {
 // ── AIC: random from search ────────────────────────────────────────────────
 
 export async function fetchAicRandom() {
-  // Get total, pick random page (AIC returns 403 on deep pages, cap at 100)
-  const countUrl = `${AIC_API}/artworks/search?q=*&limit=1&fields=id`;
+  // Get total paintings, pick random page (AIC returns 403 on deep pages, cap at 100)
+  const PAINTING_TYPES = new Set(["painting", "oil on canvas", "oil on panel", "oil paintings (visual works)"]);
+  const countUrl = `${AIC_API}/artworks/search?q=painting&limit=1&fields=id`;
   const countData = await fetchJson(countUrl);
   const totalPages = Math.min(countData.pagination.total_pages, 100);
 
   const page = Math.floor(Math.random() * totalPages) + 1;
-  const url = `${AIC_API}/artworks/search?q=*&page=${page}&limit=10&fields=${AIC_FIELDS}`;
+  const url = `${AIC_API}/artworks/search?q=painting&page=${page}&limit=10&fields=${AIC_FIELDS}`;
   const data = await fetchJson(url);
 
-  const records = data.data.filter((r) => r.image_id);
-  if (records.length === 0) throw new Error("No AIC artworks with images on this page");
+  const records = data.data.filter((r) => r.image_id && PAINTING_TYPES.has(r.classification_title?.toLowerCase()));
+  if (records.length === 0) throw new Error("No AIC paintings with images on this page");
 
   const r = pick(records);
   return {
@@ -362,7 +364,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
       let art = null;
 
       if (source.name === "Harvard") {
-        const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&hasimage=1&keyword=${encodeURIComponent(keyword)}&fields=${HARVARD_FIELDS}`;
+        const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&hasimage=1&classification=Paintings&keyword=${encodeURIComponent(keyword)}&fields=${HARVARD_FIELDS}`;
         const data = await fetchJson(url);
         const records = data.records?.filter((r) => r.primaryimageurl) || [];
         if (records.length === 0) continue;
@@ -391,6 +393,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
             const obj = await fetchJson(`${MET_API}/objects/${id}`);
             const imageUrl = obj.primaryImage || obj.primaryImageSmall;
             if (!imageUrl) continue;
+            if (obj.classification !== "Paintings") continue;
             const candidate = {
               id: obj.objectID, title: obj.title || "Untitled",
               artist: obj.artistDisplayName || "Unknown artist", imageUrl, source: "met",
@@ -406,9 +409,10 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
           } catch { continue; }
         }
       } else if (source.name === "AIC") {
-        const url = `${AIC_API}/artworks/search?q=${encodeURIComponent(keyword)}&limit=10&fields=${AIC_FIELDS}`;
+        const PAINTING_TYPES = new Set(["painting", "oil on canvas", "oil on panel", "oil paintings (visual works)"]);
+        const url = `${AIC_API}/artworks/search?q=${encodeURIComponent(keyword + " painting")}&limit=10&fields=${AIC_FIELDS}`;
         const data = await fetchJson(url);
-        const records = data.data?.filter((r) => r.image_id) || [];
+        const records = data.data?.filter((r) => r.image_id && PAINTING_TYPES.has(r.classification_title?.toLowerCase())) || [];
         if (records.length === 0) continue;
         const r = pick(records);
         art = {
