@@ -37,7 +37,7 @@ const { HARVARD_API_KEY } = process.env;
 
 // ── Harvard: random page from top-viewed works ──────────────────────────────
 
-export async function fetchHarvardRandom() {
+export async function fetchHarvardRandom({ page } = {}) {
   if (!HARVARD_API_KEY) throw new Error("HARVARD_API_KEY not set");
 
   // First get total count (paintings only)
@@ -45,9 +45,9 @@ export async function fetchHarvardRandom() {
   const countData = await fetchJson(countUrl);
   const totalPages = Math.min(countData.info.pages, 200);
 
-  // Random page
-  const page = Math.floor(Math.random() * totalPages) + 1;
-  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${page}&hasimage=1&classification=Paintings&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=${HARVARD_FIELDS}`;
+  // Use provided page or pick random
+  const p = page || Math.floor(Math.random() * totalPages) + 1;
+  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${p}&hasimage=1&classification=Paintings&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=${HARVARD_FIELDS}`;
   const data = await fetchJson(url);
 
   const records = data.records.filter((r) => r.primaryimageurl);
@@ -117,14 +117,14 @@ export async function fetchMetRandom() {
 
 // ── AIC: random from search ────────────────────────────────────────────────
 
-export async function fetchAicRandom() {
+export async function fetchAicRandom({ page } = {}) {
   // Get total paintings, pick random page (AIC returns 403 on deep pages, cap at 100)
   const countUrl = `${AIC_API}/artworks/search?q=painting&limit=1&fields=id`;
   const countData = await fetchJson(countUrl);
   const totalPages = Math.min(countData.pagination.total_pages, 100);
 
-  const page = Math.floor(Math.random() * totalPages) + 1;
-  const url = `${AIC_API}/artworks/search?q=painting&page=${page}&limit=10&fields=${AIC_FIELDS}`;
+  const p = page || Math.floor(Math.random() * totalPages) + 1;
+  const url = `${AIC_API}/artworks/search?q=painting&page=${p}&limit=10&fields=${AIC_FIELDS}`;
   const data = await fetchJson(url);
 
   const records = data.data.filter((r) => r.image_id && isPainting(r.classification_title, r.medium_display));

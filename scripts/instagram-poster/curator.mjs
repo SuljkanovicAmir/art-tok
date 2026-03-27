@@ -87,9 +87,19 @@ if (args[0] === "--cleanup") {
 const TARGET_PER_SOURCE = 100;
 
 const SOURCES = [
-  { name: "Harvard", source: "harvard", fn: fetchHarvardRandom },
-  { name: "AIC", source: "artic", fn: fetchAicRandom },
+  { name: "Harvard", source: "harvard", fn: fetchHarvardRandom, totalPages: 187 },
+  { name: "AIC", source: "artic", fn: fetchAicRandom, totalPages: 100 },
 ];
+
+/** Generate a shuffled array of page numbers 1..n */
+function shuffledPages(n) {
+  const pages = Array.from({ length: n }, (_, i) => i + 1);
+  for (let i = pages.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pages[i], pages[j]] = [pages[j], pages[i]];
+  }
+  return pages;
+}
 
 async function main() {
   const cache = loadCache();
@@ -107,17 +117,32 @@ async function main() {
   let added = 0;
   let failed = 0;
 
-  for (const { name, source, fn } of SOURCES) {
+  // Medium diversity: cap oil at 50% of total target
+  const OIL_CAP = Math.floor(TARGET_PER_SOURCE * SOURCES.length * 0.5);
+  let oilCount = cache.filter((e) => /oil/i.test(e.medium || "")).length;
+
+  for (const { name, source, fn, totalPages } of SOURCES) {
     console.log(`\n\u2500\u2500 ${name} \u2500\u2500`);
     let sourceAdded = 0;
+    const pages = shuffledPages(totalPages);
+    let pageIdx = 0;
 
     for (let attempt = 0; attempt < TARGET_PER_SOURCE * 3 && sourceAdded < TARGET_PER_SOURCE; attempt++) {
       try {
-        const art = await fn();
+        // Cycle through shuffled pages — each call hits a unique page
+        const page = pages[pageIdx % pages.length];
+        pageIdx++;
+        const art = await fn({ page });
         const key = artKey(art);
 
         // Skip if already cached or posted
         if (cacheKeys.has(key) || historySet.has(key)) {
+          continue;
+        }
+
+        // Enforce oil diversity cap (50%)
+        const isOil = /oil/i.test(art.medium || "");
+        if (isOil && oilCount >= OIL_CAP) {
           continue;
         }
 
@@ -210,7 +235,9 @@ async function main() {
 
         sourceAdded++;
         added++;
-        console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist}`);
+        if (isOil) oilCount++;
+        const mediumTag = isOil ? "oil" : (art.medium || "").slice(0, 20);
+        console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist} (${mediumTag})`);
       } catch (err) {
         console.warn(`  Failed: ${err.message}`);
         failed++;
@@ -226,6 +253,8 @@ async function main() {
 
   const stats = getCacheStats(cache, historySet);
   console.log(`Available: ${stats.available}`);
+  const totalOil = cache.filter((e) => /oil/i.test(e.medium || "")).length;
+  console.log(`Oil paintings: ${totalOil}/${cache.length} (${(totalOil / cache.length * 100).toFixed(0)}%, cap: 50%)`);
 }
 
 main().catch((err) => {
