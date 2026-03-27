@@ -244,9 +244,14 @@ async function main() {
         if (isOil) oilCount++;
         const mediumTag = isOil ? "oil" : (art.medium || "").slice(0, 20);
         console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist} (${mediumTag})`);
+
+        // Delay between fetches to avoid rate limiting
+        await new Promise((r) => setTimeout(r, 1500));
       } catch (err) {
         console.warn(`  Failed: ${err.message}`);
         failed++;
+        // Longer delay after failure (rate limit recovery)
+        await new Promise((r) => setTimeout(r, 3000));
       }
     }
 
