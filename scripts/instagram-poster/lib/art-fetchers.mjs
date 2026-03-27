@@ -1,6 +1,21 @@
 import { fetchJson, pick, probeImage } from "./fetch.mjs";
 import { loadCache, pickCached } from "./cache.mjs";
 
+// ── Painting detection ──────────────────────────────────────────────────────
+
+const PAINTING_MEDIA = /oil|acrylic|tempera|watercolor|watercolour|gouache|fresco|encaustic|pastel/i;
+const PAINTING_CLASSIFICATIONS = /^paintings/i;
+
+/**
+ * Check if an artwork is a painting by classification or medium.
+ * Works across all 3 APIs despite different classification schemes.
+ */
+function isPainting(classification, medium) {
+  if (PAINTING_CLASSIFICATIONS.test(classification || "")) return true;
+  if (PAINTING_MEDIA.test(medium || "")) return true;
+  return false;
+}
+
 // ── Art source configs ──────────────────────────────────────────────────────
 
 const HARVARD_API = "https://api.harvardartmuseums.org/object";
@@ -71,14 +86,14 @@ export async function fetchMetRandom() {
   const ids = data.objectIDs;
   if (!ids || ids.length === 0) throw new Error("No Met painting highlights found");
 
-  // Try up to 10 random picks (filter to Paintings classification)
+  // Try up to 10 random picks (filter to paintings by classification or medium)
   for (let attempt = 0; attempt < 10; attempt++) {
     const id = pick(ids);
     try {
       const obj = await fetchJson(`${MET_API}/objects/${id}`);
       const imageUrl = obj.primaryImage || obj.primaryImageSmall;
       if (!imageUrl) continue;
-      if (obj.classification !== "Paintings") continue;
+      if (!isPainting(obj.classification, obj.medium)) continue;
 
       return {
         id: obj.objectID,
@@ -104,7 +119,6 @@ export async function fetchMetRandom() {
 
 export async function fetchAicRandom() {
   // Get total paintings, pick random page (AIC returns 403 on deep pages, cap at 100)
-  const PAINTING_TYPES = new Set(["painting", "oil on canvas", "oil on panel", "oil paintings (visual works)"]);
   const countUrl = `${AIC_API}/artworks/search?q=painting&limit=1&fields=id`;
   const countData = await fetchJson(countUrl);
   const totalPages = Math.min(countData.pagination.total_pages, 100);
@@ -113,7 +127,7 @@ export async function fetchAicRandom() {
   const url = `${AIC_API}/artworks/search?q=painting&page=${page}&limit=10&fields=${AIC_FIELDS}`;
   const data = await fetchJson(url);
 
-  const records = data.data.filter((r) => r.image_id && PAINTING_TYPES.has(r.classification_title?.toLowerCase()));
+  const records = data.data.filter((r) => r.image_id && isPainting(r.classification_title, r.medium_display));
   if (records.length === 0) throw new Error("No AIC paintings with images on this page");
 
   const r = pick(records);
@@ -393,7 +407,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
             const obj = await fetchJson(`${MET_API}/objects/${id}`);
             const imageUrl = obj.primaryImage || obj.primaryImageSmall;
             if (!imageUrl) continue;
-            if (obj.classification !== "Paintings") continue;
+            if (!isPainting(obj.classification, obj.medium)) continue;
             const candidate = {
               id: obj.objectID, title: obj.title || "Untitled",
               artist: obj.artistDisplayName || "Unknown artist", imageUrl, source: "met",
@@ -409,10 +423,9 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
           } catch { continue; }
         }
       } else if (source.name === "AIC") {
-        const PAINTING_TYPES = new Set(["painting", "oil on canvas", "oil on panel", "oil paintings (visual works)"]);
         const url = `${AIC_API}/artworks/search?q=${encodeURIComponent(keyword + " painting")}&limit=10&fields=${AIC_FIELDS}`;
         const data = await fetchJson(url);
-        const records = data.data?.filter((r) => r.image_id && PAINTING_TYPES.has(r.classification_title?.toLowerCase())) || [];
+        const records = data.data?.filter((r) => r.image_id && isPainting(r.classification_title, r.medium_display)) || [];
         if (records.length === 0) continue;
         const r = pick(records);
         art = {
