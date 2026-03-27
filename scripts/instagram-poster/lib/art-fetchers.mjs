@@ -1,4 +1,5 @@
 import { fetchJson, pick, probeImage } from "./fetch.mjs";
+import { loadCache, pickCached } from "./cache.mjs";
 
 // ── Art source configs ──────────────────────────────────────────────────────
 
@@ -211,12 +212,41 @@ function rotateByTime(sources) {
   return [...sources.slice(offset), ...sources.slice(0, offset)];
 }
 
+/**
+ * Try to get artwork from Dropbox image cache (for Harvard/AIC in CI).
+ * Returns art with imageBuffer, or null if cache empty/fetch fails.
+ */
+async function fetchFromCache(sourceName, historySet) {
+  try {
+    const cache = loadCache();
+    const sourceKey = sourceName === "AIC" ? "artic" : sourceName.toLowerCase();
+    const entry = pickCached(cache, historySet, sourceKey);
+    if (!entry) return null;
+
+    console.log(`Cache hit: "${entry.title}" by ${entry.artist} [${sourceName}]`);
+    const imageBuffer = await probeImage(entry.imageUrl);
+    return { ...entry, imageBuffer };
+  } catch (err) {
+    console.warn(`Cache fetch failed: ${err.message}`);
+    return null;
+  }
+}
+
 export async function fetchRandomArtwork(historySet, excludeSources = new Set()) {
   const available = SOURCES.filter((s) =>
     (!s.needsKey || HARVARD_API_KEY) && !excludeSources.has(s.name.toLowerCase()),
   );
 
   if (available.length === 0) throw new Error("All art sources excluded or unavailable");
+
+  // Warn if cache is running low
+  try {
+    const cache = loadCache();
+    const cacheAvail = cache.filter((e) => !e.skip && !historySet.has(`${e.source}:${e.id}`)).length;
+    if (cacheAvail > 0 && cacheAvail < 20) {
+      console.warn(`Image cache low: ${cacheAvail} entries remaining. Run curator.mjs to refill.`);
+    }
+  } catch { /* non-fatal */ }
 
   // Track sources whose images fail (429/403) — shared across all rounds
   const failedImageSources = new Set();
@@ -231,6 +261,13 @@ export async function fetchRandomArtwork(historySet, excludeSources = new Set())
 
     for (const source of ordered) {
       try {
+        // For Harvard/AIC: try Dropbox cache first (museum image servers block CI IPs)
+        if (source.name === "Harvard" || source.name === "AIC") {
+          const cached = await fetchFromCache(source.name, historySet);
+          if (cached) return cached;
+          // Cache empty — fall through to live fetch (works locally, may fail in CI)
+        }
+
         console.log(`Trying ${source.name}...`);
         const art = await source.fn();
         const key = `${art.source}:${art.id}`;
@@ -240,7 +277,7 @@ export async function fetchRandomArtwork(historySet, excludeSources = new Set())
           continue;
         }
 
-        // Probe the image before returning — this is the key change
+        // Probe the image before returning
         const imageBuffer = await probeImage(art.imageUrl);
         art.imageBuffer = imageBuffer;
 

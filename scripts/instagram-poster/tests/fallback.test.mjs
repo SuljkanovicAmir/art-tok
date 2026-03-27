@@ -228,3 +228,72 @@ describe("source fallback chain (integration)", () => {
     assert.equal(art.title, "Fresh");
   });
 });
+
+// ── Tests for cache helpers ─────────────────────────────────────────────────
+
+describe("cache helpers", () => {
+  it("test 11: pickCached returns entry for matching source", async () => {
+    const { pickCached } = await import("../lib/cache.mjs?t=11");
+    const entries = [
+      { source: "harvard", id: 1, title: "A", skip: false },
+      { source: "harvard", id: 2, title: "B", skip: false },
+      { source: "artic", id: 3, title: "C", skip: false },
+    ];
+    const result = pickCached(entries, new Set(), "harvard");
+    assert.ok(result);
+    assert.equal(result.source, "harvard");
+  });
+
+  it("test 12: pickCached skips entries with skip:true", async () => {
+    const { pickCached } = await import("../lib/cache.mjs?t=12");
+    const entries = [
+      { source: "harvard", id: 1, skip: true },
+      { source: "harvard", id: 2, skip: false },
+    ];
+    const result = pickCached(entries, new Set(), "harvard");
+    assert.equal(result.id, 2);
+  });
+
+  it("test 13: pickCached skips already-posted entries", async () => {
+    const { pickCached } = await import("../lib/cache.mjs?t=13");
+    const entries = [
+      { source: "harvard", id: 1, skip: false },
+      { source: "harvard", id: 2, skip: false },
+    ];
+    const result = pickCached(entries, new Set(["harvard:1"]), "harvard");
+    assert.equal(result.id, 2);
+  });
+
+  it("test 14: pickCached returns null when cache empty for source", async () => {
+    const { pickCached } = await import("../lib/cache.mjs?t=14");
+    const entries = [
+      { source: "artic", id: 1, skip: false },
+    ];
+    const result = pickCached(entries, new Set(), "harvard");
+    assert.equal(result, null);
+  });
+
+  it("test 15: excludeEntry marks entry as skip", async () => {
+    const { excludeEntry } = await import("../lib/cache.mjs?t=15");
+    const entries = [
+      { source: "harvard", id: 1, skip: false },
+    ];
+    const found = excludeEntry(entries, "harvard:1");
+    assert.equal(found, true);
+    assert.equal(entries[0].skip, true);
+  });
+
+  it("test 16: getCacheStats counts correctly", async () => {
+    const { getCacheStats } = await import("../lib/cache.mjs?t=16");
+    const entries = [
+      { source: "harvard", id: 1, skip: false },
+      { source: "harvard", id: 2, skip: true },
+      { source: "artic", id: 3, skip: false },
+    ];
+    const stats = getCacheStats(entries, new Set(["harvard:1"]));
+    assert.equal(stats.total, 3);
+    assert.equal(stats.available, 1);
+    assert.equal(stats.skipped, 1);
+    assert.equal(stats.posted, 1);
+  });
+});
