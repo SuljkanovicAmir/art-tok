@@ -166,5 +166,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-27T20:41:53.096Z",
+    "mediaId": "17969800778874521",
+    "artKey": "artic:229360",
+    "source": "artic",
+    "mode": "post",
+    "title": "Big Electric Chair",
+    "artist": "Andy Warhol\nAmerican, 1928-1987",
+    "wasSeasonal": true,
+    "captionLength": 163,
+    "cardSizeKB": 296,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
