@@ -47,7 +47,7 @@ export async function fetchHarvardRandom({ page } = {}) {
 
   // Use provided page or pick random
   const p = page || Math.floor(Math.random() * totalPages) + 1;
-  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${p}&hasimage=1&classification=Paintings&q=verificationlevel:4&sort=totalpageviews&sortorder=desc&fields=${HARVARD_FIELDS}`;
+  const url = `${HARVARD_API}?apikey=${HARVARD_API_KEY}&size=10&page=${p}&hasimage=1&classification=Paintings&q=verificationlevel:4&sort=random&fields=${HARVARD_FIELDS}`;
   const data = await fetchJson(url);
 
   const records = data.records.filter((r) => r.primaryimageurl);
