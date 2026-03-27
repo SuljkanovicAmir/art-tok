@@ -130,10 +130,12 @@ async function main() {
     }
     console.log(`\n\u2500\u2500 ${name} (${existingForSource} existing, need ${TARGET_PER_SOURCE - existingForSource} more) \u2500\u2500`);
     let sourceAdded = 0;
+    let consecutiveFails = 0;
+    const MAX_CONSECUTIVE_FAILS = 10;
     const pages = shuffledPages(totalPages);
     let pageIdx = 0;
 
-    for (let attempt = 0; attempt < TARGET_PER_SOURCE * 3 && sourceAdded < TARGET_PER_SOURCE; attempt++) {
+    for (let attempt = 0; attempt < TARGET_PER_SOURCE * 3 && sourceAdded < TARGET_PER_SOURCE && consecutiveFails < MAX_CONSECUTIVE_FAILS; attempt++) {
       try {
         // Cycle through shuffled pages — each call hits a unique page
         const page = pages[pageIdx % pages.length];
@@ -241,6 +243,7 @@ async function main() {
 
         sourceAdded++;
         added++;
+        consecutiveFails = 0;
         if (isOil) oilCount++;
         const mediumTag = isOil ? "oil" : (art.medium || "").slice(0, 20);
         console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist} (${mediumTag})`);
@@ -248,7 +251,8 @@ async function main() {
         // Delay between fetches to avoid rate limiting
         await new Promise((r) => setTimeout(r, 1500));
       } catch (err) {
-        console.warn(`  Failed: ${err.message}`);
+        consecutiveFails++;
+        console.warn(`  Failed (${consecutiveFails}/${MAX_CONSECUTIVE_FAILS}): ${err.message}`);
         failed++;
         // Longer delay after failure (rate limit recovery)
         await new Promise((r) => setTimeout(r, 3000));
