@@ -103,5 +103,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-27T08:02:40.256Z",
+    "mediaId": "18311521678272080",
+    "artKey": "met:451332",
+    "source": "met",
+    "mode": "post",
+    "title": "\"Men Treading Grapes\", Folio from a Materia Medica of Dioscorides",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 203,
+    "cardSizeKB": 328,
+    "metadataScore": 57,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
