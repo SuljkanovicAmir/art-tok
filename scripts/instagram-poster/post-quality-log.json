@@ -124,5 +124,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-27T11:45:45.314Z",
+    "mediaId": "17883410178490191",
+    "artKey": "met:38559",
+    "source": "met",
+    "mode": "reel",
+    "title": "The Bodhisattva Vajrapani",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 120,
+    "cardSizeKB": 413,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
