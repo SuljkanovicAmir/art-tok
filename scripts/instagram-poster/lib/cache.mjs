@@ -31,12 +31,40 @@ export function getAvailable(entries, historySet, source) {
 
 /**
  * Pick a random cached artwork for the given source.
+ * If keyword is provided, prefer entries whose tags match it.
  * Returns null if no entries available.
  */
-export function pickCached(entries, historySet, source) {
+export function pickCached(entries, historySet, source, keyword = null) {
   const available = getAvailable(entries, historySet, source);
   if (available.length === 0) return null;
+
+  if (keyword) {
+    const kw = keyword.toLowerCase();
+    const tagged = available.filter((e) => e.tags?.some((t) => t.includes(kw) || kw.includes(t)));
+    if (tagged.length > 0) return tagged[Math.floor(Math.random() * tagged.length)];
+  }
+
   return available[Math.floor(Math.random() * available.length)];
+}
+
+/**
+ * Generate tags from artwork metadata by matching against seasonal keywords.
+ */
+const ALL_SEASONAL_KEYWORDS = [
+  "celebration", "new year", "winter", "feast", "festive",
+  "love", "cupid", "romance", "kiss", "lovers", "heart",
+  "spring", "flowers", "bloom", "garden", "pastoral",
+  "resurrection", "easter", "lamb", "crucifixion", "madonna",
+  "summer", "sun", "sea", "beach", "bathing", "harvest",
+  "skull", "death", "skeleton", "night", "dark", "witch",
+  "abundance", "cornucopia", "gratitude",
+  "nativity", "christmas", "angel", "snow",
+];
+
+export function generateTags(art) {
+  const text = [art.title, art.description, art.culture, art.classification, art.medium]
+    .filter(Boolean).join(" ").toLowerCase();
+  return ALL_SEASONAL_KEYWORDS.filter((kw) => text.includes(kw));
 }
 
 /**

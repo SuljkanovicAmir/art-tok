@@ -13,7 +13,7 @@
  *   node curator.mjs --cleanup                 # delete Dropbox files for posted entries
  */
 import "dotenv/config";
-import { loadCache, saveCache, excludeEntry, getCacheStats } from "./lib/cache.mjs";
+import { loadCache, saveCache, excludeEntry, getCacheStats, generateTags } from "./lib/cache.mjs";
 import { loadHistoryData, artKey } from "./lib/history.mjs";
 import { fetchHarvardRandom, fetchAicRandom } from "./lib/art-fetchers.mjs";
 import { getDropboxToken, deleteFromDropbox } from "./lib/dropbox.mjs";
@@ -199,6 +199,7 @@ async function main() {
           url: art.url || "",
           museumName: art.museumName || "",
           cachedAt: new Date().toISOString().slice(0, 10),
+          tags: generateTags(art),
           skip: false,
         };
 

@@ -232,14 +232,15 @@ function rotateByTime(sources) {
  * Try to get artwork from Dropbox image cache (for Harvard/AIC in CI).
  * Returns art with imageBuffer, or null if cache empty/fetch fails.
  */
-async function fetchFromCache(sourceName, historySet) {
+async function fetchFromCache(sourceName, historySet, keyword = null) {
   try {
     const cache = loadCache();
     const sourceKey = sourceName === "AIC" ? "artic" : sourceName.toLowerCase();
-    const entry = pickCached(cache, historySet, sourceKey);
+    const entry = pickCached(cache, historySet, sourceKey, keyword);
     if (!entry) return null;
 
-    console.log(`Cache hit: "${entry.title}" by ${entry.artist} [${sourceName}]`);
+    const tagInfo = keyword && entry.tags?.length ? ` [tags: ${entry.tags.join(", ")}]` : "";
+    console.log(`Cache hit: "${entry.title}" by ${entry.artist} [${sourceName}]${tagInfo}`);
     const imageBuffer = await probeImage(entry.imageUrl);
     return { ...entry, imageBuffer };
   } catch (err) {
@@ -375,6 +376,12 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
   for (const source of ordered) {
     if (failedImageSources.has(source.name.toLowerCase())) continue;
     try {
+      // For Harvard/AIC: try Dropbox cache with seasonal keyword first
+      if (source.name === "Harvard" || source.name === "AIC") {
+        const cached = await fetchFromCache(source.name, historySet, keyword);
+        if (cached) return cached;
+      }
+
       let art = null;
 
       if (source.name === "Harvard") {
