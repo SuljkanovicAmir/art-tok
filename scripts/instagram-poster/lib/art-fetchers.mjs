@@ -44,7 +44,7 @@ export async function fetchHarvardRandom() {
   // Use ids.lib.harvard.edu directly via idsid — nrs.harvard.edu rate-limits aggressively
   const idsid = r.images?.[0]?.idsid;
   const imageUrl = idsid
-    ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+    ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/1600,/0/default.jpg`
     : r.primaryimageurl;
 
   return {
@@ -119,7 +119,7 @@ export async function fetchAicRandom() {
     id: r.id,
     title: r.title || "Untitled",
     artist: r.artist_display || "Unknown artist",
-    imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
+    imageUrl: `${AIC_IIIF}/${r.image_id}/full/1600,/0/default.jpg`,
     source: "artic",
     culture: r.place_of_origin,
     dated: r.date_display,
@@ -147,7 +147,7 @@ export async function fetchSpecificArtwork(sourceId) {
     const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
     const idsid = r.images?.[0]?.idsid;
     const imageUrl = idsid
-      ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+      ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/1600,/0/default.jpg`
       : r.primaryimageurl;
     return {
       id: r.objectid, title: r.title || "Untitled", artist,
@@ -180,7 +180,7 @@ export async function fetchSpecificArtwork(sourceId) {
     return {
       id: r.id, title: r.title || "Untitled",
       artist: r.artist_display || "Unknown artist",
-      imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
+      imageUrl: `${AIC_IIIF}/${r.image_id}/full/1600,/0/default.jpg`,
       source: "artic", culture: r.place_of_origin, dated: r.date_display,
       classification: r.classification_title, medium: r.medium_display,
       description: r.description || "",
@@ -370,7 +370,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
         const artist = r.people?.map((p) => p.name).filter(Boolean).join(", ") || "Unknown artist";
         const idsid = r.images?.[0]?.idsid;
         const imageUrl = idsid
-          ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/843,/0/default.jpg`
+          ? `https://ids.lib.harvard.edu/ids/iiif/${idsid}/full/1600,/0/default.jpg`
           : r.primaryimageurl;
         art = {
           id: r.objectid, title: r.title || "Untitled", artist,
@@ -414,7 +414,7 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
         art = {
           id: r.id, title: r.title || "Untitled",
           artist: r.artist_display || "Unknown artist",
-          imageUrl: `${AIC_IIIF}/${r.image_id}/full/843,/0/default.jpg`,
+          imageUrl: `${AIC_IIIF}/${r.image_id}/full/1600,/0/default.jpg`,
           source: "artic", culture: r.place_of_origin, dated: r.date_display,
           classification: r.classification_title, medium: r.medium_display,
           description: r.description || "",
