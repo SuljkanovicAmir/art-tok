@@ -250,5 +250,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-28T17:32:02.087Z",
+    "mediaId": "18069396581302266",
+    "artKey": "artic:25740",
+    "source": "artic",
+    "mode": "post",
+    "title": "Scenes from the Life of Saint John the Baptist",
+    "artist": "Bartolomeo di Giovanni (Italian, active c. 1465-1501)",
+    "wasSeasonal": true,
+    "captionLength": 203,
+    "cardSizeKB": 274,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
