@@ -187,5 +187,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-28T07:45:34.237Z",
+    "mediaId": "18419993920121449",
+    "artKey": "met:853449",
+    "source": "met",
+    "mode": "post",
+    "title": "Portrait of Sor Juana de Nuestra Señora de Guadalupe",
+    "artist": "Domingo Ortiz",
+    "wasSeasonal": true,
+    "captionLength": 160,
+    "cardSizeKB": 394,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
