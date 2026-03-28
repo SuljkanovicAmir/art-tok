@@ -208,5 +208,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-28T10:35:47.560Z",
+    "mediaId": "18116544310657397",
+    "artKey": "met:459086",
+    "source": "met",
+    "mode": "post",
+    "title": "Leisure Time in an Elegant Setting",
+    "artist": "Pieter de Hooch",
+    "wasSeasonal": true,
+    "captionLength": 151,
+    "cardSizeKB": 328,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
