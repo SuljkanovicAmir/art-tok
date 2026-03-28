@@ -229,5 +229,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-28T14:34:34.057Z",
+    "mediaId": "18316922704253751",
+    "artKey": "artic:14572",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Millinery Shop",
+    "artist": "Edgar Degas (French, 1834–1917)",
+    "wasSeasonal": true,
+    "captionLength": 550,
+    "cardSizeKB": 325,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
