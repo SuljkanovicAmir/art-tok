@@ -355,5 +355,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-29T17:35:01.260Z",
+    "mediaId": "18336420184171380",
+    "artKey": "artic:16159",
+    "source": "artic",
+    "mode": "reel",
+    "title": "Ecce Agnus Dei",
+    "artist": "Giovanni di Paolo (Italian, 1398–1482)",
+    "wasSeasonal": true,
+    "captionLength": 331,
+    "cardSizeKB": 584,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
