@@ -376,5 +376,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-29T20:36:44.526Z",
+    "mediaId": "18078549875112768",
+    "artKey": "artic:100250",
+    "source": "artic",
+    "mode": "post",
+    "title": "Interrogation II",
+    "artist": "Leon Golub\nAmerican, 1922–2004",
+    "wasSeasonal": true,
+    "captionLength": 553,
+    "cardSizeKB": 293,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
