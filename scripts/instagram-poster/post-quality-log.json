@@ -292,5 +292,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-29T07:54:30.044Z",
+    "mediaId": "18096992204287348",
+    "artKey": "met:50897",
+    "source": "met",
+    "mode": "post",
+    "title": "Evening bell from mist-shrouded temple (left); Autumn moon over Lake Dongting (right)",
+    "artist": "An Gyeon",
+    "wasSeasonal": true,
+    "captionLength": 220,
+    "cardSizeKB": 300,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
