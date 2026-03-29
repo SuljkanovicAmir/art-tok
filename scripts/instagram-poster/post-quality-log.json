@@ -334,5 +334,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-29T14:36:32.417Z",
+    "mediaId": "18090235892180441",
+    "artKey": "artic:65916",
+    "source": "artic",
+    "mode": "post",
+    "title": "Movement",
+    "artist": "Marsden Hartley (American, 1877–1943)",
+    "wasSeasonal": true,
+    "captionLength": 546,
+    "cardSizeKB": 502,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
