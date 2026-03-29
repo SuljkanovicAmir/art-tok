@@ -313,5 +313,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-29T10:37:15.879Z",
+    "mediaId": "18097636481002129",
+    "artKey": "met:436037",
+    "source": "met",
+    "mode": "post",
+    "title": "The Judgment of Paris",
+    "artist": "Lucas Cranach the Elder",
+    "wasSeasonal": true,
+    "captionLength": 142,
+    "cardSizeKB": 415,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
