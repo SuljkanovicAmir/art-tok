@@ -418,5 +418,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-30T11:05:04.165Z",
+    "mediaId": "17907952479374958",
+    "artKey": "artic:111622",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Crucifixion",
+    "artist": "Carlo Crivelli (Italian, about 1430–about 1495)",
+    "wasSeasonal": true,
+    "captionLength": 569,
+    "cardSizeKB": 483,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
