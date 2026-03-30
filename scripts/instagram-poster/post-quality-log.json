@@ -460,5 +460,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-30T17:56:38.851Z",
+    "mediaId": "18084727892356161",
+    "artKey": "artic:88793",
+    "source": "artic",
+    "mode": "post",
+    "title": "Retable and Frontal of the Life of Christ and the Virgin",
+    "artist": "Spanish",
+    "wasSeasonal": true,
+    "captionLength": 573,
+    "cardSizeKB": 384,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
