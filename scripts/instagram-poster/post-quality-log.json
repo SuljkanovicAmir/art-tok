@@ -481,5 +481,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-30T20:49:16.724Z",
+    "mediaId": "17960881680070522",
+    "artKey": "artic:110760",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Adventures of Ulysses",
+    "artist": "Apollonio di Giovanni (Italian, 1415/17-1465)",
+    "wasSeasonal": true,
+    "captionLength": 165,
+    "cardSizeKB": 304,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
