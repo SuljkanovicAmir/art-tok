@@ -397,5 +397,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-30T08:23:13.306Z",
+    "mediaId": "18098470969989428",
+    "artKey": "artic:65906",
+    "source": "artic",
+    "mode": "post",
+    "title": "A Reasonable Facsimile",
+    "artist": "Arthur Dove (American, 1880–1946)",
+    "wasSeasonal": true,
+    "captionLength": 560,
+    "cardSizeKB": 229,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
