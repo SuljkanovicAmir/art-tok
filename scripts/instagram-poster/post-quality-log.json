@@ -439,5 +439,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-30T15:06:02.615Z",
+    "mediaId": "18097891516966382",
+    "artKey": "harvard:228710",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of an Actor",
+    "artist": "Unidentified Artist, Antoine-Jean Gros",
+    "wasSeasonal": true,
+    "captionLength": 155,
+    "cardSizeKB": 329,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
