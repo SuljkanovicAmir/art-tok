@@ -544,5 +544,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-03-31T15:05:48.044Z",
+    "mediaId": "17963306976075150",
+    "artKey": "harvard:311067",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Late Winter",
+    "artist": "Emile Walters",
+    "wasSeasonal": true,
+    "captionLength": 116,
+    "cardSizeKB": 388,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
