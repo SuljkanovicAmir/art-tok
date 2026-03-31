@@ -565,5 +565,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-31T17:58:12.479Z",
+    "mediaId": "18164672014421479",
+    "artKey": "artic:25743",
+    "source": "artic",
+    "mode": "reel",
+    "title": "The Adoration of the Magi",
+    "artist": "Attributed to Raffaello Botticini (Italian, 1477–c.1520)",
+    "wasSeasonal": true,
+    "captionLength": 159,
+    "cardSizeKB": 454,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
