@@ -502,5 +502,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-31T08:10:17.764Z",
+    "mediaId": "18103037827937580",
+    "artKey": "artic:202218",
+    "source": "artic",
+    "mode": "post",
+    "title": "Bather/Night",
+    "artist": "Carroll Dunham\nAmerican, born 1949",
+    "wasSeasonal": true,
+    "captionLength": 548,
+    "cardSizeKB": 340,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
