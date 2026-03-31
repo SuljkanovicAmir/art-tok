@@ -586,5 +586,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-31T20:45:26.911Z",
+    "mediaId": "18105601321706455",
+    "artKey": "artic:66108",
+    "source": "artic",
+    "mode": "post",
+    "title": "Movement: Boats and Objects, Blue Gray Sea",
+    "artist": "John Marin (American, 1870–1953)",
+    "wasSeasonal": true,
+    "captionLength": 574,
+    "cardSizeKB": 397,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
