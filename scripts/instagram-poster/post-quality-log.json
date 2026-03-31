@@ -523,5 +523,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-03-31T10:55:43.891Z",
+    "mediaId": "18309966808274763",
+    "artKey": "met:436440",
+    "source": "met",
+    "mode": "post",
+    "title": "Cottage Children (The Wood Gatherers)",
+    "artist": "Thomas Gainsborough",
+    "wasSeasonal": true,
+    "captionLength": 180,
+    "cardSizeKB": 311,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
