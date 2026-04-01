@@ -670,5 +670,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-01T17:53:57.384Z",
+    "mediaId": "18005752715890718",
+    "artKey": "artic:2923",
+    "source": "artic",
+    "mode": "post",
+    "title": "Buildings",
+    "artist": "John Marin\nAmerican, 1870-1953",
+    "wasSeasonal": true,
+    "captionLength": 656,
+    "cardSizeKB": 374,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
