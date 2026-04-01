@@ -649,5 +649,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-01T15:07:46.399Z",
+    "mediaId": "18098969740954157",
+    "artKey": "harvard:230033",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Violet and Blue:  The Little Bathers, Pérosquérie",
+    "artist": "James Abbott McNeill Whistler",
+    "wasSeasonal": true,
+    "captionLength": 167,
+    "cardSizeKB": 293,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
