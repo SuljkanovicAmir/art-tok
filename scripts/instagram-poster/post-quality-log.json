@@ -607,5 +607,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-01T08:17:49.177Z",
+    "mediaId": "18038879744569897",
+    "artKey": "artic:82511",
+    "source": "artic",
+    "mode": "post",
+    "title": "Icon with the Virgin and Child",
+    "artist": "Cretan",
+    "wasSeasonal": true,
+    "captionLength": 131,
+    "cardSizeKB": 459,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
