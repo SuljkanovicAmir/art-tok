@@ -712,5 +712,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-02T14:13:05.180Z",
+    "mediaId": "17988714941952308",
+    "artKey": "artic:199002",
+    "source": "artic",
+    "mode": "reel",
+    "title": "In Memory of My Father",
+    "artist": "Sylvia Plimack Mangold\nAmerican, born 1938",
+    "wasSeasonal": true,
+    "captionLength": 344,
+    "cardSizeKB": 292,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
