@@ -691,5 +691,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-02T08:48:19.432Z",
+    "mediaId": "18091880171335216",
+    "artKey": "artic:129884",
+    "source": "artic",
+    "mode": "post",
+    "title": "Starry Night and the Astronauts",
+    "artist": "Alma Thomas\nAmerican, 1891–1978",
+    "wasSeasonal": true,
+    "captionLength": 569,
+    "cardSizeKB": 547,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
