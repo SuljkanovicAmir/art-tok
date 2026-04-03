@@ -796,5 +796,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-03T20:39:49.069Z",
+    "mediaId": "18095720186470120",
+    "artKey": "artic:229406",
+    "source": "artic",
+    "mode": "post",
+    "title": "Liz #3 [Early Colored Liz]",
+    "artist": "Andy Warhol\nAmerican, 1928–1987",
+    "wasSeasonal": true,
+    "captionLength": 577,
+    "cardSizeKB": 246,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
