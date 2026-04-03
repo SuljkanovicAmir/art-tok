@@ -754,5 +754,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-03T10:46:40.402Z",
+    "mediaId": "18042038330771375",
+    "artKey": "met:435728",
+    "source": "met",
+    "mode": "post",
+    "title": "The Last Communion of Saint Jerome",
+    "artist": "Botticelli (Alessandro di Mariano Filipepi)",
+    "wasSeasonal": true,
+    "captionLength": 232,
+    "cardSizeKB": 430,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
