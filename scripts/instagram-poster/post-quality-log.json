@@ -733,5 +733,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-03T08:04:01.483Z",
+    "mediaId": "18119448223624143",
+    "artKey": "artic:497",
+    "source": "artic",
+    "mode": "post",
+    "title": "A Mother Feeding her Child (The Happy Mother)",
+    "artist": "Willem van Mieris (Dutch, 1662–1747)",
+    "wasSeasonal": true,
+    "captionLength": 623,
+    "cardSizeKB": 313,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
