@@ -775,5 +775,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-03T14:45:21.215Z",
+    "mediaId": "18141709483494192",
+    "artKey": "artic:137125",
+    "source": "artic",
+    "mode": "reel",
+    "title": "Many Mansions",
+    "artist": "Kerry James Marshall\nAmerican, born 1955",
+    "wasSeasonal": true,
+    "captionLength": 381,
+    "cardSizeKB": 411,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
