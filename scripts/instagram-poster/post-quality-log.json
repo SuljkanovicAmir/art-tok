@@ -901,5 +901,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-04T20:35:43.182Z",
+    "mediaId": "18091054849946163",
+    "artKey": "artic:80530",
+    "source": "artic",
+    "mode": "post",
+    "title": "Virgin and Child with an Angel",
+    "artist": "Sandro Botticelli (Italian, 1444/45–1510)",
+    "wasSeasonal": true,
+    "captionLength": 578,
+    "cardSizeKB": 376,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
