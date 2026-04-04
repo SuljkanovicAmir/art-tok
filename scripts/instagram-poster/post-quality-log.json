@@ -817,5 +817,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-04T09:56:20.623Z",
+    "mediaId": "18288338128304750",
+    "artKey": "harvard:229278",
+    "source": "harvard",
+    "mode": "post",
+    "title": "An Angel Playing a Lute, from The Presentation of Christ in the Temple, after Carpaccio",
+    "artist": "Desideri, Edward Waldo Forbes, Vittore Carpaccio",
+    "wasSeasonal": true,
+    "captionLength": 223,
+    "cardSizeKB": 434,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
