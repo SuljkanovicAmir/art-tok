@@ -838,5 +838,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-04T10:37:24.149Z",
+    "mediaId": "18010253945893990",
+    "artKey": "met:760942",
+    "source": "met",
+    "mode": "post",
+    "title": "The Yellow Room",
+    "artist": "James McNeill Whistler",
+    "wasSeasonal": true,
+    "captionLength": 162,
+    "cardSizeKB": 317,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
