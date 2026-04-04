@@ -859,5 +859,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-04T14:36:18.468Z",
+    "mediaId": "18132534328533222",
+    "artKey": "artic:16241",
+    "source": "artic",
+    "mode": "post",
+    "title": "Diptych of the Virgin and Child Enthroned and the Crucifixion",
+    "artist": "Eastern Mediterranean or Italian",
+    "wasSeasonal": true,
+    "captionLength": 602,
+    "cardSizeKB": 477,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
