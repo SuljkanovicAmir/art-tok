@@ -880,5 +880,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-04T17:33:49.273Z",
+    "mediaId": "18244760788307188",
+    "artKey": "artic:16212",
+    "source": "artic",
+    "mode": "post",
+    "title": "Virgin and Child with Saints Jerome, Bernardino of Siena, and Angels",
+    "artist": "Sano di Pietro (Italian, 1405–1481)",
+    "wasSeasonal": true,
+    "captionLength": 198,
+    "cardSizeKB": 425,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
