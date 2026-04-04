@@ -23,18 +23,29 @@ export async function publishToInstagram(token, imageUrl, caption, { isStory = f
     containerParams.set("media_type", "STORIES");
   }
 
-  const containerRes = await fetch(
-    `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
-    { method: "POST" },
-  );
+  let containerId;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const containerRes = await fetch(
+      `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
+      { method: "POST" },
+    );
 
-  if (!containerRes.ok) {
+    if (containerRes.ok) {
+      ({ id: containerId } = await containerRes.json());
+      console.log(`Container created: ${containerId}`);
+      break;
+    }
+
     const body = await containerRes.text();
+    const isTransient = body.includes('"is_transient":true') || containerRes.status === 500;
+    if (isTransient && attempt < 4) {
+      const wait = attempt * 15;
+      console.log(`Container creation failed (transient, attempt ${attempt}/4), retrying in ${wait}s...`);
+      await new Promise((r) => setTimeout(r, wait * 1000));
+      continue;
+    }
     throw new Error(`Instagram container creation failed (${containerRes.status}): ${body}`);
   }
-
-  const { id: containerId } = await containerRes.json();
-  console.log(`Container created: ${containerId}`);
 
   // Step 2: Wait for container to be ready (Instagram processes the image)
   await waitForContainer(token, containerId);
@@ -148,18 +159,29 @@ export async function publishReel(token, videoBuffer, caption) {
 
   // Note: alt_text is NOT supported for REELS media type
 
-  const containerRes = await fetch(
-    `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
-    { method: "POST" },
-  );
+  let containerId;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const containerRes = await fetch(
+      `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
+      { method: "POST" },
+    );
 
-  if (!containerRes.ok) {
+    if (containerRes.ok) {
+      ({ id: containerId } = await containerRes.json());
+      console.log(`Reel container created: ${containerId}`);
+      break;
+    }
+
     const body = await containerRes.text();
+    const isTransient = body.includes('"is_transient":true') || containerRes.status === 500;
+    if (isTransient && attempt < 4) {
+      const wait = attempt * 15;
+      console.log(`Reel container creation failed (transient, attempt ${attempt}/4), retrying in ${wait}s...`);
+      await new Promise((r) => setTimeout(r, wait * 1000));
+      continue;
+    }
     throw new Error(`Reel container creation failed (${containerRes.status}): ${body}`);
   }
-
-  const { id: containerId } = await containerRes.json();
-  console.log(`Reel container created: ${containerId}`);
 
   // Wait for video processing (30 attempts — video takes longer)
   await waitForContainer(token, containerId, 30);
