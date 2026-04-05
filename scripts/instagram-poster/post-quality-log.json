@@ -943,5 +943,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-05T10:37:24.969Z",
+    "mediaId": "17959521942074908",
+    "artKey": "met:37886",
+    "source": "met",
+    "mode": "post",
+    "title": "Krishna and Balarama Fight the Evil King Kamsa’s Wrestlers: Page from a Dispersed Bhagavata Purana",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 217,
+    "cardSizeKB": 385,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
