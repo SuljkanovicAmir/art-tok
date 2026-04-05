@@ -922,5 +922,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-05T07:56:16.203Z",
+    "mediaId": "17884894077373848",
+    "artKey": "met:371418",
+    "source": "met",
+    "mode": "post",
+    "title": "The Lictors Bringing Brutus the Bodies of his Sons",
+    "artist": "Jacques Louis David",
+    "wasSeasonal": true,
+    "captionLength": 253,
+    "cardSizeKB": 382,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
