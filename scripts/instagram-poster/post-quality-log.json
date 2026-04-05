@@ -1006,5 +1006,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-05T20:36:37.164Z",
+    "mediaId": "18112979503775182",
+    "artKey": "artic:65819",
+    "source": "artic",
+    "mode": "post",
+    "title": "Mae West's Face which May be Used as a Surrealist Apartment",
+    "artist": "Salvador Dalí\nSpanish, 1904-1989",
+    "wasSeasonal": true,
+    "captionLength": 230,
+    "cardSizeKB": 354,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
