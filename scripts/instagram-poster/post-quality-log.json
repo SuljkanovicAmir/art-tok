@@ -985,5 +985,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-05T17:36:59.424Z",
+    "mediaId": "18096992081280018",
+    "artKey": "artic:184212",
+    "source": "artic",
+    "mode": "reel",
+    "title": "Queer Basher/Icarus Falling",
+    "artist": "David Wojnarowicz\nAmerican, 1954-1992",
+    "wasSeasonal": true,
+    "captionLength": 344,
+    "cardSizeKB": 434,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
