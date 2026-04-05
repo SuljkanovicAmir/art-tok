@@ -964,5 +964,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-05T14:37:09.872Z",
+    "mediaId": "18099591454799274",
+    "artKey": "artic:218612",
+    "source": "artic",
+    "mode": "post",
+    "title": "Khee II",
+    "artist": "Jack Whitten\nAmerican, 1939-2018",
+    "wasSeasonal": true,
+    "captionLength": 543,
+    "cardSizeKB": 442,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
