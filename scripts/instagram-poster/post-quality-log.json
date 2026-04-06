@@ -1111,5 +1111,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-06T20:40:25.209Z",
+    "mediaId": "18097193555083306",
+    "artKey": "artic:229351",
+    "source": "artic",
+    "mode": "post",
+    "title": "Target",
+    "artist": "Jasper Johns\nAmerican, born 1930",
+    "wasSeasonal": true,
+    "captionLength": 558,
+    "cardSizeKB": 404,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
