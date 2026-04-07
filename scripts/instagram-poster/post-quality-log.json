@@ -1195,5 +1195,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-07T18:00:29.625Z",
+    "mediaId": "18039109481787500",
+    "artKey": "artic:16347",
+    "source": "artic",
+    "mode": "reel",
+    "title": "An Elegant Company",
+    "artist": "Pieter Codde (Dutch, 1599-1678)",
+    "wasSeasonal": true,
+    "captionLength": 367,
+    "cardSizeKB": 331,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
