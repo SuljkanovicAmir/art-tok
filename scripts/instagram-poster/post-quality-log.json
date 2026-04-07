@@ -1153,5 +1153,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-07T10:58:49.870Z",
+    "mediaId": "18097204114838667",
+    "artKey": "met:438417",
+    "source": "met",
+    "mode": "post",
+    "title": "Two Men Contemplating the Moon",
+    "artist": "Caspar David Friedrich",
+    "wasSeasonal": true,
+    "captionLength": 154,
+    "cardSizeKB": 319,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
