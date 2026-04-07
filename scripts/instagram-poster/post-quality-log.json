@@ -1132,5 +1132,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-07T08:14:56.509Z",
+    "mediaId": "18089070860184309",
+    "artKey": "artic:16246",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Continence of Scipio",
+    "artist": "Workshop of Apollonio di Giovanni (Italian, 1415/17–1465)\nMarco del Buono Giamberti (Italian, 1403–1489)",
+    "wasSeasonal": true,
+    "captionLength": 223,
+    "cardSizeKB": 276,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
