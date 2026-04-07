@@ -1174,5 +1174,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-07T15:11:01.578Z",
+    "mediaId": "17868840393600720",
+    "artKey": "harvard:230917",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Two Trees",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 130,
+    "cardSizeKB": 363,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
