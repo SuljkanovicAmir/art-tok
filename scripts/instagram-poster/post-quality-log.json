@@ -1216,5 +1216,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-07T20:51:25.316Z",
+    "mediaId": "18102888757737748",
+    "artKey": "artic:10943",
+    "source": "artic",
+    "mode": "post",
+    "title": "Yacht Race",
+    "artist": "Maurice Prendergast\nAmerican, 1858-1924",
+    "wasSeasonal": true,
+    "captionLength": 177,
+    "cardSizeKB": 350,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
