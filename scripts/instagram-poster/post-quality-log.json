@@ -1279,5 +1279,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-08T15:13:32.384Z",
+    "mediaId": "18576167437061434",
+    "artKey": "harvard:299948",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Charles William Eliot (1834-1926)",
+    "artist": "William Page, Charles William Eliot",
+    "wasSeasonal": true,
+    "captionLength": 157,
+    "cardSizeKB": 299,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
