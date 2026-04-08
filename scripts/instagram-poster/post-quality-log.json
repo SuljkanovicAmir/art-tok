@@ -1237,5 +1237,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-08T08:14:40.680Z",
+    "mediaId": "17848924107677570",
+    "artKey": "artic:76816",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Young Emperor Akbar Arrests the Insolent Shah Abu’l-Maali, Page from a Manuscript of the Akbarnama",
+    "artist": "India\nDesigned by Basawan, painted by Shankar",
+    "wasSeasonal": true,
+    "captionLength": 706,
+    "cardSizeKB": 531,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
