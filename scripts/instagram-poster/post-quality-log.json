@@ -1300,5 +1300,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-08T18:08:45.881Z",
+    "mediaId": "18160385266377629",
+    "artKey": "harvard:230972",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Mountain",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 142,
+    "cardSizeKB": 374,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
