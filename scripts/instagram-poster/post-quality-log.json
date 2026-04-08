@@ -1321,5 +1321,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-08T20:58:17.521Z",
+    "mediaId": "18189174820368340",
+    "artKey": "artic:204041",
+    "source": "artic",
+    "mode": "post",
+    "title": "Extemporaneous",
+    "artist": "Helen Torr (American, 1886–1967)",
+    "wasSeasonal": true,
+    "captionLength": 572,
+    "cardSizeKB": 333,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
