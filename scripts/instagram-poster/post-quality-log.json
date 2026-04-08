@@ -1258,5 +1258,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-08T10:59:35.405Z",
+    "mediaId": "17956874520116802",
+    "artKey": "met:437658",
+    "source": "met",
+    "mode": "post",
+    "title": "Study for \"A Sunday on La Grande Jatte\"",
+    "artist": "Georges Seurat",
+    "wasSeasonal": true,
+    "captionLength": 148,
+    "cardSizeKB": 404,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
