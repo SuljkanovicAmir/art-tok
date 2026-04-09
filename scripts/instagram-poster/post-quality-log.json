@@ -1363,5 +1363,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-09T11:01:41.504Z",
+    "mediaId": "18081064844635074",
+    "artKey": "artic:61608",
+    "source": "artic",
+    "mode": "post",
+    "title": "Sunset",
+    "artist": "Paul Klee\nGerman, born Switzerland, 1879–1940",
+    "wasSeasonal": true,
+    "captionLength": 549,
+    "cardSizeKB": 351,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
