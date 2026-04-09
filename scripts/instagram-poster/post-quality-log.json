@@ -1342,5 +1342,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-09T08:22:09.827Z",
+    "mediaId": "18020223533656291",
+    "artKey": "artic:230609",
+    "source": "artic",
+    "mode": "post",
+    "title": "Pat Hearn",
+    "artist": "Andy Warhol\nAmerican, 1928–1987",
+    "wasSeasonal": true,
+    "captionLength": 151,
+    "cardSizeKB": 239,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
