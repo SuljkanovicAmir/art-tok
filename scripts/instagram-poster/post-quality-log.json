@@ -1426,5 +1426,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-09T20:54:53.238Z",
+    "mediaId": "17914063428162215",
+    "artKey": "artic:102234",
+    "source": "artic",
+    "mode": "post",
+    "title": "American Collectors (Fred and Marcia Weisman)",
+    "artist": "David Hockney\nEnglish, born 1937",
+    "wasSeasonal": true,
+    "captionLength": 584,
+    "cardSizeKB": 328,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
