@@ -1405,5 +1405,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-09T18:01:29.256Z",
+    "mediaId": "18189358204370869",
+    "artKey": "harvard:228719",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "J.H. Brae of Church Street",
+    "artist": "Thomas Ware, William Lewis",
+    "wasSeasonal": true,
+    "captionLength": 130,
+    "cardSizeKB": 282,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
