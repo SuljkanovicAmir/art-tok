@@ -1384,5 +1384,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-09T15:24:08.315Z",
+    "mediaId": "18578880214047526",
+    "artKey": "harvard:230611",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Louise Nathurst",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 175,
+    "cardSizeKB": 272,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
