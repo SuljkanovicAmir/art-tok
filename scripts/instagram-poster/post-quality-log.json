@@ -1489,5 +1489,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-10T14:51:02.991Z",
+    "mediaId": "18104497663927667",
+    "artKey": "artic:16156",
+    "source": "artic",
+    "mode": "post",
+    "title": "Saint John the Baptist Entering the Wilderness",
+    "artist": "Giovanni di Paolo (Italian, 1398–1482)",
+    "wasSeasonal": true,
+    "captionLength": 593,
+    "cardSizeKB": 358,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
