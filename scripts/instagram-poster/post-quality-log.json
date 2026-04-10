@@ -1468,5 +1468,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-10T11:24:22.565Z",
+    "mediaId": "17897037036427918",
+    "artKey": "artic:184095",
+    "source": "artic",
+    "mode": "post",
+    "title": "Near the Lagoon",
+    "artist": "Jasper Johns\nAmerican, born 1930",
+    "wasSeasonal": true,
+    "captionLength": 580,
+    "cardSizeKB": 352,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
