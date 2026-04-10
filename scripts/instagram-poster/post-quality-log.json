@@ -1531,5 +1531,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-10T20:40:42.162Z",
+    "mediaId": "17863371732545832",
+    "artKey": "artic:186382",
+    "source": "artic",
+    "mode": "post",
+    "title": "Brilliant Gloom",
+    "artist": "Michael Raedecker\nDutch, born 1963",
+    "wasSeasonal": true,
+    "captionLength": 563,
+    "cardSizeKB": 271,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
