@@ -1510,5 +1510,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-10T17:51:18.061Z",
+    "mediaId": "17865039129669744",
+    "artKey": "artic:16183",
+    "source": "artic",
+    "mode": "post",
+    "title": "Saint Augustine's Vision of Saints Jerome and John the Baptist",
+    "artist": "Matteo di Giovanni (Italian, c. 1430–1495)",
+    "wasSeasonal": true,
+    "captionLength": 638,
+    "cardSizeKB": 402,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
