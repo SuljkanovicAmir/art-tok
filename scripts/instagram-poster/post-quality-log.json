@@ -1573,5 +1573,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-11T10:37:04.543Z",
+    "mediaId": "17995880108761159",
+    "artKey": "met:333915",
+    "source": "met",
+    "mode": "post",
+    "title": "The Connoisseur",
+    "artist": "Honoré Daumier",
+    "wasSeasonal": true,
+    "captionLength": 212,
+    "cardSizeKB": 437,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
