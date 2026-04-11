@@ -1615,5 +1615,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-11T17:35:22.990Z",
+    "mediaId": "17950606431071403",
+    "artKey": "artic:129756",
+    "source": "artic",
+    "mode": "reel",
+    "title": "Saint Anthony Abbot",
+    "artist": "Fra Angelico (Guido di Pietro; Italian, c. 1395/1400–1455)",
+    "wasSeasonal": true,
+    "captionLength": 354,
+    "cardSizeKB": 475,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
