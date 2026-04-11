@@ -1552,5 +1552,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-11T07:51:24.735Z",
+    "mediaId": "18081352778105934",
+    "artKey": "met:656430",
+    "source": "met",
+    "mode": "post",
+    "title": "Portrait of Yun Dongseom (1710–1795)",
+    "artist": "Unidentified artist",
+    "wasSeasonal": true,
+    "captionLength": 183,
+    "cardSizeKB": 337,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
