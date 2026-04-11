@@ -1636,5 +1636,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-11T20:37:09.525Z",
+    "mediaId": "18094804811131718",
+    "artKey": "artic:16169",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Beheading of Saint John the Baptist",
+    "artist": "Giovanni di Paolo (Italian, 1398–1482)",
+    "wasSeasonal": true,
+    "captionLength": 586,
+    "cardSizeKB": 346,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
