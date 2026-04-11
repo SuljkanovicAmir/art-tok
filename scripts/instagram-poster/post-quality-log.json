@@ -1594,5 +1594,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-11T14:38:29.942Z",
+    "mediaId": "18579611872008331",
+    "artKey": "artic:229361",
+    "source": "artic",
+    "mode": "post",
+    "title": "Four Mona Lisas",
+    "artist": "Andy Warhol\nAmerican, 1928-1987",
+    "wasSeasonal": true,
+    "captionLength": 157,
+    "cardSizeKB": 379,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
