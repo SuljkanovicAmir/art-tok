@@ -1699,5 +1699,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-12T14:41:37.598Z",
+    "mediaId": "18097858010044563",
+    "artKey": "artic:80604",
+    "source": "artic",
+    "mode": "post",
+    "title": "Portrait after a Costume Ball (Portrait of Madame Dietz-Monnin)",
+    "artist": "Edgar Degas (French, 1834–1917)",
+    "wasSeasonal": true,
+    "captionLength": 351,
+    "cardSizeKB": 440,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
