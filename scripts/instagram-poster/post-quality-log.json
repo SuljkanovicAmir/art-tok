@@ -1678,5 +1678,26 @@
       "hasDescription": true,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-12T10:41:12.503Z",
+    "mediaId": "17914378116165865",
+    "artKey": "met:452111",
+    "source": "met",
+    "mode": "post",
+    "title": "\"The Feast of Sada\", Folio 22v from the Shahnama (Book of Kings) of Shah Tahmasp",
+    "artist": "Abu'l Qasim Firdausi",
+    "wasSeasonal": true,
+    "captionLength": 235,
+    "cardSizeKB": 534,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
