@@ -1720,5 +1720,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-12T17:37:07.738Z",
+    "mediaId": "18080267000622424",
+    "artKey": "artic:59646",
+    "source": "artic",
+    "mode": "post",
+    "title": "Oct. 31, 1978 (Today Series, \"Tuesday\")",
+    "artist": "On Kawara\nAmerican, born Japan, 1933-2014",
+    "wasSeasonal": true,
+    "captionLength": 641,
+    "cardSizeKB": 197,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
