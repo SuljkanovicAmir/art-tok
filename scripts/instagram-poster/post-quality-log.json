@@ -1657,5 +1657,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-12T08:05:10.245Z",
+    "mediaId": "18355969333224217",
+    "artKey": "artic:229379",
+    "source": "artic",
+    "mode": "post",
+    "title": "Mr. Pointy",
+    "artist": "Takashi Murakami\nJapanese, born 1962",
+    "wasSeasonal": true,
+    "captionLength": 550,
+    "cardSizeKB": 241,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": false
+    }
   }
 ]
