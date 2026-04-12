@@ -1741,5 +1741,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-12T20:39:43.570Z",
+    "mediaId": "17874346008458042",
+    "artKey": "artic:125660",
+    "source": "artic",
+    "mode": "post",
+    "title": "The Wedding",
+    "artist": "Jacob Lawrence\nAmerican, 1917–2000",
+    "wasSeasonal": true,
+    "captionLength": 559,
+    "cardSizeKB": 396,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
