@@ -1825,5 +1825,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-13T18:04:47.368Z",
+    "mediaId": "18068820542651675",
+    "artKey": "harvard:200161",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "At the Pass (Sekiya), Illustration to Chapter 16 of the Tale of Genji (Genji monogatari)",
+    "artist": "Tosa Mitsunobu",
+    "wasSeasonal": true,
+    "captionLength": 206,
+    "cardSizeKB": 518,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
