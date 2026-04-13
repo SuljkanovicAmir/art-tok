@@ -1804,5 +1804,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-13T15:17:13.629Z",
+    "mediaId": "18047195042520150",
+    "artKey": "harvard:231292",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Basil Parker",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 126,
+    "cardSizeKB": 427,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
