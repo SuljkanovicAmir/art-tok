@@ -1783,5 +1783,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-13T11:19:23.843Z",
+    "mediaId": "18404872426151091",
+    "artKey": "artic:14700",
+    "source": "artic",
+    "mode": "post",
+    "title": "Still Life: Apples and Green Glass",
+    "artist": "Charles Demuth\nAmerican, 1883-1935",
+    "wasSeasonal": true,
+    "captionLength": 187,
+    "cardSizeKB": 315,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
