@@ -1762,5 +1762,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-13T09:02:30.056Z",
+    "mediaId": "17937812355207382",
+    "artKey": "harvard:304799",
+    "source": "harvard",
+    "mode": "post",
+    "title": "John Thornton Kirkland (1770-1840), after Gilbert Stuart",
+    "artist": "J. Whitfield, John Thornton Kirkland, Gilbert Stuart",
+    "wasSeasonal": true,
+    "captionLength": 242,
+    "cardSizeKB": 259,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
