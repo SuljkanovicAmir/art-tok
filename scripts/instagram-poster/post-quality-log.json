@@ -1888,5 +1888,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-14T15:15:40.996Z",
+    "mediaId": "18035485565598492",
+    "artKey": "harvard:230458",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Man",
+    "artist": "Frederic George Stephens",
+    "wasSeasonal": true,
+    "captionLength": 138,
+    "cardSizeKB": 311,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
