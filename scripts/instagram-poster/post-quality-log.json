@@ -1909,5 +1909,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-14T18:06:47.383Z",
+    "mediaId": "18403984531196272",
+    "artKey": "harvard:311406",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Young Man Holding a Bowl",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 152,
+    "cardSizeKB": 402,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
