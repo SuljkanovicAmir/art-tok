@@ -1867,5 +1867,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-14T15:06:57.794Z",
+    "mediaId": "18053375168713681",
+    "artKey": "harvard:333001",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[O-hya-wa-mince-kee], Chippewa Delegate",
+    "artist": "Henry Inman",
+    "wasSeasonal": true,
+    "captionLength": 142,
+    "cardSizeKB": 211,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
