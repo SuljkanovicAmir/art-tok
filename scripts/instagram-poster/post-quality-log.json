@@ -1972,5 +1972,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-15T18:07:27.854Z",
+    "mediaId": "18100628314980486",
+    "artKey": "harvard:221746",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Cattle at Pasture in a Wooded Valley",
+    "artist": "Jean-Baptiste-Camille Corot",
+    "wasSeasonal": true,
+    "captionLength": 152,
+    "cardSizeKB": 316,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
