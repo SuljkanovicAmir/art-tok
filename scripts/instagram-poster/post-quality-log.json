@@ -1930,5 +1930,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-15T09:35:52.183Z",
+    "mediaId": "18168115648415419",
+    "artKey": "harvard:227888",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Kezar Lake, Autumn Evening",
+    "artist": "Marsden Hartley",
+    "wasSeasonal": true,
+    "captionLength": 156,
+    "cardSizeKB": 595,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
