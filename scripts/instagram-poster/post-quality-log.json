@@ -1951,5 +1951,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-15T15:07:07.454Z",
+    "mediaId": "17909036772201412",
+    "artKey": "harvard:5240",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View of Wimmis, Valley of the Simmental, Switzerland",
+    "artist": "Frederic Edwin Church",
+    "wasSeasonal": true,
+    "captionLength": 209,
+    "cardSizeKB": 297,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
