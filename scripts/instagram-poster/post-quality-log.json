@@ -2035,5 +2035,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-16T18:29:50.829Z",
+    "mediaId": "18112498189698742",
+    "artKey": "harvard:226700",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Study for \"Prometheus,\" Museum of Fine Arts, Boston",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": true,
+    "captionLength": 147,
+    "cardSizeKB": 386,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
