@@ -94,6 +94,22 @@ describe("probeImage", () => {
     globalThis.fetch = originalFetch;
   });
 
+  it("test 5a: throws on empty buffer even with status 200", async () => {
+    const originalFetch = globalThis.fetch;
+    globalThis.fetch = mock.fn(() => Promise.resolve({
+      ok: true,
+      arrayBuffer: () => Promise.resolve(new ArrayBuffer(0)),
+    }));
+
+    const { probeImage } = await import("../lib/fetch.mjs?t=5a");
+    await assert.rejects(
+      () => probeImage("https://www.dropbox.com/broken.jpg"),
+      /empty body/,
+    );
+
+    globalThis.fetch = originalFetch;
+  });
+
   it("test 5: adds Referer header for AIC URLs", async () => {
     const originalFetch = globalThis.fetch;
     let capturedHeaders = null;

@@ -49,7 +49,11 @@ export async function probeImage(url, retries = 2) {
     const res = await fetch(url, { headers });
 
     if (res.ok) {
-      return Buffer.from(await res.arrayBuffer());
+      const buffer = Buffer.from(await res.arrayBuffer());
+      if (buffer.length === 0) {
+        throw new Error(`Image fetch returned empty body from ${hostname}`);
+      }
+      return buffer;
     }
 
     if ((res.status === 429 || res.status === 403) && i < retries) {
