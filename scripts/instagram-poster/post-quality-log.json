@@ -2056,5 +2056,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-16T20:52:39.654Z",
+    "mediaId": "18143849350500460",
+    "artKey": "harvard:232198",
+    "source": "harvard",
+    "mode": "post",
+    "title": "First study for \"Christ Healing the Sick\"",
+    "artist": "Washington Allston",
+    "wasSeasonal": true,
+    "captionLength": 157,
+    "cardSizeKB": 145,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
