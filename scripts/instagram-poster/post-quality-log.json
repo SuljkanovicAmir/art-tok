@@ -1993,5 +1993,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-16T13:06:48.489Z",
+    "mediaId": "17915331744359297",
+    "artKey": "met:327830",
+    "source": "met",
+    "mode": "post",
+    "title": "Panel with the god Zeus/Serapis/Ohrmazd and worshiper",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 167,
+    "cardSizeKB": 453,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
