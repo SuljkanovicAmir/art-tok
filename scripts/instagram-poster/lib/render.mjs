@@ -47,8 +47,6 @@ async function fetchImage(url, retries = 3) {
 // ── Dimensions ──────────────────────────────────────────────────────────────
 const STORY_W = 1080;
 const STORY_H = 1920;
-const POST_W = 1080;
-const POST_H = 1350;
 
 // ── Text helpers ────────────────────────────────────────────────────────────
 
@@ -384,18 +382,6 @@ function drawWatercolorBackground(ctx, seed, w, h, imagePalette) {
 // ── Card renderers ──────────────────────────────────────────────────────────
 
 const CARD_PRESETS = {
-  post: {
-    w: POST_W, h: POST_H,
-    padding: 70, captionHeight: 180, captionGap: 28,
-    shadowBlur: 28, shadowOffsetY: 6,
-    fadeStops: [0, 0.2, 0.5, 1],
-    titleFont: 'italic 38px "Georgia", "Liberation Serif", "Times New Roman", serif',
-    titleLineHeight: 48,
-    artistFont: '300 24px "Liberation Sans", "Helvetica Neue", Arial, sans-serif',
-    artistGap: 4,
-    brandFont: 'italic 800 22px "Georgia", "Liberation Serif", serif',
-    brandBottomOffset: 44,
-  },
   story: {
     w: STORY_W, h: STORY_H,
     padding: 80, captionHeight: 200, captionGap: 40,
@@ -489,17 +475,8 @@ async function renderCard(art, imageUrl, preset) {
 }
 
 /**
- * Render a 1080x1350 Instagram feed post card.
- * @param {object} art - ArtPiece-like object with { id, title, artist, imageUrl }
- * @param {string} imageUrl - URL of the artwork image
- * @returns {Promise<Buffer>} PNG buffer
- */
-export async function renderPostCard(art, imageUrl) {
-  return renderCard(art, imageUrl, CARD_PRESETS.post);
-}
-
-/**
  * Render a 1080x1920 Instagram story card.
+ * Feed posts no longer use card rendering — see lib/image-filter.mjs.
  * @param {object} art - ArtPiece-like object with { id, title, artist, imageUrl }
  * @param {string} imageUrl - URL of the artwork image
  * @returns {Promise<Buffer>} PNG buffer

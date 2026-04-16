@@ -2,15 +2,17 @@
 /**
  * ArtTok Instagram Auto-Poster
  *
- * Fetches a random artwork from Harvard/Met/AIC, generates a watercolor-style
- * card (post, story, or reel), uploads to Dropbox for hosting, then publishes
- * to Instagram via Meta Graph API.
+ * Fetches a random artwork from Harvard/Met/AIC and publishes to Instagram
+ * via Meta Graph API. Posts use the raw painting (aspect filter rejects any
+ * image outside IG's 0.8–1.91 range and retries). Stories and reels still
+ * render watercolor cards.
  *
  * Usage:
  *   node post.mjs              # auto-cycles: post → post → reel → post …
+ *   node post.mjs --post       # force pure-image feed post (skips mode cycle)
  *   node post.mjs --story      # story (1080x1920, disappears in 24h)
  *   node post.mjs --reel       # reel (30s video with audio)
- *   node post.mjs --seasonal   # force seasonal artwork (post)
+ *   node post.mjs --seasonal   # force seasonal artwork (still honors mode cycle)
  *   node post.mjs --seasonal --reel  # force seasonal reel
  *   node post.mjs --dry-run    # generate card locally, skip Instagram publish
  *
@@ -32,7 +34,8 @@ import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
 import { publishToInstagram, postFirstComment, publishReel, publishAutoStory } from "./lib/instagram-api.mjs";
 import { buildCaption, buildHashtags, buildAltText } from "./lib/captions.mjs";
-import { renderPostCard, renderStoryCard, renderReelCard } from "./lib/render.mjs";
+import { renderStoryCard, renderReelCard } from "./lib/render.mjs";
+import { prepareFeedImage, AspectOutOfRangeError } from "./lib/image-filter.mjs";
 import { pick } from "./lib/fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -40,6 +43,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // ── CLI args ────────────────────────────────────────────────────────────────
 
 const args = process.argv.slice(2);
+const IS_POST = args.includes("--post");
 const IS_STORY = args.includes("--story");
 const IS_REEL = args.includes("--reel");
 const IS_SEASONAL = args.includes("--seasonal");
@@ -52,6 +56,7 @@ const SPECIFIC_ART = ART_ARG ? ART_ARG.replace("--art=", "") : null; // e.g. "ha
 const MODE_CYCLE = ["post", "post", "post", "post", "post", "post", "post", "post", "post", "reel"];
 
 function getRunMode(historyData) {
+  if (IS_POST) return "post";
   if (IS_STORY) return "story";
   if (IS_REEL) return "reel";
   return MODE_CYCLE[historyData.runIndex % MODE_CYCLE.length];
@@ -116,9 +121,11 @@ async function main() {
   console.log(`History: ${historySet.size} previously posted artworks (run #${historyData.runIndex})`);
 
   // 3. Fetch artwork with retry loop
+  //    Posts use pure images (aspect must fit IG's [0.8, 1.91] feed range);
+  //    stories/reels still use watercolor card rendering.
   let art;
   let pngBuffer;
-  const MAX_RETRIES = 3;
+  const MAX_RETRIES = mode === "post" ? 6 : 3; // post retries more — aspect filter rejects
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -142,15 +149,28 @@ async function main() {
         }
       }
 
-      // Render appropriate card
-      const renderFn = mode === "reel" ? renderReelCard
-        : mode === "story" ? renderStoryCard : renderPostCard;
-      console.log(`Rendering ${mode} card...`);
-      pngBuffer = await renderFn(art, art.imageUrl);
-      console.log(`Card rendered: ${(pngBuffer.length / 1024).toFixed(0)} KB`);
+      if (mode === "post") {
+        console.log("Preparing feed image...");
+        const input = art.imageBuffer || art.imageUrl;
+        const prepped = await prepareFeedImage(input);
+        pngBuffer = prepped.buffer;
+        console.log(
+          `Image prepared: ${prepped.width}x${prepped.height} ` +
+          `(aspect ${prepped.aspect.toFixed(2)}), ${(pngBuffer.length / 1024).toFixed(0)} KB`,
+        );
+      } else {
+        const renderFn = mode === "reel" ? renderReelCard : renderStoryCard;
+        console.log(`Rendering ${mode} card...`);
+        pngBuffer = await renderFn(art, art.imageUrl);
+        console.log(`Card rendered: ${(pngBuffer.length / 1024).toFixed(0)} KB`);
+      }
       break;
     } catch (err) {
-      console.warn(`Attempt ${attempt}/${MAX_RETRIES} failed: ${err.message}`);
+      if (err instanceof AspectOutOfRangeError) {
+        console.warn(`Rejected "${art?.title}" — ${err.message}`);
+      } else {
+        console.warn(`Attempt ${attempt}/${MAX_RETRIES} failed: ${err.message}`);
+      }
       if (attempt === MAX_RETRIES || SPECIFIC_ART) throw err;
       art = null;
     }
@@ -159,8 +179,9 @@ async function main() {
   // 4. Dry-run: save card + optional reel video, print caption + hashtags, exit
   if (DRY_RUN) {
     const basename = `arttok-${art.source}-${art.id}-${mode}`;
-    writeFileSync(`${basename}.png`, pngBuffer);
-    console.log(`\nSaved to ${basename}.png`);
+    const ext = mode === "post" ? "jpg" : "png";
+    writeFileSync(`${basename}.${ext}`, pngBuffer);
+    console.log(`\nSaved to ${basename}.${ext}`);
 
     if (mode === "reel") {
       try {

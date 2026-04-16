@@ -9,7 +9,7 @@
     "post:dry-run": "node post.mjs --dry-run",
     "curator": "node curator.mjs",
     "curator:status": "node curator.mjs --status",
-    "test": "node --test tests/fallback.test.mjs"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "canvas": "^3.1.0",
