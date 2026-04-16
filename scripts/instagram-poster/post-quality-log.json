@@ -2014,5 +2014,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-16T15:28:41.460Z",
+    "mediaId": "17896221054433267",
+    "artKey": "harvard:230599",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Young Man with a Green Tie",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 159,
+    "cardSizeKB": 390,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
