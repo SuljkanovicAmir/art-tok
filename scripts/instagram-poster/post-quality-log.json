@@ -2161,5 +2161,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-17T20:49:12.540Z",
+    "mediaId": "18420329737126474",
+    "artKey": "harvard:226846",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Tree and Figure",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 149,
+    "cardSizeKB": 295,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
