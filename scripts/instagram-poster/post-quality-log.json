@@ -2077,5 +2077,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-17T08:27:48.277Z",
+    "mediaId": "18338318689173415",
+    "artKey": "harvard:356428",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View of Rhenen",
+    "artist": "Jan van Goyen",
+    "wasSeasonal": true,
+    "captionLength": 113,
+    "cardSizeKB": 198,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
