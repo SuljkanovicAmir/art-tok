@@ -2140,5 +2140,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-17T17:52:58.304Z",
+    "mediaId": "18029893373619221",
+    "artKey": "harvard:227886",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Noel Murphy",
+    "artist": "Pavel Tchelitchew",
+    "wasSeasonal": true,
+    "captionLength": 141,
+    "cardSizeKB": 311,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
