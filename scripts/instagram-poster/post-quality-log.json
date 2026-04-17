@@ -2098,5 +2098,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-17T10:59:15.711Z",
+    "mediaId": "18098271478835682",
+    "artKey": "met:437056",
+    "source": "met",
+    "mode": "post",
+    "title": "Tommaso di Folco Portinari (1428–1501); Maria Portinari (Maria Maddalena Baroncelli, born 1456)",
+    "artist": "Hans Memling",
+    "wasSeasonal": true,
+    "captionLength": 203,
+    "cardSizeKB": 178,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
