@@ -2119,5 +2119,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-17T14:58:25.620Z",
+    "mediaId": "18099664562100475",
+    "artKey": "harvard:226683",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Professor Oliver Dimon Kellogg (1878-1932)",
+    "artist": "Kanji Nakamura",
+    "wasSeasonal": true,
+    "captionLength": 152,
+    "cardSizeKB": 382,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
