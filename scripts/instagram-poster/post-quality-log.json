@@ -2203,5 +2203,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-18T14:42:46.748Z",
+    "mediaId": "17928504177253978",
+    "artKey": "harvard:337442",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Washington Crossing the Delaware",
+    "artist": "Justin McCarthy",
+    "wasSeasonal": true,
+    "captionLength": 136,
+    "cardSizeKB": 329,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
