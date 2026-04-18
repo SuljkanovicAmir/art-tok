@@ -2182,5 +2182,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-18T10:42:51.719Z",
+    "mediaId": "18098185103048851",
+    "artKey": "met:42716",
+    "source": "met",
+    "mode": "post",
+    "title": "Buddha of Medicine Bhaishajyaguru (Yaoshi fo)",
+    "artist": "Unknown artist",
+    "wasSeasonal": true,
+    "captionLength": 190,
+    "cardSizeKB": 282,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
