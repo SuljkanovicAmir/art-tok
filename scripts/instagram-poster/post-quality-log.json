@@ -2245,5 +2245,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-18T20:41:42.822Z",
+    "mediaId": "18022856720648138",
+    "artKey": "harvard:227594",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Mount Monadnock",
+    "artist": "Abbott Handerson Thayer",
+    "wasSeasonal": true,
+    "captionLength": 113,
+    "cardSizeKB": 369,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
