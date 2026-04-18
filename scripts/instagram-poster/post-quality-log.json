@@ -2224,5 +2224,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-18T17:38:49.618Z",
+    "mediaId": "17885377416489360",
+    "artKey": "harvard:231154",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape:  Winter Afternoon",
+    "artist": "Robert Hatton Monks",
+    "wasSeasonal": true,
+    "captionLength": 166,
+    "cardSizeKB": 314,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
