@@ -2266,5 +2266,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-19T08:07:31.989Z",
+    "mediaId": "17857075356689800",
+    "artKey": "harvard:311232",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Cliffs and Sea at Ogunquit, Maine",
+    "artist": "Charles Herbert Woodbury",
+    "wasSeasonal": true,
+    "captionLength": 141,
+    "cardSizeKB": 207,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
