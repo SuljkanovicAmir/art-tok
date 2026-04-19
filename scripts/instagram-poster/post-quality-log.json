@@ -2287,5 +2287,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-19T10:41:28.930Z",
+    "mediaId": "17914989510161838",
+    "artKey": "met:335663",
+    "source": "met",
+    "mode": "post",
+    "title": "Youth Playing a Pipe for a Satyr",
+    "artist": "Giovanni Benedetto Castiglione (Il Grechetto)",
+    "wasSeasonal": true,
+    "captionLength": 230,
+    "cardSizeKB": 299,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
