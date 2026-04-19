@@ -2329,5 +2329,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-19T20:41:14.611Z",
+    "mediaId": "18322913467284113",
+    "artKey": "harvard:231150",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Shepherds Resting",
+    "artist": "Jean-François Millet",
+    "wasSeasonal": true,
+    "captionLength": 132,
+    "cardSizeKB": 219,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
