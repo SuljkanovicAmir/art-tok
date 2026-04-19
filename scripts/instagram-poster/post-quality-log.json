@@ -2308,5 +2308,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-19T14:42:39.435Z",
+    "mediaId": "17884436046506848",
+    "artKey": "harvard:231944",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Bonlak on the Nile near Cairo",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": true,
+    "captionLength": 140,
+    "cardSizeKB": 159,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
