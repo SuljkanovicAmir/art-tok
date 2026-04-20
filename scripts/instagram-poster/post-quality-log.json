@@ -2371,5 +2371,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-20T11:20:50.692Z",
+    "mediaId": "18424057774120393",
+    "artKey": "harvard:311839",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Hampstead Heath",
+    "artist": "Unidentified Artist, David Lucas, John Constable",
+    "wasSeasonal": true,
+    "captionLength": 160,
+    "cardSizeKB": 174,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
