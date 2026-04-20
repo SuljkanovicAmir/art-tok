@@ -2392,5 +2392,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-20T15:18:00.846Z",
+    "mediaId": "18135103120546696",
+    "artKey": "harvard:230894",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Beach Scene with Boy and Horse-Drawn Carriage",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "captionLength": 159,
+    "cardSizeKB": 247,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
