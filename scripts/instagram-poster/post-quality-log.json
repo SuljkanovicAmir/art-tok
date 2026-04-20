@@ -2413,5 +2413,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-20T18:00:22.416Z",
+    "mediaId": "18093792305156827",
+    "artKey": "harvard:299711",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Josiah Parsons Cooke (1787-1880)",
+    "artist": "Chester Harding, Josiah Parsons Cooke",
+    "wasSeasonal": true,
+    "captionLength": 156,
+    "cardSizeKB": 224,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
