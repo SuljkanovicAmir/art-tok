@@ -2350,5 +2350,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-20T09:08:10.483Z",
+    "mediaId": "18058568810479735",
+    "artKey": "harvard:228896",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Divine Wisdom",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": true,
+    "captionLength": 366,
+    "cardSizeKB": 410,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
