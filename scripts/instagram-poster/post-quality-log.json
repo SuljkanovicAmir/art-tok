@@ -2434,5 +2434,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-20T20:52:03.638Z",
+    "mediaId": "18106468646305206",
+    "artKey": "harvard:227209",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Fishing Village, Brittany",
+    "artist": "Odilon Redon",
+    "wasSeasonal": true,
+    "captionLength": 121,
+    "cardSizeKB": 171,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
