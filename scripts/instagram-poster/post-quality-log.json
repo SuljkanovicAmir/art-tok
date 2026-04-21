@@ -2518,5 +2518,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-21T18:00:46.136Z",
+    "mediaId": "18092319610903361",
+    "artKey": "harvard:227539",
+    "source": "harvard",
+    "mode": "post",
+    "title": "A Cardinal and his Entourage in a Park",
+    "artist": "Emanuel Gottlieb Leutze",
+    "wasSeasonal": false,
+    "captionLength": 145,
+    "cardSizeKB": 249,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
