@@ -2497,5 +2497,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-21T15:15:44.412Z",
+    "mediaId": "17990826803958163",
+    "artKey": "harvard:305153",
+    "source": "harvard",
+    "mode": "post",
+    "title": "John Barnard Swett Jackson (1806-1879)",
+    "artist": "Edward L. Custer, John Barnard Swett Jackson",
+    "wasSeasonal": false,
+    "captionLength": 166,
+    "cardSizeKB": 237,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
