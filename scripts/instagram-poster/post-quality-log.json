@@ -2455,5 +2455,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-21T08:54:53.720Z",
+    "mediaId": "17870332530606859",
+    "artKey": "harvard:231341",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "English Channel",
+    "artist": "Homer Dodge Martin",
+    "wasSeasonal": false,
+    "captionLength": 103,
+    "cardSizeKB": 392,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
