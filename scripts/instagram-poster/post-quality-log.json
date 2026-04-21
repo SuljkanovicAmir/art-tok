@@ -2539,5 +2539,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-21T20:56:00.239Z",
+    "mediaId": "18079539608398839",
+    "artKey": "harvard:304485",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Fisher Ames (1758-1808)",
+    "artist": "Gilbert Stuart, Fisher Ames, John Doggett",
+    "wasSeasonal": false,
+    "captionLength": 155,
+    "cardSizeKB": 330,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
