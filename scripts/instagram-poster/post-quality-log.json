@@ -2476,5 +2476,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-21T11:09:50.409Z",
+    "mediaId": "18116882173675979",
+    "artKey": "harvard:304884",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Samuel Cooper Thacher (1785-1818)",
+    "artist": "Gilbert Stuart Newton, Samuel Cooper Thacher",
+    "wasSeasonal": false,
+    "captionLength": 173,
+    "cardSizeKB": 198,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
