@@ -2623,5 +2623,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-22T18:01:46.225Z",
+    "mediaId": "18576370354050631",
+    "artKey": "harvard:228775",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Girl",
+    "artist": "William Henry Furness, Jr.",
+    "wasSeasonal": false,
+    "captionLength": 136,
+    "cardSizeKB": 251,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
