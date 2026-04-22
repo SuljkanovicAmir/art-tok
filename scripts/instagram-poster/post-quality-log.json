@@ -2602,5 +2602,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-22T15:16:51.685Z",
+    "mediaId": "18068041883330425",
+    "artKey": "harvard:304973",
+    "source": "harvard",
+    "mode": "post",
+    "title": "John Still Winthrop (1720-1776)",
+    "artist": "Unidentified Artist, John Still Winthrop",
+    "wasSeasonal": false,
+    "captionLength": 163,
+    "cardSizeKB": 226,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
