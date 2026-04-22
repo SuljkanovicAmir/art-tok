@@ -2560,5 +2560,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-22T08:50:33.621Z",
+    "mediaId": "18014937482681241",
+    "artKey": "harvard:230132",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Dr. Thomas Dagoumer (1762-1833/1835)",
+    "artist": "Pierre-Paul Prud'hon",
+    "wasSeasonal": false,
+    "captionLength": 140,
+    "cardSizeKB": 308,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
