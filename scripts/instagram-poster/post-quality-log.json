@@ -2644,5 +2644,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-22T20:57:54.196Z",
+    "mediaId": "18086004872580908",
+    "artKey": "harvard:231649",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Seven-Peaks, Guadarrama",
+    "artist": "Joaquin Sorolla y Bastida",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 166,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
