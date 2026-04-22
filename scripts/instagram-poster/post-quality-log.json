@@ -2581,5 +2581,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-22T11:08:32.188Z",
+    "mediaId": "17877193824573671",
+    "artKey": "harvard:311701",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Chief Wade in the Water",
+    "artist": "Unidentified Artist, Winold Reiss, Joseph Lindon Smith",
+    "wasSeasonal": false,
+    "captionLength": 173,
+    "cardSizeKB": 289,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
