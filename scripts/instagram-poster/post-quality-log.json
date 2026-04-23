@@ -2665,5 +2665,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-23T08:55:44.918Z",
+    "mediaId": "18034037480637445",
+    "artKey": "harvard:302052",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "George Washington (1732-1799)",
+    "artist": "Gilbert Stuart, George Washington",
+    "wasSeasonal": false,
+    "captionLength": 135,
+    "cardSizeKB": 402,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
