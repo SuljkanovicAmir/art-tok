@@ -2686,5 +2686,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-23T20:55:52.778Z",
+    "mediaId": "17892067665333573",
+    "artKey": "harvard:330634",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Woman in a Blue Dress",
+    "artist": "John Henry Brown",
+    "wasSeasonal": false,
+    "captionLength": 127,
+    "cardSizeKB": 342,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
