@@ -2728,5 +2728,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-24T11:08:43.553Z",
+    "mediaId": "18071248577392493",
+    "artKey": "harvard:226424",
+    "source": "harvard",
+    "mode": "post",
+    "title": "York Harbor, Maine",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 124,
+    "cardSizeKB": 211,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
