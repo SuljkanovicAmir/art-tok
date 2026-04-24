@@ -2707,5 +2707,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-24T09:01:30.473Z",
+    "mediaId": "18008760110853530",
+    "artKey": "harvard:304771",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Jonathan Belcher (1681/82-1757)",
+    "artist": "Thomas Hudson, Jonathan Belcher",
+    "wasSeasonal": false,
+    "captionLength": 154,
+    "cardSizeKB": 147,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
