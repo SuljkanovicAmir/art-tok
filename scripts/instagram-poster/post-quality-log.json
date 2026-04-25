@@ -2770,5 +2770,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-25T14:43:41.391Z",
+    "mediaId": "17963884500078516",
+    "artKey": "harvard:230066",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Paul Barroilhet (1810-1871)",
+    "artist": "Thomas Couture",
+    "wasSeasonal": false,
+    "captionLength": 125,
+    "cardSizeKB": 408,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
