@@ -2749,5 +2749,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-25T10:41:34.180Z",
+    "mediaId": "18453414733129292",
+    "artKey": "met:471061",
+    "source": "met",
+    "mode": "post",
+    "title": "Lion",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "captionLength": 116,
+    "cardSizeKB": 442,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
