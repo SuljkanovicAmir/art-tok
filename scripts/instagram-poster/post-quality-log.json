@@ -2812,5 +2812,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-26T14:46:29.433Z",
+    "mediaId": "18101422306797364",
+    "artKey": "harvard:226910",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life with Oranges, Pomegranates, Grapes, Chestnuts, Medlars and Ears of Wheat",
+    "artist": "Cornelis de Heem",
+    "wasSeasonal": false,
+    "captionLength": 189,
+    "cardSizeKB": 256,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
