@@ -2791,5 +2791,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-26T10:48:24.243Z",
+    "mediaId": "18038124962792682",
+    "artKey": "met:764091",
+    "source": "met",
+    "mode": "post",
+    "title": "Our Lady of Valvanera",
+    "artist": "Unknown",
+    "wasSeasonal": false,
+    "captionLength": 139,
+    "cardSizeKB": 197,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
