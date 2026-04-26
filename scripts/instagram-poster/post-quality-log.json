@@ -2854,5 +2854,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-26T20:41:28.641Z",
+    "mediaId": "18055201769499802",
+    "artKey": "harvard:230836",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Venice",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 125,
+    "cardSizeKB": 226,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
