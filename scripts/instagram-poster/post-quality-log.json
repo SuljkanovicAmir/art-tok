@@ -2833,5 +2833,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-26T17:40:52.905Z",
+    "mediaId": "18102464233782457",
+    "artKey": "harvard:311545",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Washington's Tomb",
+    "artist": "Samuel Lancaster Gerry",
+    "wasSeasonal": false,
+    "captionLength": 127,
+    "cardSizeKB": 393,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
