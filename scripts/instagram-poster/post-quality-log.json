@@ -2875,5 +2875,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-27T15:51:18.853Z",
+    "mediaId": "17963296269109931",
+    "artKey": "harvard:232035",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Bust of a Young Woman",
+    "artist": "Angelo Asti",
+    "wasSeasonal": false,
+    "captionLength": 102,
+    "cardSizeKB": 354,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": false,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
