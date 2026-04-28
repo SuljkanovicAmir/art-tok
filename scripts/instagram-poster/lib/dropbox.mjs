@@ -79,7 +79,14 @@ export async function uploadToDropbox(buffer, filenamePrefix, extension) {
     if (!shareUrl) throw new Error("Failed to create or find Dropbox shared link");
   }
 
-  const directUrl = shareUrl.replace(/\?dl=0$/, "?raw=1").replace(/&dl=0/, "&raw=1");
+  // Use dl.dropboxusercontent.com (direct CDN) instead of www.dropbox.com.
+  // Why: Meta's media fetcher intermittently fails on www.dropbox.com/scl/...?raw=1
+  // (returns error 9004/2207052 "media could not be fetched"), while the direct
+  // CDN host serves the binary reliably without going through the web frontend.
+  const directUrl = shareUrl
+    .replace("www.dropbox.com", "dl.dropboxusercontent.com")
+    .replace(/\?dl=0$/, "?dl=1")
+    .replace(/&dl=0/, "&dl=1");
   return { url: directUrl, path, token };
 }
 
