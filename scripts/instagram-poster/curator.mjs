@@ -13,11 +13,13 @@
  *   node curator.mjs --cleanup                 # delete Dropbox files for posted entries
  */
 import "dotenv/config";
+import { loadImage } from "canvas";
 import { loadCache, saveCache, excludeEntry, getCacheStats, generateTags } from "./lib/cache.mjs";
 import { loadHistoryData, artKey } from "./lib/history.mjs";
 import { fetchHarvardRandom, fetchAicRandom } from "./lib/art-fetchers.mjs";
 import { getDropboxToken, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { probeImage } from "./lib/fetch.mjs";
+import { IG_MIN_ASPECT, IG_MAX_ASPECT } from "./lib/image-filter.mjs";
 
 const HISTORY_FILE = new URL("./posted-history.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 
@@ -84,7 +86,23 @@ if (args[0] === "--cleanup") {
 
 // ── Main: fetch and cache ────────────────────────────────────────────────────
 
-const TARGET_PER_SOURCE = 100;
+const TARGET_PER_SOURCE = 200;
+const PORTRAIT_CAP_PCT = 0.20;
+
+/**
+ * Detect portrait artworks by title heuristic.
+ * Catches: "Portrait of...", "Self-Portrait", "Mrs./Mr./Sir/Lady X", life-dates "(1794-1874)".
+ * Misses some single-name portraits ("Edward Kenny") to keep false-positive rate low.
+ */
+export function isPortrait(art) {
+  const title = (art.title || "").toLowerCase();
+  const original = art.title || "";
+  if (/\bportrait\b/.test(title)) return true;
+  if (/\bself-portrait\b/.test(title)) return true;
+  if (/\b(mrs?|miss|mme|madame|monsieur|sir|lady|lord|dr)\.?\s+[A-Z]/i.test(original)) return true;
+  if (/\(\d{3,4}\s*[-–—]\s*\d{3,4}\)/.test(original)) return true;
+  return false;
+}
 
 const SOURCES = [
   { name: "Harvard", source: "harvard", fn: fetchHarvardRandom, totalPages: 187 },
@@ -121,6 +139,10 @@ async function main() {
   const OIL_CAP = Math.floor(TARGET_PER_SOURCE * SOURCES.length * 0.5);
   let oilCount = cache.filter((e) => /oil/i.test(e.medium || "")).length;
 
+  // Subject diversity: cap portraits at PORTRAIT_CAP_PCT of current cache size (dynamic).
+  // Tracked separately because the heuristic depends on title, not metadata fields.
+  let portraitCount = cache.filter(isPortrait).length;
+
   for (const { name, source, fn, totalPages } of SOURCES) {
     // Skip source if it already has enough entries in cache
     const existingForSource = cache.filter((e) => e.source === source).length;
@@ -136,6 +158,9 @@ async function main() {
     let pageIdx = 0;
 
     for (let attempt = 0; attempt < TARGET_PER_SOURCE * 3 && sourceAdded < TARGET_PER_SOURCE && consecutiveFails < MAX_CONSECUTIVE_FAILS; attempt++) {
+      // Default: pause 60s between iterations to stay well under museum-API rate limits.
+      // Set to true on early-exit paths that didn't actually hit the image server (no pause needed).
+      let skipPause = false;
       try {
         // Cycle through shuffled pages — each call hits a unique page
         const page = pages[pageIdx % pages.length];
@@ -143,19 +168,47 @@ async function main() {
         const art = await fn({ page });
         const key = artKey(art);
 
-        // Skip if already cached or posted
+        // Skip if already cached or posted (no probeImage call — skip the pause)
         if (cacheKeys.has(key) || historySet.has(key)) {
+          skipPause = true;
           continue;
         }
 
         // Enforce oil diversity cap (50%)
         const isOil = /oil/i.test(art.medium || "");
         if (isOil && oilCount >= OIL_CAP) {
+          skipPause = true;
+          continue;
+        }
+
+        // Enforce portrait diversity cap (20% of current cache).
+        // Adding this entry would push portraits/(total+1) above the cap → skip.
+        const isPortraitArt = isPortrait(art);
+        if (isPortraitArt && (portraitCount + 1) / (cache.length + 1) > PORTRAIT_CAP_PCT) {
+          skipPause = true;
           continue;
         }
 
         // Download image (your local IP works)
         const imageBuffer = await probeImage(art.imageUrl);
+
+        // Aspect probe — reject anything outside IG feed range so the cache
+        // only holds postable entries. Saves Dropbox storage and avoids the
+        // post-time aspect-retry loop that was burning entire job runs.
+        let imgWidth, imgHeight, aspect;
+        try {
+          const decoded = await loadImage(imageBuffer);
+          imgWidth = decoded.width;
+          imgHeight = decoded.height;
+          aspect = imgWidth / imgHeight;
+        } catch (err) {
+          console.warn(`  Skipped "${art.title}" — decode failed: ${err.message}`);
+          continue;
+        }
+        if (aspect < IG_MIN_ASPECT || aspect > IG_MAX_ASPECT) {
+          console.log(`  Skipped "${art.title}" — aspect ${aspect.toFixed(2)} (${imgWidth}x${imgHeight}) out of [${IG_MIN_ASPECT}, ${IG_MAX_ASPECT}]`);
+          continue;
+        }
 
         // Upload to Dropbox
         const filename = `${source}-${art.id}`;
@@ -231,6 +284,9 @@ async function main() {
           description: art.description || "",
           url: art.url || "",
           museumName: art.museumName || "",
+          width: imgWidth,
+          height: imgHeight,
+          aspect: Number(aspect.toFixed(3)),
           cachedAt: new Date().toISOString().slice(0, 10),
           tags: generateTags(art),
           skip: false,
@@ -245,17 +301,19 @@ async function main() {
         added++;
         consecutiveFails = 0;
         if (isOil) oilCount++;
+        if (isPortraitArt) portraitCount++;
         const mediumTag = isOil ? "oil" : (art.medium || "").slice(0, 20);
-        console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist} (${mediumTag})`);
-
-        // Delay between fetches to avoid rate limiting
-        await new Promise((r) => setTimeout(r, 1500));
+        console.log(`  [${sourceAdded}/${TARGET_PER_SOURCE}] "${art.title}" by ${art.artist} (${mediumTag}, aspect ${aspect.toFixed(2)})`);
       } catch (err) {
         consecutiveFails++;
         console.warn(`  Failed (${consecutiveFails}/${MAX_CONSECUTIVE_FAILS}): ${err.message}`);
         failed++;
-        // Longer delay after failure (rate limit recovery)
-        await new Promise((r) => setTimeout(r, 3000));
+      } finally {
+        // 30s pause between iterations that actually hit the museum image servers.
+        // Skipped on early-exit paths (already-cached, oil-cap, portrait-cap) since those make no image-server calls.
+        if (!skipPause) {
+          await new Promise((r) => setTimeout(r, 30_000));
+        }
       }
     }
 
@@ -270,6 +328,8 @@ async function main() {
   console.log(`Available: ${stats.available}`);
   const totalOil = cache.filter((e) => /oil/i.test(e.medium || "")).length;
   console.log(`Oil paintings: ${totalOil}/${cache.length} (${(totalOil / cache.length * 100).toFixed(0)}%, cap: 50%)`);
+  const totalPortraits = cache.filter(isPortrait).length;
+  console.log(`Portraits: ${totalPortraits}/${cache.length} (${(totalPortraits / cache.length * 100).toFixed(0)}%, cap: ${(PORTRAIT_CAP_PCT * 100).toFixed(0)}%)`);
 }
 
 main().catch((err) => {
