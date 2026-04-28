@@ -2938,5 +2938,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-28T21:09:02.142Z",
+    "mediaId": "17997804590760892",
+    "artKey": "harvard:229379",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Josephine de Beauharnais as Empress",
+    "artist": "Jean Baptiste Isabey",
+    "wasSeasonal": false,
+    "captionLength": 156,
+    "cardSizeKB": 345,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
