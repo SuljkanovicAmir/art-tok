@@ -2896,5 +2896,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-28T16:08:34.761Z",
+    "mediaId": "17885677830522359",
+    "artKey": "met:437854",
+    "source": "met",
+    "mode": "post",
+    "title": "Whalers",
+    "artist": "Joseph Mallord William Turner",
+    "wasSeasonal": false,
+    "captionLength": 135,
+    "cardSizeKB": 218,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
