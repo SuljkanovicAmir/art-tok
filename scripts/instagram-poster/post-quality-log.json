@@ -2917,5 +2917,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-04-28T18:19:57.337Z",
+    "mediaId": "18105683300297116",
+    "artKey": "harvard:230027",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Ajaccio, Corsica",
+    "artist": "James Abbott McNeill Whistler",
+    "wasSeasonal": false,
+    "captionLength": 134,
+    "cardSizeKB": 169,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
