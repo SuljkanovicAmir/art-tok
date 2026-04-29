@@ -3001,5 +3001,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-29T15:57:19.671Z",
+    "mediaId": "18071238668307145",
+    "artKey": "harvard:228697",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Coast Near Boscastle, Cornwall",
+    "artist": "William Trost Richards",
+    "wasSeasonal": false,
+    "captionLength": 149,
+    "cardSizeKB": 189,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
