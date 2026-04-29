@@ -2980,5 +2980,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-29T11:39:53.880Z",
+    "mediaId": "18136165897472356",
+    "artKey": "artic:79593",
+    "source": "artic",
+    "mode": "post",
+    "title": "Ciphers and Constellations in Love with a Woman",
+    "artist": "Joan Miró\nSpanish, 1893-1983",
+    "wasSeasonal": false,
+    "captionLength": 638,
+    "cardSizeKB": 353,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
