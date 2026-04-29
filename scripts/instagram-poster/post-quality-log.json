@@ -2959,5 +2959,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-29T09:10:53.262Z",
+    "mediaId": "18079042001298546",
+    "artKey": "harvard:230064",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Arab Horsemen Carrying Away Their Dead",
+    "artist": "Théodore Chassériau",
+    "wasSeasonal": false,
+    "captionLength": 141,
+    "cardSizeKB": 214,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
