@@ -3022,5 +3022,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-29T18:13:05.799Z",
+    "mediaId": "18122591662623369",
+    "artKey": "harvard:232031",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Three Girls in a Park",
+    "artist": "George Yewell",
+    "wasSeasonal": false,
+    "captionLength": 118,
+    "cardSizeKB": 331,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
