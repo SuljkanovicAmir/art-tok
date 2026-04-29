@@ -3043,5 +3043,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-29T21:08:53.132Z",
+    "mediaId": "17873667990476022",
+    "artKey": "harvard:228509",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Study for \"Monmouth Before James II\"",
+    "artist": "John Singleton Copley",
+    "wasSeasonal": false,
+    "captionLength": 146,
+    "cardSizeKB": 283,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
