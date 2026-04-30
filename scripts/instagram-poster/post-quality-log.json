@@ -3127,5 +3127,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-30T18:11:23.547Z",
+    "mediaId": "18099833069515639",
+    "artKey": "harvard:229065",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Hermitage, Effect of Snow",
+    "artist": "Camille Pissarro",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 328,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
