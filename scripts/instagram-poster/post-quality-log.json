@@ -3064,5 +3064,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-30T09:13:02.169Z",
+    "mediaId": "17848556613697045",
+    "artKey": "harvard:310986",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Dr. Oliver Wendell Holmes (1809-1894)",
+    "artist": "John White Alexander, Dr. Oliver Wendell Holmes",
+    "wasSeasonal": false,
+    "captionLength": 168,
+    "cardSizeKB": 161,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
