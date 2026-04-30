@@ -3106,5 +3106,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-30T15:52:15.969Z",
+    "mediaId": "18130493017571193",
+    "artKey": "harvard:228028",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Study for \"The Combat\"",
+    "artist": "William Etty, Ferdinand-Victor-Eugène Delacroix",
+    "wasSeasonal": false,
+    "captionLength": 164,
+    "cardSizeKB": 264,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
