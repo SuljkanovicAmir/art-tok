@@ -3085,5 +3085,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-30T11:39:39.460Z",
+    "mediaId": "18069058835327223",
+    "artKey": "harvard:230907",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Portrait of a Young Man Wearing a Hat",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 520,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
