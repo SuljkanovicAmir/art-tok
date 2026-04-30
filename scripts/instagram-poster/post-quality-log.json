@@ -3148,5 +3148,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-04-30T21:04:05.745Z",
+    "mediaId": "18119530834734006",
+    "artKey": "harvard:230325",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Battle of Arab Horsemen",
+    "artist": "Théodore Chassériau",
+    "wasSeasonal": false,
+    "captionLength": 125,
+    "cardSizeKB": 209,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
