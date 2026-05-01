@@ -3253,5 +3253,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-01T20:55:53.119Z",
+    "mediaId": "18011054798849493",
+    "artKey": "harvard:356435",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Three Peasants Drinking and Smoking",
+    "artist": "Adriaen van Ostade",
+    "wasSeasonal": false,
+    "captionLength": 136,
+    "cardSizeKB": 181,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
