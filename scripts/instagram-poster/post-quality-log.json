@@ -3190,5 +3190,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-01T11:08:51.346Z",
+    "mediaId": "18081357248630117",
+    "artKey": "harvard:227932",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Three Swans",
+    "artist": "Henri-Edmond Cross",
+    "wasSeasonal": false,
+    "captionLength": 120,
+    "cardSizeKB": 193,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
