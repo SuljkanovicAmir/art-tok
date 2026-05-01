@@ -3232,5 +3232,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-01T18:00:26.835Z",
+    "mediaId": "18116457916740415",
+    "artKey": "harvard:221570",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Studies for \"The Martyrdom of Saint Symphorien\" (Lictors, Stone Thrower, and Spectator)",
+    "artist": "Jean-Auguste-Dominique Ingres",
+    "wasSeasonal": false,
+    "captionLength": 305,
+    "cardSizeKB": 423,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
