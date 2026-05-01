@@ -3169,5 +3169,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-01T09:02:54.007Z",
+    "mediaId": "17982184604989962",
+    "artKey": "harvard:200005",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Murasaki Shikibu writing at Ishiyamadera (Frontispiece to an album containing 54 illustrations and calligraphic excerpts from the Tale of Genji)",
+    "artist": "Tosa Mitsuoki 土佐光起",
+    "wasSeasonal": false,
+    "captionLength": 401,
+    "cardSizeKB": 211,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
