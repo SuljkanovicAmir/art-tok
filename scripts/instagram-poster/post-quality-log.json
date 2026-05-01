@@ -3211,5 +3211,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-01T14:58:09.180Z",
+    "mediaId": "17856055404640385",
+    "artKey": "harvard:231933",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Mossy Bank",
+    "artist": "Jervis McEntee",
+    "wasSeasonal": false,
+    "captionLength": 108,
+    "cardSizeKB": 262,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
