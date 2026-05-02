@@ -3295,5 +3295,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-02T10:55:35.575Z",
+    "mediaId": "18063846023702699",
+    "artKey": "met:435641",
+    "source": "met",
+    "mode": "reel",
+    "title": "Madonna and Child",
+    "artist": "Giovanni Bellini",
+    "wasSeasonal": false,
+    "captionLength": 120,
+    "cardSizeKB": 481,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
