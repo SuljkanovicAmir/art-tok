@@ -3337,5 +3337,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-02T17:45:42.400Z",
+    "mediaId": "18070356803654898",
+    "artKey": "harvard:227918",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Boats at Anchor and Beachhead",
+    "artist": "Louis-Eugène Boudin",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 237,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
