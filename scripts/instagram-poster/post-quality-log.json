@@ -3316,5 +3316,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-02T14:51:05.977Z",
+    "mediaId": "18037570109598583",
+    "artKey": "harvard:230433",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Night Scene, Rotterdam",
+    "artist": "Johan Barthold Jongkind",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 373,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
