@@ -3358,5 +3358,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-02T20:44:01.717Z",
+    "mediaId": "18008000462713167",
+    "artKey": "harvard:231949",
+    "source": "harvard",
+    "mode": "post",
+    "title": "A Red-Haired Woman",
+    "artist": "Edward D.E. Greene",
+    "wasSeasonal": false,
+    "captionLength": 128,
+    "cardSizeKB": 293,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
