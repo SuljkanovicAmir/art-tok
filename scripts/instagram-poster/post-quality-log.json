@@ -3274,5 +3274,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-02T08:22:13.975Z",
+    "mediaId": "17997804707929513",
+    "artKey": "harvard:230579",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Old Man with a Dark Mantle",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 283,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
