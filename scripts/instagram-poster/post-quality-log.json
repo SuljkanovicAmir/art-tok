@@ -3442,5 +3442,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-03T20:46:10.448Z",
+    "mediaId": "18211218442329974",
+    "artKey": "harvard:312216",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Mountain Pass",
+    "artist": "Robert David Gauley",
+    "wasSeasonal": false,
+    "captionLength": 116,
+    "cardSizeKB": 365,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
