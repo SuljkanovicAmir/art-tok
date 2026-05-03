@@ -3379,5 +3379,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-03T08:48:26.714Z",
+    "mediaId": "18098995769039396",
+    "artKey": "harvard:231943",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Man Fishing",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "captionLength": 122,
+    "cardSizeKB": 188,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
