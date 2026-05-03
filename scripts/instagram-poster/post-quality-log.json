@@ -3400,5 +3400,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-03T14:51:57.150Z",
+    "mediaId": "18096109211142525",
+    "artKey": "harvard:304512",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Eliphalet Pearson (1752-1826),  after Samuel F.B. Morse",
+    "artist": "James Frothingham, Eliphalet Pearson",
+    "wasSeasonal": false,
+    "captionLength": 181,
+    "cardSizeKB": 243,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
