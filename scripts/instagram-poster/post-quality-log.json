@@ -3421,5 +3421,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-03T17:50:33.018Z",
+    "mediaId": "18158313766450693",
+    "artKey": "harvard:332993",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[Wesh-cubb] (The Sweet), Chippewa",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "captionLength": 136,
+    "cardSizeKB": 177,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
