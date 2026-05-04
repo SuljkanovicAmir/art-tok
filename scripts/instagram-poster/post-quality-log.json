@@ -3484,5 +3484,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-04T11:51:16.195Z",
+    "mediaId": "18053158181739594",
+    "artKey": "harvard:311142",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View of Ghent",
+    "artist": "Jacques François Carabain",
+    "wasSeasonal": false,
+    "captionLength": 130,
+    "cardSizeKB": 188,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
