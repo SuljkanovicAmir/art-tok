@@ -3463,5 +3463,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-04T09:22:10.103Z",
+    "mediaId": "17870949303609513",
+    "artKey": "harvard:311693",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Mt. Fuji with Gravestones",
+    "artist": "Lilla Cabot Perry",
+    "wasSeasonal": false,
+    "captionLength": 131,
+    "cardSizeKB": 433,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
