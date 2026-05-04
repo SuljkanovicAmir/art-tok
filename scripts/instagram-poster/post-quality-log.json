@@ -3505,5 +3505,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-04T16:04:27.581Z",
+    "mediaId": "18103151909512305",
+    "artKey": "met:635401",
+    "source": "met",
+    "mode": "reel",
+    "title": "The Virgin of Guadalupe with the Four Apparitions",
+    "artist": "Nicolás Enríquez",
+    "wasSeasonal": false,
+    "captionLength": 175,
+    "cardSizeKB": 555,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
