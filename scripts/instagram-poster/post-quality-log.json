@@ -3547,5 +3547,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-04T21:10:48.375Z",
+    "mediaId": "18124619248617986",
+    "artKey": "harvard:222214",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Charing Cross Bridge:  Fog on the Thames",
+    "artist": "Claude Monet",
+    "wasSeasonal": false,
+    "captionLength": 136,
+    "cardSizeKB": 210,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
