@@ -3526,5 +3526,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-04T18:16:27.089Z",
+    "mediaId": "18215664064321793",
+    "artKey": "harvard:311169",
+    "source": "harvard",
+    "mode": "post",
+    "title": "One Too Many",
+    "artist": "Seymour Joseph Guy",
+    "wasSeasonal": false,
+    "captionLength": 114,
+    "cardSizeKB": 201,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
