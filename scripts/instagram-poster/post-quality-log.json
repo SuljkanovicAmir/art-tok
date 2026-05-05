@@ -3631,5 +3631,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-05T18:15:39.226Z",
+    "mediaId": "17929325127085608",
+    "artKey": "harvard:226483",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Untitled #4",
+    "artist": "Agnes Martin",
+    "wasSeasonal": false,
+    "captionLength": 124,
+    "cardSizeKB": 158,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
