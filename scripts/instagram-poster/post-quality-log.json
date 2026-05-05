@@ -3652,5 +3652,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-05T21:07:13.239Z",
+    "mediaId": "17929658184267011",
+    "artKey": "harvard:50447",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Henry Pickering Bowditch (1840-1911)",
+    "artist": "Sarah Gooll Putnam, Henry Pickering Bowditch",
+    "wasSeasonal": false,
+    "captionLength": 164,
+    "cardSizeKB": 217,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
