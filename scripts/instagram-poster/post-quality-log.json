@@ -3610,5 +3610,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-05T16:27:13.771Z",
+    "mediaId": "18359838688229087",
+    "artKey": "met:37800",
+    "source": "met",
+    "mode": "post",
+    "title": "Sadaksari-Lokeshvara Surrounded by Manifestations and Monks",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "captionLength": 185,
+    "cardSizeKB": 559,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
