@@ -3568,5 +3568,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-05T09:08:51.757Z",
+    "mediaId": "18405768343197965",
+    "artKey": "harvard:228365",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Interior of Stable with Horses",
+    "artist": "Unidentified Artist, Théodore Géricault",
+    "wasSeasonal": false,
+    "captionLength": 161,
+    "cardSizeKB": 208,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
