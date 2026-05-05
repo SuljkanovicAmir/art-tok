@@ -3589,5 +3589,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-05T11:31:10.703Z",
+    "mediaId": "18359293081230596",
+    "artKey": "harvard:230133",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Madame Pierre Henri Renoir (Blanche-Marie Blanc)",
+    "artist": "Pierre-Auguste Renoir",
+    "wasSeasonal": false,
+    "captionLength": 153,
+    "cardSizeKB": 383,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
