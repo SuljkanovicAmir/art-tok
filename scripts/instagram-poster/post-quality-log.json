@@ -3757,5 +3757,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-06T21:13:11.258Z",
+    "mediaId": "18196106149361970",
+    "artKey": "harvard:229048",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Gabrielle in a Red Dress",
+    "artist": "Pierre-Auguste Renoir",
+    "wasSeasonal": false,
+    "captionLength": 158,
+    "cardSizeKB": 376,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
