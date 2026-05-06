@@ -3673,5 +3673,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-06T09:24:48.203Z",
+    "mediaId": "18079140185166706",
+    "artKey": "harvard:231360",
+    "source": "harvard",
+    "mode": "post",
+    "title": "House of the Customs Officer, Varengeville",
+    "artist": "Claude Monet",
+    "wasSeasonal": false,
+    "captionLength": 138,
+    "cardSizeKB": 308,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
