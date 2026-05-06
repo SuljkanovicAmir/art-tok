@@ -3736,5 +3736,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-06T18:37:10.613Z",
+    "mediaId": "18079100855173088",
+    "artKey": "harvard:231586",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Rhode Island Pasture",
+    "artist": "Johannes Adam Simon Oertel",
+    "wasSeasonal": false,
+    "captionLength": 130,
+    "cardSizeKB": 193,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
