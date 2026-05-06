@@ -3694,5 +3694,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-06T11:49:13.123Z",
+    "mediaId": "17866744041680887",
+    "artKey": "harvard:228146",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Unidentified Artist, Henri-Edmond Cross, Henri-Edmond Cross",
+    "wasSeasonal": false,
+    "captionLength": 163,
+    "cardSizeKB": 256,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
