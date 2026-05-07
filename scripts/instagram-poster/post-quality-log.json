@@ -3820,5 +3820,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-07T16:07:49.699Z",
+    "mediaId": "18045782915771530",
+    "artKey": "met:310870",
+    "source": "met",
+    "mode": "post",
+    "title": "Eyema byeri (reliquary guardian figure)",
+    "artist": "Okak-Fang artist",
+    "wasSeasonal": false,
+    "captionLength": 173,
+    "cardSizeKB": 188,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
