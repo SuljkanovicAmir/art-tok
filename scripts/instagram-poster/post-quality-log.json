@@ -3778,5 +3778,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-07T09:36:33.297Z",
+    "mediaId": "18147588247436664",
+    "artKey": "harvard:178453",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Edward Wigglesworth (1731-1794)",
+    "artist": "James Reeve Stuart, Edward Wigglesworth",
+    "wasSeasonal": false,
+    "captionLength": 154,
+    "cardSizeKB": 291,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
