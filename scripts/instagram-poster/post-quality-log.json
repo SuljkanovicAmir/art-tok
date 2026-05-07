@@ -3862,5 +3862,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-07T21:06:14.270Z",
+    "mediaId": "18550722070067220",
+    "artKey": "harvard:230640",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Summer Scene (Bathers)",
+    "artist": "Jean Frédéric Bazille",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 366,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
