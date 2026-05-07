@@ -3841,5 +3841,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-07T18:26:49.263Z",
+    "mediaId": "17874361293605151",
+    "artKey": "harvard:229056",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Durham, Connecticut",
+    "artist": "George Inness",
+    "wasSeasonal": false,
+    "captionLength": 120,
+    "cardSizeKB": 235,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
