@@ -3799,5 +3799,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-07T11:50:20.206Z",
+    "mediaId": "18335775607221823",
+    "artKey": "harvard:311838",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Benvenu and Loch Achray, Scotland",
+    "artist": "Alexander Nasmyth",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 217,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
