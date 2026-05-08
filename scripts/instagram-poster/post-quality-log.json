@@ -3904,5 +3904,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-08T11:18:52.262Z",
+    "mediaId": "18092994629351159",
+    "artKey": "harvard:299794",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Breakfast Table",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 361,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
