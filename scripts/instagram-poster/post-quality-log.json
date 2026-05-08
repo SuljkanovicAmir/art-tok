@@ -3925,5 +3925,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-08T15:25:30.413Z",
+    "mediaId": "18002305538745475",
+    "artKey": "harvard:227933",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Seascape",
+    "artist": "Henri-Edmond Cross",
+    "wasSeasonal": false,
+    "captionLength": 104,
+    "cardSizeKB": 365,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
