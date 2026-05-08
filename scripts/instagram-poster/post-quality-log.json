@@ -3967,5 +3967,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-08T21:03:10.146Z",
+    "mediaId": "18101664254071267",
+    "artKey": "harvard:231101",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Seated Young Man Leaning Forward",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 160,
+    "cardSizeKB": 294,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
