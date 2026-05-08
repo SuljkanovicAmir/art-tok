@@ -3883,5 +3883,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-08T08:23:56.567Z",
+    "mediaId": "18040124777717246",
+    "artKey": "harvard:229058",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Trout Brook",
+    "artist": "Albert Bierstadt",
+    "wasSeasonal": false,
+    "captionLength": 122,
+    "cardSizeKB": 211,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
