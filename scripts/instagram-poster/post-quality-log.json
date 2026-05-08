@@ -3946,5 +3946,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-08T18:12:22.497Z",
+    "mediaId": "18034696865797823",
+    "artKey": "harvard:230050",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Evening in Venice",
+    "artist": "Richard Parkes Bonington",
+    "wasSeasonal": false,
+    "captionLength": 130,
+    "cardSizeKB": 462,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
