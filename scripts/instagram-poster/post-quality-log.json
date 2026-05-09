@@ -3988,5 +3988,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-09T08:30:41.557Z",
+    "mediaId": "18000602561927933",
+    "artKey": "harvard:317736",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Perry Albert Cohea",
+    "artist": "Raphaelle Peale",
+    "wasSeasonal": false,
+    "captionLength": 131,
+    "cardSizeKB": 266,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
