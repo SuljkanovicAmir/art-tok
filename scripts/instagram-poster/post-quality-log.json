@@ -4009,5 +4009,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-09T10:59:15.395Z",
+    "mediaId": "18372117067205627",
+    "artKey": "met:677910",
+    "source": "met",
+    "mode": "post",
+    "title": "Untitled (Cracked Watermelon)",
+    "artist": "Charles Ethan Porter",
+    "wasSeasonal": false,
+    "captionLength": 148,
+    "cardSizeKB": 171,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
