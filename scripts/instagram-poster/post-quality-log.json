@@ -4072,5 +4072,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-09T20:46:23.381Z",
+    "mediaId": "18395002855156776",
+    "artKey": "harvard:342182",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Floral Still Life with Hollyhock and Marigold",
+    "artist": "Jan van Huysum II",
+    "wasSeasonal": false,
+    "captionLength": 149,
+    "cardSizeKB": 269,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
