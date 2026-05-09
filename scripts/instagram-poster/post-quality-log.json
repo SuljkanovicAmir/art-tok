@@ -4051,5 +4051,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-09T17:53:03.644Z",
+    "mediaId": "18100634108083649",
+    "artKey": "harvard:230444",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Pan and Psyche",
+    "artist": "Edward Burne-Jones",
+    "wasSeasonal": false,
+    "captionLength": 121,
+    "cardSizeKB": 370,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
