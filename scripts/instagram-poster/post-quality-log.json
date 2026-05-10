@@ -4114,5 +4114,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-10T11:02:10.527Z",
+    "mediaId": "18138878494463473",
+    "artKey": "harvard:227898",
+    "source": "harvard",
+    "mode": "post",
+    "title": "George Washington (1732-1799)",
+    "artist": "Rembrandt Peale",
+    "wasSeasonal": false,
+    "captionLength": 131,
+    "cardSizeKB": 182,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
