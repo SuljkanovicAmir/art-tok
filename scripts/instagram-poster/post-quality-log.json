@@ -4177,5 +4177,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-10T20:52:03.745Z",
+    "mediaId": "17984315111822339",
+    "artKey": "harvard:230411",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Defeat of the Cimbri and the Teutons by Marius",
+    "artist": "François Joseph Heim, Théodore Chassériau",
+    "wasSeasonal": false,
+    "captionLength": 217,
+    "cardSizeKB": 260,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
