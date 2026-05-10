@@ -4093,5 +4093,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-10T08:55:48.462Z",
+    "mediaId": "18176003518361677",
+    "artKey": "harvard:232032",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Seacoast",
+    "artist": "E. Baker",
+    "wasSeasonal": false,
+    "captionLength": 108,
+    "cardSizeKB": 131,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
