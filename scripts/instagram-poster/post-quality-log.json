@@ -4156,5 +4156,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-10T17:53:56.355Z",
+    "mediaId": "18118566559679083",
+    "artKey": "harvard:372825",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Mocking of Christ",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "captionLength": 192,
+    "cardSizeKB": 158,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
