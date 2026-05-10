@@ -4135,5 +4135,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-10T14:56:21.635Z",
+    "mediaId": "17863491333625746",
+    "artKey": "harvard:227489",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Boy and a Dog",
+    "artist": "William Beechey, John Constable, Unidentified Artist",
+    "wasSeasonal": false,
+    "captionLength": 138,
+    "cardSizeKB": 460,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
