@@ -4219,5 +4219,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-11T16:34:43.134Z",
+    "mediaId": "18094059443464509",
+    "artKey": "harvard:333002",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[Naa-gar-ness], Chippewa Delegate",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "captionLength": 136,
+    "cardSizeKB": 181,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
