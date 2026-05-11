@@ -4261,5 +4261,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-11T21:19:14.573Z",
+    "mediaId": "18591525295003629",
+    "artKey": "harvard:310905",
+    "source": "harvard",
+    "mode": "post",
+    "title": "George Edward Ellis (1814-1894)",
+    "artist": "Francis Alexander, George Edward Ellis",
+    "wasSeasonal": false,
+    "captionLength": 153,
+    "cardSizeKB": 282,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
