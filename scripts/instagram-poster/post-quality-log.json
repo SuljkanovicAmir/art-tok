@@ -4324,5 +4324,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-12T16:24:06.897Z",
+    "mediaId": "18137126929468503",
+    "artKey": "met:25111",
+    "source": "met",
+    "mode": "post",
+    "title": "Album of Tournaments and Parades in Nuremberg",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "captionLength": 231,
+    "cardSizeKB": 315,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
