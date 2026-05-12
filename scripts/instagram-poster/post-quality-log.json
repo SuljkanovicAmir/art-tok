@@ -4303,5 +4303,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-12T12:19:10.271Z",
+    "mediaId": "17938425453213458",
+    "artKey": "harvard:311493",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Windmill",
+    "artist": "Louis (Carl Ludwig Christoph) Douzette",
+    "wasSeasonal": false,
+    "captionLength": 145,
+    "cardSizeKB": 319,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
