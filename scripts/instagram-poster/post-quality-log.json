@@ -4345,5 +4345,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-12T18:58:59.982Z",
+    "mediaId": "18192617203367270",
+    "artKey": "harvard:230424",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Landscape with Cliff and Figure",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 131,
+    "cardSizeKB": 559,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
