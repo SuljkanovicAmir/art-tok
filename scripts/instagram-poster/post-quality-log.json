@@ -4282,5 +4282,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-12T09:43:26.960Z",
+    "mediaId": "17871562932610052",
+    "artKey": "harvard:228953",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Sarah Phillips Church",
+    "artist": "John S. Blunt (also known as The Borden Limner), The Borden Limner, John S. Blunt (also known as The Borden Limner), Unidentified Artist",
+    "wasSeasonal": false,
+    "captionLength": 249,
+    "cardSizeKB": 233,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
