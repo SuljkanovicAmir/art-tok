@@ -4366,5 +4366,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-12T21:23:14.329Z",
+    "mediaId": "18111666604804526",
+    "artKey": "harvard:340553",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Roosters and Hens",
+    "artist": "Itō Shochū 伊藤処冲",
+    "wasSeasonal": false,
+    "captionLength": 241,
+    "cardSizeKB": 277,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
