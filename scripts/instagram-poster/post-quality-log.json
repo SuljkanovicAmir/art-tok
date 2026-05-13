@@ -4450,5 +4450,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-13T18:57:34.815Z",
+    "mediaId": "18376372162162506",
+    "artKey": "harvard:229099",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Merrimack River Landscape",
+    "artist": "Alvan Fisher",
+    "wasSeasonal": false,
+    "captionLength": 122,
+    "cardSizeKB": 179,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
