@@ -4387,5 +4387,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-13T09:47:17.955Z",
+    "mediaId": "18078614399399986",
+    "artKey": "harvard:299880",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Lady Susanna Holworthy (c. 1640-1690)",
+    "artist": "Michael Dahl, Lady Susanna Henley Holworthy",
+    "wasSeasonal": false,
+    "captionLength": 172,
+    "cardSizeKB": 177,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
