@@ -4471,5 +4471,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-13T21:27:14.582Z",
+    "mediaId": "17867401254653817",
+    "artKey": "harvard:226410",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Venice",
+    "artist": "Thomas Moran",
+    "wasSeasonal": false,
+    "captionLength": 102,
+    "cardSizeKB": 199,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
