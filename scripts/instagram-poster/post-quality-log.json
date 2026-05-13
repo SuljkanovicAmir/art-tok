@@ -4408,5 +4408,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-13T12:07:32.908Z",
+    "mediaId": "18201697369357534",
+    "artKey": "harvard:227758",
+    "source": "harvard",
+    "mode": "post",
+    "title": "An Apostle",
+    "artist": "Giovanni Francesco Romanelli, Bernardino Nocchi",
+    "wasSeasonal": false,
+    "captionLength": 154,
+    "cardSizeKB": 336,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
