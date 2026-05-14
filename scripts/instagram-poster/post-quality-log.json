@@ -4492,5 +4492,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-14T09:36:13.878Z",
+    "mediaId": "18094694728923137",
+    "artKey": "harvard:226455",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Paul Azadian of Tarsus",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 165,
+    "cardSizeKB": 198,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
