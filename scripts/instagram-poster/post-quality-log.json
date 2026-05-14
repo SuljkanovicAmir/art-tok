@@ -4534,5 +4534,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-14T16:27:09.867Z",
+    "mediaId": "18099568688021339",
+    "artKey": "met:436535",
+    "source": "met",
+    "mode": "post",
+    "title": "Wheat Field with Cypresses",
+    "artist": "Vincent van Gogh",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 413,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
