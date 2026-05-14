@@ -4513,5 +4513,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-14T11:55:29.969Z",
+    "mediaId": "18208915960338038",
+    "artKey": "harvard:31157",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Height of Her Ambition",
+    "artist": "Charles Caleb Ward",
+    "wasSeasonal": false,
+    "captionLength": 128,
+    "cardSizeKB": 279,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
