@@ -4555,5 +4555,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-14T18:57:14.749Z",
+    "mediaId": "18352268461240242",
+    "artKey": "harvard:230252",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Major General August de la Motte",
+    "artist": "John Singleton Copley",
+    "wasSeasonal": false,
+    "captionLength": 123,
+    "cardSizeKB": 511,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
