@@ -4576,5 +4576,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-14T21:12:12.496Z",
+    "mediaId": "18102973306812087",
+    "artKey": "harvard:229044",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life with Apples",
+    "artist": "Henri Matisse",
+    "wasSeasonal": false,
+    "captionLength": 153,
+    "cardSizeKB": 183,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
