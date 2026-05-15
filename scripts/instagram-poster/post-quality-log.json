@@ -4660,5 +4660,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-15T18:24:34.463Z",
+    "mediaId": "18096095699168501",
+    "artKey": "harvard:312545",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Moroccan Courtyard",
+    "artist": "Samuel Colman",
+    "wasSeasonal": false,
+    "captionLength": 139,
+    "cardSizeKB": 404,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
