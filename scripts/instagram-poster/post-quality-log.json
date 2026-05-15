@@ -4639,5 +4639,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-15T16:05:05.394Z",
+    "mediaId": "18108527368744064",
+    "artKey": "harvard:228194",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Nymph Tormented by Cupid",
+    "artist": "Narcisse Virgile Diaz de la Peña",
+    "wasSeasonal": false,
+    "captionLength": 139,
+    "cardSizeKB": 287,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
