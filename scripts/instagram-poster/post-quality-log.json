@@ -4681,5 +4681,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-15T21:04:29.163Z",
+    "mediaId": "17887420380519638",
+    "artKey": "harvard:231000",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Canal Scene with Two Gondolas",
+    "artist": "Kanji Nakamura",
+    "wasSeasonal": false,
+    "captionLength": 140,
+    "cardSizeKB": 447,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
