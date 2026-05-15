@@ -4618,5 +4618,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-15T12:03:03.934Z",
+    "mediaId": "18361279681231769",
+    "artKey": "harvard:230107",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Young Man",
+    "artist": "Théodore Géricault, Théodore Géricault, Jean-Baptiste Regnault",
+    "wasSeasonal": false,
+    "captionLength": 177,
+    "cardSizeKB": 273,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
