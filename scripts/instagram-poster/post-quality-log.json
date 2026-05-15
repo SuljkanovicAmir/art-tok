@@ -4597,5 +4597,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-15T10:00:28.253Z",
+    "mediaId": "18005967455733605",
+    "artKey": "harvard:227934",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Pharoah's Horses",
+    "artist": "Unidentified Artist, John F. Herring Sr.",
+    "wasSeasonal": false,
+    "captionLength": 159,
+    "cardSizeKB": 229,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
