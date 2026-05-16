@@ -4765,5 +4765,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-16T17:57:13.891Z",
+    "mediaId": "18097649701896017",
+    "artKey": "harvard:305002",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Alexander Agassiz (1835-1910)",
+    "artist": "William Thorne, Alexander Agassiz",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 298,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
