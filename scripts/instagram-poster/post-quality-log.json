@@ -4744,5 +4744,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-16T14:58:59.309Z",
+    "mediaId": "18075683189249488",
+    "artKey": "harvard:230051",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Riva degli Schiavoni and Doge's Palace, Venice",
+    "artist": "James G. Holland, Richard Parkes Bonington",
+    "wasSeasonal": false,
+    "captionLength": 180,
+    "cardSizeKB": 179,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
