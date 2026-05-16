@@ -4702,5 +4702,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-16T08:49:00.287Z",
+    "mediaId": "17924462379323858",
+    "artKey": "harvard:311841",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View of the Boston Fens",
+    "artist": "Arthur Clifton Goodwin",
+    "wasSeasonal": false,
+    "captionLength": 142,
+    "cardSizeKB": 261,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
