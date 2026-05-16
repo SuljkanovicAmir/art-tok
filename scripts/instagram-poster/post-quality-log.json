@@ -4786,5 +4786,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-16T20:51:45.792Z",
+    "mediaId": "18097246952178014",
+    "artKey": "harvard:304646",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Robert Troup Paine (1829-1851)",
+    "artist": "Samuel Stillman Osgood, Robert Troup Paine",
+    "wasSeasonal": false,
+    "captionLength": 194,
+    "cardSizeKB": 235,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
