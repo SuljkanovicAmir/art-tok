@@ -4723,5 +4723,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-16T11:03:56.527Z",
+    "mediaId": "18024692633652125",
+    "artKey": "harvard:230706",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life with Peppers",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 272,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
