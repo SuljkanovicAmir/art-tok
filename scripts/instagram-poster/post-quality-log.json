@@ -4849,5 +4849,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-17T14:59:12.475Z",
+    "mediaId": "17889386136508119",
+    "artKey": "harvard:213930",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Vanity of the Artist's Dream",
+    "artist": "Charles Bird King",
+    "wasSeasonal": false,
+    "captionLength": 171,
+    "cardSizeKB": 400,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
