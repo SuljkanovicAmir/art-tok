@@ -4891,5 +4891,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-17T20:55:30.964Z",
+    "mediaId": "18092371304349959",
+    "artKey": "harvard:311846",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Wooded Stream",
+    "artist": "John Leslie Breck",
+    "wasSeasonal": false,
+    "captionLength": 122,
+    "cardSizeKB": 287,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
