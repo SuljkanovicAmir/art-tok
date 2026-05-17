@@ -4870,5 +4870,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-17T17:59:28.541Z",
+    "mediaId": "17881463643571369",
+    "artKey": "harvard:312547",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Arab Encampment at Sunset",
+    "artist": "Charles Théodore Frère",
+    "wasSeasonal": false,
+    "captionLength": 142,
+    "cardSizeKB": 153,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
