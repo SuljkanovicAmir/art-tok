@@ -4828,5 +4828,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-17T11:09:22.807Z",
+    "mediaId": "18199219717359548",
+    "artKey": "harvard:230646",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life, Daffodils",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 251,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
