@@ -4975,5 +4975,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-18T21:24:00.619Z",
+    "mediaId": "18112434262872302",
+    "artKey": "harvard:228125",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Branch of the Seine near Giverny",
+    "artist": "Claude Monet, Claude Monet",
+    "wasSeasonal": false,
+    "captionLength": 180,
+    "cardSizeKB": 350,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
