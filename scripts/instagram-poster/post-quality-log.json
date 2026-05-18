@@ -4933,5 +4933,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-18T16:48:49.346Z",
+    "mediaId": "18582637147015811",
+    "artKey": "met:436504",
+    "source": "met",
+    "mode": "post",
+    "title": "The Adoration of the Magi",
+    "artist": "Giotto di Bondone",
+    "wasSeasonal": false,
+    "captionLength": 165,
+    "cardSizeKB": 421,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
