@@ -4912,5 +4912,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-18T11:08:15.231Z",
+    "mediaId": "17934494742254036",
+    "artKey": "harvard:230333",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Saint Mark Rescuing a Slave, after Tintoretto",
+    "artist": "Robert David Gauley, Jacopo Tintoretto",
+    "wasSeasonal": false,
+    "captionLength": 337,
+    "cardSizeKB": 212,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
