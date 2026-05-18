@@ -4954,5 +4954,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-18T18:53:30.815Z",
+    "mediaId": "18106500104482286",
+    "artKey": "harvard:231107",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape with Road and Buildings",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 147,
+    "cardSizeKB": 447,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
