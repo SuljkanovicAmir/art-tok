@@ -5038,5 +5038,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-19T19:02:36.772Z",
+    "mediaId": "17870103081525354",
+    "artKey": "met:437394",
+    "source": "met",
+    "mode": "post",
+    "title": "Aristotle with a Bust of Homer",
+    "artist": "Rembrandt (Rembrandt van Rijn)",
+    "wasSeasonal": false,
+    "captionLength": 155,
+    "cardSizeKB": 172,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
