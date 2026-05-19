@@ -4996,5 +4996,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-19T10:38:34.289Z",
+    "mediaId": "17894389905328642",
+    "artKey": "harvard:228853",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View of Canal and Bridges",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 193,
+    "cardSizeKB": 282,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
