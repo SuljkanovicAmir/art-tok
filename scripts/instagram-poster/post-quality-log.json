@@ -5017,5 +5017,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-19T16:51:11.789Z",
+    "mediaId": "18531925840073430",
+    "artKey": "met:359362",
+    "source": "met",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Edgar Degas",
+    "wasSeasonal": false,
+    "captionLength": 148,
+    "cardSizeKB": 261,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
