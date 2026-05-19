@@ -5059,5 +5059,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-19T21:21:29.412Z",
+    "mediaId": "18099340292034065",
+    "artKey": "harvard:228161",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Dam and Damrak, Amsterdam",
+    "artist": "Jan van der Heyden, Adriaen van de Velde, Gerrit Adriaensz Berckheyde",
+    "wasSeasonal": false,
+    "captionLength": 185,
+    "cardSizeKB": 220,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
