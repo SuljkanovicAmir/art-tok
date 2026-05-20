@@ -5143,5 +5143,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-20T21:56:34.453Z",
+    "mediaId": "18108251978488248",
+    "artKey": "harvard:379491",
+    "source": "harvard",
+    "mode": "post",
+    "title": "River Landscape",
+    "artist": "Jan van Goyen",
+    "wasSeasonal": false,
+    "captionLength": 116,
+    "cardSizeKB": 252,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
