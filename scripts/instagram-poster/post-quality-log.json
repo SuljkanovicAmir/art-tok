@@ -5101,5 +5101,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-20T16:54:17.391Z",
+    "mediaId": "17950253865173946",
+    "artKey": "met:438112",
+    "source": "met",
+    "mode": "post",
+    "title": "Queen Henrietta Maria",
+    "artist": "Anthony van Dyck",
+    "wasSeasonal": false,
+    "captionLength": 132,
+    "cardSizeKB": 265,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
