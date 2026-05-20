@@ -5122,5 +5122,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-20T19:27:14.875Z",
+    "mediaId": "17917993251167426",
+    "artKey": "met:459092",
+    "source": "met",
+    "mode": "post",
+    "title": "Trees and Houses Near the Jas de Bouffan",
+    "artist": "Paul Cézanne",
+    "wasSeasonal": false,
+    "captionLength": 199,
+    "cardSizeKB": 272,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
