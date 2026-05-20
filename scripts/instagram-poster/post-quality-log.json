@@ -5080,5 +5080,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-20T10:27:06.674Z",
+    "mediaId": "18081919259423190",
+    "artKey": "met:37947",
+    "source": "met",
+    "mode": "post",
+    "title": "Rama Releases the Demon Spies Shuka and Sarana: Folio from the Siege of Lanka series",
+    "artist": "Manaku",
+    "wasSeasonal": false,
+    "captionLength": 216,
+    "cardSizeKB": 294,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
