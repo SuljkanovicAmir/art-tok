@@ -5206,5 +5206,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-21T18:59:39.075Z",
+    "mediaId": "17906285277246164",
+    "artKey": "harvard:299547",
+    "source": "harvard",
+    "mode": "post",
+    "title": "David Williams Cheever (1831-1915)",
+    "artist": "Ignaz Marcel Gaugengigl, David Williams Cheever",
+    "wasSeasonal": false,
+    "captionLength": 168,
+    "cardSizeKB": 220,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
