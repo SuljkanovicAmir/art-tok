@@ -5227,5 +5227,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-21T21:29:03.472Z",
+    "mediaId": "18341204158171282",
+    "artKey": "harvard:227854",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Sacrifice of Isaac",
+    "artist": "Antonio di Donnino del Mazziere",
+    "wasSeasonal": false,
+    "captionLength": 139,
+    "cardSizeKB": 207,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
