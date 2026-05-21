@@ -5164,5 +5164,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-21T10:41:16.942Z",
+    "mediaId": "18407455468146120",
+    "artKey": "met:437549",
+    "source": "met",
+    "mode": "post",
+    "title": "Wheat Fields",
+    "artist": "Jacob van Ruisdael",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 208,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
