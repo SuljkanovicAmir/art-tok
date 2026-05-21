@@ -5185,5 +5185,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-21T16:41:34.114Z",
+    "mediaId": "18100154231030436",
+    "artKey": "met:459112",
+    "source": "met",
+    "mode": "reel",
+    "title": "Two Young Girls at the Piano",
+    "artist": "Auguste Renoir",
+    "wasSeasonal": false,
+    "captionLength": 123,
+    "cardSizeKB": 446,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
