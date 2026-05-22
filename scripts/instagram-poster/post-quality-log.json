@@ -5290,5 +5290,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-22T18:56:29.261Z",
+    "mediaId": "18163773982447129",
+    "artKey": "harvard:317369",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Artemas Ward (1727-1800)",
+    "artist": "Raphaelle Peale, Artemas Ward",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 176,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
