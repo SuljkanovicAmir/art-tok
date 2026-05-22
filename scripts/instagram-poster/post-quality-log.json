@@ -5269,5 +5269,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-22T16:27:27.464Z",
+    "mediaId": "18104262605070110",
+    "artKey": "met:11764",
+    "source": "met",
+    "mode": "post",
+    "title": "Mrs. Mayer and Daughter",
+    "artist": "Ammi Phillips",
+    "wasSeasonal": false,
+    "captionLength": 134,
+    "cardSizeKB": 280,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
