@@ -5248,5 +5248,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-22T10:26:11.335Z",
+    "mediaId": "18145530370449564",
+    "artKey": "met:458971",
+    "source": "met",
+    "mode": "post",
+    "title": "The Creation of the World and the Expulsion from Paradise",
+    "artist": "Giovanni di Paolo (Giovanni di Paolo di Grazia)",
+    "wasSeasonal": false,
+    "captionLength": 210,
+    "cardSizeKB": 376,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
