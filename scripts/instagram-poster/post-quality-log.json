@@ -5311,5 +5311,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-22T21:12:13.859Z",
+    "mediaId": "18059647025706000",
+    "artKey": "harvard:228132",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Beloved Child",
+    "artist": "Jean-Honoré Fragonard, Marguerite Gérard",
+    "wasSeasonal": false,
+    "captionLength": 149,
+    "cardSizeKB": 258,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
