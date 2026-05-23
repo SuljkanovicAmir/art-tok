@@ -5416,5 +5416,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-23T20:55:37.359Z",
+    "mediaId": "18138224200468350",
+    "artKey": "harvard:304996",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Rebecca Tyng Dudley (Mrs. Joseph Dudley) (1651-1722), after an English artist",
+    "artist": "Unidentified Artist, Rebecca Tyng Dudley",
+    "wasSeasonal": false,
+    "captionLength": 297,
+    "cardSizeKB": 336,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
