@@ -5395,5 +5395,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-23T18:03:50.521Z",
+    "mediaId": "18104561800802492",
+    "artKey": "harvard:230397",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Portrait of a Young Man",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 135,
+    "cardSizeKB": 439,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
