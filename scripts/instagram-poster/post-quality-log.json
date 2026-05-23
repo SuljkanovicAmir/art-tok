@@ -5374,5 +5374,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-23T15:02:53.234Z",
+    "mediaId": "18091893752214815",
+    "artKey": "harvard:311335",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Butter and Eggs Cross",
+    "artist": "Hermann Dudley Murphy",
+    "wasSeasonal": false,
+    "captionLength": 138,
+    "cardSizeKB": 238,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
