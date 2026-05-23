@@ -5353,5 +5353,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-23T11:13:33.073Z",
+    "mediaId": "18081293690159677",
+    "artKey": "harvard:227935",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Equestrienne",
+    "artist": "Alfred Dedreux, Alfred Dedreux",
+    "wasSeasonal": false,
+    "captionLength": 134,
+    "cardSizeKB": 344,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
