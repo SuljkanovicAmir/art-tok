@@ -5332,5 +5332,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-23T09:03:06.782Z",
+    "mediaId": "17965879421915120",
+    "artKey": "harvard:333014",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[Ke-wa-din] (North Wind), Chippewa",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 210,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
