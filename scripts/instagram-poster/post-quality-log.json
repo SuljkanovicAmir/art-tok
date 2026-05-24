@@ -5479,5 +5479,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-24T15:07:03.827Z",
+    "mediaId": "18003604082747159",
+    "artKey": "harvard:228721",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Oath of the Seven Chieftains before Thebes",
+    "artist": "Unidentified Artist, Anne-Louis Girodet de Roucy-Trioson",
+    "wasSeasonal": false,
+    "captionLength": 207,
+    "cardSizeKB": 262,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
