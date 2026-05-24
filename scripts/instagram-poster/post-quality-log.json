@@ -5437,5 +5437,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-24T09:22:57.780Z",
+    "mediaId": "18112613863870310",
+    "artKey": "harvard:227231",
+    "source": "harvard",
+    "mode": "post",
+    "title": "View from the Augustus-Brücke in Moonlight",
+    "artist": "Johannes Christian Clausen Dahl",
+    "wasSeasonal": false,
+    "captionLength": 160,
+    "cardSizeKB": 387,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
