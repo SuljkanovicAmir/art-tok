@@ -5458,5 +5458,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-24T11:18:59.157Z",
+    "mediaId": "18076587497654026",
+    "artKey": "harvard:311222",
+    "source": "harvard",
+    "mode": "post",
+    "title": "All Souls",
+    "artist": "Augustus Vincent Tack",
+    "wasSeasonal": false,
+    "captionLength": 145,
+    "cardSizeKB": 179,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
