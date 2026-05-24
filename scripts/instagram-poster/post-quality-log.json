@@ -5521,5 +5521,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-24T20:58:50.724Z",
+    "mediaId": "18400512736156980",
+    "artKey": "harvard:230414",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Early Spring: Sun Struggling Through Clouds (Landscape)",
+    "artist": "John La Farge",
+    "wasSeasonal": false,
+    "captionLength": 157,
+    "cardSizeKB": 198,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
