@@ -5500,5 +5500,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-24T17:59:46.098Z",
+    "mediaId": "18186011917337944",
+    "artKey": "harvard:230131",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Pietà",
+    "artist": "Gustave Moreau",
+    "wasSeasonal": false,
+    "captionLength": 109,
+    "cardSizeKB": 220,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
