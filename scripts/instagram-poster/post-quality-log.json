@@ -5584,5 +5584,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-25T21:09:53.371Z",
+    "mediaId": "18082028654392060",
+    "artKey": "harvard:361266",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Skull Wearing a Wreath of Flowers",
+    "artist": "Thomas Satterwhite Noble",
+    "wasSeasonal": false,
+    "captionLength": 144,
+    "cardSizeKB": 369,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
