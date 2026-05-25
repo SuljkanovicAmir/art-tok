@@ -5542,5 +5542,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-25T11:12:31.461Z",
+    "mediaId": "17889930627521525",
+    "artKey": "harvard:222160",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Two Women of Color, Dominica [French Mulatress of Dominica and a Negro Woman in their Proper Dress]",
+    "artist": "Agostino Brunias",
+    "wasSeasonal": false,
+    "captionLength": 207,
+    "cardSizeKB": 428,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
