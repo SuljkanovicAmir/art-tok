@@ -5563,5 +5563,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-25T16:24:32.062Z",
+    "mediaId": "17900485680284774",
+    "artKey": "met:343735",
+    "source": "met",
+    "mode": "post",
+    "title": "Still-Life with a Watermelon and Pomegranates",
+    "artist": "Paul Cézanne",
+    "wasSeasonal": false,
+    "captionLength": 182,
+    "cardSizeKB": 238,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
