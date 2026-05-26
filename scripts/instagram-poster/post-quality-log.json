@@ -5626,5 +5626,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-26T21:47:29.982Z",
+    "mediaId": "17864580072628457",
+    "artKey": "harvard:312213",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Houses on a Beach",
+    "artist": "Charles Edwin Lewis Green",
+    "wasSeasonal": false,
+    "captionLength": 129,
+    "cardSizeKB": 218,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
