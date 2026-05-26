@@ -5605,5 +5605,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-26T17:29:21.885Z",
+    "mediaId": "18406391506144481",
+    "artKey": "harvard:229004",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Walter Nelson",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 100,
+    "cardSizeKB": 467,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
