@@ -5689,5 +5689,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-27T21:57:57.659Z",
+    "mediaId": "18087753860627393",
+    "artKey": "harvard:228219",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Peasant Working in a Field",
+    "artist": "Cesare-Félix-Georges dell' Acqua",
+    "wasSeasonal": false,
+    "captionLength": 154,
+    "cardSizeKB": 424,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
