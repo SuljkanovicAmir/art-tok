@@ -5647,5 +5647,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-27T10:57:06.148Z",
+    "mediaId": "18103450061099515",
+    "artKey": "met:435809",
+    "source": "met",
+    "mode": "post",
+    "title": "The Harvesters",
+    "artist": "Pieter Bruegel the Elder",
+    "wasSeasonal": false,
+    "captionLength": 131,
+    "cardSizeKB": 316,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
