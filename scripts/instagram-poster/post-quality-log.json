@@ -5668,5 +5668,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-27T17:21:32.307Z",
+    "mediaId": "18117825421761366",
+    "artKey": "harvard:358352",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Sarah Smith Logan (Mrs. William Clarke)",
+    "artist": "James Peale",
+    "wasSeasonal": false,
+    "captionLength": 215,
+    "cardSizeKB": 385,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
