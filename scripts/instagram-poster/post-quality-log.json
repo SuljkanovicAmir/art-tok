@@ -5752,5 +5752,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-28T21:56:16.883Z",
+    "mediaId": "17903852688431352",
+    "artKey": "harvard:230030",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Plumed Serpent",
+    "artist": "Joseph Lindon Smith",
+    "wasSeasonal": false,
+    "captionLength": 214,
+    "cardSizeKB": 183,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
