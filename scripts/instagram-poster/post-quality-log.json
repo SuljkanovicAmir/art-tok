@@ -5710,5 +5710,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-28T10:58:38.307Z",
+    "mediaId": "18083087945152205",
+    "artKey": "met:10497",
+    "source": "met",
+    "mode": "post",
+    "title": "View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm—The Oxbow",
+    "artist": "Thomas Cole",
+    "wasSeasonal": false,
+    "captionLength": 189,
+    "cardSizeKB": 180,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
