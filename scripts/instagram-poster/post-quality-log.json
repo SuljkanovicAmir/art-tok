@@ -5731,5 +5731,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-28T17:35:56.872Z",
+    "mediaId": "18074441552290753",
+    "artKey": "harvard:231636",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Study for \"Young Spartan Girls Challenging Boys\"",
+    "artist": "Hilaire-Germain-Edgar Degas",
+    "wasSeasonal": false,
+    "captionLength": 249,
+    "cardSizeKB": 292,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
