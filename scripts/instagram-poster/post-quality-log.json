@@ -5773,5 +5773,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-29T10:47:55.825Z",
+    "mediaId": "18053149700574361",
+    "artKey": "met:437261",
+    "source": "met",
+    "mode": "post",
+    "title": "The Penitence of Saint Jerome",
+    "artist": "Joachim Patinir",
+    "wasSeasonal": false,
+    "captionLength": 141,
+    "cardSizeKB": 285,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
