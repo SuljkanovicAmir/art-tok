@@ -5794,5 +5794,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-05-29T17:35:35.039Z",
+    "mediaId": "18104352091997359",
+    "artKey": "harvard:230331",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Little White Sofa",
+    "artist": "James Abbott McNeill Whistler",
+    "wasSeasonal": false,
+    "captionLength": 185,
+    "cardSizeKB": 247,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
