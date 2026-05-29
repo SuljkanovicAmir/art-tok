@@ -5815,5 +5815,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-29T21:54:38.453Z",
+    "mediaId": "17866669734625143",
+    "artKey": "harvard:336320",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Summer",
+    "artist": "Angelo Caroselli",
+    "wasSeasonal": false,
+    "captionLength": 96,
+    "cardSizeKB": 399,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
