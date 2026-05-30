@@ -5899,5 +5899,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-30T18:03:20.429Z",
+    "mediaId": "18118476220667007",
+    "artKey": "harvard:228413",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Gooseherd",
+    "artist": "Constant Troyon",
+    "wasSeasonal": false,
+    "captionLength": 119,
+    "cardSizeKB": 377,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
