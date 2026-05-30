@@ -5857,5 +5857,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-30T11:22:29.618Z",
+    "mediaId": "18536505061073665",
+    "artKey": "harvard:230874",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Edward Kenny",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 126,
+    "cardSizeKB": 270,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
