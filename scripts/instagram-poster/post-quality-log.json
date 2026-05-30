@@ -5878,5 +5878,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-30T15:09:09.580Z",
+    "mediaId": "17930608200275724",
+    "artKey": "harvard:227785",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Watkins Glen; verso: Landscape",
+    "artist": "Thomas Cole",
+    "wasSeasonal": false,
+    "captionLength": 125,
+    "cardSizeKB": 260,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
