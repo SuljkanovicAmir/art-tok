@@ -5920,5 +5920,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-30T21:00:23.188Z",
+    "mediaId": "17940627765232502",
+    "artKey": "harvard:311175",
+    "source": "harvard",
+    "mode": "post",
+    "title": "John McAllister, Jr. (1786-1877)",
+    "artist": "Thomas Sully",
+    "wasSeasonal": false,
+    "captionLength": 128,
+    "cardSizeKB": 170,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
