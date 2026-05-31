@@ -6025,5 +6025,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-31T21:02:26.066Z",
+    "mediaId": "18126842503531953",
+    "artKey": "harvard:230847",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Ginger",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 106,
+    "cardSizeKB": 482,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
