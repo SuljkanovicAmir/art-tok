@@ -6004,5 +6004,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-31T18:04:13.998Z",
+    "mediaId": "18105901979488223",
+    "artKey": "harvard:231710",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Storm King on the Hudson",
+    "artist": "Samuel Colman",
+    "wasSeasonal": false,
+    "captionLength": 154,
+    "cardSizeKB": 176,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
