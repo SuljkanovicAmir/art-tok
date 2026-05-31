@@ -5983,5 +5983,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-31T15:19:10.018Z",
+    "mediaId": "18006057551916333",
+    "artKey": "harvard:323718",
+    "source": "harvard",
+    "mode": "post",
+    "title": "A Gentleman",
+    "artist": "James Peale",
+    "wasSeasonal": false,
+    "captionLength": 147,
+    "cardSizeKB": 239,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
