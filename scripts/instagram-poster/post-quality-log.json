@@ -5941,5 +5941,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-31T09:47:56.831Z",
+    "mediaId": "18082614359159126",
+    "artKey": "harvard:231363",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Villa Medici, Grotto-Loggia Façade, after Velazquez",
+    "artist": "Denman Waldo Ross, Diego Rodriguez Velázquez",
+    "wasSeasonal": false,
+    "captionLength": 245,
+    "cardSizeKB": 399,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
