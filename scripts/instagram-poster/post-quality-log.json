@@ -5962,5 +5962,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-05-31T11:42:23.139Z",
+    "mediaId": "17993158577794963",
+    "artKey": "harvard:227862",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Autumn Landscape with Man Fishing",
+    "artist": "William Morris Hunt",
+    "wasSeasonal": false,
+    "captionLength": 169,
+    "cardSizeKB": 264,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
