@@ -6046,5 +6046,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-01T12:38:52.880Z",
+    "mediaId": "18099639985893082",
+    "artKey": "harvard:231206",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Ralph Albert Blakelock",
+    "wasSeasonal": false,
+    "captionLength": 118,
+    "cardSizeKB": 165,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
