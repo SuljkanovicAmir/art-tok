@@ -6088,5 +6088,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-01T22:34:20.474Z",
+    "mediaId": "18092268575612537",
+    "artKey": "harvard:228512",
+    "source": "harvard",
+    "mode": "post",
+    "title": "House, Mount Desert, Maine",
+    "artist": "Thomas Cole",
+    "wasSeasonal": false,
+    "captionLength": 126,
+    "cardSizeKB": 215,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
