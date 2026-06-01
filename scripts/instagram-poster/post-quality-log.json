@@ -6067,5 +6067,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-01T19:21:48.767Z",
+    "mediaId": "17924820756345634",
+    "artKey": "met:436121",
+    "source": "met",
+    "mode": "post",
+    "title": "A Woman Seated beside a Vase of Flowers (Madame Paul Valpinçon?)",
+    "artist": "Edgar Degas",
+    "wasSeasonal": false,
+    "captionLength": 170,
+    "cardSizeKB": 248,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
