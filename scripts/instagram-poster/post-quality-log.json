@@ -6130,5 +6130,26 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-02T18:06:21.691Z",
+    "mediaId": "18106363337315267",
+    "artKey": "harvard:230157",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Donkey Ride",
+    "artist": "Arthur Boyd Houghton",
+    "wasSeasonal": false,
+    "captionLength": 122,
+    "cardSizeKB": 291,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
