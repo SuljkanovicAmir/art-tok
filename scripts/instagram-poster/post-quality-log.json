@@ -6109,5 +6109,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-02T11:20:00.413Z",
+    "mediaId": "18095521777944145",
+    "artKey": "harvard:228202",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life with Apples, a Pear, and a Ceramic Portrait Jug",
+    "artist": "Paul Gauguin",
+    "wasSeasonal": false,
+    "captionLength": 213,
+    "cardSizeKB": 275,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
