@@ -6151,5 +6151,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-03T11:58:11.446Z",
+    "mediaId": "18121388968678306",
+    "artKey": "harvard:228116",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Alfred Henry Maurer",
+    "wasSeasonal": false,
+    "captionLength": 124,
+    "cardSizeKB": 348,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
