@@ -6193,5 +6193,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-04T19:24:34.896Z",
+    "mediaId": "18105725395976246",
+    "artKey": "met:435908",
+    "source": "met",
+    "mode": "post",
+    "title": "The Trojan Women Setting Fire to Their Fleet",
+    "artist": "Claude Lorrain (Claude Gellée)",
+    "wasSeasonal": false,
+    "captionLength": 198,
+    "cardSizeKB": 200,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
