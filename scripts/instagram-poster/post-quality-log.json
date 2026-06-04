@@ -6172,5 +6172,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-04T10:40:05.917Z",
+    "mediaId": "17920406310364034",
+    "artKey": "met:437326",
+    "source": "met",
+    "mode": "post",
+    "title": "Blind Orion Searching for the Rising Sun",
+    "artist": "Nicolas Poussin",
+    "wasSeasonal": false,
+    "captionLength": 150,
+    "cardSizeKB": 194,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
