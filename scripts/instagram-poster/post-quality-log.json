@@ -6235,5 +6235,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-05T18:59:54.930Z",
+    "mediaId": "18066813761425333",
+    "artKey": "harvard:230509",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Jackson Falls, New Hampshire",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "captionLength": 128,
+    "cardSizeKB": 452,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
