@@ -6256,5 +6256,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-05T21:27:44.370Z",
+    "mediaId": "17877017580477985",
+    "artKey": "harvard:228021",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Thomas Jefferson (1743-1826) (The Medallion Portrait)",
+    "artist": "Gilbert Stuart",
+    "wasSeasonal": false,
+    "captionLength": 235,
+    "cardSizeKB": 215,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
