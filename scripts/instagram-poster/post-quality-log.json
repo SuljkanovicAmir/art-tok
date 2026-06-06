@@ -6319,5 +6319,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-06T18:07:04.292Z",
+    "mediaId": "17917528665388110",
+    "artKey": "harvard:230039",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Dotheboy's Hall",
+    "artist": "Thomas Webster",
+    "wasSeasonal": false,
+    "captionLength": 112,
+    "cardSizeKB": 224,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
