@@ -6298,5 +6298,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-06T15:18:13.878Z",
+    "mediaId": "18011811167910638",
+    "artKey": "harvard:230456",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Triumph of the Innocents",
+    "artist": "William Holman Hunt, M. Grieve Co.",
+    "wasSeasonal": false,
+    "captionLength": 151,
+    "cardSizeKB": 201,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
