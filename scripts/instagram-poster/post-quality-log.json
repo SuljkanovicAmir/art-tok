@@ -6277,5 +6277,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-06T11:28:51.927Z",
+    "mediaId": "18137527357553850",
+    "artKey": "harvard:311343",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Scottish Black Grouse, Cocks and Hens",
+    "artist": "John James Audubon",
+    "wasSeasonal": false,
+    "captionLength": 139,
+    "cardSizeKB": 202,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
