@@ -6340,5 +6340,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-07T15:26:08.717Z",
+    "mediaId": "17971758762108037",
+    "artKey": "harvard:304941",
+    "source": "harvard",
+    "mode": "post",
+    "title": "George Tufton Moffatt (1836-1895)",
+    "artist": "Benoni Irwin, George Tufton Moffatt",
+    "wasSeasonal": false,
+    "captionLength": 152,
+    "cardSizeKB": 170,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
