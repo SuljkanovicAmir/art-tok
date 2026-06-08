@@ -6361,5 +6361,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-08T11:59:47.954Z",
+    "mediaId": "18023308208668058",
+    "artKey": "harvard:306081",
+    "source": "harvard",
+    "mode": "post",
+    "title": "A Moonlight Night in Venice",
+    "artist": "Robert David Gauley",
+    "wasSeasonal": false,
+    "captionLength": 143,
+    "cardSizeKB": 291,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
