@@ -6382,5 +6382,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-08T17:24:43.475Z",
+    "mediaId": "18063645359467015",
+    "artKey": "harvard:231903",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Holy Grail",
+    "artist": "Johannes Adam Simon Oertel",
+    "wasSeasonal": false,
+    "captionLength": 153,
+    "cardSizeKB": 151,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
