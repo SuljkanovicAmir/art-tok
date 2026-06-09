@@ -6424,5 +6424,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-09T16:32:29.791Z",
+    "mediaId": "18105269908809384",
+    "artKey": "met:436528",
+    "source": "met",
+    "mode": "post",
+    "title": "Irises",
+    "artist": "Vincent van Gogh",
+    "wasSeasonal": false,
+    "captionLength": 117,
+    "cardSizeKB": 376,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
