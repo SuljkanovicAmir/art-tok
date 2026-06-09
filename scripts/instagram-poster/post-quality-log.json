@@ -6466,5 +6466,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-09T21:48:47.844Z",
+    "mediaId": "17986415339828963",
+    "artKey": "harvard:228742",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Narcisse Virgile Diaz de la Peña",
+    "wasSeasonal": false,
+    "captionLength": 127,
+    "cardSizeKB": 247,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
