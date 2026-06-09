@@ -6403,5 +6403,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-09T10:35:37.013Z",
+    "mediaId": "18140631691535589",
+    "artKey": "met:453336",
+    "source": "met",
+    "mode": "post",
+    "title": "A Stallion",
+    "artist": "Habiballah of Sava",
+    "wasSeasonal": false,
+    "captionLength": 157,
+    "cardSizeKB": 218,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
