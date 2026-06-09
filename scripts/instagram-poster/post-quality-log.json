@@ -6445,5 +6445,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-09T19:17:18.254Z",
+    "mediaId": "18114941054504882",
+    "artKey": "met:435882",
+    "source": "met",
+    "mode": "reel",
+    "title": "Still Life with Apples and a Pot of Primroses",
+    "artist": "Paul Cézanne",
+    "wasSeasonal": false,
+    "captionLength": 142,
+    "cardSizeKB": 403,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
