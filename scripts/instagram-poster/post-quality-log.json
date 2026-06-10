@@ -6487,5 +6487,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-10T10:57:23.382Z",
+    "mediaId": "17926849026123229",
+    "artKey": "met:10464",
+    "source": "met",
+    "mode": "post",
+    "title": "At the Seaside",
+    "artist": "William Merritt Chase",
+    "wasSeasonal": false,
+    "captionLength": 134,
+    "cardSizeKB": 205,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
