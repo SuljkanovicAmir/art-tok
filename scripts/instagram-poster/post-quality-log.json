@@ -6508,5 +6508,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-10T22:04:31.365Z",
+    "mediaId": "18064968305444300",
+    "artKey": "met:459123",
+    "source": "met",
+    "mode": "post",
+    "title": "Madame Roulin and Her Baby",
+    "artist": "Vincent van Gogh",
+    "wasSeasonal": false,
+    "captionLength": 137,
+    "cardSizeKB": 558,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
