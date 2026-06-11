@@ -232,16 +232,22 @@ async function main() {
     const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(pngBuffer);
     console.log(`Hosted at: ${publicUrl}`);
     console.log("Publishing story...");
-    mediaId = await publishToInstagram(token, publicUrl, caption, { isStory: true, altText });
-    await deleteFromDropbox(dropboxPath, dropboxToken);
+    try {
+      mediaId = await publishToInstagram(token, publicUrl, caption, { isStory: true, altText });
+    } finally {
+      await deleteFromDropbox(dropboxPath, dropboxToken);
+    }
   } else {
     // post mode
     console.log("Uploading post image...");
     const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(pngBuffer);
     console.log(`Hosted at: ${publicUrl}`);
     console.log("Publishing post...");
-    mediaId = await publishToInstagram(token, publicUrl, caption, { altText });
-    await deleteFromDropbox(dropboxPath, dropboxToken);
+    try {
+      mediaId = await publishToInstagram(token, publicUrl, caption, { altText });
+    } finally {
+      await deleteFromDropbox(dropboxPath, dropboxToken);
+    }
   }
 
   // 7. Record state IMMEDIATELY — first-comment and auto-story are decoration;

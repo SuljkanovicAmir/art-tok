@@ -83,11 +83,54 @@ export async function uploadToDropbox(buffer, filenamePrefix, extension) {
   // Why: Meta's media fetcher intermittently fails on www.dropbox.com/scl/...?raw=1
   // (returns error 9004/2207052 "media could not be fetched"), while the direct
   // CDN host serves the binary reliably without going through the web frontend.
-  const directUrl = shareUrl
+  const directUrl = toDirectUrl(shareUrl);
+
+  // Pre-probe the direct URL before handing it to Meta. A freshly-created shared
+  // link can take a few seconds to become CDN-fetchable; catching that here (with
+  // backoff) converts the Meta-9004 "media could not be fetched" class into an
+  // early, retryable failure. Clean up the orphaned upload if it never serves.
+  try {
+    await probeDirectUrl(directUrl);
+  } catch (err) {
+    await deleteFromDropbox(path, token);
+    throw err;
+  }
+
+  return { url: directUrl, path, token };
+}
+
+/**
+ * Rewrite a Dropbox share URL to the direct-download CDN host. Pure + idempotent.
+ */
+export function toDirectUrl(shareUrl) {
+  return shareUrl
     .replace("www.dropbox.com", "dl.dropboxusercontent.com")
     .replace(/\?dl=0$/, "?dl=1")
     .replace(/&dl=0/, "&dl=1");
-  return { url: directUrl, path, token };
+}
+
+/**
+ * Verify a direct Dropbox URL actually serves image/video bytes before Meta tries.
+ * NOTE: Dropbox's CDN answers HEAD with JSON metadata (no real content-type), so we
+ * must probe with GET and discard the body. Retries with linear backoff to absorb
+ * shared-link propagation delay. Throws after `attempts` failures.
+ */
+export async function probeDirectUrl(url, attempts = 3) {
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url);
+      const type = res.headers.get("content-type") || "";
+      const len = Number(res.headers.get("content-length") || 0);
+      res.body?.cancel?.();
+      const okType = type.startsWith("image/") || type.startsWith("video/");
+      if (res.ok && okType && (len === 0 || len > 1000)) return;
+      console.warn(`Direct-URL probe ${i}/${attempts}: status=${res.status} type=${type} len=${len}`);
+    } catch (err) {
+      console.warn(`Direct-URL probe ${i}/${attempts} error: ${err.message}`);
+    }
+    if (i < attempts) await new Promise((r) => setTimeout(r, i * 5000));
+  }
+  throw new Error("Dropbox direct URL not fetchable — aborting before Meta container creation");
 }
 
 export async function uploadImage(imageBuffer) {
@@ -96,7 +139,7 @@ export async function uploadImage(imageBuffer) {
 
 export async function deleteFromDropbox(path, token) {
   try {
-    await fetch("https://api.dropboxapi.com/2/files/delete_v2", {
+    const res = await fetch("https://api.dropboxapi.com/2/files/delete_v2", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -104,8 +147,13 @@ export async function deleteFromDropbox(path, token) {
       },
       body: JSON.stringify({ path }),
     });
-    console.log("Cleaned up Dropbox file");
-  } catch {
+    if (!res.ok) {
+      console.warn(`Dropbox delete failed (${res.status}) for ${path}`);
+    } else {
+      console.log(`Cleaned up Dropbox file: ${path}`);
+    }
+  } catch (err) {
     // Non-fatal — file will just stay in Dropbox
+    console.warn(`Dropbox delete error for ${path}: ${err.message}`);
   }
 }
