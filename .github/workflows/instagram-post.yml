@@ -2,7 +2,7 @@ name: Instagram Auto-Post
 
 on:
   schedule:
-    # 5 posts/day — 08:00, 11:00, 15:00, 18:00, 21:00 CET (UTC+1)
+    # UTC. Local CET in winter: 08/11/15/18/21. In summer (CEST) these land 1h later — accepted.
     - cron: "0 7,10,14,17,20 * * *"
   workflow_dispatch:
     inputs:
@@ -16,32 +16,44 @@ on:
           - post
           - story
           - reel
+          - pan-reel-trial
           - seasonal-post
           - seasonal-reel
 
 permissions:
   contents: write
+  issues: write
+
+concurrency:
+  group: ig-state
+  cancel-in-progress: false
 
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scripts/instagram-poster/package-lock.json
 
-      # node-canvas native dependencies + ffmpeg for reels
+      # node-canvas ships prebuilt linux-x64 binaries; only fonts + ffmpeg are needed.
       - name: Install system deps
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential libcairo2-dev libpango1.0-dev \
-            libjpeg-dev libgif-dev librsvg2-dev fonts-liberation fonts-dejavu ffmpeg
+          sudo apt-get install -y fonts-liberation fonts-dejavu ffmpeg
 
       - name: Install npm dependencies
         working-directory: scripts/instagram-poster
-        run: npm install
+        run: npm ci
+
+      - name: Pre-flight tests
+        working-directory: scripts/instagram-poster
+        run: npm test
 
       - name: Post to Instagram
         working-directory: scripts/instagram-poster
@@ -55,23 +67,40 @@ jobs:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
+          MODE: ${{ inputs.mode }}
         run: |
-          MODE="${{ inputs.mode }}"
-          if [ "$MODE" = "story" ]; then
-            node post.mjs --story
-          elif [ "$MODE" = "reel" ]; then
-            node post.mjs --reel
-          elif [ "$MODE" = "seasonal-post" ]; then
-            node post.mjs --seasonal
-          elif [ "$MODE" = "seasonal-reel" ]; then
-            node post.mjs --seasonal --reel
-          else
-            node post.mjs
-          fi
+          case "$MODE" in
+            post)           node post.mjs --post ;;
+            story)          node post.mjs --story ;;
+            reel)           node post.mjs --reel ;;
+            pan-reel-trial) node post.mjs --reel --pan --trial ;;
+            seasonal-post)  node post.mjs --seasonal ;;
+            seasonal-reel)  node post.mjs --seasonal --reel ;;
+            *)              node post.mjs ;;
+          esac
 
-      - name: Commit updated history
+      - name: Commit updated state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add scripts/instagram-poster/posted-history.json scripts/instagram-poster/post-quality-log.json
-          git diff --staged --quiet || (git commit -m "chore: update posted history + quality log" && git push)
+          git add scripts/instagram-poster/posted-history.json \
+                  scripts/instagram-poster/post-quality-log.json \
+                  scripts/instagram-poster/image-cache.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update posted history + quality log"
+          for i in 1 2 3; do git push && exit 0; git pull --rebase origin main; done
+          exit 1
+
+      - name: Alert on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          EXISTING=$(gh issue list --label automation-failure --state open --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" -b "Post run failed: $RUN_URL"
+          else
+            gh issue create --title "Automation failures" --label automation-failure \
+              -b "Post run failed: $RUN_URL"
+          fi
