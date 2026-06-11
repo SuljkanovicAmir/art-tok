@@ -150,7 +150,7 @@ export async function publishAutoStory(token, art, existingStoryBuffer = null) {
   }
 }
 
-export async function publishReel(token, videoBuffer, caption) {
+export async function publishReel(token, videoBuffer, caption, { trial = false, thumbOffsetMs = 17000 } = {}) {
   if (!token) throw new Error("INSTAGRAM_ACCESS_TOKEN not set");
   if (!INSTAGRAM_USER_ID) throw new Error("INSTAGRAM_USER_ID not set");
 
@@ -166,6 +166,8 @@ export async function publishReel(token, videoBuffer, caption) {
       caption,
       access_token: token,
     });
+    containerParams.set("thumb_offset", String(thumbOffsetMs)); // grid cover ≈ the full painting near the end
+    if (trial) containerParams.set("trial_params", JSON.stringify({ trial_type: "STANDARD" }));
 
     // Note: alt_text is NOT supported for REELS media type
 
@@ -178,11 +180,17 @@ export async function publishReel(token, videoBuffer, caption) {
 
       if (containerRes.ok) {
         ({ id: containerId } = await containerRes.json());
-        console.log(`Reel container created: ${containerId}`);
+        console.log(`Reel container created: ${containerId}${containerParams.has("trial_params") ? " (trial)" : ""}`);
         break;
       }
 
       const body = await containerRes.text();
+      // trial_params availability varies by account — degrade gracefully to a normal reel.
+      if (containerParams.has("trial_params") && body.includes("trial")) {
+        console.warn("trial_params rejected — publishing as a normal reel");
+        containerParams.delete("trial_params");
+        continue; // consumes one attempt of this loop
+      }
       const isTransient = body.includes('"is_transient":true') || containerRes.status === 500;
       if (isTransient && attempt < 4) {
         const wait = attempt * 15;
