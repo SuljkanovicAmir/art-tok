@@ -6571,5 +6571,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-11T22:11:54.581Z",
+    "mediaId": "18094067243254150",
+    "artKey": "met:436516",
+    "source": "met",
+    "mode": "post",
+    "title": "The Triumph of Fame; (reverse) Impresa of the Medici Family and Arms of the Medici and Tornabuoni Families",
+    "artist": "Giovanni di ser Giovanni Guidi (called Scheggia)",
+    "wasSeasonal": false,
+    "captionLength": 273,
+    "cardSizeKB": 415,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
