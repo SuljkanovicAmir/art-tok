@@ -29,6 +29,7 @@ import { fileURLToPath } from "node:url";
 
 import { loadHistoryData, saveHistoryData, artKey } from "./lib/history.mjs";
 import { loadQualityLog, saveQualityLog, buildQualityEntry } from "./lib/quality-log.mjs";
+import { isDuplicateRun } from "./lib/run-guard.mjs";
 import { fetchSpecificArtwork, fetchRandomArtwork, fetchSeasonalArtwork, shouldPostSeasonal, getActiveSeason } from "./lib/art-fetchers.mjs";
 import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
@@ -113,6 +114,13 @@ async function main() {
   // 1. Load history data (object format, auto-migrates from array)
   const historyData = loadHistoryData(HISTORY_FILE);
   const historySet = new Set(historyData.posted);
+
+  // 1a. Idempotency guard — a re-run or overlapping schedule must not double-post.
+  //     Skipped for dry runs and explicit single-art (--art=) requests.
+  if (!DRY_RUN && !SPECIFIC_ART && isDuplicateRun(loadQualityLog(QUALITY_LOG_FILE))) {
+    console.log("A post was published within the last 90 minutes — treating this as a duplicate run. Exiting cleanly.");
+    return;
+  }
 
   // 2. Determine mode from cycle (or CLI override)
   const mode = getRunMode(historyData);
