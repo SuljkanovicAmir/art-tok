@@ -22,7 +22,7 @@
  *   HARVARD_API_KEY         — Harvard Art Museums API key
  */
 import "dotenv/config";
-import { existsSync, readFileSync, writeFileSync, readdirSync, unlinkSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, unlinkSync, mkdirSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -82,9 +82,7 @@ async function createReelVideo(art, existingCardBuffer = null) {
   console.log(`Audio track: ${audioPath.split(/[\\/]/).pop()}`);
 
   const tmpDir = join(__dirname, "tmp");
-  if (!existsSync(tmpDir)) {
-    execSync(`mkdir -p "${tmpDir}"`);
-  }
+  mkdirSync(tmpDir, { recursive: true });
   const cardPath = join(tmpDir, `reel-card-${Date.now()}.png`);
   const reelPath = join(tmpDir, `reel-${Date.now()}.mp4`);
 
@@ -123,7 +121,7 @@ async function main() {
   }
 
   // 2. Determine mode from cycle (or CLI override)
-  const mode = getRunMode(historyData);
+  let mode = getRunMode(historyData);
   console.log(`ArtTok Instagram Poster — ${mode} mode${DRY_RUN ? " (dry run)" : ""}`);
   console.log("─".repeat(50));
   console.log(`History: ${historySet.size} previously posted artworks (run #${historyData.runIndex})`);
@@ -223,10 +221,25 @@ async function main() {
 
   // 6. Publish based on mode
   if (mode === "reel") {
-    console.log("Creating reel video...");
-    const videoBuffer = await createReelVideo(art, pngBuffer);
-    console.log("Publishing reel...");
-    mediaId = await publishReel(token, videoBuffer, caption);
+    try {
+      console.log("Creating reel video...");
+      const videoBuffer = await createReelVideo(art, pngBuffer);
+      console.log("Publishing reel...");
+      mediaId = await publishReel(token, videoBuffer, caption);
+    } catch (err) {
+      // Reels are the rarest slot (1 in 10); a deterministic reel failure must not
+      // waste the slot. Fall back to a plain image post of the same artwork.
+      console.warn(`Reel failed (${err.message}) — falling back to image post so the slot isn't lost`);
+      const prepped = await prepareFeedImage(art.imageBuffer || art.imageUrl); // may throw AspectOutOfRange — acceptable, run fails as before
+      pngBuffer = prepped.buffer;
+      const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(prepped.buffer);
+      try {
+        mediaId = await publishToInstagram(token, publicUrl, buildCaption(art, "post"), { altText });
+      } finally {
+        await deleteFromDropbox(dropboxPath, dropboxToken);
+      }
+      mode = "post"; // so quality log + first comment behave like a post
+    }
   } else if (mode === "story") {
     console.log("Uploading story image...");
     const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(pngBuffer);

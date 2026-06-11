@@ -17,7 +17,9 @@ export async function fetchJson(url, retries = 2) {
       await new Promise((r) => setTimeout(r, wait));
       continue;
     }
-    throw new Error(`HTTP ${res.status}: ${new URL(url).hostname}${new URL(url).pathname}`);
+    const err = new Error(`HTTP ${res.status}: ${new URL(url).hostname}${new URL(url).pathname}`);
+    err.statusCode = res.status;
+    throw err;
   }
 }
 

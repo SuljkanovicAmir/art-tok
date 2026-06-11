@@ -50,9 +50,17 @@ export async function publishToInstagram(token, imageUrl, caption, { isStory = f
   // Step 2: Wait for container to be ready (Instagram processes the image)
   await waitForContainer(token, containerId);
 
-  // Step 3: Publish (with retries — Instagram may report FINISHED before media is truly available)
-  let mediaId;
-  for (let attempt = 1; attempt <= 5; attempt++) {
+  // Step 3: Publish (shared 9007 retry parity with reels)
+  return publishContainer(token, containerId);
+}
+
+/**
+ * Publish a ready container, retrying Instagram's 9007 "Media ID is not available"
+ * transient (it sometimes reports FINISHED before the media is truly publishable).
+ * Shared by image posts and reels so both get identical retry behavior.
+ */
+export async function publishContainer(token, containerId, attempts = 5) {
+  for (let attempt = 1; attempt <= attempts; attempt++) {
     const publishRes = await fetch(
       `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media_publish`,
       {
@@ -66,27 +74,26 @@ export async function publishToInstagram(token, imageUrl, caption, { isStory = f
     );
 
     if (publishRes.ok) {
-      ({ id: mediaId } = await publishRes.json());
-      break;
+      const { id: mediaId } = await publishRes.json();
+      return mediaId;
     }
 
     const body = await publishRes.text();
     // Error 9007 / subcode 2207027 = "Media ID is not available" — transient, retry after delay
-    if (publishRes.status === 400 && body.includes('"code":9007') && attempt < 5) {
-      console.log(`Publish not ready (attempt ${attempt}/5), waiting ${attempt * 3}s...`);
+    if (publishRes.status === 400 && body.includes('"code":9007') && attempt < attempts) {
+      console.log(`Publish not ready (attempt ${attempt}/${attempts}), waiting ${attempt * 3}s...`);
       await new Promise((r) => setTimeout(r, attempt * 3000));
       continue;
     }
     throw new Error(`Instagram publish failed (${publishRes.status}): ${body}`);
   }
-
-  return mediaId;
+  throw new Error("Instagram publish exhausted retries");
 }
 
-export async function waitForContainer(token, containerId, maxAttempts = 10) {
+export async function waitForContainer(token, containerId, maxAttempts = 10, intervalMs = 3000) {
   for (let i = 0; i < maxAttempts; i++) {
     const res = await fetch(
-      `${IG_GRAPH}/${containerId}?fields=status_code&access_token=${token}`,
+      `${IG_GRAPH}/${containerId}?fields=status_code,status&access_token=${token}`,
     );
     if (!res.ok) {
       const body = await res.text();
@@ -95,10 +102,12 @@ export async function waitForContainer(token, containerId, maxAttempts = 10) {
     const data = await res.json();
 
     if (data.status_code === "FINISHED") return;
-    if (data.status_code === "ERROR") throw new Error("Instagram container processing failed");
+    if (data.status_code === "ERROR") {
+      throw new Error(`Instagram container processing failed: ${data.status || "(no detail)"}`);
+    }
 
     console.log(`Container status: ${data.status_code} (attempt ${i + 1}/${maxAttempts})`);
-    await new Promise((r) => setTimeout(r, 3000));
+    await new Promise((r) => setTimeout(r, intervalMs));
   }
   throw new Error("Instagram container processing timed out");
 }
@@ -149,65 +158,48 @@ export async function publishReel(token, videoBuffer, caption) {
   const { url: videoUrl, path, token: dbxToken } = await uploadToDropbox(videoBuffer, "arttok-reel", "mp4");
   console.log(`Reel hosted at: ${videoUrl}`);
 
-  // Create REELS container
-  const containerParams = new URLSearchParams({
-    media_type: "REELS",
-    video_url: videoUrl,
-    caption,
-    access_token: token,
-  });
+  try {
+    // Create REELS container
+    const containerParams = new URLSearchParams({
+      media_type: "REELS",
+      video_url: videoUrl,
+      caption,
+      access_token: token,
+    });
 
-  // Note: alt_text is NOT supported for REELS media type
+    // Note: alt_text is NOT supported for REELS media type
 
-  let containerId;
-  for (let attempt = 1; attempt <= 4; attempt++) {
-    const containerRes = await fetch(
-      `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
-      { method: "POST" },
-    );
+    let containerId;
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      const containerRes = await fetch(
+        `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${containerParams.toString()}`,
+        { method: "POST" },
+      );
 
-    if (containerRes.ok) {
-      ({ id: containerId } = await containerRes.json());
-      console.log(`Reel container created: ${containerId}`);
-      break;
+      if (containerRes.ok) {
+        ({ id: containerId } = await containerRes.json());
+        console.log(`Reel container created: ${containerId}`);
+        break;
+      }
+
+      const body = await containerRes.text();
+      const isTransient = body.includes('"is_transient":true') || containerRes.status === 500;
+      if (isTransient && attempt < 4) {
+        const wait = attempt * 15;
+        console.log(`Reel container creation failed (transient, attempt ${attempt}/4), retrying in ${wait}s...`);
+        await new Promise((r) => setTimeout(r, wait * 1000));
+        continue;
+      }
+      throw new Error(`Reel container creation failed (${containerRes.status}): ${body}`);
     }
 
-    const body = await containerRes.text();
-    const isTransient = body.includes('"is_transient":true') || containerRes.status === 500;
-    if (isTransient && attempt < 4) {
-      const wait = attempt * 15;
-      console.log(`Reel container creation failed (transient, attempt ${attempt}/4), retrying in ${wait}s...`);
-      await new Promise((r) => setTimeout(r, wait * 1000));
-      continue;
-    }
-    throw new Error(`Reel container creation failed (${containerRes.status}): ${body}`);
+    // Wait for video processing — videos take longer, so poll 60× at 5s (5-min budget)
+    await waitForContainer(token, containerId, 60, 5000);
+
+    // Publish with the same 9007 retry parity as image posts
+    return await publishContainer(token, containerId);
+  } finally {
+    // Clean up Dropbox whether publish succeeded or threw
+    await deleteFromDropbox(path, dbxToken);
   }
-
-  // Wait for video processing (30 attempts — video takes longer)
-  await waitForContainer(token, containerId, 30);
-
-  // Publish
-  const publishRes = await fetch(
-    `${IG_GRAPH}/${INSTAGRAM_USER_ID}/media_publish`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        creation_id: containerId,
-        access_token: token,
-      }).toString(),
-    },
-  );
-
-  if (!publishRes.ok) {
-    const body = await publishRes.text();
-    throw new Error(`Reel publish failed (${publishRes.status}): ${body}`);
-  }
-
-  const { id: mediaId } = await publishRes.json();
-
-  // Clean up Dropbox
-  await deleteFromDropbox(path, dbxToken);
-
-  return mediaId;
 }
