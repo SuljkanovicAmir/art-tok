@@ -42,7 +42,7 @@ function metadataScore(art) {
 /**
  * Build a quality entry for the current post.
  */
-export function buildQualityEntry(art, { mode, caption, cardSizeKB, mediaId, wasSeasonal }) {
+export function buildQualityEntry(art, { mode, caption, cardSizeKB, mediaId, wasSeasonal, fallbackFrom = null }) {
   return {
     timestamp: new Date().toISOString(),
     mediaId,
@@ -52,6 +52,7 @@ export function buildQualityEntry(art, { mode, caption, cardSizeKB, mediaId, was
     title: art.title,
     artist: art.artist,
     wasSeasonal,
+    fallbackFrom,
     captionLength: caption.length,
     cardSizeKB: Math.round(cardSizeKB),
     metadataScore: metadataScore(art),

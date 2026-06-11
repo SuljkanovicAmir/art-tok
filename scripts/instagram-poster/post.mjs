@@ -36,6 +36,7 @@ import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
 import { publishToInstagram, postFirstComment, publishReel, publishAutoStory } from "./lib/instagram-api.mjs";
 import { buildCaption, buildHashtags, buildAltText } from "./lib/captions.mjs";
 import { renderStoryCard, renderReelCard } from "./lib/render.mjs";
+import { createPanReel, getImageDims } from "./lib/reel-pan.mjs";
 import { prepareFeedImage, AspectOutOfRangeError } from "./lib/image-filter.mjs";
 import { pick } from "./lib/fetch.mjs";
 
@@ -48,6 +49,8 @@ const IS_POST = args.includes("--post");
 const IS_STORY = args.includes("--story");
 const IS_REEL = args.includes("--reel");
 const IS_SEASONAL = args.includes("--seasonal");
+const IS_PAN = args.includes("--pan");     // "Look Closer" pan/zoom reel from the source painting
+const IS_TRIAL = args.includes("--trial"); // publish reel to the trial audience (Task 10)
 const DRY_RUN = args.includes("--dry-run");
 const ART_ARG = args.find((a) => a.startsWith("--art="));
 const SPECIFIC_ART = ART_ARG ? ART_ARG.replace("--art=", "") : null; // e.g. "harvard:229060"
@@ -101,6 +104,23 @@ async function createReelVideo(art, existingCardBuffer = null) {
     try { unlinkSync(cardPath); } catch { /* ignore */ }
     try { unlinkSync(reelPath); } catch { /* ignore */ }
   }
+}
+
+// Pan reels ("Look Closer") when --pan is set: animate the source painting itself.
+// Falls back to the watercolor card reel if the source is too small or ffmpeg fails,
+// so the reel slot is never lost. Returns { buffer, fallbackFrom }.
+async function createReelVideoAuto(art, cardBuffer) {
+  if (IS_PAN) {
+    try {
+      const imageBuffer = art.imageBuffer || Buffer.from(await (await fetch(art.imageUrl)).arrayBuffer());
+      const dims = await getImageDims(imageBuffer);
+      return { buffer: createPanReel(art, imageBuffer, dims, pickAudioTrack()), fallbackFrom: null };
+    } catch (err) {
+      console.warn(`Pan reel failed (${err.message}) — falling back to card reel`);
+      return { buffer: await createReelVideo(art, cardBuffer), fallbackFrom: "pan-reel" };
+    }
+  }
+  return { buffer: await createReelVideo(art, cardBuffer), fallbackFrom: null };
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────
@@ -196,9 +216,9 @@ async function main() {
     if (mode === "reel") {
       try {
         console.log("\nCreating reel video (dry-run)...");
-        const videoBuffer = await createReelVideo(art, pngBuffer);
+        const { buffer: videoBuffer, fallbackFrom } = await createReelVideoAuto(art, pngBuffer);
         writeFileSync(`${basename}.mp4`, videoBuffer);
-        console.log(`Saved to ${basename}.mp4 (${(videoBuffer.length / 1024 / 1024).toFixed(1)} MB)`);
+        console.log(`Saved to ${basename}.mp4 (${(videoBuffer.length / 1024 / 1024).toFixed(1)} MB)${fallbackFrom ? ` [fell back from ${fallbackFrom}]` : ""}`);
       } catch (err) {
         console.warn(`Reel video failed: ${err.message}`);
         console.warn("Install ffmpeg to test reel creation locally");
@@ -220,12 +240,14 @@ async function main() {
   let mediaId;
 
   // 6. Publish based on mode
+  let fallbackFrom = null;
   if (mode === "reel") {
     try {
       console.log("Creating reel video...");
-      const videoBuffer = await createReelVideo(art, pngBuffer);
+      const reel = await createReelVideoAuto(art, pngBuffer);
+      fallbackFrom = reel.fallbackFrom;
       console.log("Publishing reel...");
-      mediaId = await publishReel(token, videoBuffer, caption);
+      mediaId = await publishReel(token, reel.buffer, caption, { trial: IS_TRIAL });
     } catch (err) {
       // Reels are the rarest slot (1 in 10); a deterministic reel failure must not
       // waste the slot. Fall back to a plain image post of the same artwork.
@@ -239,6 +261,7 @@ async function main() {
         await deleteFromDropbox(dropboxPath, dropboxToken);
       }
       mode = "post"; // so quality log + first comment behave like a post
+      fallbackFrom = "reel-to-post";
     }
   } else if (mode === "story") {
     console.log("Uploading story image...");
@@ -278,6 +301,7 @@ async function main() {
     cardSizeKB: pngBuffer.length / 1024,
     mediaId,
     wasSeasonal,
+    fallbackFrom,
   });
   qualityLog.push(entry);
   saveQualityLog(QUALITY_LOG_FILE, qualityLog);

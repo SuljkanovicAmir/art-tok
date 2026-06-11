@@ -1,7 +1,15 @@
 // lib/reel-pan.mjs
 // Plans ffmpeg motion for "Look Closer" reels: turn one high-res painting
-// into a slow 9:16 drift. Pure function -> filtergraph string; the ffmpeg shell
-// lives in createPanReel (appended in Task 9).
+// into a slow 9:16 drift. planPanMotion is a pure function -> filtergraph string;
+// createPanReel is the ffmpeg/canvas shell that renders it.
+
+import { execFileSync } from "node:child_process";
+import { writeFileSync, readFileSync, unlinkSync, mkdirSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { loadImage } from "canvas";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export const DURATION_S = 18;
 export const FPS = 30;
@@ -73,4 +81,65 @@ export function planPanMotion({ width, height, seed }) {
       `:x='iw/2-(iw/zoom)/2':y='ih/2-(ih/zoom)/2'` +
       `:d=${FRAMES}:s=${OUT_W}x${OUT_H}:fps=${FPS},format=yuv420p`,
   };
+}
+
+// ── ffmpeg / canvas shell ────────────────────────────────────────────────────
+
+function hashKey(s) {
+  let h = 0;
+  for (const c of s) h = (Math.imul(h, 31) + c.charCodeAt(0)) | 0;
+  return h >>> 0;
+}
+
+/**
+ * Probe an image buffer's pixel dimensions via node-canvas (already a dependency).
+ */
+export async function getImageDims(buffer) {
+  const img = await loadImage(buffer);
+  return { width: img.width, height: img.height };
+}
+
+/**
+ * Render a "Look Closer" pan reel from the artwork's source image.
+ * @param art         artwork object (uses source + id for a deterministic seed)
+ * @param imageBuffer raw painting JPEG/PNG buffer (NOT the 1080 filtered post image)
+ * @param dims        { width, height } of imageBuffer
+ * @param audioPath   mp3 path
+ * @returns Buffer of the rendered mp4
+ * @throws if no motion plan fits the source or ffmpeg fails — caller falls back to a card reel
+ */
+export function createPanReel(art, imageBuffer, dims, audioPath) {
+  const seed = hashKey(`${art.source}:${art.id}`);
+  const plan = planPanMotion({ ...dims, seed });
+  if (!plan) throw new Error(`source too small for pan reel (${dims.width}x${dims.height})`);
+  console.log(`Pan reel preset: ${plan.preset} (${dims.width}x${dims.height})`);
+
+  const tmpDir = join(__dirname, "..", "tmp");
+  mkdirSync(tmpDir, { recursive: true });
+  const imgPath = join(tmpDir, `pan-src-${art.source}-${art.id}.jpg`);
+  const outPath = join(tmpDir, `pan-reel-${art.source}-${art.id}.mp4`);
+  writeFileSync(imgPath, imageBuffer);
+
+  try {
+    // -loop 1 holds the still image on the timeline so the crop/zoompan
+    // expressions (which advance with t / on) have the full DURATION_S to animate.
+    execFileSync("ffmpeg", [
+      "-y", "-loop", "1", "-i", imgPath, "-i", audioPath,
+      "-filter_complex", `[0:v]${plan.filter}[v]`,
+      "-map", "[v]", "-map", "1:a",
+      "-t", String(DURATION_S),
+      "-c:v", "libx264", "-preset", "medium", "-crf", "21",
+      "-c:a", "aac", "-b:a", "128k",
+      "-movflags", "+faststart",
+      outPath,
+    ], { stdio: "pipe", timeout: 180000 });
+
+    const video = readFileSync(outPath);
+    if (video.length < 100 * 1024) throw new Error(`pan reel suspiciously small (${video.length} bytes)`);
+    console.log(`Pan reel created: ${(video.length / 1024 / 1024).toFixed(1)} MB`);
+    return video;
+  } finally {
+    try { unlinkSync(imgPath); } catch { /* ignore */ }
+    try { unlinkSync(outPath); } catch { /* ignore */ }
+  }
 }
