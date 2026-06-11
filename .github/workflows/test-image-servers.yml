@@ -1,13 +1,13 @@
 name: Test Image Servers
 on: workflow_dispatch
 
+permissions: {}
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Test image server endpoints
-        env:
-          HARVARD_API_KEY: ${{ secrets.HARVARD_API_KEY }}
         run: |
           echo "=========================================="
           echo "  IMAGE SERVER DIAGNOSTICS FROM GH ACTIONS"

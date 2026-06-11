@@ -31,3 +31,13 @@ scripts/instagram-poster/arttok-*.mp4
 *.njsproj
 *.sln
 *.sw?
+
+# Instagram poster build artifacts (jpg sources + tmp render dir)
+scripts/instagram-poster/arttok-*.jpg
+scripts/instagram-poster/tmp/
+
+# Local tooling / agent state
+.claude/
+.claude-flow/
+.swarm/
+coverage/
