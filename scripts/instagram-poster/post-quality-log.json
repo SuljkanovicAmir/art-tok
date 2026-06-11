@@ -6550,5 +6550,26 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-11T17:37:54.735Z",
+    "mediaId": "18079003355239674",
+    "artKey": "harvard:228368",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Forest Landscape",
+    "artist": "Narcisse Virgile Diaz de la Peña",
+    "wasSeasonal": false,
+    "captionLength": 147,
+    "cardSizeKB": 321,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
