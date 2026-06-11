@@ -6529,5 +6529,26 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-11T11:24:12.682Z",
+    "mediaId": "18077454935263908",
+    "artKey": "harvard:230034",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Self-Portrait",
+    "artist": "Ford Madox Brown, M. Grieve Co.",
+    "wasSeasonal": false,
+    "captionLength": 128,
+    "cardSizeKB": 405,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
