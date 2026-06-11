@@ -133,16 +133,19 @@ async function main() {
   //    stories/reels still use watercolor card rendering.
   let art;
   let pngBuffer;
+  let usedSeasonal = false;
   const MAX_RETRIES = mode === "post" ? 6 : 3; // post retries more — aspect filter rejects
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
+      usedSeasonal = false;
       if (SPECIFIC_ART) {
         art = await fetchSpecificArtwork(SPECIFIC_ART);
       } else if (IS_SEASONAL) {
         const season = getActiveSeason() || { key: "on-demand", keywords: ["spring", "flowers", "landscape", "garden", "nature"] };
         console.log(`Seasonal (forced): ${season.key}`);
         art = await fetchSeasonalArtwork(season, historySet);
+        usedSeasonal = !!art;
         if (!art) {
           console.warn("No seasonal artwork found — falling back to random");
           art = await fetchRandomArtwork(historySet);
@@ -151,6 +154,7 @@ async function main() {
         const season = shouldPostSeasonal(historyData);
         if (season) {
           art = await fetchSeasonalArtwork(season, historySet);
+          usedSeasonal = !!art;
         }
         if (!art) {
           art = await fetchRandomArtwork(historySet);
@@ -240,26 +244,14 @@ async function main() {
     await deleteFromDropbox(dropboxPath, dropboxToken);
   }
 
-  // 7. Post first comment with hashtags (not for stories)
-  if (mode !== "story") {
-    await postFirstComment(token, mediaId, hashtags);
-  }
-
-  // 8. Publish auto-story (not if already a story)
-  if (mode !== "story") {
-    await publishAutoStory(token, art, null);
-  }
-
-  // 9. Update history
-  const wasSeasonal = (IS_SEASONAL || getActiveSeason() !== null) && SPECIFIC_ART === null;
+  // 7. Record state IMMEDIATELY — first-comment and auto-story are decoration;
+  //    a crash there must not leave a live post unrecorded.
+  const wasSeasonal = usedSeasonal && SPECIFIC_ART === null;
   historyData.posted.push(artKey(art));
   historyData.postsSinceLastSeasonal = wasSeasonal ? 0 : historyData.postsSinceLastSeasonal + 1;
   historyData.runIndex = (historyData.runIndex + 1) % MODE_CYCLE.length;
-
-  // 10. Save history
   saveHistoryData(HISTORY_FILE, historyData);
 
-  // 11. Log quality metrics
   const qualityLog = loadQualityLog(QUALITY_LOG_FILE);
   const entry = buildQualityEntry(art, {
     mode,
@@ -271,6 +263,12 @@ async function main() {
   qualityLog.push(entry);
   saveQualityLog(QUALITY_LOG_FILE, qualityLog);
   console.log(`Quality logged: metadata ${entry.metadataScore}%, caption ${entry.captionLength} chars, card ${entry.cardSizeKB} KB`);
+
+  // 8. First comment with hashtags (not for stories) — non-fatal, post already recorded
+  if (mode !== "story") await postFirstComment(token, mediaId, hashtags);
+
+  // 9. Auto-story (not if already a story) — non-fatal, post already recorded
+  if (mode !== "story") await publishAutoStory(token, art, null);
 
   console.log("─".repeat(50));
   console.log(`Published! Media ID: ${mediaId} (${mode})`);
