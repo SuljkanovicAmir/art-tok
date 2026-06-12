@@ -96,3 +96,36 @@ export function getCacheStats(entries, historySet) {
   }
   return { total, available, skipped, posted, bySource };
 }
+
+/**
+ * Pick a themed carousel set: same culture (the grouping with the best data
+ * coverage), same orientation (IG crops all children to the first child's
+ * aspect), one work per artist, entries must have a known aspect.
+ * Returns null when nothing qualifies — caller falls back to a single post.
+ */
+export function pickThemedSet(entries, historySet, { size = 4, minSize = 3, rng = Math.random } = {}) {
+  const pool = entries.filter((e) =>
+    !e.skip && e.aspect && e.culture &&
+    !historySet.has(`${e.source}:${e.id}`),
+  );
+
+  const groups = new Map();
+  for (const e of pool) {
+    const orientation = e.aspect < 1.0 ? "portrait" : "landscape";
+    const key = `${e.culture}|${orientation}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(e);
+  }
+
+  const viable = [...groups.values()]
+    .map((g) => {
+      const seen = new Set();
+      return g.filter((e) => !seen.has(e.artist) && seen.add(e.artist));
+    })
+    .filter((g) => g.length >= minSize);
+  if (viable.length === 0) return null;
+
+  const group = viable[Math.floor(rng() * viable.length)];
+  const shuffled = [...group].sort(() => rng() - 0.5);
+  return shuffled.slice(0, Math.min(size, shuffled.length));
+}
