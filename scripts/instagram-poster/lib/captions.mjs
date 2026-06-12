@@ -1,26 +1,5 @@
 const CORE_TAGS = ["#arttok", "#fineart", "#arthistory"];
 
-const ROTATING_TAGS = [
-  // Museum & gallery (on-brand core)
-  "#museumlife", "#museumlover", "#artmuseum", "#museumcollection",
-  "#museumvisit", "#museumsoftheworld", "#museumfromhome",
-  // Art history & education
-  "#arthistorynerd", "#arteducation", "#arthistorian", "#historyofart",
-  "#arthistory101", "#culturalheritage",
-  // Classical & period art
-  "#classicalart", "#classicalmasterpiece", "#oldmasters",
-  "#renaissanceart", "#baroqueart", "#impressionism", "#europeanart",
-  // Technique & medium
-  "#oilpaintingart", "#masterpiece", "#paintingoftheday",
-  "#portraitpainting", "#figurativeart",
-  // Curatorial & appreciation
-  "#artcurator", "#artappreciation", "#artdiscovery",
-  "#fineartfriday", "#artexhibition",
-  // Niche discovery (high engagement, low competition)
-  "#artdetail", "#closerlookatart", "#museumart", "#classicalpainting",
-  "#artfromthemuseums", "#askacurator", "#museumselfie", "#permanentcollection",
-];
-
 const MOVEMENT_TAGS = {
   painting: "#painting", paintings: "#painting",
   oil: "#oilpainting", watercolor: "#watercolor",
@@ -36,42 +15,35 @@ const MUSEUM_TAGS = {
   artic: "#artinstituteofchicago",
 };
 
-function pickRandom(arr, n) {
-  const shuffled = [...arr].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, n);
-}
+// 2026 IG discovery: 3–5 *specific* tags beat 20+ generic ones, and the keyword-rich
+// caption itself is now the real surface. Build a focused set: brand + museum + artist
+// + medium + culture, capped at 7. (rng kept for signature parity; result is deterministic.)
+export function buildHashtags(art, rng = Math.random) {
+  const tags = [...CORE_TAGS]; // #arttok #fineart #arthistory
 
-export function buildHashtags(art) {
-  const tags = [...CORE_TAGS];
-
-  // Museum tag
   tags.push(MUSEUM_TAGS[art.source] || "#museum");
 
-  // Medium/movement-specific tags (allow up to 2)
+  // Artist tag — the highest-intent searchers use these.
+  if (art.artist && art.artist !== "Unknown artist") {
+    const slug = art.artist.toLowerCase().replace(/[^a-z]/g, "");
+    if (slug.length >= 4 && slug.length <= 24) tags.push(`#${slug}`);
+  }
+
+  // One medium tag.
   if (art.medium) {
     const mediumLower = art.medium.toLowerCase();
-    let mediumCount = 0;
     for (const [keyword, tag] of Object.entries(MOVEMENT_TAGS)) {
-      if (mediumLower.includes(keyword)) {
-        tags.push(tag);
-        mediumCount++;
-        if (mediumCount >= 2) break;
-      }
+      if (mediumLower.includes(keyword)) { tags.push(tag); break; }
     }
   }
 
-  // Culture-specific tag
+  // One culture tag.
   if (art.culture) {
     const clean = art.culture.replace(/[^a-zA-Z]/g, "").toLowerCase();
     if (clean.length > 2 && clean.length < 30) tags.push(`#${clean}`);
   }
 
-  // Fill remaining slots from rotating pool (target 20-25 total)
-  const target = 20 + Math.floor(Math.random() * 6); // 20-25
-  const remaining = target - tags.length;
-  if (remaining > 0) tags.push(...pickRandom(ROTATING_TAGS, remaining));
-
-  return tags.join(" ");
+  return [...new Set(tags)].slice(0, 7).join(" ");
 }
 
 function stripHtml(str) {
@@ -91,10 +63,6 @@ function cleanDescription(raw) {
   return cleaned;
 }
 
-function pick(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
 // ── Rotating engagement hooks (keeps feed fresh, drives comments + saves) ──
 
 // Curator's notes — short, observational, never asks for engagement.
@@ -112,7 +80,7 @@ const CURATOR_NOTES = [
 
 const SIGN_OFF = "Follow @arttok.art \u00B7 Masterworks, daily.";
 
-export function buildCaption(art, mode = "post") {
+export function buildCaption(art, mode = "post", rng = Math.random) {
   const lines = [];
   const desc = cleanDescription(art.description);
 
@@ -133,9 +101,9 @@ export function buildCaption(art, mode = "post") {
     }
 
     // Curator's note ~1 in 3 reels
-    if (Math.random() < 0.125) {
+    if (rng() < 0.33) {
       lines.push("");
-      lines.push(pick(CURATOR_NOTES));
+      lines.push(CURATOR_NOTES[Math.floor(rng() * CURATOR_NOTES.length)]);
     }
 
     lines.push("");
@@ -148,6 +116,7 @@ export function buildCaption(art, mode = "post") {
     const details = [];
     if (art.dated) details.push(art.dated);
     if (art.medium) details.push(art.medium);
+    if (art.culture) details.push(art.culture);
     if (details.length) lines.push(details.join(" \u00B7 "));
 
     lines.push(art.museumName);
@@ -160,9 +129,9 @@ export function buildCaption(art, mode = "post") {
     }
 
     // Curator's note ~1 in 3 posts
-    if (Math.random() < 0.125) {
+    if (rng() < 0.33) {
       lines.push("");
-      lines.push(pick(CURATOR_NOTES));
+      lines.push(CURATOR_NOTES[Math.floor(rng() * CURATOR_NOTES.length)]);
     }
 
     lines.push("");
