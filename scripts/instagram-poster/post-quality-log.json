@@ -6592,5 +6592,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-12T11:03:03.295Z",
+    "mediaId": "17933922468279347",
+    "artKey": "harvard:305136",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Henry Wadsworth Longfellow (1807-1882)",
+    "artist": "Thomas Buchanan Read, Henry Wadsworth Longfellow",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 181,
+    "cardSizeKB": 245,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
