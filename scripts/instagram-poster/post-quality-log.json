@@ -6658,5 +6658,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-12T21:48:07.799Z",
+    "mediaId": "17893515474506614",
+    "artKey": "harvard:230614",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "A Sea-Spell",
+    "artist": "Dante Gabriel Rossetti",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 108,
+    "cardSizeKB": 463,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
