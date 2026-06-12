@@ -56,7 +56,7 @@ function truncate(str, maxLen) {
   return str.slice(0, cut > 0 ? cut : maxLen) + "...";
 }
 
-function cleanDescription(raw) {
+export function cleanDescription(raw) {
   if (!raw) return "";
   const cleaned = stripHtml(raw);
   if (cleaned.length < 20) return "";
@@ -80,7 +80,7 @@ const CURATOR_NOTES = [
 
 const SIGN_OFF = "Follow @arttok.art \u00B7 Masterworks, daily.";
 
-export function buildCaption(art, mode = "post", rng = Math.random) {
+export function buildCaption(art, mode = "post", rng = Math.random, { contextLine = null } = {}) {
   const lines = [];
   const desc = cleanDescription(art.description);
 
@@ -126,6 +126,11 @@ export function buildCaption(art, mode = "post", rng = Math.random) {
       lines.push("───────");
       lines.push("");
       lines.push(truncate(desc, 400));
+    } else if (contextLine) {
+      lines.push("");
+      lines.push("───────");
+      lines.push("");
+      lines.push(contextLine);
     }
 
     // Curator's note ~1 in 3 posts

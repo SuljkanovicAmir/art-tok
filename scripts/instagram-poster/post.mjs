@@ -34,9 +34,10 @@ import { fetchSpecificArtwork, fetchRandomArtwork, fetchSeasonalArtwork, shouldP
 import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
 import { publishToInstagram, postFirstComment, publishReel, publishAutoStory } from "./lib/instagram-api.mjs";
-import { buildCaption, buildHashtags, buildAltText } from "./lib/captions.mjs";
+import { buildCaption, buildHashtags, buildAltText, cleanDescription } from "./lib/captions.mjs";
 import { renderStoryCard, renderReelCard } from "./lib/render.mjs";
 import { createPanReel, getImageDims } from "./lib/reel-pan.mjs";
+import { fetchArtistContext } from "./lib/wiki.mjs";
 import { prepareFeedImage, AspectOutOfRangeError } from "./lib/image-filter.mjs";
 import { pick } from "./lib/fetch.mjs";
 
@@ -206,6 +207,10 @@ async function main() {
     }
   }
 
+  // Context line: a one-sentence Wikipedia artist note, used only when the artwork
+  // itself has no usable description. Best-effort — null on any failure or timeout.
+  const contextLine = cleanDescription(art.description) ? null : await fetchArtistContext(art.artist);
+
   // 4. Dry-run: save card + optional reel video, print caption + hashtags, exit
   if (DRY_RUN) {
     const basename = `arttok-${art.source}-${art.id}-${mode}`;
@@ -225,7 +230,7 @@ async function main() {
       }
     }
 
-    console.log(`\nCaption:\n${buildCaption(art, mode)}`);
+    console.log(`\nCaption:\n${buildCaption(art, mode, undefined, { contextLine })}`);
     console.log(`\nHashtags:\n${buildHashtags(art)}`);
     return;
   }
@@ -234,7 +239,7 @@ async function main() {
   let token = process.env.INSTAGRAM_ACCESS_TOKEN;
   token = await refreshTokenIfNeeded(token);
 
-  const caption = buildCaption(art, mode);
+  const caption = buildCaption(art, mode, undefined, { contextLine });
   const altText = buildAltText(art);
   const hashtags = buildHashtags(art);
   let mediaId;
@@ -256,7 +261,7 @@ async function main() {
       pngBuffer = prepped.buffer;
       const { url: publicUrl, path: dropboxPath, token: dropboxToken } = await uploadImage(prepped.buffer);
       try {
-        mediaId = await publishToInstagram(token, publicUrl, buildCaption(art, "post"), { altText });
+        mediaId = await publishToInstagram(token, publicUrl, buildCaption(art, "post", undefined, { contextLine }), { altText });
       } finally {
         await deleteFromDropbox(dropboxPath, dropboxToken);
       }
