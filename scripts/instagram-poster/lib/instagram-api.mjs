@@ -211,3 +211,32 @@ export async function publishReel(token, videoBuffer, caption, { trial = false, 
     await deleteFromDropbox(path, dbxToken);
   }
 }
+
+/**
+ * Publish a CAROUSEL post from already-hosted image URLs (2–10 children).
+ * Reuses the shared container/poll/publish plumbing. IG crops every child to
+ * the first child's aspect, so callers should pass same-orientation images.
+ */
+export async function publishCarousel(token, hostedUrls, caption) {
+  if (hostedUrls.length < 2) throw new Error("carousel needs >=2 items");
+
+  const children = [];
+  for (const url of hostedUrls) {
+    const params = new URLSearchParams({
+      image_url: url, is_carousel_item: "true", access_token: token,
+    });
+    const res = await fetch(`${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${params.toString()}`, { method: "POST" });
+    if (!res.ok) throw new Error(`Carousel child failed (${res.status}): ${await res.text()}`);
+    children.push((await res.json()).id);
+  }
+  for (const id of children) await waitForContainer(token, id);
+
+  const parentParams = new URLSearchParams({
+    media_type: "CAROUSEL", children: children.join(","), caption, access_token: token,
+  });
+  const parentRes = await fetch(`${IG_GRAPH}/${INSTAGRAM_USER_ID}/media?${parentParams.toString()}`, { method: "POST" });
+  if (!parentRes.ok) throw new Error(`Carousel container failed (${parentRes.status}): ${await parentRes.text()}`);
+  const { id: parentId } = await parentRes.json();
+  await waitForContainer(token, parentId);
+  return publishContainer(token, parentId);
+}

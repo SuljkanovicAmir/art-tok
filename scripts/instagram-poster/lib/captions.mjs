@@ -152,3 +152,15 @@ export function buildAltText(art) {
   parts.push(art.museumName);
   return parts.join(". ").slice(0, 1000);
 }
+
+// Numbered gallery labels for a themed carousel, one entry per child work.
+export function buildCarouselCaption(theme, arts, rng = Math.random) {
+  const lines = [theme, ""];
+  arts.forEach((a, i) => {
+    const detail = [a.dated, a.medium].filter(Boolean).join(" · ");
+    lines.push(`${i + 1}. ${a.title}${a.artist !== "Unknown artist" ? ` — ${a.artist}` : ""}`);
+    if (detail) lines.push(`   ${detail}`);
+  });
+  lines.push("", arts[0].museumName, "", SIGN_OFF);
+  return lines.join("\n");
+}

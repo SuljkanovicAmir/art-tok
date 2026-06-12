@@ -4,6 +4,8 @@ on:
   schedule:
     # UTC. Local CET in winter: 08/11/15/18/21. In summer (CEST) these land 1h later — accepted.
     - cron: "0 7,10,14,17,20 * * *"
+    # Sunday 16:00 UTC — themed carousel slot (resolved in the "Resolve mode" step).
+    - cron: "0 16 * * 0"
   workflow_dispatch:
     inputs:
       mode:
@@ -17,6 +19,7 @@ on:
           - story
           - reel
           - pan-reel-trial
+          - carousel
           - seasonal-post
           - seasonal-reel
 
@@ -55,6 +58,19 @@ jobs:
         working-directory: scripts/instagram-poster
         run: npm test
 
+      # The Sunday 16:00 UTC schedule maps to the carousel; everything else passes
+      # through the dispatch input (or "auto" for the regular scheduled posts).
+      - name: Resolve mode
+        id: mode
+        env:
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 16 * * 0" ]; then
+            echo "mode=carousel" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=${MODE:-auto}" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Post to Instagram
         working-directory: scripts/instagram-poster
         env:
@@ -67,13 +83,14 @@ jobs:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
-          MODE: ${{ inputs.mode }}
+          MODE: ${{ steps.mode.outputs.mode }}
         run: |
           case "$MODE" in
             post)           node post.mjs --post ;;
             story)          node post.mjs --story ;;
             reel)           node post.mjs --reel ;;
             pan-reel-trial) node post.mjs --reel --pan --trial ;;
+            carousel)       node post.mjs --carousel ;;
             seasonal-post)  node post.mjs --seasonal ;;
             seasonal-reel)  node post.mjs --seasonal --reel ;;
             *)              node post.mjs ;;

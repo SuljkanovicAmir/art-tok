@@ -33,11 +33,12 @@ import { isDuplicateRun } from "./lib/run-guard.mjs";
 import { fetchSpecificArtwork, fetchRandomArtwork, fetchSeasonalArtwork, shouldPostSeasonal, getActiveSeason } from "./lib/art-fetchers.mjs";
 import { uploadImage, deleteFromDropbox } from "./lib/dropbox.mjs";
 import { refreshTokenIfNeeded } from "./lib/token-refresh.mjs";
-import { publishToInstagram, postFirstComment, publishReel, publishAutoStory } from "./lib/instagram-api.mjs";
-import { buildCaption, buildHashtags, buildAltText, cleanDescription } from "./lib/captions.mjs";
+import { publishToInstagram, postFirstComment, publishReel, publishAutoStory, publishCarousel } from "./lib/instagram-api.mjs";
+import { buildCaption, buildHashtags, buildAltText, cleanDescription, buildCarouselCaption } from "./lib/captions.mjs";
 import { renderStoryCard, renderReelCard } from "./lib/render.mjs";
 import { createPanReel, getImageDims } from "./lib/reel-pan.mjs";
 import { fetchArtistContext } from "./lib/wiki.mjs";
+import { loadCache, pickThemedSet } from "./lib/cache.mjs";
 import { prepareFeedImage, AspectOutOfRangeError } from "./lib/image-filter.mjs";
 import { pick } from "./lib/fetch.mjs";
 
@@ -52,6 +53,7 @@ const IS_REEL = args.includes("--reel");
 const IS_SEASONAL = args.includes("--seasonal");
 const IS_PAN = args.includes("--pan");     // "Look Closer" pan/zoom reel from the source painting
 const IS_TRIAL = args.includes("--trial"); // publish reel to the trial audience (Task 10)
+const IS_CAROUSEL = args.includes("--carousel"); // themed multi-image post from the cache
 const DRY_RUN = args.includes("--dry-run");
 const ART_ARG = args.find((a) => a.startsWith("--art="));
 const SPECIFIC_ART = ART_ARG ? ART_ARG.replace("--art=", "") : null; // e.g. "harvard:229060"
@@ -129,6 +131,74 @@ async function createReelVideoAuto(art, cardBuffer) {
 const HISTORY_FILE = new URL("./posted-history.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 const QUALITY_LOG_FILE = new URL("./post-quality-log.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 
+/**
+ * Themed carousel post from the Dropbox image cache. Picks a same-culture,
+ * same-orientation set, prepares + hosts each child, and publishes a CAROUSEL.
+ * Returns true when it handled the slot (published or dry-ran); false to fall
+ * back to a single post (no themed set, or fewer than 3 children survived).
+ */
+async function handleCarousel(historyData, historySet) {
+  const set = pickThemedSet(loadCache(), historySet);
+  if (!set) return false;
+
+  const culture = set[0].culture;
+  const theme = `${culture} painting · a small selection`;
+  const caption = buildCarouselCaption(theme, set);
+  const hashtags = buildHashtags(set[0]);
+  console.log(`Carousel: ${set.length} ${culture} works`);
+
+  // Dry-run: write the children + print the numbered caption, then exit.
+  if (DRY_RUN) {
+    for (let i = 0; i < set.length; i++) {
+      const prepped = await prepareFeedImage(set[i].imageUrl);
+      writeFileSync(`arttok-carousel-${i + 1}.jpg`, prepped.buffer);
+      console.log(`Saved arttok-carousel-${i + 1}.jpg (${set[i].source}:${set[i].id})`);
+    }
+    console.log(`\nCaption:\n${caption}`);
+    console.log(`\nHashtags:\n${hashtags}`);
+    return true;
+  }
+
+  let token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  token = await refreshTokenIfNeeded(token);
+
+  const uploaded = []; // { entry, url, path, token }
+  try {
+    for (const entry of set) {
+      try {
+        const prepped = await prepareFeedImage(entry.imageUrl);
+        const up = await uploadImage(prepped.buffer);
+        uploaded.push({ entry, ...up });
+      } catch (err) {
+        console.warn(`Carousel child skipped (${entry.source}:${entry.id}): ${err.message}`);
+      }
+    }
+
+    if (uploaded.length < 3) {
+      console.warn(`Only ${uploaded.length} carousel children survived (<3) — falling back to a single post`);
+      return false;
+    }
+
+    const mediaId = await publishCarousel(token, uploaded.map((u) => u.url), caption);
+    console.log(`Carousel published! Media ID: ${mediaId}`);
+
+    // Record state immediately — every published child counts as posted.
+    for (const u of uploaded) historyData.posted.push(artKey(u.entry));
+    saveHistoryData(HISTORY_FILE, historyData);
+
+    const qualityLog = loadQualityLog(QUALITY_LOG_FILE);
+    qualityLog.push(buildQualityEntry(set[0], {
+      mode: "carousel", caption, cardSizeKB: 0, mediaId, wasSeasonal: false,
+    }));
+    saveQualityLog(QUALITY_LOG_FILE, qualityLog);
+
+    await postFirstComment(token, mediaId, hashtags);
+    return true;
+  } finally {
+    for (const u of uploaded) await deleteFromDropbox(u.path, u.token);
+  }
+}
+
 async function main() {
   // 1. Load history data (object format, auto-migrates from array)
   const historyData = loadHistoryData(HISTORY_FILE);
@@ -139,6 +209,13 @@ async function main() {
   if (!DRY_RUN && !SPECIFIC_ART && isDuplicateRun(loadQualityLog(QUALITY_LOG_FILE))) {
     console.log("A post was published within the last 90 minutes — treating this as a duplicate run. Exiting cleanly.");
     return;
+  }
+
+  // 1b. Carousel mode — themed multi-image post (falls back to a single post if none qualifies)
+  if (IS_CAROUSEL) {
+    const handled = await handleCarousel(historyData, historySet);
+    if (handled) return;
+    console.log("No themed carousel set available — continuing as a single post");
   }
 
   // 2. Determine mode from cycle (or CLI override)
