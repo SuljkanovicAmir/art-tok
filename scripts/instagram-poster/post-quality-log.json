@@ -6636,5 +6636,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-12T19:06:29.562Z",
+    "mediaId": "18431190049125026",
+    "artKey": "met:747611",
+    "source": "met",
+    "mode": "post",
+    "title": "Sabrina",
+    "artist": "Samuel Palmer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 291,
+    "cardSizeKB": 269,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
