@@ -6614,5 +6614,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-12T16:45:26.623Z",
+    "mediaId": "18377723710160705",
+    "artKey": "met:10065",
+    "source": "met",
+    "mode": "post",
+    "title": "Repose",
+    "artist": "John White Alexander",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 280,
+    "cardSizeKB": 237,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
