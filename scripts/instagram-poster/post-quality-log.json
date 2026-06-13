@@ -6702,5 +6702,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-13T15:43:24.616Z",
+    "mediaId": "18114510883875881",
+    "artKey": "harvard:231449",
+    "source": "harvard",
+    "mode": "post",
+    "title": "On the Shenandoah",
+    "artist": "William Louis Sonntag",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 141,
+    "cardSizeKB": 187,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
