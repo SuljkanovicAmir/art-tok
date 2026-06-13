@@ -6724,5 +6724,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-13T18:08:45.613Z",
+    "mediaId": "18121323217742874",
+    "artKey": "harvard:311494",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Venice, Italy",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 298,
+    "cardSizeKB": 200,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
