@@ -6746,5 +6746,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-13T21:18:15.259Z",
+    "mediaId": "17893950558356160",
+    "artKey": "harvard:231947",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Yankee Peddler",
+    "artist": "William Tolman Carlton",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 138,
+    "cardSizeKB": 199,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
