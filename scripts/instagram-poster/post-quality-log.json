@@ -6680,5 +6680,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-13T11:56:56.689Z",
+    "mediaId": "17926959933341564",
+    "artKey": "harvard:227219",
+    "source": "harvard",
+    "mode": "post",
+    "title": "City View with Moon",
+    "artist": "Ralph Albert Blakelock",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 337,
+    "cardSizeKB": 280,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
