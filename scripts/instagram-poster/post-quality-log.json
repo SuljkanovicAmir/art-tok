@@ -6812,5 +6812,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-14T17:23:09.483Z",
+    "mediaId": "18115161154855390",
+    "artKey": "harvard:311093",
+    "source": "harvard",
+    "mode": "carousel",
+    "title": "Samuel Taylor Coleridge (1772-1834)",
+    "artist": "Washington Allston",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 560,
+    "cardSizeKB": 0,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
