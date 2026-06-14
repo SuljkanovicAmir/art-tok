@@ -6768,5 +6768,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-14T10:26:01.545Z",
+    "mediaId": "18101748386323649",
+    "artKey": "harvard:305208",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Entering the War",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 316,
+    "cardSizeKB": 309,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
