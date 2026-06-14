@@ -6834,5 +6834,27 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-14T21:14:57.661Z",
+    "mediaId": "18101057413877129",
+    "artKey": "harvard:311334",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Josiah Kendall Waite (1809-1872)",
+    "artist": "Bass Otis, Josiah Kendall Waite",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 170,
+    "cardSizeKB": 151,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
