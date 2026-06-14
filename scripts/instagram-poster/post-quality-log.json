@@ -6790,5 +6790,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-14T15:49:29.730Z",
+    "mediaId": "17957684940138465",
+    "artKey": "harvard:304808",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Charles Sumner (1811-1874)",
+    "artist": "Walter M. Brackett, Charles Sumner",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 158,
+    "cardSizeKB": 216,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
