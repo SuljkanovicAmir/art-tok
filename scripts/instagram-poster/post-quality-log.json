@@ -6856,5 +6856,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-15T13:16:07.174Z",
+    "mediaId": "18331374997269833",
+    "artKey": "met:459083",
+    "source": "met",
+    "mode": "post",
+    "title": "Burgomaster Jan van Duren (1613–1687)",
+    "artist": "Gerard ter Borch the Younger",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 167,
+    "cardSizeKB": 271,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
