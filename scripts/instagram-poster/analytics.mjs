@@ -13,11 +13,16 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchJson, IG_GRAPH } from "./lib/fetch.mjs";
 import { loadQualityLog } from "./lib/quality-log.mjs";
+import { loadCache, getCacheStats } from "./lib/cache.mjs";
+import { loadHistoryData } from "./lib/history.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = join(__dirname, "..", "..", "docs", "analytics");
 const QUALITY_LOG_FILE = join(__dirname, "post-quality-log.json");
-const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID } = process.env;
+const HISTORY_FILE = join(__dirname, "posted-history.json");
+// Graph API versions sunset ~2 years after release; warn as v21.0's window closes.
+const API_SUNSET = new Date("2026-10-01");
+const { INSTAGRAM_ACCESS_TOKEN, INSTAGRAM_USER_ID, META_APP_ID, META_APP_SECRET } = process.env;
 
 if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
   console.error("INSTAGRAM_ACCESS_TOKEN and INSTAGRAM_USER_ID required");
@@ -81,6 +86,72 @@ function getPreviousFollowers() {
   const lastReport = readFileSync(join(DOCS_DIR, files[files.length - 1]), "utf-8");
   const match = lastReport.match(/Followers:\s*\*\*(\d+)\*\*/);
   return match ? parseInt(match[1], 10) : null;
+}
+
+async function tokenDaysLeft() {
+  if (!META_APP_ID || !META_APP_SECRET) return null;
+  try {
+    const res = await fetch(`${IG_GRAPH}/debug_token?input_token=${INSTAGRAM_ACCESS_TOKEN}&access_token=${META_APP_ID}|${META_APP_SECRET}`);
+    const data = await res.json();
+    if (!data.data?.is_valid) return "invalid";
+    const expiresAt = data.data.expires_at;
+    if (!expiresAt) return Infinity; // never-expiring token
+    return Math.floor((expiresAt - Math.floor(Date.now() / 1000)) / 86400);
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Pipeline health: cache coverage, token expiry, Graph API sunset, fallback rate.
+ * Surfaces the slow-burn failures (empty cache, expiring token, deprecated API)
+ * that don't throw but quietly degrade the pipeline.
+ */
+async function buildHealthSection(qualityLog) {
+  let s = `## Pipeline Health\n\n`;
+
+  // Image cache coverage per source.
+  const historySet = new Set(loadHistoryData(HISTORY_FILE).posted);
+  const stats = getCacheStats(loadCache(), historySet);
+  s += `### Image cache (available per source)\n\n`;
+  s += `| Source | Available | Total | Skipped | Posted |\n`;
+  s += `|--------|-----------|-------|---------|--------|\n`;
+  for (const [source, d] of Object.entries(stats.bySource)) {
+    const warn = d.available < 20 ? " ⚠️ low" : "";
+    s += `| ${source} | ${d.available}${warn} | ${d.total} | ${d.skipped} | ${d.posted} |\n`;
+  }
+  const low = Object.entries(stats.bySource).filter(([, d]) => d.available < 20).map(([src]) => src);
+  s += `\n`;
+  if (low.length) s += `> ⚠️ Low cache (<20 available): ${low.join(", ")} — run the curator to top up.\n\n`;
+
+  // Access token expiry.
+  const days = await tokenDaysLeft();
+  s += `### Access token\n\n`;
+  if (days === null) s += `- Token status: unknown (no app credentials in this run)\n\n`;
+  else if (days === "invalid") s += `- Token status: ⚠️ **INVALID** — refresh required\n\n`;
+  else if (days === Infinity) s += `- Token status: valid, no expiry\n\n`;
+  else s += `- Token expires in **${days} days**${days < 14 ? " ⚠️" : ""}\n\n`;
+
+  // Graph API sunset.
+  const sunsetDays = Math.floor((API_SUNSET.getTime() - Date.now()) / 86400000);
+  s += `### Graph API version\n\n`;
+  s += `- Pinned ${IG_GRAPH.split("/").pop()}, est. sunset ${API_SUNSET.toISOString().split("T")[0]} (${sunsetDays} days)`;
+  s += sunsetDays < 90 ? ` ⚠️ **bump the API version soon**\n\n` : `\n\n`;
+
+  // Fallback rate over the last 7 days.
+  const weekAgoMs = Date.now() - 7 * 24 * 3600 * 1000;
+  const recent = qualityLog.filter((e) => e.timestamp && new Date(e.timestamp).getTime() > weekAgoMs);
+  const fallbacks = recent.filter((e) => e.fallbackFrom);
+  s += `### Fallback rate (last 7 days)\n\n`;
+  s += `- ${fallbacks.length} / ${recent.length} posts fell back`;
+  if (fallbacks.length) {
+    const byType = {};
+    for (const e of fallbacks) byType[e.fallbackFrom] = (byType[e.fallbackFrom] || 0) + 1;
+    s += ` (${Object.entries(byType).map(([k, v]) => `${k}: ${v}`).join(", ")})`;
+  }
+  s += `\n\n`;
+
+  return s;
 }
 
 async function main() {
@@ -250,6 +321,8 @@ async function main() {
     report += `- Avg card file size: ${avgCard} KB\n`;
     report += `- Posts with quality data: ${matched.length} / ${enriched.length}\n\n`;
   }
+
+  report += await buildHealthSection(qualityLog);
 
   if (!existsSync(DOCS_DIR)) mkdirSync(DOCS_DIR, { recursive: true });
   const filename = `${dateStr}-weekly.md`;
