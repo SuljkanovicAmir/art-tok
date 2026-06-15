@@ -6878,5 +6878,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-15T16:40:12.117Z",
+    "mediaId": "18213841633327346",
+    "artKey": "met:458956",
+    "source": "met",
+    "mode": "reel",
+    "title": "The Adoration of the Magi",
+    "artist": "Bartolo di Fredi",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 126,
+    "cardSizeKB": 597,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
