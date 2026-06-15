@@ -31,6 +31,9 @@ jobs:
         env:
           VITE_HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
 
+      - name: Generate Pinterest RSS feed
+        run: node scripts/prerender/generate-rss.mjs
+
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
