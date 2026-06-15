@@ -6900,5 +6900,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-15T18:28:19.308Z",
+    "mediaId": "18155064286471199",
+    "artKey": "harvard:200201",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "The Bell Cricket (Suzumushi), Illustration to Chapter 38 of the Tale of Genji (Genji monogatari)",
+    "artist": "Tosa Mitsunobu",
+    "wasSeasonal": true,
+    "fallbackFrom": null,
+    "captionLength": 214,
+    "cardSizeKB": 519,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
