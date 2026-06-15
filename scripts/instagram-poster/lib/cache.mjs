@@ -20,22 +20,27 @@ export function saveCache(entries) {
 
 /**
  * Get available (non-skipped, non-posted) entries for a given source.
+ * `minScore` (optional) requires aiScore >= minScore — but UNSCORED entries
+ * (aiScore == null) stay eligible so the pipeline never starves while scoring
+ * is incomplete. Low scorers are excluded explicitly.
  */
-export function getAvailable(entries, historySet, source) {
+export function getAvailable(entries, historySet, source, { minScore } = {}) {
   return entries.filter((e) =>
     e.source === source &&
     !e.skip &&
-    !historySet.has(`${e.source}:${e.id}`),
+    !historySet.has(`${e.source}:${e.id}`) &&
+    (minScore == null || e.aiScore == null || e.aiScore >= minScore),
   );
 }
 
 /**
  * Pick a random cached artwork for the given source.
  * If keyword is provided, prefer entries whose tags match it.
+ * `minScore` (optional) excludes low-scoring entries (unscored stay eligible).
  * Returns null if no entries available.
  */
-export function pickCached(entries, historySet, source, keyword = null) {
-  const available = getAvailable(entries, historySet, source);
+export function pickCached(entries, historySet, source, keyword = null, { minScore } = {}) {
+  const available = getAvailable(entries, historySet, source, { minScore });
   if (available.length === 0) return null;
 
   if (keyword) {
@@ -103,10 +108,11 @@ export function getCacheStats(entries, historySet) {
  * aspect), one work per artist, entries must have a known aspect.
  * Returns null when nothing qualifies — caller falls back to a single post.
  */
-export function pickThemedSet(entries, historySet, { size = 4, minSize = 3, rng = Math.random } = {}) {
+export function pickThemedSet(entries, historySet, { size = 4, minSize = 3, rng = Math.random, minScore } = {}) {
   const pool = entries.filter((e) =>
     !e.skip && e.aspect && e.culture &&
-    !historySet.has(`${e.source}:${e.id}`),
+    !historySet.has(`${e.source}:${e.id}`) &&
+    (minScore == null || e.aiScore == null || e.aiScore >= minScore),
   );
 
   const groups = new Map();
