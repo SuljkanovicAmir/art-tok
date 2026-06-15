@@ -17,6 +17,10 @@ const OUT_W = 1080;
 const OUT_H = 1920;
 const FRAMES = DURATION_S * FPS;
 
+// Pull-out: finish the zoom-out early, then linger on the fully revealed painting.
+const PULLOUT_HOLD_S = 4;                                        // seconds held at full view
+const PULLOUT_ZOOM_FRAMES = (DURATION_S - PULLOUT_HOLD_S) * FPS; // zoom-out completes here; max() then holds at 1.0
+
 // mulberry32 — same deterministic PRNG family used for art seeding elsewhere.
 function mulberry32(a) {
   return function () {
@@ -56,9 +60,10 @@ export function planPanMotion({ width, height, seed }) {
   }
 
   if (longEdge >= 1400) {
-    // ── Pull-out reveal: start ~2.8x on the upper third, settle on full view.
+    // ── Pull-out reveal: start ~2.8x on the upper third, zoom out to the full
+    //    view by (DURATION_S - PULLOUT_HOLD_S)s, then hold there for the rest.
     const startZoom = 2.8;
-    const step = ((startZoom - 1.0) / FRAMES).toFixed(5);
+    const step = ((startZoom - 1.0) / PULLOUT_ZOOM_FRAMES).toFixed(5);
     const fx = (0.35 + rng() * 0.3).toFixed(2); // focus x in [0.35, 0.65]
     const fy = "0.30";                           // upper third — faces live here
     return {
