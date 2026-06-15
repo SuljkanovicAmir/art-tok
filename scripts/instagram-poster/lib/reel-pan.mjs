@@ -11,14 +11,14 @@ import { loadImage } from "canvas";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-export const DURATION_S = 18;
+export const DURATION_S = 15;
 export const FPS = 30;
 const OUT_W = 1080;
 const OUT_H = 1920;
 const FRAMES = DURATION_S * FPS;
 
 // Pull-out: finish the zoom-out early, then linger on the fully revealed painting.
-const PULLOUT_HOLD_S = 4;                                        // seconds held at full view
+const PULLOUT_HOLD_S = 5;                                        // seconds held at full view
 const PULLOUT_ZOOM_FRAMES = (DURATION_S - PULLOUT_HOLD_S) * FPS; // zoom-out completes here; max() then holds at 1.0
 
 // mulberry32 — same deterministic PRNG family used for art seeding elsewhere.
