@@ -6944,5 +6944,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-16T12:12:55.358Z",
+    "mediaId": "18101532998126230",
+    "artKey": "harvard:311342",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Wild Turkey Cock, Hen, and Chicks",
+    "artist": "John James Audubon",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 269,
+    "cardSizeKB": 206,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
