@@ -6966,5 +6966,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-16T22:13:36.265Z",
+    "mediaId": "18088119734573742",
+    "artKey": "met:78190",
+    "source": "met",
+    "mode": "post",
+    "title": "Chakrasamvara and Vajravarahi",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 160,
+    "cardSizeKB": 516,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
