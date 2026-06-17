@@ -7010,5 +7010,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-17T19:26:10.068Z",
+    "mediaId": "18066128342513670",
+    "artKey": "met:14521",
+    "source": "met",
+    "mode": "post",
+    "title": "Beauty Revealed",
+    "artist": "Sarah Goodridge",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 232,
+    "cardSizeKB": 248,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
