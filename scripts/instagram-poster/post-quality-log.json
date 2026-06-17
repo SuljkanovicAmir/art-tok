@@ -6988,5 +6988,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-17T16:55:33.766Z",
+    "mediaId": "18111862684923550",
+    "artKey": "met:436173",
+    "source": "met",
+    "mode": "post",
+    "title": "Woman Having Her Hair Combed",
+    "artist": "Edgar Degas",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 332,
+    "cardSizeKB": 382,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
