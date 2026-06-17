@@ -7032,5 +7032,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-17T22:02:11.426Z",
+    "mediaId": "18061247300491097",
+    "artKey": "harvard:230036",
+    "source": "harvard",
+    "mode": "post",
+    "title": "My Lady Greensleeves",
+    "artist": "Dante Gabriel Rossetti",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 307,
+    "cardSizeKB": 344,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
