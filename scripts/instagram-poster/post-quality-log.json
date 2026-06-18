@@ -7054,5 +7054,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-18T11:09:23.939Z",
+    "mediaId": "17885688390589874",
+    "artKey": "harvard:307780",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Denman W. Ross (1863 - 1936)",
+    "artist": "Durr Freedley",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 361,
+    "cardSizeKB": 353,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
