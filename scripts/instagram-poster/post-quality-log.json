@@ -7076,5 +7076,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-18T17:09:49.978Z",
+    "mediaId": "17991432671808494",
+    "artKey": "harvard:231564",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Two Saints - Nikita and Elizabeth",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 317,
+    "cardSizeKB": 337,
+    "metadataScore": 100,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": true,
+      "hasCulture": true
+    }
   }
 ]
