@@ -7098,5 +7098,27 @@
       "hasDescription": true,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-18T22:10:33.949Z",
+    "mediaId": "17979729543044271",
+    "artKey": "met:436966",
+    "source": "met",
+    "mode": "post",
+    "title": "The Adoration of the Shepherds",
+    "artist": "Andrea Mantegna",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 313,
+    "cardSizeKB": 282,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
