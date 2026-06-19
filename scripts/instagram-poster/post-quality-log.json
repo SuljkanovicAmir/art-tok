@@ -7142,5 +7142,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-19T16:32:13.627Z",
+    "mediaId": "18059735336740329",
+    "artKey": "met:65576",
+    "source": "met",
+    "mode": "post",
+    "title": "Pichhwai for the Festival of Cows",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 243,
+    "cardSizeKB": 624,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
