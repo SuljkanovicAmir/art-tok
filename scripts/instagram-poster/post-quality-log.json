@@ -7120,5 +7120,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-19T11:26:04.217Z",
+    "mediaId": "17991938660989395",
+    "artKey": "harvard:231299",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Cappucini Amalfi Monastery",
+    "artist": "Joseph Lindon Smith",
+    "wasSeasonal": false,
+    "fallbackFrom": "reel-to-post",
+    "captionLength": 115,
+    "cardSizeKB": 309,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
