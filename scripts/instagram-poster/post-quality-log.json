@@ -7164,5 +7164,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-19T18:55:43.137Z",
+    "mediaId": "18088433399078404",
+    "artKey": "harvard:312263",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Yellowstone",
+    "artist": "Unidentified Artist, Thomas Moran",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 142,
+    "cardSizeKB": 319,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
