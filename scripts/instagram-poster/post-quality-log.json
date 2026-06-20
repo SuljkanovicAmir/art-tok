@@ -7208,5 +7208,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-20T21:19:57.842Z",
+    "mediaId": "17863962384651016",
+    "artKey": "harvard:230356",
+    "source": "harvard",
+    "mode": "post",
+    "title": "River Landscape",
+    "artist": "Jean-Baptiste-Camille Corot, Jean-Baptiste-Camille Corot, Jean-Baptiste-Camille Corot",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 200,
+    "cardSizeKB": 178,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
