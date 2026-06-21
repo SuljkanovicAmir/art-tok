@@ -36,6 +36,9 @@ scripts/instagram-poster/arttok-*.mp4
 scripts/instagram-poster/arttok-*.jpg
 scripts/instagram-poster/tmp/
 
+# Cache scoring scratch (downloaded/downscaled images, manifest, scores)
+scripts/instagram-poster/temp/
+
 # Local tooling / agent state
 .claude/
 .claude-flow/
