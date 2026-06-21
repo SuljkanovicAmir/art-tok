@@ -7230,5 +7230,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-21T10:31:07.750Z",
+    "mediaId": "18158445364464518",
+    "artKey": "met:36451",
+    "source": "met",
+    "mode": "post",
+    "title": "Illustrated manuscript of the Lotus Sutra (Miaofa lianhua jing), Volume 2",
+    "artist": "Unidentified artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 294,
+    "cardSizeKB": 218,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
