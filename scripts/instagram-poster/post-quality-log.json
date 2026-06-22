@@ -7252,5 +7252,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-22T22:03:51.542Z",
+    "mediaId": "18131911717592948",
+    "artKey": "met:459088",
+    "source": "met",
+    "mode": "post",
+    "title": "Saint Jerome as Scholar",
+    "artist": "El Greco (Domenikos Theotokopoulos)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 192,
+    "cardSizeKB": 315,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
