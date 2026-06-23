@@ -7296,5 +7296,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-23T16:28:02.622Z",
+    "mediaId": "18113066585493843",
+    "artKey": "met:436323",
+    "source": "met",
+    "mode": "post",
+    "title": "Marie Emilie Coignet de Courson (1716–1806) with a Dog",
+    "artist": "Jean Honoré Fragonard",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 335,
+    "cardSizeKB": 387,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
