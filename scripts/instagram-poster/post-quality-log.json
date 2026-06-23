@@ -7318,5 +7318,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-23T19:09:23.969Z",
+    "mediaId": "18568832833064331",
+    "artKey": "met:48948",
+    "source": "met",
+    "mode": "post",
+    "title": "The Sixteen Luohans",
+    "artist": "Wu Bin",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 155,
+    "cardSizeKB": 221,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
