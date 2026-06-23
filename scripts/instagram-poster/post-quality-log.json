@@ -7274,5 +7274,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-23T10:37:23.067Z",
+    "mediaId": "17870589426685218",
+    "artKey": "met:435600",
+    "source": "met",
+    "mode": "post",
+    "title": "Saint John on Patmos",
+    "artist": "Hans Baldung (called Hans Baldung Grien)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 182,
+    "cardSizeKB": 351,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
