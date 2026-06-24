@@ -7362,5 +7362,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-24T10:24:04.307Z",
+    "mediaId": "18185828122384673",
+    "artKey": "met:247017",
+    "source": "met",
+    "mode": "post",
+    "title": "Cubiculum (bedroom) from the Villa of P. Fannius Synistor at Boscoreale",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 175,
+    "cardSizeKB": 329,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
