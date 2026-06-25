@@ -7406,5 +7406,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-25T10:16:41.188Z",
+    "mediaId": "18120559429815442",
+    "artKey": "met:435844",
+    "source": "met",
+    "mode": "post",
+    "title": "The Musicians",
+    "artist": "Caravaggio (Michelangelo Merisi)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 140,
+    "cardSizeKB": 251,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
