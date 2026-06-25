@@ -7428,5 +7428,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-25T16:26:29.064Z",
+    "mediaId": "17997763055783163",
+    "artKey": "met:11122",
+    "source": "met",
+    "mode": "post",
+    "title": "The Gulf Stream",
+    "artist": "Winslow Homer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 263,
+    "cardSizeKB": 198,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
