@@ -7450,5 +7450,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-25T19:05:52.481Z",
+    "mediaId": "17895168822492846",
+    "artKey": "met:437344",
+    "source": "met",
+    "mode": "post",
+    "title": "The Shepherd's Song",
+    "artist": "Pierre Puvis de Chavannes",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 305,
+    "cardSizeKB": 274,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
