@@ -7494,5 +7494,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-26T16:18:53.296Z",
+    "mediaId": "18208288840341483",
+    "artKey": "met:854908",
+    "source": "met",
+    "mode": "post",
+    "title": "Vaishravana, the Guardian of Buddhism and Protector of Riches",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 201,
+    "cardSizeKB": 451,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
