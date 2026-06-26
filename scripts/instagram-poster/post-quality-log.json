@@ -7472,5 +7472,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-26T10:23:43.740Z",
+    "mediaId": "17886821193580923",
+    "artKey": "met:61429",
+    "source": "met",
+    "mode": "post",
+    "title": "Maharana Sarup Singh Inspects a Prize Stallion",
+    "artist": "Tara",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 210,
+    "cardSizeKB": 456,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
