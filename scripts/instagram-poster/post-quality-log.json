@@ -7560,5 +7560,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-06-29T19:06:46.608Z",
+    "mediaId": "18160308673457523",
+    "artKey": "harvard:230813",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Portrait of David",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 104,
+    "cardSizeKB": 442,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
