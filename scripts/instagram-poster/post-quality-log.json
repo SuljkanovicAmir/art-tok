@@ -7538,5 +7538,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-29T16:53:54.125Z",
+    "mediaId": "18112275725486624",
+    "artKey": "met:459968",
+    "source": "met",
+    "mode": "post",
+    "title": "Landscape",
+    "artist": "Auguste Renoir",
+    "wasSeasonal": true,
+    "fallbackFrom": null,
+    "captionLength": 214,
+    "cardSizeKB": 227,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
