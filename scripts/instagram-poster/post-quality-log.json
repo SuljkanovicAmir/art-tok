@@ -7582,5 +7582,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-06-30T10:31:52.586Z",
+    "mediaId": "18078373217438379",
+    "artKey": "met:436575",
+    "source": "met",
+    "mode": "post",
+    "title": "View of Toledo",
+    "artist": "El Greco (Domenikos Theotokopoulos)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 153,
+    "cardSizeKB": 266,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
