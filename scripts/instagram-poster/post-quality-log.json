@@ -7626,5 +7626,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-02T10:10:29.337Z",
+    "mediaId": "17907808233445752",
+    "artKey": "met:39901",
+    "source": "met",
+    "mode": "post",
+    "title": "Night-Shining White",
+    "artist": "Han Gan",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 185,
+    "cardSizeKB": 246,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
