@@ -7648,5 +7648,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-02T16:06:09.728Z",
+    "mediaId": "18078710231286518",
+    "artKey": "met:436244",
+    "source": "met",
+    "mode": "post",
+    "title": "Virgin and Child with Saint Anne",
+    "artist": "Albrecht Dürer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 299,
+    "cardSizeKB": 286,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
