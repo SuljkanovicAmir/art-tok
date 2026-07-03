@@ -7670,5 +7670,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-03T10:05:49.530Z",
+    "mediaId": "18102743387270806",
+    "artKey": "met:459110",
+    "source": "met",
+    "mode": "post",
+    "title": "Young Girl Bathing",
+    "artist": "Auguste Renoir",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 244,
+    "cardSizeKB": 401,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
