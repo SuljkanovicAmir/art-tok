@@ -7692,5 +7692,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-05T19:00:09.998Z",
+    "mediaId": "18161065372415248",
+    "artKey": "harvard:230859",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Beach Scene with Boy in Striped Shorts",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": true,
+    "fallbackFrom": null,
+    "captionLength": 154,
+    "cardSizeKB": 529,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
