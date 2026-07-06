@@ -15,7 +15,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Dramatic Romantic battle scene, rich warm tones, dense but energetic composition. Slightly dark/muddy in shadows; reads well at size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -35,7 +45,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 6,
+      "igFit": 2
+    },
+    "aiScoreNote": "Almost entirely grey-beige; tiny figures lost in flat expanse. Near-monochrome impression study turns to mush at thumbnail size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -53,7 +73,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Heavy brown monochromatic study, heavily darkened scan with severe yellowing at edges. Hard caps apply: quality low, visual dull.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -73,7 +103,17 @@
     "tags": [
       "madonna"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of a damaged icon — no color, heavy paint loss visible. Unpostable scan; hard cap quality ≤3 → score ≤4.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -93,7 +133,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Charming beach vignette with warm chestnut horse against pale blue sky. Small scale limits impact; decent color but modest IG presence.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -111,7 +161,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Very dark, heavily bituminized landscape; frame visible in shot. Nearly black lower half, muddy greens. Frame border lowers quality score.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -129,7 +189,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Exquisite Napoleonic miniature in ornate octagonal case; crisp, delicate rendering. Unusual format reads with elegance at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -147,7 +217,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of the painting — no color reproduction at all. Hard cap quality ≤3 applies; unpostable as-is.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -165,7 +245,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Warm-toned portrait study with blue-lavender ground; painterly directness and good color warmth. Reads cleanly at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -185,7 +275,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Muted beach scene with nice red accent on boy's shorts; pale overall. Acceptable figure grouping but low visual energy for IG.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -203,7 +303,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Very dark brown portrait against near-black background; face barely lit. Low visual energy, standard 19th-c. portrait formula.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -221,7 +331,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Bold expressionist colors — orange flag, green coats, teal water — energetic and distinctive. Ornate frame slightly distracts.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -239,7 +359,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 5,
+      "igFit": 3
+    },
+    "aiScoreNote": "Near-monochrome yellow-grey seascape; heavily aged/yellowed. Atmospheric but too muted and uniform to stop a scroll.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -257,7 +387,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Intimate dark-ground portrait with warm skin tones against burgundy. Surface damage visible; decent composition but low saturation.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -275,7 +415,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 8
+    },
+    "aiScoreNote": "Sorolla's luminous Spanish landscape — snow-capped peaks, purple earth tones, vivid blue sky. Strong horizontal read, instantly postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -293,7 +443,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 4
+    },
+    "aiScoreNote": "Dark brown tones dominate; figure reads but palette is muddy. Competent portrait, low scroll-stop power.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -313,7 +473,17 @@
     "tags": [
       "flowers"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Gold-ground Genji illustration with rich color accents; some surface flaking lowers quality. Distinctive and exotic.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -331,7 +501,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Bold red and pink figure study with expressive brushwork; sketch-like quality limits polish but color is vivid.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -349,7 +529,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 5
+    },
+    "aiScoreNote": "Interesting subject — geisha with kabuki mask — but heavy surface cracking and rolled-canvas distortion hurt quality badly.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -367,7 +557,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Millet early work; earthy palette and lively figures but overall muddy tones. Small image turns to mush at thumb size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -403,7 +603,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Competent 18th-c. colonial portrait with decent warm tones; nothing distinctive enough to stop a scroll.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -421,7 +631,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Rich blues and warm skin tones in outdoor nude study; unfinished feel but colorful. Reads adequately small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -439,7 +659,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Intimate bust portrait with warm flesh against dark ground; paint flaking visible. Competent but unremarkable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -457,7 +687,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Paint loss and surface damage visible; moody warm-dark palette but scan quality and condition limit postability.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -475,7 +715,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Audubon's wild turkeys — strong horizontal panorama, rich bronze plumage, clean sky. Reads well at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -493,7 +743,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Warm red hair portrait study with some charm; paint chips across surface. Fine in rotation, nothing special.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -511,7 +771,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Impressionist Venice with heavy physical frame in image; pastel palette washes out at thumb. Frame inclusion hurts igFit.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -529,7 +799,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Dutch still life masterpiece — deep black ground, luminous oranges and grapes, silk bow. Scroll-stopping and bold at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -549,7 +829,17 @@
     "tags": [
       "sun"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 9,
+      "igFit": 8
+    },
+    "aiScoreNote": "Gorgeous sunset gradient from orange to pale blue; silhouetted palms and tents. Clean scan, strong mood, reads beautifully small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -567,7 +857,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Heavy crazing lines score across the face; surface damage is visually dominant and distracting. Unpostable in this state.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -585,7 +885,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 6
+    },
+    "aiScoreNote": "Elegant Sully portrait, clean scan, good likeness. Palette is dark and restrained — acceptable but not eye-catching.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -603,7 +913,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Vibrant roses and azaleas with lush green foliage; crisp botanical detail. Fresh and colorful, strong IG flower content.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -621,7 +941,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archive photograph of the painting — no color, heavy grain. Unpostable; this is a photo of art, not art.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -639,7 +969,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 5
+    },
+    "aiScoreNote": "Masterful Dutch panoramic landscape; clean scan but muted grey palette and vast sky read flat at Instagram scale.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -657,7 +997,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 3,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Snapshot of a tondo on a wall with visible room, tape, and a wall outlet. Not a proper reproduction — unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -675,7 +1025,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 3
+    },
+    "aiScoreNote": "Monochrome B&W portrait scan; no color, visually inert on a dark feed. Technically clean scan but zero scroll-stopping power.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -693,7 +1053,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Rich twilight palette — deep blues, warm amber trees, snow-capped peak. Good tonal range; reads well at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -711,7 +1081,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Duveneck head study with expressive brushwork and warm auburn hair. Dark and intimate but slightly muddy; small scale hurts thumbnail legibility.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -729,7 +1109,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Fresh teal-green impressionist tree against cool haze; loose and energetic. Small canvas with rough edges slightly visible but color pops.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -747,7 +1137,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Theatrical golden light, cardinal's scarlet robe, grand staircase, statues — cinematic and narrative-rich. Strong diagonal composition reads at all sizes.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -765,7 +1165,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Muted gray-lavender beach plein air; figures tiny, colors washed out. Canvas texture and worn edges visible. Impressionistic but low energy.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -783,7 +1193,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Light-dappled cliff with green trees and small figures; pastel and fresh. Vertical format works for IG; compositionally a bit scattered.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -803,7 +1223,17 @@
     "tags": [
       "winter"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Photographed on canvas stretcher with tacks visible; severe framing distraction. Faded pinkish palette. Presentation makes it unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -821,7 +1251,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 2
+    },
+    "aiScoreNote": "B&W archival photo of a Baroque portrait — no color whatsoever. Clean scan but entirely monochrome; fails scroll-stop test completely.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -839,7 +1279,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Bold profile with headdress and warm earth tones; painted frame included in shot. Museum-catalogue photo shows background shelf — distracting context kills IG fit.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -859,7 +1309,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Heavily yellowed/faded beige scan; boy's form barely emerges from ground. The entire image reads as one muddy tan tone. Quality cap applies.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -877,7 +1337,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Vibrant Orizaba cityscape — lush greens, terracotta rooftops, blue mountain. Impressionist energy; slightly busy but colorful and legible.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -895,7 +1365,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Redon coastal scene with deep blue sky and quiet harbor geometry. Unusual wide format; subtle and atmospheric, moderate IG appeal.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -913,7 +1393,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Dark purple-brown tones dominate; praying figure after Tintoretto. Moody but murky. Some cracking/damage visible; limited color range.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -931,7 +1421,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Rich Baroque lady portrait — chartreuse-gold gown, deep cobalt drape, warm skin against dark ground. Strong color contrast; direct gaze holds at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -969,7 +1469,17 @@
     "tags": [
       "angel"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 8,
+      "igFit": 9
+    },
+    "aiScoreNote": "Moreau's Saint Sebastian — blazing crimson wings, luminous cross, jewel-like colors and mystical drama. Genuinely scroll-stopping; a hero post.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -987,7 +1497,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archival photograph of painting, framed, shot on gray background. No color, frame border visible. Unpostable scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1005,7 +1525,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Heavily damaged surface with large white paint losses across upper right. Warm portrait underneath but damage is too severe for IG.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1023,7 +1553,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Warm Denman Ross female portrait — amber robe, cool lavender background, confident pose. Clean scan; pleasant but not remarkable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1041,7 +1581,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Ross male portrait with luminous skin tones and warm ochre robe against deep violet. Solid brushwork; clean scan. Fine for rotation.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1059,7 +1609,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Ethereal Tchelitchew portrait, pale luminous face against dark ground. Haunting mood but muted palette limits scroll-stop power.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1097,7 +1657,17 @@
     "tags": [
       "sea"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Coastal landscape photographed in frame with mat board visible. Heavy gold frame crops composition; dark muddy tones read poorly at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1115,7 +1685,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Romantic woodland scene with gate and tall tree. Competent but subdued; figures tiny, colors muted olive-brown, unremarkable at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1133,7 +1713,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Bold red-green background with confident brushwork portrait. Vivid color contrast punches above its modest scale; scan has minor flaking.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1151,7 +1741,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Sargent Prometheus study in tondo format. Pale flesh tones on cream ground, underdrawn feel. Interesting but too washed-out for strong IG impact.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "artic",
@@ -1207,7 +1807,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Miniature portrait with vivid cobalt dress and red shawl against gold mount. Jewel-like color pops; ornate frame adds context, slightly competes.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1227,7 +1837,17 @@
     "tags": [
       "spring"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 8
+    },
+    "aiScoreNote": "Tale of Genji scroll with gold ground, blossoming cherry, layered robes. Rich decorative color and diagonal architecture make it highly IG-ready.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1245,7 +1865,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Genji moonlit music scene on gold ground. Elegant but more static than ch.34; foxed gold areas reduce quality slightly. Still distinctive.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1263,7 +1893,17 @@
     "museumName": "Harvard Art Museums",
     "cachedAt": "2026-03-27",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo of a small silver icon. No color, low resolution, photographed against grey mat. Unpostable as an art image.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1302,7 +1942,17 @@
     "aspect": 0.835,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Dense trompe-l'oeil vanitas with classical head, books, palette. Rich warm tones, sharp scan, loads of detail that rewards zooming in.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1323,7 +1973,17 @@
     "aspect": 1.709,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 5,
+      "igFit": 3
+    },
+    "aiScoreNote": "Tiny Whistler panel, muted grey-green landscape sketch. Almost monochromatic, very small scale, turns to grey mush at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1344,7 +2004,17 @@
     "aspect": 1.26,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Moreau Pietà with warm sunset sky and blue-cloaked Madonna. Atmospheric and emotionally arresting; scan slightly yellowed at edges but legible.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1365,7 +2035,17 @@
     "aspect": 1.144,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Moran Yellowstone landscape photographed inside ornate gold frame with grey wall visible. Frame dominates; dark scan with heavy glare reduces quality.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1388,7 +2068,17 @@
     "tags": [
       "night"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 5,
+      "igFit": 6
+    },
+    "aiScoreNote": "Jongkind moonlit Dutch canal with windmill. Evocative nocturne but dark and desaturated; canvas texture visible, scan slightly uneven.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1409,7 +2099,17 @@
     "aspect": 1.257,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archival photo of a Barbizon forest scene in a frame. No color information recoverable; unpostable scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1430,7 +2130,17 @@
     "aspect": 1.511,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Audubon oil of black grouse group in Highland setting. Detailed plumage against stormy sky; clean scan, wide format reads well cropped square.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1451,7 +2161,17 @@
     "aspect": 0.827,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Oval bust portrait on plain white ground. Very dark and tonally flat with minimal color; unremarkable subject, weak scroll-stop power.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1472,7 +2192,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Brunias Caribbean scene with striped and white-clad figures against tropical foliage. Fresh color palette, clear narrative, clean scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1493,7 +2223,17 @@
     "aspect": 0.875,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Blue mountain pass in gold frame, photographed with visible glass reflections and mat. Reflections and frame reduce usable image quality significantly.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1514,7 +2254,17 @@
     "aspect": 0.833,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Colonial portrait with red dress and brown shawl against dark ground. Decent color warmth but formulaic composition; canvas visible at edges.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1535,7 +2285,17 @@
     "aspect": 0.831,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 9,
+      "igFit": 8
+    },
+    "aiScoreNote": "Ingres neoclassical interior, rich greens and reds, sharp scan. Two-figure focal point reads clearly at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1556,7 +2316,17 @@
     "aspect": 0.824,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Dull brown palette, plain clerical portrait. Minimal color interest; unremarkable at thumbnail scale.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1577,7 +2347,17 @@
     "aspect": 0.808,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 4
+    },
+    "aiScoreNote": "Scan is faded and low-contrast with visible edge damage. Charming subject undermined by poor reproduction quality.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1601,7 +2381,17 @@
       "spring",
       "sun"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Moody tonal landscape but scan is murky and yellowed at bottom edge. Loses legibility at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1622,7 +2412,17 @@
     "aspect": 1.254,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Very dark verre églomisé; heavy black border dominates. Scene barely readable; scan quality poor overall.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1646,7 +2446,17 @@
       "flowers",
       "skull"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Striking vanitas: pale skull against near-black ground with colorful floral crown. Bold and legible at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1667,7 +2477,17 @@
     "aspect": 1.244,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Very dark, muddy palette; figures barely discernible. Loses all detail at thumbnail; scan adds no clarity.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1688,7 +2508,17 @@
     "aspect": 1.004,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 4,
+      "quality": 8,
+      "igFit": 2
+    },
+    "aiScoreNote": "Agnes Martin minimalist grid — near-white with faint lines. Visually inert at any size; fails igFit hard cap.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1709,7 +2539,17 @@
     "aspect": 0.821,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Bright Venetian canal plein-air, warm reds and greens. Pleasant but modest scale; reads acceptably at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1730,7 +2570,17 @@
     "aspect": 1.616,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Classic Hudson River panorama, luminous sky and river. Clean scan, good tonal range. Solid feed post.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1751,7 +2601,17 @@
     "aspect": 1.269,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Heavily darkened copy after Tintoretto; scan shows cracking and edge damage throughout. Below postable quality.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1772,7 +2632,17 @@
     "aspect": 1.228,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Monet coastal — churning sea, stone house, vivid impasto. Scroll-stopping color and texture, sharp scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1793,7 +2663,17 @@
     "aspect": 0.825,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Warm Venetian evening, loose brushwork. Pleasant palette but modest drama; competent feed filler.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1814,7 +2694,17 @@
     "aspect": 0.846,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Géricault portrait, intense gaze, clean scan with visible craquelure. Strong face-forward composition for IG.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1835,7 +2725,17 @@
     "aspect": 1.269,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Thomas Cole autumn gorge, warm orange-red foliage against grey rock arch. Vivid season color, readable small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1856,7 +2756,17 @@
     "aspect": 1.233,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Etty combat sketch — teal sky, warm flesh tones, dynamic figures. Loose study quality slightly limits appeal.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1879,7 +2789,17 @@
     "tags": [
       "cupid"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 3,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of painting; no color information. Unpostable for a color art feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1900,7 +2820,17 @@
     "aspect": 0.811,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Renoir portrait, rich reds and painterly touch. Warm, vibrant; reads well small. Confidently postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1921,7 +2851,17 @@
     "aspect": 1.276,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 3,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archival photo of a sculptural object, not a painting scan. No color; not suitable for feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1942,7 +2882,17 @@
     "aspect": 0.805,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 3,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archival photo of a portrait painting. Flat grey tones; no color; unpostable for art feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1963,7 +2913,17 @@
     "aspect": 1.12,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Monet Seine study, cool blue-green palette, atmospheric but muted. Frame visible in scan reduces igFit. Reads soft at thumbnail size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -1984,7 +2944,17 @@
     "aspect": 0.836,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Sargent interior — luminous whites, deep crimson walls, pink roses. Strong diagonal composition. Sharp scan. Instantly postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2005,7 +2975,17 @@
     "aspect": 1.576,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Bright yellows and greens, pleasant Italian scene. Somewhat diffuse composition with no strong focal anchor. Washes out small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2026,7 +3006,17 @@
     "aspect": 1.658,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Pre-Raphaelite nocturne packed with cherubs and rich teal-blue. Dense but vivid; subject reads well at scale. Strong color.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2047,7 +3037,17 @@
     "aspect": 0.834,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 7,
+      "igFit": 3
+    },
+    "aiScoreNote": "Standard colonial portrait, near-monochrome dark brown palette. Clean scan but visually inert. Unlikely to stop a scroll.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2068,7 +3068,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archive photograph of the painting — no color information visible. Unpostable as-is.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2089,7 +3099,17 @@
     "aspect": 1.477,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Barbizon forest, dramatic sky, warm golden light on tree trunks. Good atmosphere but dark and dense; muddies at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2110,7 +3130,17 @@
     "aspect": 0.804,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph scan of the painting. No color, heavy grey tones. Unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2131,7 +3161,17 @@
     "aspect": 0.821,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Dignified portrait with vivid teal coat, blue trade-medal necklace, warm ochre background. Color contrast is its strength.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2152,7 +3192,17 @@
     "aspect": 0.837,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Very dark, near-monochrome portrait with scan damage visible (stains upper right). Low contrast and low visual impact.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2173,7 +3223,17 @@
     "aspect": 1.101,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Japanese folding screen, gold ground, bold roosters with red combs. Elegant symmetry and luxe gold. Distinctive at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2194,7 +3254,17 @@
     "aspect": 1.33,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Edo-period painting, gold clouds, vivid teal and orange foliage, isometric architecture. Refined and exotic — strong feed presence.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2217,7 +3287,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Quiet New England beach scene, muted palette of sand and pale sky. Yellow boat is the only accent. Decent but unremarkable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2238,7 +3318,17 @@
     "aspect": 1.293,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 3
+    },
+    "aiScoreNote": "Scan shows bare unframed canvas edges, surface damage and grime. Romantic landscape underneath but scan quality is too poor.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2259,7 +3349,17 @@
     "aspect": 0.982,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Dutch tondo of tavern scene, circular format interesting, but overall muddy earth tones with little color contrast. Mid-tier.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2280,7 +3380,17 @@
     "aspect": 0.815,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Dutch flower still life, rich dark ground, luminous hollyhock and gold marigold. Jewel-like color and sharp scan. Postable standout.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2301,7 +3411,17 @@
     "aspect": 1.258,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of the painting only. No color data. Unpostable in this state.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2322,7 +3442,17 @@
     "aspect": 0.841,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 3,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Heavily damaged scan: large paint losses, cracking, bare canvas exposed all around edges. Unpostable regardless of subject.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2343,7 +3473,17 @@
     "aspect": 0.81,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Academic portrait in academic robes with red sash against warm russet ground. Competent and clean scan, but genre is niche.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2364,7 +3504,17 @@
     "aspect": 1.255,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Neoclassical oil sketch, warm earth tones, multiple figures. Loose sketch quality limits igFit — reads as unclear at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2385,7 +3535,17 @@
     "aspect": 1.411,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Pleasant pastoral with white cow as focal point. Solid color but unremarkable; competent composition loses detail at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2406,7 +3566,17 @@
     "aspect": 0.883,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 5,
+      "igFit": 2
+    },
+    "aiScoreNote": "Miniature portrait in dark oval frame — overwhelmed by the black surround. Too small and dim to read at thumbnail size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2427,7 +3597,17 @@
     "aspect": 1.594,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Moody coastal cliffs with subtle color. Horizontal format and muted palette work against it at IG size; competent but quiet.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2448,7 +3628,17 @@
     "aspect": 1.264,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Gauguin still life — rich reds and greens, bold brushwork, iconic ceramic jug. Clean scan, reads well small. Strongly postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2469,7 +3659,17 @@
     "aspect": 1.164,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Golden-hour Amsterdam street scene, warm peach sky vs. dark facades. Rich detail and atmosphere; crowds add life but clutter at thumb.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2490,7 +3690,17 @@
     "aspect": 1.323,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Thomas Cole cabin in mountain valley. Quiet greens, competent Hudson River composition, but low visual punch for IG scroll-stopping.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2511,7 +3721,17 @@
     "aspect": 1.679,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Beckmann triptych — bold graphic color, striking figures. Wide format is unusual for IG; expressionist energy reads through thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2532,7 +3752,17 @@
     "aspect": 1.658,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white scan only — no color information. Quality cap applies; unpostable as-is regardless of underlying painting quality.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2553,7 +3783,17 @@
     "aspect": 0.813,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Heavily cracked and yellowed portrait with visible paint loss and damaged edges. Quality cap applies; poor scan of a deteriorated work.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2574,7 +3814,17 @@
     "aspect": 0.826,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Striking Chippewa delegate portrait — feather headdress, teal coat, red star detail. Dark background limits vibrancy but face reads well.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2595,7 +3845,17 @@
     "aspect": 1.272,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Photographed in its gold frame with visible museum mount. Frame dominates canvas area; muted greens, small focal subject. Dull.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2616,7 +3876,17 @@
     "aspect": 1.166,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Elegant Victorian garden scene — vivid pink and yellow dresses, parasol, lush green setting. Narrative charm, reads well at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2637,7 +3907,17 @@
     "aspect": 1.195,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white scan, extremely dark interior. No color, heavy shadow. Unpostable; quality and visual caps both apply.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2658,7 +3938,17 @@
     "aspect": 0.832,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Prud'hon portrait — warm brown tones, expressive face, excellent draughtsmanship. Clean scan, strong presence; color range is limited but refined.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2679,7 +3969,17 @@
     "aspect": 0.837,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Moonlit windmill silhouette with glowing cloud break — dramatic nocturne. Strong vertical composition, moon reflection in water. Moody and postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2700,7 +4000,17 @@
     "aspect": 1.561,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Bonington's Venice — warm rose Doge's Palace, blue sky, wide panorama. Scan has slight yellowing at edges but image reads clearly.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2723,7 +4033,17 @@
     "tags": [
       "snow"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Pissarro snow scene — lavender-white tones, bare trees, impressionist texture. Serene and recognizably Impressionist; reads well at IG size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2744,7 +4064,17 @@
     "aspect": 0.824,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Mt. Fuji above Japanese graveyard — unusual romantic subject. Soft pastels, competent composition; scan slightly faded, subject reads at thumb.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2765,7 +4095,17 @@
     "aspect": 1.469,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Chassériau battle scene — warm desert palette, horsemen, dramatic action. Rich warm tones with colorful figures; complex but legible.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2786,7 +4126,17 @@
     "aspect": 1.626,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 5
+    },
+    "aiScoreNote": "Hudson River panorama in gold frame with visible mat. Warm autumnal tones are nice but frame/mat intrude; overall quality presentation is weak.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2809,7 +4159,17 @@
     "tags": [
       "sea"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Grayscale scan with no color data — muddy, flat, unpostable. Quality cap applies.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2830,7 +4190,17 @@
     "aspect": 1.213,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Lively Victorian genre scene, warm palette, good energy. Canvas tacking edges visible but scan is acceptable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2851,7 +4221,17 @@
     "aspect": 0.804,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Rich burgundy drapery and strong sitter presence. Clean scan, clear focal point, reads well at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2872,7 +4252,17 @@
     "aspect": 0.829,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 5,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Bright impressionist street sketch, pleasant but unfocused composition. Washes out small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2893,7 +4283,17 @@
     "aspect": 1.249,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 1,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 3,
+      "quality": 1,
+      "igFit": 1
+    },
+    "aiScoreNote": "Black-and-white archival photograph of painting on an easel with camera rig visible. Completely unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2914,7 +4314,17 @@
     "aspect": 0.818,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Elegant blue dress against dark ground, luminous skin tones. Clean scan, reads clearly at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2935,7 +4345,17 @@
     "aspect": 1.408,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 9
+    },
+    "aiScoreNote": "Moran's Venice glows with gold-and-blue luminosity. Striking panoramic composition, instantly scroll-stopping.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2958,7 +4378,17 @@
     "tags": [
       "summer"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Dramatic Baroque figure in octagonal format, warm amber tones, flame detail adds energy. Distinctive framing.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -2979,7 +4409,17 @@
     "aspect": 0.832,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Very dark, nearly monochrome portrait with minimal tonal range and visible edge damage. Dull at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3000,7 +4440,17 @@
     "aspect": 0.839,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Renoir's warm red palette with characteristic brushwork. Intimate, clean scan, face reads well small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3021,7 +4471,17 @@
     "aspect": 0.815,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Unstretched canvas with heavy tacking margins and foxing visible all around. Scan presentation too rough.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3044,7 +4504,17 @@
     "tags": [
       "dark"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 8
+    },
+    "aiScoreNote": "Sargent's bravura brushwork, rich blue turban, expressive aged face. Bold contrast, strong at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3067,7 +4537,17 @@
     "tags": [
       "night"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Tiny, nearly invisible nocturne on unprimed canvas with tacking visible. Near-black with negligible detail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3088,7 +4568,17 @@
     "aspect": 1.264,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 9,
+      "igFit": 7
+    },
+    "aiScoreNote": "Monet's ethereal blue fog with glowing red sun. Excellent scan quality; subtle but atmospheric and prestigious.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3109,7 +4599,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Warm Orientalist courtyard, interesting subject, but scan is small and slightly muddy with edge damage.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3130,7 +4630,17 @@
     "aspect": 1.258,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 1,
+    "aiScoreBreakdown": {
+      "visual": 1,
+      "composition": 4,
+      "quality": 1,
+      "igFit": 1
+    },
+    "aiScoreNote": "Black-and-white archival photo of triptych with accession label visible. Completely unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3151,7 +4661,17 @@
     "aspect": 0.809,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Ingres figure study — muscular, dynamic grouping with strong draftsmanship. Earthy palette but compelling action.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3172,7 +4692,17 @@
     "aspect": 1.251,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 6,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Grayscale scan of Scottish landscape with decorative frame included. No color, quality cap applies.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3193,7 +4723,17 @@
     "aspect": 0.808,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Dark, muted portrait with heavy craquelure visible and indistinct background. Forgettable at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3214,7 +4754,17 @@
     "aspect": 1.684,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Pointillist swans with cool blue-grey palette, but heavy foxing/rust staining around all edges mars the scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3235,7 +4785,17 @@
     "aspect": 0.823,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 8
+    },
+    "aiScoreNote": "Rossetti Pre-Raphaelite face — rich greens and reds, intimate close-up, strong focal point. Minor edge damage lowers quality slightly.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3258,7 +4818,17 @@
     "tags": [
       "sea"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Cross pointillist seascape — decorative blue/pink palette reads well but heavy foxing/yellowing on scan and landscape format limit impact.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3279,7 +4849,17 @@
     "aspect": 1.346,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 4
+    },
+    "aiScoreNote": "Degas study — muted earth tones, loose unfinished sketch quality. Dull color and small figures turn to mush at thumbnail size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3300,7 +4880,17 @@
     "aspect": 0.901,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 7,
+      "igFit": 3
+    },
+    "aiScoreNote": "Near-black portrait on black ground — face barely emerges from darkness. Visually inert; near-invisible at thumbnail size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3323,7 +4913,17 @@
     "tags": [
       "love"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Fragonard/Gérard — luminous pinks and whites, lively scene with clear figures. Pleasant but somewhat busy; scan is clean.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3344,7 +4944,17 @@
     "aspect": 1.415,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Hunt landscape — very dark, muddy browns, minimal contrast. Small scan shows white border artifacts. Visually inert on feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3365,7 +4975,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white archival photo of painting with frame, scale bar, and museum label visible. Unpostable scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3386,7 +5006,17 @@
     "aspect": 1.244,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 5
+    },
+    "aiScoreNote": "Dramatic luminous grail scene with glowing red focal point, but canvas has heavy cracking/damage marks visible throughout.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3407,7 +5037,17 @@
     "aspect": 1.404,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Ross waterfall — energetic impasto whites against deep green/purple rocks. Fresh plein-air feel, reads well small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3428,7 +5068,17 @@
     "aspect": 1.304,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Van Goyen river landscape — heavily yellowed monochrome tan, tiny figures, no contrast. Classic tonalist but unreadable on feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3449,7 +5099,17 @@
     "aspect": 1.417,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 7,
+      "igFit": 8
+    },
+    "aiScoreNote": "Chassériau battle — vivid reds, whites, blue sky; dynamic chaotic energy with strong central mass. Scroll-stopping action composition.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3470,7 +5130,17 @@
     "aspect": 0.806,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 6
+    },
+    "aiScoreNote": "Copley unfinished portrait study — unusual half-sketched format is visually interesting but limited palette; clean sharp scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3491,7 +5161,17 @@
     "aspect": 1.266,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 4,
+      "quality": 3,
+      "igFit": 3
+    },
+    "aiScoreNote": "Bierstadt on arched board — dark cramped landscape with color chart strip at bottom and grey mount border. Scan detracts heavily.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3512,7 +5192,17 @@
     "aspect": 0.803,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Sargent mural photographed in situ with stone archway — monumental but muted tones, architectural framing confuses the image.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3533,7 +5223,17 @@
     "aspect": 0.812,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo of seated man — no color, flat b&w documentary scan. Unpostable for a color art feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3554,7 +5254,17 @@
     "aspect": 0.809,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 5,
+      "igFit": 6
+    },
+    "aiScoreNote": "Rembrandt Peale Washington — iconic tondo format with strong face; visible cracking across canvas reduces quality score.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3575,7 +5285,17 @@
     "aspect": 1.251,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo of painting with visible frame — no color information, museum archival shot. Unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3596,7 +5316,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo with ornate frame and dark background. No color, purely archival documentation shot.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3617,7 +5347,17 @@
     "aspect": 0.839,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Frothingham oval portrait — warm flesh tones but very plain, unfinished-looking canvas edges showing. Unengaging for feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3638,7 +5378,17 @@
     "aspect": 1.429,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Carlton Yankee Peddler — vivid reds, bright sky, lively genre scene with many figures; clean sharp scan with strong narrative pull.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3661,7 +5411,17 @@
     "tags": [
       "sea"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Rossetti at peak: luminous flesh tones, pink flowers, rich auburn — saturated and striking. Strong vertical composition, reads beautifully at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3682,7 +5442,17 @@
     "aspect": 1.435,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Matisse but muted — cracked panel, dark palette, chartreuse apples pop slightly. Heavy craquelure hurts quality. Interesting but loses impact at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3703,7 +5473,17 @@
     "aspect": 1.72,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Vivid teal sky, bright pink and orange robes — good color. Wide landscape format with frame included dilutes igFit. Busy multi-scene narrative.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3724,7 +5504,17 @@
     "aspect": 1.863,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 4,
+      "igFit": 4
+    },
+    "aiScoreNote": "Small, muted autumn landscape with heavy scan border. Dull palette, low contrast, limited resolution. Reads as muddy thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3747,7 +5537,17 @@
     "tags": [
       "summer"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 8
+    },
+    "aiScoreNote": "Bazille summer scene: vivid greens and blues, near-square format, dynamic figurative arrangement. Sun-drenched and legible at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3768,7 +5568,17 @@
     "aspect": 1.056,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 8,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "La Farge allegorical figure — dramatic diagonal pose against stormy sea. Moody and atmospheric but some canvas texture/cracking visible.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3789,7 +5599,17 @@
     "aspect": 1.276,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 6,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Greyscale photograph of a painting — no color information visible at all. Completely unpostable as an IG art image.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3810,7 +5630,17 @@
     "aspect": 1.21,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 5,
+      "igFit": 5
+    },
+    "aiScoreNote": "Green tonalist stream scene — pleasant but monochromatic in green. Soft and slightly underexposed. Passable but unremarkable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3831,7 +5661,17 @@
     "aspect": 1.333,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Inness pastoral with glowing sky — warm luminous clouds anchor the composition. Clean scan, solid colors. Good but not scroll-stopping.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3852,7 +5692,17 @@
     "aspect": 1.595,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 3,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 4,
+      "quality": 4,
+      "igFit": 3
+    },
+    "aiScoreNote": "Tiny Whistler sketch panel — barely resolved figure on a sofa. Very small format makes detail illegible. Too raw and incomplete for IG.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3873,7 +5723,17 @@
     "aspect": 0.844,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "American folk portrait in striking blue dress — charming naive style. Clean scan, good color. Likeable but stiff composition limits engagement.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3894,7 +5754,17 @@
     "aspect": 1.382,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of a sketch — no color, low contrast, unfinished quality. Not postable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3917,7 +5787,17 @@
     "tags": [
       "sea"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Bold teal and orange-red background with leaning male figure — vivid complementary colors. Loose painterly sketch energy works well at IG crop.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3938,7 +5818,17 @@
     "aspect": 1.246,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo of a Victorian schoolroom painting. No color, poor scan with border artifacts. Unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3959,7 +5849,17 @@
     "aspect": 0.885,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 5
+    },
+    "aiScoreNote": "Dark tonalist architecture — shadowed loggia with cypress trees. Moody but very dark and low-contrast. Loses legibility at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -3980,7 +5880,17 @@
     "aspect": 1.244,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photo scan of a landscape painting with film grain and border. No usable color. Unpostable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4001,7 +5911,17 @@
     "aspect": 0.829,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 6,
+      "igFit": 6
+    },
+    "aiScoreNote": "Dignified Native American portrait with pipe — muted earth tones, dark background. Historically significant but visually restrained.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4022,7 +5942,17 @@
     "aspect": 0.803,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 5,
+      "quality": 2,
+      "igFit": 2
+    },
+    "aiScoreNote": "Black-and-white photograph of a bearded male portrait. No color data, dark tones. Completely unpostable for a color art feed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4043,7 +5973,17 @@
     "aspect": 1.443,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Warm red-orange nude figure study against deep background — bold contrast, painterly bravura. Energetic and reads clearly at small size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4064,7 +6004,17 @@
     "aspect": 1.39,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 6,
+      "igFit": 7
+    },
+    "aiScoreNote": "Vivid red and green peppers against dark background — punchy complementary colors. Loose brushwork and some paint loss but vibrant at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4085,7 +6035,17 @@
     "aspect": 1.418,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 4
+    },
+    "aiScoreNote": "Dark forest study with torn/ragged canvas edges visible; scan quality low. Moody but muddy and hard to read small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4106,7 +6066,17 @@
     "aspect": 1.001,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 8,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Striking medallion-format grisaille portrait of Jefferson; bold circular framing reads well at thumbnail despite monochrome palette.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4127,7 +6097,17 @@
     "aspect": 0.847,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Competent colonial portrait; dark background swallows most of the canvas. Clean scan but visually flat and unremarkable.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4150,7 +6130,17 @@
     "tags": [
       "beach"
     ],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 1,
+      "igFit": 3
+    },
+    "aiScoreNote": "Kodak color-control strip and ruler visible across top; painting shown on museum stand. Unpostable archival capture.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4171,7 +6161,17 @@
     "aspect": 0.825,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 8,
+    "aiScoreBreakdown": {
+      "visual": 8,
+      "composition": 7,
+      "quality": 9,
+      "igFit": 8
+    },
+    "aiScoreNote": "Rich amber-gold background with Pre-Raphaelite decorative detail; warm palette and strong face pop well. Excellent scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4192,7 +6192,17 @@
     "aspect": 0.823,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Ethnographic portrait with striking red headband detail; neutral background limits visual punch. Solid scan.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4213,7 +6223,17 @@
     "aspect": 0.834,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 9,
+      "igFit": 9
+    },
+    "aiScoreNote": "Burne-Jones at his best — luminous flesh tones, vivid green landscape, blue irises. Compositional tension reads beautifully small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4234,7 +6254,17 @@
     "aspect": 1.198,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 3,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Sepia-brown grisaille study; near-monochromatic palette kills visual impact. Fine as a study but dull for IG.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4255,7 +6285,17 @@
     "aspect": 0.8,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 5,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 5
+    },
+    "aiScoreNote": "Warm-toned colonial portrait with red chair accent; competent but conventional. Nothing distinctive at scroll speed.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4276,7 +6316,17 @@
     "aspect": 1.4,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Pastoral Hudson River landscape with good sky and green trees. Pleasant but somewhat generic; reads acceptably small.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4297,7 +6347,17 @@
     "aspect": 1.222,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 2,
+    "aiScoreBreakdown": {
+      "visual": 2,
+      "composition": 4,
+      "quality": 2,
+      "igFit": 3
+    },
+    "aiScoreNote": "Black-and-white photograph of a framed painting — no color information at all. Unpostable as-is.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4318,7 +6378,17 @@
     "aspect": 0.885,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 5,
+      "composition": 5,
+      "quality": 3,
+      "igFit": 4
+    },
+    "aiScoreNote": "Post-Impressionist field worker inside ornate gilt frame that dominates the image; painting itself obscured and scan is dark.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4339,7 +6409,17 @@
     "aspect": 1.397,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 7,
+      "igFit": 6
+    },
+    "aiScoreNote": "Impressionist Boston Fens with fresh yellow-green foliage; loose brushwork is energetic. Decent but lacks a strong focal point.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4360,7 +6440,17 @@
     "aspect": 1.204,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 6,
+      "quality": 4,
+      "igFit": 6
+    },
+    "aiScoreNote": "Vivid yellow-on-blue Sargent still life, but heavy paint loss and cracking across lower half noticeably degrades quality.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4381,7 +6471,17 @@
     "aspect": 1.751,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 7,
+      "quality": 8,
+      "igFit": 7
+    },
+    "aiScoreNote": "Atmospheric Daubigny river view; moody grey sky, tall poplars, clean scan. Subtle but refined — holds up at thumbnail.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4402,7 +6502,17 @@
     "aspect": 0.824,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 6,
+    "aiScoreBreakdown": {
+      "visual": 6,
+      "composition": 6,
+      "quality": 8,
+      "igFit": 6
+    },
+    "aiScoreNote": "Flat modernist portrait with striking teal background and painter's palette prop; clean scan and restrained palette works well.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4423,7 +6533,17 @@
     "aspect": 1.008,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": false,
+    "aiScore": 7,
+    "aiScoreBreakdown": {
+      "visual": 7,
+      "composition": 7,
+      "quality": 7,
+      "igFit": 7
+    },
+    "aiScoreNote": "Jewel-like Empress Josephine miniature; ornate gold frame and jeweled crown add richness. Reads like a treasure at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "harvard",
@@ -4444,7 +6564,17 @@
     "aspect": 0.882,
     "cachedAt": "2026-04-25",
     "tags": [],
-    "skip": false
+    "skip": true,
+    "aiScore": 4,
+    "aiScoreBreakdown": {
+      "visual": 4,
+      "composition": 5,
+      "quality": 6,
+      "igFit": 4
+    },
+    "aiScoreNote": "Small oval miniature on white ground; subject is muted and low-contrast. Decorative gold locket frame doesn't compensate.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   },
   {
     "source": "artic",
@@ -4468,6 +6598,16 @@
       "love",
       "night"
     ],
-    "skip": false
+    "skip": false,
+    "aiScore": 9,
+    "aiScoreBreakdown": {
+      "visual": 9,
+      "composition": 9,
+      "quality": 8,
+      "igFit": 9
+    },
+    "aiScoreNote": "Miró Constellations series — electric red/blue/black biomorphs on pale ground. Instantly arresting; playful and graphic at any size.",
+    "aiScoredAt": "2026-06-15",
+    "aiScoredBy": "claude-sonnet-4-6"
   }
 ]
