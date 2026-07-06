@@ -7714,5 +7714,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-06T08:57:25.372Z",
+    "mediaId": "17935098594089654",
+    "artKey": "harvard:300055",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Ezekiel Hersey (1709-1770)",
+    "artist": "Edward Savage, Ezekiel Hersey",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 128,
+    "cardSizeKB": 541,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
