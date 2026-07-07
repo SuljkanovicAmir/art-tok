@@ -7736,5 +7736,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-07T10:26:28.304Z",
+    "mediaId": "18000599921955848",
+    "artKey": "met:698529",
+    "source": "met",
+    "mode": "post",
+    "title": "Dance in a Subterranean Roundhouse at Clear Lake, California",
+    "artist": "Jules Tavernier",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 181,
+    "cardSizeKB": 181,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
