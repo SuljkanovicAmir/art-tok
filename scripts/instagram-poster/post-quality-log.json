@@ -7780,5 +7780,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-07T19:04:41.609Z",
+    "mediaId": "17867920869691870",
+    "artKey": "harvard:200186",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Falling Flowers (Hanachirusato), Illustration to Chapter 11 of the Tale of Genji (Genji monogatari)",
+    "artist": "Tosa Mitsunobu",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 246,
+    "cardSizeKB": 524,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
