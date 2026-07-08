@@ -7802,5 +7802,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-08T16:03:49.274Z",
+    "mediaId": "17893996005558430",
+    "artKey": "met:437329",
+    "source": "met",
+    "mode": "post",
+    "title": "The Abduction of the Sabine Women",
+    "artist": "Nicolas Poussin",
+    "wasSeasonal": true,
+    "fallbackFrom": null,
+    "captionLength": 294,
+    "cardSizeKB": 208,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
