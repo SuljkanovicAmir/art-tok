@@ -7824,5 +7824,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-09T10:26:08.994Z",
+    "mediaId": "17882862135608785",
+    "artKey": "met:436253",
+    "source": "met",
+    "mode": "post",
+    "title": "Lucas van Uffel (died 1637)",
+    "artist": "Anthony van Dyck",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 303,
+    "cardSizeKB": 227,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
