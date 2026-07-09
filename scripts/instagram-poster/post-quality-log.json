@@ -7846,5 +7846,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-09T16:28:59.217Z",
+    "mediaId": "18085477577168681",
+    "artKey": "met:436002",
+    "source": "met",
+    "mode": "post",
+    "title": "Woman with a Parrot",
+    "artist": "Gustave Courbet",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 250,
+    "cardSizeKB": 152,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
