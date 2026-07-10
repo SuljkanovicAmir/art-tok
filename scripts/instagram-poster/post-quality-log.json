@@ -7890,5 +7890,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-10T16:26:18.301Z",
+    "mediaId": "18119758996834514",
+    "artKey": "met:15026",
+    "source": "met",
+    "mode": "post",
+    "title": "Self-portrait",
+    "artist": "John Singleton Copley",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 265,
+    "cardSizeKB": 185,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
