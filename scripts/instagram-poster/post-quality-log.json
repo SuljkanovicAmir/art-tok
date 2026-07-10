@@ -7868,5 +7868,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-10T10:24:21.124Z",
+    "mediaId": "18405921811152978",
+    "artKey": "met:437869",
+    "source": "met",
+    "mode": "post",
+    "title": "Juan de Pareja (ca. 1608–1670)",
+    "artist": "Velázquez (Diego Rodríguez de Silva y Velázquez)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 173,
+    "cardSizeKB": 266,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
