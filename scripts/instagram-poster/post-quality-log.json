@@ -7912,5 +7912,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-13T10:27:57.328Z",
+    "mediaId": "17925203139382894",
+    "artKey": "met:11050",
+    "source": "met",
+    "mode": "post",
+    "title": "Approaching Thunder Storm",
+    "artist": "Martin Johnson Heade",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 364,
+    "cardSizeKB": 132,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
