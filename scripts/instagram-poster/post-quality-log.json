@@ -7934,5 +7934,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-18T14:43:29.675Z",
+    "mediaId": "18097480220163908",
+    "artKey": "harvard:231276",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Imaginative Composition",
+    "artist": "Kanji Nakamura",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 145,
+    "cardSizeKB": 442,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
