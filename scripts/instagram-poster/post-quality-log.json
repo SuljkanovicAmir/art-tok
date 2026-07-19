@@ -7956,5 +7956,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-19T17:49:06.747Z",
+    "mediaId": "18024956273839370",
+    "artKey": "harvard:230112",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Saint Sebastian and the Angel",
+    "artist": "Gustave Moreau",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 116,
+    "cardSizeKB": 487,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
