@@ -7978,5 +7978,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-20T10:12:49.867Z",
+    "mediaId": "18098839268215744",
+    "artKey": "met:437053",
+    "source": "met",
+    "mode": "post",
+    "title": "The Afternoon Meal (La Merienda)",
+    "artist": "Luis Meléndez",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 144,
+    "cardSizeKB": 227,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
