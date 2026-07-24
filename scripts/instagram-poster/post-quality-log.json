@@ -8022,5 +8022,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-24T13:41:28.516Z",
+    "mediaId": "18104917742124311",
+    "artKey": "met:437675",
+    "source": "met",
+    "mode": "reel",
+    "title": "Saint Andrew",
+    "artist": "Simone Martini",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 111,
+    "cardSizeKB": 695,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
