@@ -8066,5 +8066,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-07-27T16:22:45.114Z",
+    "mediaId": "18119122501891304",
+    "artKey": "met:436603",
+    "source": "met",
+    "mode": "post",
+    "title": "Samson Captured by the Philistines",
+    "artist": "Guercino (Giovanni Francesco Barbieri)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 206,
+    "cardSizeKB": 253,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
