@@ -8044,5 +8044,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-27T09:38:43.234Z",
+    "mediaId": "18127439686660419",
+    "artKey": "harvard:200193",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Spring Shoots I (Wakana: jō), Illustration to Chapter 34 of the Tale of Genji (Genji monogatari)",
+    "artist": "Tosa Mitsunobu",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 263,
+    "cardSizeKB": 521,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
