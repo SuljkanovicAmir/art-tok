@@ -8088,5 +8088,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-07-30T14:27:53.443Z",
+    "mediaId": "18108010892020832",
+    "artKey": "harvard:230428",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Study of a Woman's Head",
+    "artist": "Frank Duveneck",
+    "wasSeasonal": true,
+    "fallbackFrom": null,
+    "captionLength": 115,
+    "cardSizeKB": 435,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
