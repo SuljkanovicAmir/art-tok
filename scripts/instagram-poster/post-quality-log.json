@@ -8110,5 +8110,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-02T19:49:47.476Z",
+    "mediaId": "17931389253124373",
+    "artKey": "harvard:230507",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Beach Scene with Two Figures",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 128,
+    "cardSizeKB": 462,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
