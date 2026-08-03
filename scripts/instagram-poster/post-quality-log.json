@@ -8132,5 +8132,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-03T10:43:28.785Z",
+    "mediaId": "18109773947083179",
+    "artKey": "met:438815",
+    "source": "met",
+    "mode": "post",
+    "title": "Madame Georges Charpentier (Marguerite-Louise Lemonnier, 1848–1904) and Her Children, Georgette-Berthe (1872–1945) and Paul-Emile-Charles (1875–1895)",
+    "artist": "Auguste Renoir",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 333,
+    "cardSizeKB": 234,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
