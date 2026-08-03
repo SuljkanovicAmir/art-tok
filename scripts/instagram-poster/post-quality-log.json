@@ -8154,5 +8154,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-03T16:26:23.218Z",
+    "mediaId": "17896447278577731",
+    "artKey": "met:75274",
+    "source": "met",
+    "mode": "post",
+    "title": "Buddha Shakyamuni as \"Lord of the Munis\"",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 173,
+    "cardSizeKB": 526,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
