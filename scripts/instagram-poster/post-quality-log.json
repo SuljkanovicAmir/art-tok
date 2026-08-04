@@ -8176,5 +8176,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-04T16:12:41.455Z",
+    "mediaId": "18579360241066616",
+    "artKey": "met:247009",
+    "source": "met",
+    "mode": "post",
+    "title": "Wall painting from Room H of the Villa of P. Fannius Synistor at Boscoreale",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 214,
+    "cardSizeKB": 386,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
