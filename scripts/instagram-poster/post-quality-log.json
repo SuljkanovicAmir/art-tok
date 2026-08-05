@@ -8198,5 +8198,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-05T16:01:51.189Z",
+    "mediaId": "18100776313961185",
+    "artKey": "met:37966",
+    "source": "met",
+    "mode": "post",
+    "title": "Buddha Amoghasiddhi with Eight Bodhisattvas",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 207,
+    "cardSizeKB": 568,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
