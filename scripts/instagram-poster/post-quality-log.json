@@ -8220,5 +8220,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-05T18:23:53.864Z",
+    "mediaId": "18139282633541846",
+    "artKey": "harvard:231016",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Orizaba, Mexico",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 137,
+    "cardSizeKB": 586,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
