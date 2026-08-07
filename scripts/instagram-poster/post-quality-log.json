@@ -8242,5 +8242,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-07T20:42:12.223Z",
+    "mediaId": "18051338387575208",
+    "artKey": "met:440723",
+    "source": "met",
+    "mode": "post",
+    "title": "Bashi-Bazouk",
+    "artist": "Jean-Léon Gérôme",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 226,
+    "cardSizeKB": 248,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
