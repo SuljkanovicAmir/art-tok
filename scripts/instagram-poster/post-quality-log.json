@@ -8264,5 +8264,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-08T07:51:01.600Z",
+    "mediaId": "18001803065976424",
+    "artKey": "met:679844",
+    "source": "met",
+    "mode": "post",
+    "title": "Fish Market",
+    "artist": "Joachim Beuckelaer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 278,
+    "cardSizeKB": 229,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
