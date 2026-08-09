@@ -8286,5 +8286,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-09T07:54:47.206Z",
+    "mediaId": "17932276254122610",
+    "artKey": "met:437749",
+    "source": "met",
+    "mode": "post",
+    "title": "Merry Company on a Terrace",
+    "artist": "Jan Steen",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 296,
+    "cardSizeKB": 325,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
