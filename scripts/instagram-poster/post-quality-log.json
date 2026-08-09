@@ -8330,5 +8330,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-09T16:36:53.017Z",
+    "mediaId": "18125261791695984",
+    "artKey": "met:459052",
+    "source": "met",
+    "mode": "post",
+    "title": "A Goldsmith in his Shop",
+    "artist": "Petrus Christus",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 320,
+    "cardSizeKB": 330,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
