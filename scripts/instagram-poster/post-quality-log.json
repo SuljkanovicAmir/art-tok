@@ -8308,5 +8308,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-09T10:35:34.626Z",
+    "mediaId": "18108042443101927",
+    "artKey": "met:459084",
+    "source": "met",
+    "mode": "post",
+    "title": "Margaretha van Haexbergen (1614–1676)",
+    "artist": "Gerard ter Borch the Younger",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 167,
+    "cardSizeKB": 199,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
