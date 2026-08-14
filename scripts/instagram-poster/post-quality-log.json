@@ -8352,5 +8352,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-14T10:58:28.584Z",
+    "mediaId": "18071514464449998",
+    "artKey": "met:435888",
+    "source": "met",
+    "mode": "post",
+    "title": "Soap Bubbles",
+    "artist": "Jean Siméon Chardin",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 182,
+    "cardSizeKB": 239,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
