@@ -8374,5 +8374,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-15T07:31:21.496Z",
+    "mediaId": "18377145808224033",
+    "artKey": "met:37942",
+    "source": "met",
+    "mode": "post",
+    "title": "Shiva and Parvati Playing Chaupar: Folio from a Rasamanjari Series",
+    "artist": "Devidasa of Nurpur",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 249,
+    "cardSizeKB": 230,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
