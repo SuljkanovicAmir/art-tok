@@ -8462,5 +8462,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-16T16:26:19.840Z",
+    "mediaId": "18113405752769130",
+    "artKey": "met:477499",
+    "source": "met",
+    "mode": "post",
+    "title": "Jaharis Byzantine Lectionary",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 177,
+    "cardSizeKB": 192,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
