@@ -8440,5 +8440,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-16T14:24:33.634Z",
+    "mediaId": "18147601966542304",
+    "artKey": "harvard:312212",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Self-Portrait",
+    "artist": "Ignaz Marcel Gaugengigl, Charles Prendergast",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 127,
+    "cardSizeKB": 369,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
