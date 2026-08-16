@@ -8418,5 +8418,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-16T10:23:54.996Z",
+    "mediaId": "18155694928501323",
+    "artKey": "met:10159",
+    "source": "met",
+    "mode": "post",
+    "title": "Fur Traders Descending the Missouri",
+    "artist": "George Caleb Bingham",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 273,
+    "cardSizeKB": 188,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
