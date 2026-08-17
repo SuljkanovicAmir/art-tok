@@ -8484,5 +8484,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-17T10:32:48.236Z",
+    "mediaId": "18099469964002499",
+    "artKey": "met:39668",
+    "source": "met",
+    "mode": "post",
+    "title": "Old Trees, Level Distance",
+    "artist": "Guo Xi",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 306,
+    "cardSizeKB": 118,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
