@@ -8506,5 +8506,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-18T07:38:44.875Z",
+    "mediaId": "17928794310384584",
+    "artKey": "met:342992",
+    "source": "met",
+    "mode": "post",
+    "title": "Sunset",
+    "artist": "Eugène Delacroix",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 268,
+    "cardSizeKB": 214,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
