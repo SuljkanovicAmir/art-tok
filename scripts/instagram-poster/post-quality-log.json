@@ -8528,5 +8528,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-18T10:29:09.485Z",
+    "mediaId": "18134011498719014",
+    "artKey": "met:437826",
+    "source": "met",
+    "mode": "post",
+    "title": "Venus and Adonis",
+    "artist": "Titian (Tiziano Vecellio)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 166,
+    "cardSizeKB": 217,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
