@@ -8572,5 +8572,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-20T10:31:16.670Z",
+    "mediaId": "17988265824105002",
+    "artKey": "met:11380",
+    "source": "met",
+    "mode": "post",
+    "title": "Nocturne",
+    "artist": "John La Farge",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 384,
+    "cardSizeKB": 266,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
