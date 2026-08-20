@@ -8550,5 +8550,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-20T07:41:39.756Z",
+    "mediaId": "18102251309191833",
+    "artKey": "met:435839",
+    "source": "met",
+    "mode": "post",
+    "title": "Piazza San Marco",
+    "artist": "Canaletto (Giovanni Antonio Canal)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 180,
+    "cardSizeKB": 173,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
