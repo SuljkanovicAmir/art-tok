@@ -8594,5 +8594,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-21T07:42:53.517Z",
+    "mediaId": "18100684880618440",
+    "artKey": "met:40055",
+    "source": "met",
+    "mode": "post",
+    "title": "Emperor Xuanzong's flight to Shu",
+    "artist": "Unidentified artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 197,
+    "cardSizeKB": 207,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
