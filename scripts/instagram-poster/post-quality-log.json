@@ -8616,5 +8616,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-21T10:31:36.546Z",
+    "mediaId": "17989651395035587",
+    "artKey": "met:896001",
+    "source": "met",
+    "mode": "post",
+    "title": "Willow trees at a brook (Weidenbach near Neuostra)",
+    "artist": "Emilie Mediz-Pelikan",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 249,
+    "cardSizeKB": 231,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
