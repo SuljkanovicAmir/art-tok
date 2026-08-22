@@ -8638,5 +8638,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-22T07:32:39.814Z",
+    "mediaId": "18111169421028920",
+    "artKey": "met:10481",
+    "source": "met",
+    "mode": "post",
+    "title": "Heart of the Andes",
+    "artist": "Frederic Edwin Church",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 242,
+    "cardSizeKB": 236,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
