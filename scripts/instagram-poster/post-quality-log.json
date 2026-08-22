@@ -8660,5 +8660,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-22T10:24:56.101Z",
+    "mediaId": "18069047123483624",
+    "artKey": "met:435868",
+    "source": "met",
+    "mode": "reel",
+    "title": "The Card Players",
+    "artist": "Paul Cézanne",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 161,
+    "cardSizeKB": 378,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
