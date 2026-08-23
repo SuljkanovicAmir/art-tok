@@ -8682,5 +8682,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-23T07:34:04.359Z",
+    "mediaId": "17875660728545853",
+    "artKey": "met:459016",
+    "source": "met",
+    "mode": "post",
+    "title": "The Annunciation",
+    "artist": "Botticelli (Alessandro di Mariano Filipepi)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 169,
+    "cardSizeKB": 233,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
