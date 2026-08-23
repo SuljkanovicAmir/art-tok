@@ -8704,5 +8704,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-23T10:25:10.226Z",
+    "mediaId": "17966232831171221",
+    "artKey": "met:64893",
+    "source": "met",
+    "mode": "post",
+    "title": "The Demon Hiranyaksha Departs the Demon Palace: Folio from a Bhagavata Purana Series",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 276,
+    "cardSizeKB": 232,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
