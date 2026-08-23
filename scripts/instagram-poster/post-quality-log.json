@@ -8726,5 +8726,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-23T16:27:53.191Z",
+    "mediaId": "18149061421524322",
+    "artKey": "met:470309",
+    "source": "met",
+    "mode": "post",
+    "title": "The Hours of Jeanne d'Evreux, Queen of France",
+    "artist": "Jean Pucelle",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 344,
+    "cardSizeKB": 140,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
