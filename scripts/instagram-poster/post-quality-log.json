@@ -8748,5 +8748,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-24T07:58:26.379Z",
+    "mediaId": "18441421681121174",
+    "artKey": "met:37802",
+    "source": "met",
+    "mode": "post",
+    "title": "Mandala of Jnanadakini",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 142,
+    "cardSizeKB": 635,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
