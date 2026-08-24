@@ -8770,5 +8770,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-24T10:37:47.427Z",
+    "mediaId": "17907072165469449",
+    "artKey": "met:626692",
+    "source": "met",
+    "mode": "post",
+    "title": "The Jabach Family",
+    "artist": "Charles Le Brun",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 259,
+    "cardSizeKB": 187,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
