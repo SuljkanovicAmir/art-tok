@@ -8814,5 +8814,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-25T10:33:52.410Z",
+    "mediaId": "18339512863255712",
+    "artKey": "met:44918",
+    "source": "met",
+    "mode": "post",
+    "title": "Rough Waves",
+    "artist": "Ogata Kōrin",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 325,
+    "cardSizeKB": 260,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
