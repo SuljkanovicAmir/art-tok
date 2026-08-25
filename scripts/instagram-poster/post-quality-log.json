@@ -8792,5 +8792,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-25T07:47:53.100Z",
+    "mediaId": "18104387392897877",
+    "artKey": "met:437879",
+    "source": "met",
+    "mode": "post",
+    "title": "Study of a Young Woman",
+    "artist": "Johannes Vermeer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 295,
+    "cardSizeKB": 326,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
