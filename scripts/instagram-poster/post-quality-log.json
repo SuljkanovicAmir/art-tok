@@ -8836,5 +8836,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-26T07:47:24.436Z",
+    "mediaId": "17965669590174065",
+    "artKey": "met:456949",
+    "source": "met",
+    "mode": "post",
+    "title": "Great Indian Fruit Bat",
+    "artist": "Bhawani Das",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 194,
+    "cardSizeKB": 98,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
