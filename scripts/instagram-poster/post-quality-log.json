@@ -8902,5 +8902,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-08-26T22:48:59.935Z",
+    "mediaId": "17907533997538714",
+    "artKey": "met:435826",
+    "source": "met",
+    "mode": "post",
+    "title": "The Love Song",
+    "artist": "Sir Edward Burne-Jones",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 297,
+    "cardSizeKB": 246,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
