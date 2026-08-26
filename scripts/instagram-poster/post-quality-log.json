@@ -8858,5 +8858,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-26T10:36:02.862Z",
+    "mediaId": "18139701733585391",
+    "artKey": "met:437769",
+    "source": "met",
+    "mode": "post",
+    "title": "Clothing the Naked",
+    "artist": "Michiel Sweerts",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 314,
+    "cardSizeKB": 164,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
