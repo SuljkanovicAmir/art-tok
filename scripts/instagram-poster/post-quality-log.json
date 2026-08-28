@@ -8946,5 +8946,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-28T19:18:01.399Z",
+    "mediaId": "17910372654461045",
+    "artKey": "met:382608",
+    "source": "met",
+    "mode": "post",
+    "title": "Still Life with Flowers, a Snail and Insects",
+    "artist": "Joris Hoefnagel",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 352,
+    "cardSizeKB": 428,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
