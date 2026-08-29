@@ -8968,5 +8968,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-29T22:27:07.643Z",
+    "mediaId": "18102075362213829",
+    "artKey": "met:337499",
+    "source": "met",
+    "mode": "post",
+    "title": "The Lake of Zug",
+    "artist": "Joseph Mallord William Turner",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 357,
+    "cardSizeKB": 219,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
