@@ -8990,5 +8990,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-08-30T22:28:20.319Z",
+    "mediaId": "18002732853003772",
+    "artKey": "met:11145",
+    "source": "met",
+    "mode": "post",
+    "title": "The Veteran in a New Field",
+    "artist": "Winslow Homer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 256,
+    "cardSizeKB": 330,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
