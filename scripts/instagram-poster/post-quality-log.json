@@ -9034,5 +9034,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-02T22:25:31.135Z",
+    "mediaId": "18128127559811211",
+    "artKey": "met:337500",
+    "source": "met",
+    "mode": "post",
+    "title": "Lady Lilith",
+    "artist": "Dante Gabriel Rossetti",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 292,
+    "cardSizeKB": 388,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
