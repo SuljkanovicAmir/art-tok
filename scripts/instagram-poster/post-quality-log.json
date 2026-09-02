@@ -9012,5 +9012,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-02T12:37:26.976Z",
+    "mediaId": "18059799365785233",
+    "artKey": "harvard:229653",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Pauline Bonaparte, Princess Borghese",
+    "artist": "Jean Baptiste Isabey, Pauline Bonaparte",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 150,
+    "cardSizeKB": 490,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
