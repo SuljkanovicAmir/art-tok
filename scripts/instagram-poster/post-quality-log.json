@@ -9056,5 +9056,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-03T22:25:31.796Z",
+    "mediaId": "17960363034194644",
+    "artKey": "met:37801",
+    "source": "met",
+    "mode": "post",
+    "title": "Mahasiddha Jnanatapa",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 164,
+    "cardSizeKB": 455,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
