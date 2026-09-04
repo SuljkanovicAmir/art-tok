@@ -9078,5 +9078,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-04T22:11:06.552Z",
+    "mediaId": "18126580126753164",
+    "artKey": "met:247008",
+    "source": "met",
+    "mode": "post",
+    "title": "Wall painting from the west wall of Room L of the Villa of P. Fannius Synistor at Boscoreale",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 235,
+    "cardSizeKB": 301,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
