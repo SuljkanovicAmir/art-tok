@@ -9166,5 +9166,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-05T21:58:21.569Z",
+    "mediaId": "18194468440389487",
+    "artKey": "met:451405",
+    "source": "met",
+    "mode": "post",
+    "title": "'Saz'-Style Drawing of a Dragon Amid Foliage",
+    "artist": "Shah Quli",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 268,
+    "cardSizeKB": 271,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
