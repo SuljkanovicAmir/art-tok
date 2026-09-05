@@ -9144,5 +9144,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-05T18:49:43.494Z",
+    "mediaId": "18019370009715869",
+    "artKey": "met:478211",
+    "source": "met",
+    "mode": "post",
+    "title": "Dish with Abraham and Melchizedek",
+    "artist": "Hans of Landshut",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 192,
+    "cardSizeKB": 413,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
