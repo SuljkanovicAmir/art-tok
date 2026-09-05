@@ -9100,5 +9100,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-05T11:11:11.564Z",
+    "mediaId": "18046167752814933",
+    "artKey": "harvard:20471",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Roses and Azaleas",
+    "artist": "George Cochran Lambdin",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 109,
+    "cardSizeKB": 457,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
