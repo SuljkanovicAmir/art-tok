@@ -9122,5 +9122,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-05T16:34:56.001Z",
+    "mediaId": "17976949952913852",
+    "artKey": "met:459185",
+    "source": "met",
+    "mode": "post",
+    "title": "Design for a Wall Monument",
+    "artist": "Francesco di Giorgio Martini",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 322,
+    "cardSizeKB": 343,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
