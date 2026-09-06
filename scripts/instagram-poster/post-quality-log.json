@@ -9232,5 +9232,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-06T18:55:19.850Z",
+    "mediaId": "17989454829021157",
+    "artKey": "met:10154",
+    "source": "met",
+    "mode": "post",
+    "title": "The Rocky Mountains, Lander's Peak",
+    "artist": "Albert Bierstadt",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 322,
+    "cardSizeKB": 171,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
