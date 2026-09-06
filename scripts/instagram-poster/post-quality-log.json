@@ -9210,5 +9210,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-06T16:45:03.465Z",
+    "mediaId": "18094042838402413",
+    "artKey": "met:436095",
+    "source": "met",
+    "mode": "post",
+    "title": "The Third-Class Carriage",
+    "artist": "Honoré Daumier",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 399,
+    "cardSizeKB": 197,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
