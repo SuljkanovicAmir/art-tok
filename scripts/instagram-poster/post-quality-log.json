@@ -9188,5 +9188,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-06T11:33:19.515Z",
+    "mediaId": "18091990910439833",
+    "artKey": "met:436532",
+    "source": "met",
+    "mode": "post",
+    "title": "Self-Portrait with a Straw Hat (obverse: The Potato Peeler)",
+    "artist": "Vincent van Gogh",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 327,
+    "cardSizeKB": 734,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
