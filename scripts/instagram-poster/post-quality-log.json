@@ -9254,5 +9254,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-06T22:00:07.181Z",
+    "mediaId": "18130492774740008",
+    "artKey": "met:459045",
+    "source": "met",
+    "mode": "post",
+    "title": "The Feast of Herod and the Beheading of the Baptist",
+    "artist": "Giovanni Baronzio",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 379,
+    "cardSizeKB": 415,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
