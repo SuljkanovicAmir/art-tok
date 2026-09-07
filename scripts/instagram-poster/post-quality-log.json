@@ -9276,5 +9276,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-07T13:19:45.464Z",
+    "mediaId": "17987274398859252",
+    "artKey": "met:78195",
+    "source": "met",
+    "mode": "post",
+    "title": "Mahakala, Protector of the Tent",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 199,
+    "cardSizeKB": 483,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
