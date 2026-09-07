@@ -9320,5 +9320,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-07T22:35:52.805Z",
+    "mediaId": "18444063097121166",
+    "artKey": "met:458978",
+    "source": "met",
+    "mode": "reel",
+    "title": "Coronation of the Virgin",
+    "artist": "Giovanni di Paolo (Giovanni di Paolo di Grazia)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 205,
+    "cardSizeKB": 651,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
