@@ -9298,5 +9298,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-07T18:38:09.372Z",
+    "mediaId": "18074687264405330",
+    "artKey": "met:435962",
+    "source": "met",
+    "mode": "post",
+    "title": "Hagar in the Wilderness",
+    "artist": "Camille Corot",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 324,
+    "cardSizeKB": 229,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
