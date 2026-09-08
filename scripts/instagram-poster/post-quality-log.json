@@ -9342,5 +9342,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-08T17:49:09.733Z",
+    "mediaId": "18115242788057790",
+    "artKey": "met:438817",
+    "source": "met",
+    "mode": "post",
+    "title": "The Dance Class",
+    "artist": "Edgar Degas",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 227,
+    "cardSizeKB": 271,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
