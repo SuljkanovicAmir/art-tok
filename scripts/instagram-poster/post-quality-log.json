@@ -9364,5 +9364,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-08T22:25:26.520Z",
+    "mediaId": "17940352326360447",
+    "artKey": "met:437397",
+    "source": "met",
+    "mode": "post",
+    "title": "Self-Portrait",
+    "artist": "Rembrandt (Rembrandt van Rijn)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 138,
+    "cardSizeKB": 267,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
