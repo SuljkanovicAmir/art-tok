@@ -9386,5 +9386,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-09T12:12:29.135Z",
+    "mediaId": "18073661597443937",
+    "artKey": "met:458998",
+    "source": "met",
+    "mode": "post",
+    "title": "The Assumption of the Virgin",
+    "artist": "Bernardo Daddi",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 276,
+    "cardSizeKB": 263,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
