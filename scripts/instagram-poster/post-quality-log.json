@@ -9408,5 +9408,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-10T22:19:15.005Z",
+    "mediaId": "18099158279384276",
+    "artKey": "met:72589",
+    "source": "met",
+    "mode": "post",
+    "title": "Maharana Sangram Singh Riding a Prize Stallion",
+    "artist": "Stipple Master",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 253,
+    "cardSizeKB": 403,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
