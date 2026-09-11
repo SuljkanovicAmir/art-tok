@@ -9430,5 +9430,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-11T22:19:03.827Z",
+    "mediaId": "18352237162168733",
+    "artKey": "met:438822",
+    "source": "met",
+    "mode": "post",
+    "title": "The Repast of the Lion",
+    "artist": "Henri Rousseau (le Douanier)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 149,
+    "cardSizeKB": 203,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
