@@ -9452,5 +9452,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-12T16:47:58.258Z",
+    "mediaId": "18170674111394900",
+    "artKey": "met:459131",
+    "source": "met",
+    "mode": "post",
+    "title": "The Last Supper",
+    "artist": "Ugolino da Siena (Ugolino di Nerio)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 160,
+    "cardSizeKB": 293,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
