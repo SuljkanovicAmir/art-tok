@@ -9474,5 +9474,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-12T21:59:02.660Z",
+    "mediaId": "18060377747795225",
+    "artKey": "met:39936",
+    "source": "met",
+    "mode": "post",
+    "title": "Finches and bamboo",
+    "artist": "Emperor Huizong",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 170,
+    "cardSizeKB": 143,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
