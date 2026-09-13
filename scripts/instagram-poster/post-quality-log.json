@@ -9496,5 +9496,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-13T18:35:32.132Z",
+    "mediaId": "17876116242630286",
+    "artKey": "met:11311",
+    "source": "met",
+    "mode": "post",
+    "title": "Lake George",
+    "artist": "John Frederick Kensett",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 293,
+    "cardSizeKB": 162,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
