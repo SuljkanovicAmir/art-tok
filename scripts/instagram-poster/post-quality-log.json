@@ -9518,5 +9518,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-14T19:05:16.095Z",
+    "mediaId": "17962529781194370",
+    "artKey": "met:21126",
+    "source": "met",
+    "mode": "post",
+    "title": "Young Husband: First Marketing",
+    "artist": "Lilly Martin Spencer",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 265,
+    "cardSizeKB": 360,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
