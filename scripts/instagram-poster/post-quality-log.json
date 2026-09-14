@@ -9540,5 +9540,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-14T23:00:13.923Z",
+    "mediaId": "18158405380507636",
+    "artKey": "met:455059",
+    "source": "met",
+    "mode": "reel",
+    "title": "\"The Eavesdropper\", Folio 47r from a Haft Paikar (Seven Portraits) of the Khamsa (Quintet) of Nizami of Ganja",
+    "artist": "Maulana Azhar",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 207,
+    "cardSizeKB": 686,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
