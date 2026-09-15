@@ -9562,5 +9562,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-15T12:31:00.581Z",
+    "mediaId": "17987155179023978",
+    "artKey": "met:437097",
+    "source": "met",
+    "mode": "post",
+    "title": "Haystacks: Autumn",
+    "artist": "Jean-François Millet",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 252,
+    "cardSizeKB": 239,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
