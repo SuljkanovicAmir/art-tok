@@ -9584,5 +9584,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-15T18:00:10.221Z",
+    "mediaId": "18314113984304431",
+    "artKey": "met:440393",
+    "source": "met",
+    "mode": "post",
+    "title": "The Baptism of Christ",
+    "artist": "Jacopo Bassano (Jacopo da Ponte)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 152,
+    "cardSizeKB": 240,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
