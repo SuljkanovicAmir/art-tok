@@ -9650,5 +9650,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-16T22:41:37.740Z",
+    "mediaId": "18108994493146813",
+    "artKey": "met:438820",
+    "source": "met",
+    "mode": "post",
+    "title": "Young Ladies of the Village",
+    "artist": "Gustave Courbet",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 261,
+    "cardSizeKB": 290,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
