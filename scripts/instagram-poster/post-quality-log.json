@@ -9606,5 +9606,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-16T12:28:02.337Z",
+    "mediaId": "17872971567586452",
+    "artKey": "met:436918",
+    "source": "met",
+    "mode": "post",
+    "title": "Venus and Cupid",
+    "artist": "Lorenzo Lotto",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 326,
+    "cardSizeKB": 220,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
