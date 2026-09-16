@@ -9628,5 +9628,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-16T18:01:21.496Z",
+    "mediaId": "18008058677976606",
+    "artKey": "met:16584",
+    "source": "met",
+    "mode": "post",
+    "title": "George Washington",
+    "artist": "Gilbert Stuart",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 289,
+    "cardSizeKB": 317,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
