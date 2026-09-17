@@ -9672,5 +9672,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-17T12:27:54.478Z",
+    "mediaId": "17881242504523037",
+    "artKey": "met:436838",
+    "source": "met",
+    "mode": "post",
+    "title": "The Fortune-Teller",
+    "artist": "Georges de La Tour",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 356,
+    "cardSizeKB": 244,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
