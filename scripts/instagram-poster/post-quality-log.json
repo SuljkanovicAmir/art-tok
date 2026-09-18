@@ -9694,5 +9694,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-18T17:33:59.088Z",
+    "mediaId": "18115724558044585",
+    "artKey": "met:453683",
+    "source": "met",
+    "mode": "post",
+    "title": "\"Jonah and the Whale\", Folio Probably from a Jami al-Tavarikh (Compendium of Chronicles)",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 251,
+    "cardSizeKB": 348,
+    "metadataScore": 57,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
