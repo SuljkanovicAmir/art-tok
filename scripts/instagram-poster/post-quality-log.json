@@ -9716,5 +9716,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-19T22:12:17.901Z",
+    "mediaId": "18379418641236367",
+    "artKey": "met:437971",
+    "source": "met",
+    "mode": "post",
+    "title": "The Young Virgin",
+    "artist": "Francisco de Zurbarán",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 139,
+    "cardSizeKB": 308,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
