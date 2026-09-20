@@ -9782,5 +9782,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-20T22:14:47.561Z",
+    "mediaId": "18333297334287839",
+    "artKey": "met:459007",
+    "source": "met",
+    "mode": "post",
+    "title": "The Nativity",
+    "artist": "Lorenzo Monaco (Piero di Giovanni)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 159,
+    "cardSizeKB": 321,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
