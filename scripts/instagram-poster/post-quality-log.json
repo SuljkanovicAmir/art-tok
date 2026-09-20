@@ -9738,5 +9738,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-20T12:04:20.115Z",
+    "mediaId": "18097028861379975",
+    "artKey": "met:714877",
+    "source": "met",
+    "mode": "post",
+    "title": "Chakrasamvara with His Consort Vajravarahi",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 206,
+    "cardSizeKB": 699,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
