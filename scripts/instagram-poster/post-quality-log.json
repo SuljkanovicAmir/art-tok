@@ -9760,5 +9760,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-20T17:21:18.600Z",
+    "mediaId": "18081386012711126",
+    "artKey": "met:44858",
+    "source": "met",
+    "mode": "reel",
+    "title": "Old Plum",
+    "artist": "Kano Sansetsu",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 102,
+    "cardSizeKB": 320,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
