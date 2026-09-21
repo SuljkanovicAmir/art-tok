@@ -9804,5 +9804,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-21T13:42:24.881Z",
+    "mediaId": "17949043272285321",
+    "artKey": "met:10819",
+    "source": "met",
+    "mode": "post",
+    "title": "The Champion Single Sculls (Max Schmitt in a Single Scull)",
+    "artist": "Thomas Eakins",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 320,
+    "cardSizeKB": 204,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
