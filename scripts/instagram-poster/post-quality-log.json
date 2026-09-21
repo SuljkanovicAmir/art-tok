@@ -9826,5 +9826,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-21T23:03:00.199Z",
+    "mediaId": "17917578465445335",
+    "artKey": "met:341793",
+    "source": "met",
+    "mode": "post",
+    "title": "Lindisfarne Castle, Holy Island, Northumberland",
+    "artist": "Thomas Girtin",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 179,
+    "cardSizeKB": 211,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
