@@ -9848,5 +9848,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-25T12:36:40.815Z",
+    "mediaId": "18130876543706824",
+    "artKey": "met:435851",
+    "source": "met",
+    "mode": "post",
+    "title": "The Meditation on the Passion",
+    "artist": "Vittore Carpaccio",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 264,
+    "cardSizeKB": 291,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
