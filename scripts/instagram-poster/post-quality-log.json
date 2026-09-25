@@ -9870,5 +9870,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-09-25T23:09:19.820Z",
+    "mediaId": "18028274048911317",
+    "artKey": "met:10522",
+    "source": "met",
+    "mode": "post",
+    "title": "Daniel Crommelin Verplanck",
+    "artist": "John Singleton Copley",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 301,
+    "cardSizeKB": 378,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
