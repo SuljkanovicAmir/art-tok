@@ -9892,5 +9892,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-26T17:39:31.579Z",
+    "mediaId": "18140326531612033",
+    "artKey": "met:438814",
+    "source": "met",
+    "mode": "post",
+    "title": "The Abduction of Rebecca",
+    "artist": "Eugène Delacroix",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 270,
+    "cardSizeKB": 311,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
