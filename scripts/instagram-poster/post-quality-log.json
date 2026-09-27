@@ -9936,5 +9936,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-27T22:52:17.088Z",
+    "mediaId": "18142092583595998",
+    "artKey": "met:436282",
+    "source": "met",
+    "mode": "post",
+    "title": "The Crucifixion; The Last Judgment",
+    "artist": "Jan van Eyck",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 441,
+    "cardSizeKB": 458,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
