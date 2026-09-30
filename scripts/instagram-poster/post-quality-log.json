@@ -9980,5 +9980,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-09-30T13:25:06.129Z",
+    "mediaId": "18116164048956839",
+    "artKey": "met:38006",
+    "source": "met",
+    "mode": "reel",
+    "title": "Portrait of the Indian Monk Atisha",
+    "artist": "Unknown artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 133,
+    "cardSizeKB": 568,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": false,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
