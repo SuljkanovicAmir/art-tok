@@ -25,6 +25,10 @@ const HARVARD_FIELDS = [
 ].join(",");
 
 const MET_API = "https://collectionapi.metmuseum.org/public/collection/v1";
+// /v1/search was retired 2026-10-01 (HTTP 410). /v1/objects is still current.
+const MET_SEARCH_API = "https://collectionapi.metmuseum.org/public/collection/v1.1/search";
+const MET_SEARCH_PAGE_SIZE = 500; // API maximum; larger limits are clamped
+const MET_SEARCH_MAX_PAGES = 4;
 
 const AIC_API = "https://api.artic.edu/api/v1";
 const AIC_IIIF = "https://www.artic.edu/iiif/2";
@@ -34,6 +38,29 @@ const AIC_FIELDS = [
 ].join(",");
 
 const { HARVARD_API_KEY } = process.env;
+
+// ── Met: paginated ID search ─────────────────────────────────────────────────
+
+/**
+ * Collect object IDs from Met's paginated search. Stops at the last page, or
+ * after MET_SEARCH_MAX_PAGES so a broad keyword can't fan out into many calls.
+ * The API omits `objectIDs` entirely once offset passes the end of the results.
+ */
+export async function searchMetIds(params) {
+  const ids = [];
+  for (let page = 0; page < MET_SEARCH_MAX_PAGES; page++) {
+    const query = new URLSearchParams({
+      ...params,
+      limit: String(MET_SEARCH_PAGE_SIZE),
+      offset: String(page * MET_SEARCH_PAGE_SIZE),
+    });
+    const data = await fetchJson(`${MET_SEARCH_API}?${query}`);
+    const batch = data.objectIDs ?? [];
+    ids.push(...batch);
+    if (batch.length < MET_SEARCH_PAGE_SIZE || ids.length >= data.total) break;
+  }
+  return ids;
+}
 
 // ── Harvard: random page from top-viewed works ──────────────────────────────
 
@@ -81,10 +108,8 @@ export async function fetchHarvardRandom({ page } = {}) {
 // ── Met: random from highlights ─────────────────────────────────────────────
 
 export async function fetchMetRandom() {
-  const searchUrl = `${MET_API}/search?hasImages=true&isHighlight=true&q=painting`;
-  const data = await fetchJson(searchUrl);
-  const ids = data.objectIDs;
-  if (!ids || ids.length === 0) throw new Error("No Met painting highlights found");
+  const ids = await searchMetIds({ hasImages: "true", isHighlight: "true", q: "painting" });
+  if (ids.length === 0) throw new Error("No Met painting highlights found");
 
   // Try up to 10 random picks (filter to paintings by classification or medium)
   for (let attempt = 0; attempt < 10; attempt++) {
@@ -404,10 +429,8 @@ export async function fetchSeasonalArtwork(season, historySet, excludeSources = 
           museumName: "Harvard Art Museums",
         };
       } else if (source.name === "Met") {
-        const searchUrl = `${MET_API}/search?hasImages=true&q=${encodeURIComponent(keyword)}`;
-        const searchData = await fetchJson(searchUrl);
-        const ids = searchData.objectIDs;
-        if (!ids || ids.length === 0) continue;
+        const ids = await searchMetIds({ hasImages: "true", q: keyword });
+        if (ids.length === 0) continue;
         for (let i = 0; i < Math.min(5, ids.length); i++) {
           const id = pick(ids);
           try {
