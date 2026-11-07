@@ -121,7 +121,7 @@ export default function TimelineBoard({ round, imageUrl, label, onFinish }: Time
   return (
     <div className="timeline__board">
       <header className="timeline__bar">
-        <Link to="/" className="timeline__close" aria-label="Leave the game">
+        <Link to="/games" className="timeline__close" aria-label="Leave the game">
           <X size={22} strokeWidth={2} />
         </Link>
         <p className="timeline__kicker">{label}</p>

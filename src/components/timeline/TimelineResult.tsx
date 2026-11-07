@@ -55,7 +55,7 @@ export default function TimelineResult({
   return (
     <div className="timeline__result">
       <header className="timeline__bar">
-        <Link to="/" className="timeline__close" aria-label="Back to the feed">
+        <Link to="/games" className="timeline__close" aria-label="Back to the games">
           <X size={22} strokeWidth={2} />
         </Link>
         <p className="timeline__kicker">

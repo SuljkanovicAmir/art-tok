@@ -78,7 +78,7 @@ export default function TimelinePage() {
       {!isPlaying && !finished && (
         <div className="timeline__intro">
           <header className="timeline__bar">
-            <Link to="/" className="timeline__close" aria-label="Back to the feed">
+            <Link to="/games" className="timeline__close" aria-label="Back to the games">
               <X size={22} strokeWidth={2} />
             </Link>
           </header>

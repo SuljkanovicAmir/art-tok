@@ -3387,3 +3387,1001 @@
     transition: none;
   }
 }
+
+
+
+
+/* ── Jigsaw game ── */
+
+.jigsaw {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+  background:
+    radial-gradient(130% 60% at 50% -5%, color-mix(in srgb, var(--paint, #3a3a44) 30%, transparent), transparent 70%),
+    var(--bg-primary);
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.jigsaw__intro,
+.jigsaw__result {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 34rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top, 0px) 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.jigsaw__bar {
+  flex: none;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr 2.75rem;
+  align-items: center;
+  height: 3.25rem;
+  margin: 0 -0.5rem;
+}
+
+.jigsaw__close {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: var(--text-primary);
+  background: none;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--duration-fast) var(--ease-glass);
+}
+
+.jigsaw__close:hover {
+  opacity: 0.7;
+}
+
+.jigsaw__kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.jigsaw :focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+
+/* Buttons, matching the Timeline ones */
+
+.jigsaw__action {
+  min-height: 2.75rem;
+  padding: 0 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--glass-l3-bg);
+  border: 1px solid var(--glass-l3-border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-glass);
+}
+
+.jigsaw__action:active {
+  transform: scale(0.97);
+}
+
+.jigsaw__action:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.jigsaw__action--primary {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.jigsaw__note {
+  margin: 0.9rem 0 0;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+/* Intro */
+
+.jigsaw__fan {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  container-type: size;
+}
+
+.jigsaw__fan::before {
+  content: "";
+  position: absolute;
+  inset: 6% -10%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--paint, #3a3a44) 55%, transparent), transparent);
+  opacity: 0.7;
+}
+
+.jigsaw__fan-piece {
+  position: absolute;
+  left: calc(50% + var(--x));
+  top: calc(50% + var(--y));
+  width: min(32cqw, calc(46cqh * var(--piece-aspect)));
+  aspect-ratio: var(--piece-aspect);
+  translate: -50% -50%;
+  rotate: var(--turn);
+  filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.6));
+  animation:
+    jigsaw-fan-in 0.7s var(--ease-spring) backwards,
+    jigsaw-bob 5s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 90ms), calc(var(--i) * -1.1s);
+}
+
+.jigsaw__fan-piece:nth-child(3) {
+  z-index: 1;
+}
+
+.jigsaw__fan-piece canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.jigsaw__intro-copy {
+  flex: none;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.jigsaw__title {
+  margin: 0.5rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.jigsaw__rules {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Play */
+
+.jigsaw__play {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top, 0px) 0.75rem 0;
+}
+
+/* Tall enough for the kicker above the timer, with room at the top. */
+
+.jigsaw__play > .jigsaw__bar {
+  height: auto;
+  min-height: 3rem;
+  padding: 0.7rem 0 0.4rem;
+}
+
+.jigsaw__clock {
+  display: grid;
+  justify-items: center;
+  gap: 0.1rem;
+  padding: 0;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.jigsaw__clock:disabled {
+  cursor: default;
+}
+
+.jigsaw__time {
+  font-size: 1.65rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Feedback sits outside the clipped surface, so labels can float past the edge. */
+
+.jigsaw__skip {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Dock: progress, tools and the tray */
+
+.jigsaw__progress {
+  flex: 1;
+  height: 4px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.jigsaw__progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--text-secondary), var(--text-primary));
+  transition: width 0.45s var(--ease-spring);
+}
+
+.jigsaw__count {
+  min-width: 2.6rem;
+  font-size: 0.8rem;
+  text-align: right;
+  color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.jigsaw__tool {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: var(--text-primary);
+  background: var(--glass-l3-bg);
+  border: 1px solid var(--glass-l3-border);
+  border-radius: var(--radius-button);
+  cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform var(--duration-fast) var(--ease-glass),
+    opacity var(--duration-fast) var(--ease-glass);
+}
+
+.jigsaw__tool:active:not(:disabled) {
+  transform: scale(0.92);
+  background: var(--glass-l2-border);
+}
+
+.jigsaw__tool:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Paused: fully blurred, so the pause can't be used to study the painting. */
+
+.jigsaw__pause {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  background: rgba(5, 5, 5, 0.35);
+}
+
+.jigsaw__pause-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.jigsaw__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Result */
+
+.jigsaw__result {
+  display: block;
+  overflow-y: auto;
+}
+
+.jigsaw__frame {
+  margin: 0.25rem 0 0;
+  padding: 0.5rem;
+  background: var(--glass-l2-bg);
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-card);
+  animation: glass-reveal var(--duration-slow) var(--ease-glass) both;
+}
+
+.jigsaw__frame-link {
+  display: grid;
+  place-items: center;
+}
+
+.jigsaw__frame img {
+  display: block;
+  width: 100%;
+  max-height: 44vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.jigsaw__caption {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.6rem 0.25rem 0.2rem;
+  text-align: center;
+}
+
+.jigsaw__caption-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.jigsaw__caption-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.jigsaw__summary {
+  text-align: center;
+  padding: 1.25rem 0 1.25rem;
+  animation: glass-reveal var(--duration-slow) var(--ease-glass) 0.1s both;
+}
+
+.jigsaw__score {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+.jigsaw__rank {
+  margin: 0.4rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+.jigsaw__versus {
+  margin: 1rem 0 0;
+  font-weight: 500;
+}
+
+.jigsaw__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.jigsaw__sizes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+  animation: glass-reveal var(--duration-normal) var(--ease-glass) both;
+}
+
+.jigsaw__size {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.5rem;
+  color: var(--text-primary);
+  background: var(--glass-l2-bg);
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-glass);
+}
+
+.jigsaw__size:active {
+  transform: scale(0.97);
+}
+
+.jigsaw__size-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.jigsaw__size-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.jigsaw__footer {
+  padding: 1rem 0 0.5rem;
+  text-align: center;
+  border-top: 1px solid var(--glass-l1-border);
+}
+
+.jigsaw__totals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.jigsaw__totals dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.jigsaw__totals dd {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-variant-numeric: lining-nums;
+}
+
+/* Games hub */
+
+.games {
+  min-height: 100dvh;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: calc(env(safe-area-inset-top, 0px) + 1.5rem) 1rem calc(7rem + env(safe-area-inset-bottom, 0px));
+  color: var(--text-primary);
+}
+
+.games__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.games__lead {
+  margin: 0.4rem 0 1.5rem;
+  color: var(--text-secondary);
+}
+
+.games__list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.games__card {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--glass-shadow);
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.games__card:active {
+  transform: scale(0.985);
+}
+
+.games__art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-glass);
+}
+
+.games__card:hover .games__art {
+  transform: scale(1.03);
+}
+
+/* Today's painting stays hidden until it has been played. */
+
+.games__art--hidden,
+.games__card:hover .games__art--hidden {
+  filter: blur(22px) saturate(1.15);
+  transform: scale(1.2);
+}
+
+.games__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.55) 45%, transparent 75%);
+}
+
+.games__copy {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+}
+
+.games__name {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.games__blurb {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.games__state {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.games__streak {
+  color: var(--text-tertiary);
+}
+
+/* Portrait: two thirds of any spare height sits above the board, nearer the thumb. */
+
+/* Desktop: board on the left, tools and tray in a right rail */
+
+/* Keeps the board large on short phones. */
+
+@keyframes jigsaw-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes jigsaw-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes jigsaw-sheen {
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes jigsaw-fan-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+@keyframes jigsaw-bob {
+  from {
+    transform: translateY(-1.5%);
+  }
+  to {
+    transform: translateY(1.5%);
+  }
+}
+
+.jigsaw__stats {
+  margin: 0.35rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.jigsaw__marker {
+  margin-left: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* The table: pieces lie straight on the page, with no frame around them. */
+.jigsaw__stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.jigsaw__table {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.jigsaw__table.is-live {
+  cursor: grab;
+}
+
+/* Everything the camera moves. Its transform is written directly during gestures. */
+.jigsaw__world {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+}
+
+/* A held chunk can overhang the whole table, including the dock, unless zoomed in. */
+.jigsaw__stage.is-holding {
+  z-index: 3;
+}
+
+.jigsaw__stage.is-holding .jigsaw__table:not(.is-zoomed) {
+  overflow: visible;
+}
+
+.jigsaw__table.is-zoomed.is-live {
+  cursor: move;
+}
+
+/* Zoom buttons float over the table's corner. */
+.jigsaw__zoom {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.1rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 2.4rem;
+  background: rgba(20, 20, 20, 0.62);
+  backdrop-filter: blur(var(--glass-l3-blur));
+  -webkit-backdrop-filter: blur(var(--glass-l3-blur));
+  border: 1px solid var(--glass-l2-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--glass-shadow);
+}
+
+.jigsaw__zoom button {
+  width: 2.4rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--text-primary);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: opacity var(--duration-fast) var(--ease-glass);
+}
+
+.jigsaw__zoom button:disabled {
+  opacity: 0.32;
+  cursor: default;
+}
+
+.jigsaw__zoom button:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: -3px;
+}
+
+.jigsaw__zoom-level {
+  font-size: 0.68rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+
+/* The faded painting, used for the opening preview and for the Guide. */
+.jigsaw__sheet {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.jigsaw__sheet img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.jigsaw__sheet.is-reveal img,
+.jigsaw__sheet.is-peek img {
+  opacity: 1;
+}
+
+.jigsaw__sheet.is-guide img {
+  opacity: 0.16;
+  transition: opacity 0.6s var(--ease-glass);
+}
+
+.jigsaw__sheet.is-finish img {
+  opacity: 0;
+  animation: jigsaw-fade-in 0.5s var(--ease-glass) 1.05s forwards;
+}
+
+.jigsaw__cuts {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.jigsaw__cuts path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-linecap: round;
+}
+
+.jigsaw__table.is-preview .jigsaw__cuts {
+  opacity: 0;
+}
+
+.jigsaw__table.is-cut .jigsaw__cuts {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.55));
+}
+
+.jigsaw__table.is-cut .jigsaw__cuts path {
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: jigsaw-draw 0.55s var(--ease-glass) forwards;
+}
+
+.jigsaw__sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 34%, rgba(255, 255, 255, 0.38) 50%, transparent 66%);
+  transform: translateX(-110%);
+  animation: jigsaw-sheen 0.75s ease-in-out 1.45s forwards;
+}
+
+/* A chunk is one element the size of the board, moved by its transform. */
+.jigsaw__group {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.jigsaw__group.is-hidden {
+  visibility: hidden;
+}
+
+.jigsaw__group.is-held {
+  will-change: transform;
+}
+
+.jigsaw__table.is-scatter .jigsaw__group {
+  transition: transform 0.65s var(--ease-glass) var(--delay);
+}
+
+.jigsaw__table.is-tidying .jigsaw__group {
+  transition: transform 0.3s var(--ease-glass);
+}
+
+.jigsaw__table.is-settling .jigsaw__group {
+  transition: transform 0.35s var(--ease-glass);
+}
+
+.jigsaw__group-body {
+  position: absolute;
+  inset: 0;
+  transition:
+    filter 0.15s var(--ease-glass),
+    transform 0.15s var(--ease-spring);
+}
+
+.jigsaw__group.is-held .jigsaw__group-body {
+  transform: scale(1.03);
+  filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.5));
+}
+
+.jigsaw__group.is-selected .jigsaw__group-body {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 9px rgba(255, 236, 190, 0.6))
+    drop-shadow(0 8px 8px rgba(0, 0, 0, 0.45));
+}
+
+.jigsaw__group.is-fresh .jigsaw__group-body {
+  animation: jigsaw-snap 0.5s var(--ease-glass);
+}
+
+.jigsaw__piece {
+  position: absolute;
+  display: block;
+}
+
+.jigsaw__piece.is-wave {
+  animation: jigsaw-wave 0.6s ease-in-out var(--wave) both;
+}
+
+.jigsaw__glow-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.jigsaw__glow {
+  fill: none;
+  stroke: rgba(255, 232, 186, 0.95);
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(255, 214, 140, 0.9));
+  animation: jigsaw-glow 0.5s ease-out forwards;
+}
+
+.jigsaw__peek {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: rgba(5, 5, 5, 0.82);
+  opacity: 0;
+  transition: opacity 0.12s var(--ease-glass);
+}
+
+.jigsaw__peek.is-on {
+  opacity: 1;
+}
+
+/* Dock: one slim row under the table */
+.jigsaw__dock {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0 calc(0.6rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Desktop: the dock is a centred row under the table, so the table gets the full width. */
+@media (min-width: 900px) and (orientation: landscape) {
+  .jigsaw__play {
+    padding: env(safe-area-inset-top, 0px) 2rem 0;
+  }
+
+  .jigsaw__dock {
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  .jigsaw__progress {
+    flex: 0 1 24rem;
+  }
+}
+
+/* Keeps the table large on short phones. */
+@media (max-height: 680px) {
+  .jigsaw__bar {
+    height: 2.75rem;
+  }
+
+  .jigsaw__play > .jigsaw__bar {
+    height: auto;
+    min-height: 2.75rem;
+    padding: 0.45rem 0 0.25rem;
+  }
+
+  .jigsaw__time {
+    font-size: 1.35rem;
+  }
+
+  .jigsaw__dock {
+    padding: 0.25rem 0 calc(0.4rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .jigsaw__tool {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .jigsaw__fan-piece {
+    width: min(26cqw, calc(40cqh * var(--piece-aspect)));
+  }
+
+  .jigsaw__title {
+    font-size: 2.2rem;
+  }
+}
+
+@keyframes jigsaw-snap {
+  0% {
+    filter: brightness(1.5);
+    transform: scale(1.02);
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes jigsaw-glow {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes jigsaw-wave {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: translateY(0);
+  }
+  45% {
+    filter: brightness(1.3);
+    transform: translateY(-2.5%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jigsaw__fan-piece,
+  .jigsaw__frame,
+  .jigsaw__summary,
+  .jigsaw__sizes,
+  .jigsaw__group.is-fresh .jigsaw__group-body,
+  .jigsaw__piece.is-wave,
+  .jigsaw__glow {
+    animation: none;
+  }
+
+  .jigsaw__sheet.is-finish img {
+    animation-delay: 0s;
+    animation-duration: 0.3s;
+  }
+
+  .jigsaw__sheen {
+    display: none;
+  }
+
+  .jigsaw__table .jigsaw__group,
+  .jigsaw__group-body,
+  .jigsaw__sheet.is-guide img,
+  .jigsaw__progress span,
+  .games__art,
+  .games__card {
+    transition: none !important;
+  }
+}

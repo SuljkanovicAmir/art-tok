@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { History } from "lucide-react";
+import { Puzzle } from "lucide-react";
 
 const navItems = [
   {
@@ -48,10 +48,10 @@ const navItems = [
     ),
   },
   {
-    path: "/timeline",
-    label: "Timeline game",
-    activeIcon: <History strokeWidth={2.6} />,
-    inactiveIcon: <History strokeWidth={1.8} />,
+    path: "/games",
+    label: "Games",
+    activeIcon: <Puzzle strokeWidth={2.6} />,
+    inactiveIcon: <Puzzle strokeWidth={1.8} />,
   },
   {
     path: "/liked",
@@ -72,8 +72,8 @@ const navItems = [
 export default function BottomNav() {
   const location = useLocation();
 
-  // The game is full screen, and the nav would sit under the card being dragged.
-  if (location.pathname.startsWith("/timeline")) return null;
+  // The games are full screen, and the nav would sit under the piece being dragged.
+  if (location.pathname.startsWith("/timeline") || location.pathname.startsWith("/jigsaw")) return null;
 
   return (
     <nav className="bottom-nav glass-noise" aria-label="Main navigation">

@@ -1,4 +1,4 @@
-import type { Challenge, PlacedPainting, TimelinePainting, TimelineRecord } from "../../types/timeline";
+import type { Challenge, PlacedPainting, TimelinePainting } from "../../types/timeline";
 
 /** One starting painting plus seven for the player to place */
 export const ROUND_SIZE = 8;
@@ -15,7 +15,7 @@ export function puzzleNumber(now: Date): number {
   return Math.floor((day - FIRST_PUZZLE_DAY) / DAY_MS) + 1;
 }
 
-function seededRandom(seed: number): () => number {
+export function seededRandom(seed: number): () => number {
   let state = seed >>> 0;
   return () => {
     state = (state + 0x6d2b79f5) >>> 0;
@@ -58,7 +58,7 @@ export function rankForScore(score: number): string {
   return "Time Traveller";
 }
 
-export function currentStreak(records: Record<string, TimelineRecord>, today: number): number {
+export function currentStreak(records: Record<string, unknown>, today: number): number {
   let day = records[today] ? today : today - 1;
   let streak = 0;
   while (records[day]) {

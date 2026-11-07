@@ -1,0 +1,452 @@
+[
+  {
+    "id": 10150,
+    "title": "Merced River, Yosemite Valley",
+    "artist": "Albert Bierstadt",
+    "date": "1866",
+    "width": 1200,
+    "height": 861,
+    "color": "#998665"
+  },
+  {
+    "id": 10154,
+    "title": "The Rocky Mountains, Lander's Peak",
+    "artist": "Albert Bierstadt",
+    "date": "1863",
+    "width": 1200,
+    "height": 719,
+    "color": "#818375"
+  },
+  {
+    "id": 10158,
+    "title": "Sunrise on the Matterhorn",
+    "artist": "Albert Bierstadt",
+    "date": "after 1875",
+    "width": 875,
+    "height": 1200,
+    "color": "#755a59"
+  },
+  {
+    "id": 10464,
+    "title": "At the Seaside",
+    "artist": "William Merritt Chase",
+    "date": "ca. 1892",
+    "width": 1200,
+    "height": 714,
+    "color": "#9da1af"
+  },
+  {
+    "id": 10482,
+    "title": "The Parthenon",
+    "artist": "Frederic Edwin Church",
+    "date": "1871",
+    "width": 1200,
+    "height": 739,
+    "color": "#746346"
+  },
+  {
+    "id": 10499,
+    "title": "The Titan's Goblet",
+    "artist": "Thomas Cole",
+    "date": "1833",
+    "width": 1008,
+    "height": 1200,
+    "color": "#655842"
+  },
+  {
+    "id": 10501,
+    "title": "View on the Catskill—Early Autumn",
+    "artist": "Thomas Cole",
+    "date": "1836–37",
+    "width": 1200,
+    "height": 747,
+    "color": "#5d523f"
+  },
+  {
+    "id": 10589,
+    "title": "Wyoming Valley, Pennsylvania",
+    "artist": "Jasper Francis Cropsey",
+    "date": "1864",
+    "width": 1200,
+    "height": 737,
+    "color": "#b09974"
+  },
+  {
+    "id": 10786,
+    "title": "The Beeches",
+    "artist": "Asher Brown Durand",
+    "date": "1845",
+    "width": 959,
+    "height": 1200,
+    "color": "#52412d"
+  },
+  {
+    "id": 11051,
+    "title": "Hummingbird and Apple Blossoms",
+    "artist": "Martin Johnson Heade",
+    "date": "1875",
+    "width": 1200,
+    "height": 1034,
+    "color": "#796650"
+  },
+  {
+    "id": 11052,
+    "title": "Hummingbird and Passionflowers",
+    "artist": "Martin Johnson Heade",
+    "date": "ca. 1875–85",
+    "width": 798,
+    "height": 1200,
+    "color": "#61523c"
+  },
+  {
+    "id": 11121,
+    "title": "Flower Garden and Bungalow, Bermuda",
+    "artist": "Winslow Homer",
+    "date": "1899",
+    "width": 1200,
+    "height": 800,
+    "color": "#78846d"
+  },
+  {
+    "id": 11145,
+    "title": "The Veteran in a New Field",
+    "artist": "Winslow Homer",
+    "date": "1865",
+    "width": 1200,
+    "height": 758,
+    "color": "#7c6e45"
+  },
+  {
+    "id": 11229,
+    "title": "Delaware Water Gap",
+    "artist": "George Inness",
+    "date": "1861",
+    "width": 1200,
+    "height": 862,
+    "color": "#836435"
+  },
+  {
+    "id": 11310,
+    "title": "Hudson River Scene",
+    "artist": "John Frederick Kensett",
+    "date": "1857",
+    "width": 1200,
+    "height": 800,
+    "color": "#736642"
+  },
+  {
+    "id": 12132,
+    "title": "Market Place",
+    "artist": "John Singer Sargent",
+    "date": "1890s",
+    "width": 1200,
+    "height": 866,
+    "color": "#877a69"
+  },
+  {
+    "id": 12135,
+    "title": "Military Camp",
+    "artist": "John Singer Sargent",
+    "date": "1918",
+    "width": 1200,
+    "height": 782,
+    "color": "#b39985"
+  },
+  {
+    "id": 12168,
+    "title": "Temple of Bacchus, Baalbek",
+    "artist": "John Singer Sargent",
+    "date": "1906",
+    "width": 1200,
+    "height": 859,
+    "color": "#decaaf"
+  },
+  {
+    "id": 12388,
+    "title": "A Basket of Clams",
+    "artist": "Winslow Homer",
+    "date": "1873",
+    "width": 1006,
+    "height": 1200,
+    "color": "#a6947c"
+  },
+  {
+    "id": 12843,
+    "title": "Horseneck Falls",
+    "artist": "John Henry Twachtman",
+    "date": "ca. 1889–1900",
+    "width": 1004,
+    "height": 1200,
+    "color": "#747a68"
+  },
+  {
+    "id": 13180,
+    "title": "The Factory Village",
+    "artist": "Julian Alden Weir",
+    "date": "1897",
+    "width": 1200,
+    "height": 917,
+    "color": "#567a66"
+  },
+  {
+    "id": 13356,
+    "title": "Tennessee",
+    "artist": "Alexander H. Wyant",
+    "date": "1866",
+    "width": 1200,
+    "height": 783,
+    "color": "#7e7a70"
+  },
+  {
+    "id": 36492,
+    "title": "Storm below Mount Fuji",
+    "artist": "Katsushika Hokusai",
+    "date": "ca. 1830–32",
+    "width": 1200,
+    "height": 805,
+    "color": "#827770"
+  },
+  {
+    "id": 36608,
+    "title": "Cherry Blosson Viewing at Gotenyama",
+    "artist": "Torii Kiyonaga",
+    "date": "ca. 1784",
+    "width": 852,
+    "height": 1200,
+    "color": "#a2896d"
+  },
+  {
+    "id": 36669,
+    "title": "Perspective Print",
+    "artist": "Utagawa Toyoharu",
+    "date": "ca. 1780",
+    "width": 1200,
+    "height": 858,
+    "color": "#9c8068"
+  },
+  {
+    "id": 39799,
+    "title": "Under the Wave off Kanagawa",
+    "artist": "Katsushika Hokusai",
+    "date": "ca. 1830–32",
+    "width": 1200,
+    "height": 809,
+    "color": "#b9b3a4"
+  },
+  {
+    "id": 45287,
+    "title": "Concise Illustrated Biography of Monk Nichiren: Calming the Stormy Sea at Tsunoda in Exile to Sado Island",
+    "artist": "Utagawa Kuniyoshi",
+    "date": "1835–36",
+    "width": 1200,
+    "height": 769,
+    "color": "#727e80"
+  },
+  {
+    "id": 45294,
+    "title": "Twilight Moon at Ryōgoku Bridge",
+    "artist": "Utagawa Hiroshige",
+    "date": "Edo period",
+    "width": 1200,
+    "height": 761,
+    "color": "#9b988c"
+  },
+  {
+    "id": 51087,
+    "title": "Rain of the Fifth Month",
+    "artist": "Utagawa Kunisada",
+    "date": "19th century",
+    "width": 1200,
+    "height": 837,
+    "color": "#a29b88"
+  },
+  {
+    "id": 54384,
+    "title": "Water Scene",
+    "artist": "Utagawa Kuniyoshi",
+    "date": "1840",
+    "width": 1055,
+    "height": 1200,
+    "color": "#b6ad99"
+  },
+  {
+    "id": 54433,
+    "title": "Mystical Bird",
+    "artist": "Katsushika Hokusai",
+    "date": "1820–33",
+    "width": 974,
+    "height": 1200,
+    "color": "#ab9b88"
+  },
+  {
+    "id": 55433,
+    "title": "Sudden Shower over Shin-Ōhashi Bridge and Atake",
+    "artist": "Utagawa Hiroshige",
+    "date": "1857",
+    "width": 808,
+    "height": 1200,
+    "color": "#8c8a7f"
+  },
+  {
+    "id": 56689,
+    "title": "Kinryūsan Temple at Asakusa, from the series \"One Hundred Famous Views of Edo\"",
+    "artist": "Utagawa Hiroshige",
+    "date": "1856",
+    "width": 806,
+    "height": 1200,
+    "color": "#b99880"
+  },
+  {
+    "id": 435809,
+    "title": "The Harvesters",
+    "artist": "Pieter Bruegel the Elder",
+    "date": "1565",
+    "width": 1200,
+    "height": 884,
+    "color": "#8b6e49"
+  },
+  {
+    "id": 435839,
+    "title": "Piazza San Marco",
+    "artist": "Canaletto",
+    "date": "late 1720s",
+    "width": 1200,
+    "height": 740,
+    "color": "#636b63"
+  },
+  {
+    "id": 435882,
+    "title": "Still Life with Apples and a Pot of Primroses",
+    "artist": "Paul Cézanne",
+    "date": "ca. 1890",
+    "width": 1200,
+    "height": 951,
+    "color": "#5d7b76"
+  },
+  {
+    "id": 435908,
+    "title": "The Trojan Women Setting Fire to Their Fleet",
+    "artist": "Claude Lorrain",
+    "date": "ca. 1643",
+    "width": 1200,
+    "height": 827,
+    "color": "#69604c"
+  },
+  {
+    "id": 436121,
+    "title": "A Woman Seated beside a Vase of Flowers",
+    "artist": "Edgar Degas",
+    "date": "1865",
+    "width": 1200,
+    "height": 961,
+    "color": "#5b4f3b"
+  },
+  {
+    "id": 436528,
+    "title": "Irises",
+    "artist": "Vincent van Gogh",
+    "date": "1890",
+    "width": 1200,
+    "height": 952,
+    "color": "#a4afab"
+  },
+  {
+    "id": 436535,
+    "title": "Wheat Field with Cypresses",
+    "artist": "Vincent van Gogh",
+    "date": "1889",
+    "width": 1200,
+    "height": 941,
+    "color": "#77826f"
+  },
+  {
+    "id": 436819,
+    "title": "Mäda Primavesi",
+    "artist": "Gustav Klimt",
+    "date": "1912–13",
+    "width": 888,
+    "height": 1200,
+    "color": "#afa0a7"
+  },
+  {
+    "id": 436947,
+    "title": "Boating",
+    "artist": "Edouard Manet",
+    "date": "1874",
+    "width": 1200,
+    "height": 904,
+    "color": "#526861"
+  },
+  {
+    "id": 436966,
+    "title": "The Adoration of the Shepherds",
+    "artist": "Andrea Mantegna",
+    "date": "shortly after 1450",
+    "width": 1200,
+    "height": 881,
+    "color": "#544431"
+  },
+  {
+    "id": 437053,
+    "title": "The Afternoon Meal",
+    "artist": "Luis Meléndez",
+    "date": "ca. 1772",
+    "width": 1200,
+    "height": 825,
+    "color": "#413c26"
+  },
+  {
+    "id": 437299,
+    "title": "Jalais Hill, Pontoise",
+    "artist": "Camille Pissarro",
+    "date": "1867",
+    "width": 1200,
+    "height": 912,
+    "color": "#6e7762"
+  },
+  {
+    "id": 437430,
+    "title": "By the Seashore",
+    "artist": "Auguste Renoir",
+    "date": "1883",
+    "width": 950,
+    "height": 1200,
+    "color": "#55685f"
+  },
+  {
+    "id": 437654,
+    "title": "Circus Sideshow",
+    "artist": "Georges Seurat",
+    "date": "1887–88",
+    "width": 1200,
+    "height": 801,
+    "color": "#524746"
+  },
+  {
+    "id": 437658,
+    "title": "Study for \"A Sunday on La Grande Jatte\"",
+    "artist": "Georges Seurat",
+    "date": "1884",
+    "width": 1200,
+    "height": 817,
+    "color": "#6b6b5a"
+  },
+  {
+    "id": 438817,
+    "title": "The Dance Class",
+    "artist": "Edgar Degas",
+    "date": "1874",
+    "width": 1105,
+    "height": 1200,
+    "color": "#5b5843"
+  },
+  {
+    "id": 438822,
+    "title": "The Repast of the Lion",
+    "artist": "Henri Rousseau",
+    "date": "ca. 1907",
+    "width": 1200,
+    "height": 843,
+    "color": "#3e5050"
+  }
+]
