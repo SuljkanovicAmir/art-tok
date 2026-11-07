@@ -30,6 +30,7 @@ jobs:
       - run: npm run build
         env:
           VITE_HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
+          VITE_GOATCOUNTER_CODE: ${{ vars.VITE_GOATCOUNTER_CODE }}
 
       - name: Generate Pinterest RSS feed
         run: node scripts/prerender/generate-rss.mjs
