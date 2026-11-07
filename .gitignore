@@ -44,3 +44,4 @@ scripts/instagram-poster/temp/
 .claude-flow/
 .swarm/
 coverage/
+.playwright-mcp/

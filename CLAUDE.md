@@ -11,23 +11,9 @@
 - NEVER commit secrets, credentials, or .env files
 - Never add Co-Authored-By credits in commit messages
 
-## File Organization
-
-- `/src` — source (`/components`, `/pages`, `/hooks`, `/services`, `/stores`, `/types`, `/utils`)
-- `/tests` — test files
-- `/docs` — documentation and feature plans
-- `/scripts` — utility scripts (including `instagram-poster/`)
-
 ## Stack
 
-- Vite 6, React 19, TypeScript 5, @tanstack/react-query 5
-- Plain CSS — liquid glass design system, dark theme (#050505), BEM-like naming
-- 3 Art APIs: Harvard (API key), Met Museum (no key), Art Institute of Chicago (no key)
 - `VITE_HARVARD_API_KEY` — NEVER hardcode
-
-## Routes
-
-- `/` — feed, `/artwork/:source/:id` — detail, `/search`, `/liked`, `/categories`, `/categories/:facet/:value`
 
 ## Git (Gitflow)
 
@@ -36,23 +22,8 @@
 
 ## Build
 
-```bash
-npm install           # Install dependencies
-npm run dev           # Dev server
-npm run lint          # Lint (ALWAYS run after changes)
-tsc -b && vite build  # Build (run before committing)
-```
-
-## Instagram Poster
-
-```bash
-cd scripts/instagram-poster && npm install  # First time only
-node post.mjs --dry-run          # Test post (renders card, prints caption)
-node post.mjs --reel --dry-run   # Test reel (generates .mp4, needs ffmpeg)
-```
-
-- Requires `.env` with `IG_USER_ID`, `IG_ACCESS_TOKEN`, `META_APP_ID`, `META_APP_SECRET`
-- GitHub Actions runs 4x/day — see `.github/workflows/instagram-post.yml`
+- `npm run lint` — ALWAYS run after changes
+- `tsc -b && vite build` — run before committing
 
 ## Code Quality
 
@@ -66,9 +37,9 @@ node post.mjs --reel --dry-run   # Test reel (generates .mp4, needs ffmpeg)
 
 - AIC API returns 403 intermittently — always retry with fallback source
 - Met API is two-step: search returns IDs, then batch-fetch objects
-- `alt_text_custom` is FORBIDDEN on Instagram Reels — causes API error
 - All styles in single `src/App.css` — search there first, not per-component
 - `src/stores/` exists but is legacy (MobX) — not imported anywhere
+- Instagram poster details (CLI, env vars, Reels gotchas) live in `scripts/instagram-poster/CLAUDE.md`
 
 ## Concurrency
 
