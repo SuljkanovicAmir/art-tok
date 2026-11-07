@@ -22,6 +22,8 @@ on:
           - carousel
           - seasonal-post
           - seasonal-reel
+          - dry-run
+          - dry-run-reel
 
 permissions:
   contents: write
@@ -93,6 +95,8 @@ jobs:
             carousel)       node post.mjs --carousel ;;
             seasonal-post)  node post.mjs --seasonal ;;
             seasonal-reel)  node post.mjs --seasonal --reel ;;
+            dry-run)        node post.mjs --post --dry-run ;;
+            dry-run-reel)   node post.mjs --reel --dry-run ;;
             *)              node post.mjs ;;
           esac
 

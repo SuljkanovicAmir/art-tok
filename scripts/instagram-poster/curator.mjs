@@ -135,17 +135,21 @@ async function main() {
   let added = 0;
   let failed = 0;
 
+  // Targets and caps measure what can still be posted. Posted and skipped entries
+  // stay in the cache file, so counting them would block refills once it runs dry.
+  const usable = cache.filter((e) => !e.skip && !historySet.has(`${e.source}:${e.id}`));
+
   // Medium diversity: cap oil at 50% of total target
   const OIL_CAP = Math.floor(TARGET_PER_SOURCE * SOURCES.length * 0.5);
-  let oilCount = cache.filter((e) => /oil/i.test(e.medium || "")).length;
+  let oilCount = usable.filter((e) => /oil/i.test(e.medium || "")).length;
 
-  // Subject diversity: cap portraits at PORTRAIT_CAP_PCT of current cache size (dynamic).
+  // Subject diversity: cap portraits at PORTRAIT_CAP_PCT of usable entries (dynamic).
   // Tracked separately because the heuristic depends on title, not metadata fields.
-  let portraitCount = cache.filter(isPortrait).length;
+  let portraitCount = usable.filter(isPortrait).length;
 
   for (const { name, source, fn, totalPages } of SOURCES) {
     // Skip source if it already has enough entries in cache
-    const existingForSource = cache.filter((e) => e.source === source).length;
+    const existingForSource = usable.filter((e) => e.source === source).length;
     if (existingForSource >= TARGET_PER_SOURCE) {
       console.log(`\n\u2500\u2500 ${name} \u2500\u2500 (skipped, already ${existingForSource} cached)`);
       continue;
@@ -181,10 +185,10 @@ async function main() {
           continue;
         }
 
-        // Enforce portrait diversity cap (20% of current cache).
+        // Enforce portrait diversity cap (20% of usable entries).
         // Adding this entry would push portraits/(total+1) above the cap → skip.
         const isPortraitArt = isPortrait(art);
-        if (isPortraitArt && (portraitCount + 1) / (cache.length + 1) > PORTRAIT_CAP_PCT) {
+        if (isPortraitArt && (portraitCount + 1) / (usable.length + 1) > PORTRAIT_CAP_PCT) {
           skipPause = true;
           continue;
         }
@@ -294,6 +298,7 @@ async function main() {
 
         // Write immediately (crash-safe)
         cache.push(entry);
+        usable.push(entry);
         cacheKeys.add(key);
         saveCache(cache);
 

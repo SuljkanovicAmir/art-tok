@@ -8,6 +8,8 @@ import type {
 import type { ArtPiece } from "../types/art";
 
 const API_BASE = "https://collectionapi.metmuseum.org/public/collection/v1";
+/** /v1/search was retired 2026-10-01; v1.1 is paginated via offset and limit */
+const SEARCH_API = "https://collectionapi.metmuseum.org/public/collection/v1.1/search";
 
 /** Max concurrent object fetches per page to stay polite */
 const BATCH_SIZE = 8;
@@ -106,39 +108,14 @@ export class MetAdapter implements ArtSource {
   readonly name = "The Metropolitan Museum of Art";
   readonly id = "met" as const;
 
-  /** Cached highlight IDs so pagination is stable within a session */
-  private cachedHighlightIds: number[] | null = null;
-
-  /**
-   * Feed: search highlights with images, paginate through ID list.
-   * Met search returns ALL matching IDs at once; we cache them so page
-   * boundaries stay stable across paginated requests.
-   */
+  /** Feed: highlights with images, one API page per feed page. */
   async fetchFeed(options: ArtSourceFeedOptions): Promise<ArtSourceFeedResult> {
-    if (!this.cachedHighlightIds) {
-      const response = await fetch(
-        `${API_BASE}/search?hasImages=true&isHighlight=true&q=*`
-      );
-      if (!response.ok) throw new Error(`Met feed failed: ${response.status}`);
-
-      const data: MetSearchResponse = await response.json();
-      this.cachedHighlightIds = data.objectIDs ?? [];
-    }
-
-    const allIds = this.cachedHighlightIds;
-
-    // Use BATCH_SIZE as effective page size so we don't skip IDs
-    const effectiveSize = Math.min(options.size, BATCH_SIZE);
-    const start = (options.page - 1) * effectiveSize;
-    const pageIds = allIds.slice(start, start + effectiveSize);
-
-    const pieces = await batchFetchObjects(pageIds);
-
-    return {
-      pieces,
-      hasNext: start + effectiveSize < allIds.length,
-      total: allIds.length,
-    };
+    const params = new URLSearchParams({
+      hasImages: "true",
+      isHighlight: "true",
+      q: "*",
+    });
+    return this.fetchSearchPage(params, options, "feed");
   }
 
   async search(options: ArtSourceSearchOptions): Promise<ArtSourceFeedResult> {
@@ -160,21 +137,30 @@ export class MetAdapter implements ArtSource {
 
     params.set("q", queryParts.join(" ") || "*");
 
-    const response = await fetch(`${API_BASE}/search?${params.toString()}`);
-    if (!response.ok) throw new Error(`Met search failed: ${response.status}`);
+    return this.fetchSearchPage(params, options, "search");
+  }
 
-    const data: MetSearchResponse = await response.json();
-    const allIds = data.objectIDs ?? [];
-
+  /** Fetch one page of IDs from the paginated search API, then their objects. */
+  private async fetchSearchPage(
+    params: URLSearchParams,
+    options: ArtSourceFeedOptions,
+    label: string
+  ): Promise<ArtSourceFeedResult> {
+    // Use BATCH_SIZE as effective page size so we don't skip IDs
     const effectiveSize = Math.min(options.size, BATCH_SIZE);
     const start = (options.page - 1) * effectiveSize;
-    const pageIds = allIds.slice(start, start + effectiveSize);
+    params.set("limit", String(effectiveSize));
+    params.set("offset", String(start));
 
-    const pieces = await batchFetchObjects(pageIds);
+    const response = await fetch(`${SEARCH_API}?${params.toString()}`);
+    if (!response.ok) throw new Error(`Met ${label} failed: ${response.status}`);
+
+    const data: MetSearchResponse = await response.json();
+    const pieces = await batchFetchObjects(data.objectIDs ?? []);
 
     return {
       pieces,
-      hasNext: start + effectiveSize < allIds.length,
+      hasNext: start + effectiveSize < data.total,
       total: data.total,
     };
   }
