@@ -5,6 +5,7 @@ import ArtworkDetailPage from "./pages/ArtworkDetailPage";
 import SearchPage from "./pages/SearchPage";
 import LikedPage from "./pages/LikedPage";
 import CategoriesPage from "./pages/CategoriesPage";
+import TimelinePage from "./pages/TimelinePage";
 import BottomNav from "./components/BottomNav";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/liked" element={<LikedPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/categories/:facet/:value" element={<SearchPage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
       </Routes>
       <BottomNav />
     </>

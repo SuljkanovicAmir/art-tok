@@ -31,6 +31,10 @@ jobs:
         env:
           VITE_HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
 
+      # GitHub Pages has no server routing, so deep links need the app as a 404 fallback.
+      - name: Add single-page app fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Generate Pinterest RSS feed
         run: node scripts/prerender/generate-rss.mjs
 

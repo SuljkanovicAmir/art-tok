@@ -1,0 +1,434 @@
+[
+  {
+    "id": 438605,
+    "title": "The Crucifixion",
+    "artist": "Pietro Lorenzetti",
+    "year": 1344
+  },
+  {
+    "id": 436282,
+    "title": "The Crucifixion; The Last Judgment",
+    "artist": "Jan van Eyck",
+    "year": 1438
+  },
+  {
+    "id": 435896,
+    "title": "Portrait of a Carthusian",
+    "artist": "Petrus Christus",
+    "year": 1446
+  },
+  {
+    "id": 436892,
+    "title": "Madonna and Child",
+    "artist": "Filippino Lippi",
+    "year": 1484
+  },
+  {
+    "id": 435641,
+    "title": "Madonna and Child",
+    "artist": "Giovanni Bellini",
+    "year": 1489
+  },
+  {
+    "id": 435728,
+    "title": "The Last Communion of Saint Jerome",
+    "artist": "Botticelli",
+    "year": 1493
+  },
+  {
+    "id": 436101,
+    "title": "The Rest on the Flight into Egypt",
+    "artist": "Gerard David",
+    "year": 1515
+  },
+  {
+    "id": 436244,
+    "title": "Virgin and Child with Saint Anne",
+    "artist": "Albrecht Dürer",
+    "year": 1519
+  },
+  {
+    "id": 436658,
+    "title": "Hermann von Wedigh III",
+    "artist": "Hans Holbein the Younger",
+    "year": 1532
+  },
+  {
+    "id": 435809,
+    "title": "The Harvesters",
+    "artist": "Pieter Bruegel the Elder",
+    "year": 1565
+  },
+  {
+    "id": 679844,
+    "title": "Fish Market",
+    "artist": "Joachim Beuckelaer",
+    "year": 1568
+  },
+  {
+    "id": 435844,
+    "title": "The Musicians",
+    "artist": "Caravaggio",
+    "year": 1597
+  },
+  {
+    "id": 436575,
+    "title": "View of Toledo",
+    "artist": "El Greco",
+    "year": 1600
+  },
+  {
+    "id": 436622,
+    "title": "Merrymakers at Shrovetide",
+    "artist": "Frans Hals",
+    "year": 1617
+  },
+  {
+    "id": 436603,
+    "title": "Samson Captured by the Philistines",
+    "artist": "Guercino",
+    "year": 1619
+  },
+  {
+    "id": 435817,
+    "title": "The Crucifixion with the Virgin and Saint John",
+    "artist": "Hendrick ter Brugghen",
+    "year": 1625
+  },
+  {
+    "id": 439933,
+    "title": "Lute Player",
+    "artist": "Valentin de Boulogne",
+    "year": 1626
+  },
+  {
+    "id": 437423,
+    "title": "The Immaculate Conception",
+    "artist": "Guido Reni",
+    "year": 1627
+  },
+  {
+    "id": 437971,
+    "title": "The Young Virgin",
+    "artist": "Francisco de Zurbarán",
+    "year": 1633
+  },
+  {
+    "id": 437329,
+    "title": "The Abduction of the Sabine Women",
+    "artist": "Nicolas Poussin",
+    "year": 1634
+  },
+  {
+    "id": 438112,
+    "title": "Queen Henrietta Maria",
+    "artist": "Anthony van Dyck",
+    "year": 1636
+  },
+  {
+    "id": 435908,
+    "title": "The Trojan Women Setting Fire to Their Fleet",
+    "artist": "Claude Lorrain",
+    "year": 1643
+  },
+  {
+    "id": 437455,
+    "title": "The Holy Family with Saints Anne and Catherine of Alexandria",
+    "artist": "Jusepe de Ribera",
+    "year": 1648
+  },
+  {
+    "id": 437869,
+    "title": "Juan de Pareja",
+    "artist": "Velázquez",
+    "year": 1650
+  },
+  {
+    "id": 437394,
+    "title": "Aristotle with a Bust of Homer",
+    "artist": "Rembrandt",
+    "year": 1653
+  },
+  {
+    "id": 437326,
+    "title": "Blind Orion Searching for the Rising Sun",
+    "artist": "Nicolas Poussin",
+    "year": 1658
+  },
+  {
+    "id": 437397,
+    "title": "Self-Portrait",
+    "artist": "Rembrandt",
+    "year": 1660
+  },
+  {
+    "id": 437879,
+    "title": "Study of a Young Woman",
+    "artist": "Johannes Vermeer",
+    "year": 1667
+  },
+  {
+    "id": 437926,
+    "title": "Mezzetin",
+    "artist": "Antoine Watteau",
+    "year": 1720
+  },
+  {
+    "id": 435839,
+    "title": "Piazza San Marco",
+    "artist": "Canaletto",
+    "year": 1729
+  },
+  {
+    "id": 435888,
+    "title": "Soap Bubbles",
+    "artist": "Jean Siméon Chardin",
+    "year": 1734
+  },
+  {
+    "id": 435739,
+    "title": "The Toilette of Venus",
+    "artist": "François Boucher",
+    "year": 1751
+  },
+  {
+    "id": 437790,
+    "title": "Allegory of the Planets and Continents",
+    "artist": "Giovanni Battista Tiepolo",
+    "year": 1752
+  },
+  {
+    "id": 436579,
+    "title": "Broken Eggs",
+    "artist": "Jean-Baptiste Greuze",
+    "year": 1756
+  },
+  {
+    "id": 437053,
+    "title": "The Afternoon Meal",
+    "artist": "Luis Meléndez",
+    "year": 1772
+  },
+  {
+    "id": 441769,
+    "title": "Virgil's Tomb by Moonlight, with Silius Italicus Declaiming",
+    "artist": "Joseph Wright",
+    "year": 1779
+  },
+  {
+    "id": 437447,
+    "title": "Captain George K. H. Coussmaker",
+    "artist": "Sir Joshua Reynolds",
+    "year": 1782
+  },
+  {
+    "id": 436840,
+    "title": "Self-Portrait with Two Pupils, Marie Gabrielle Capet",
+    "artist": "Adélaïde Labille-Guiard",
+    "year": 1785
+  },
+  {
+    "id": 436105,
+    "title": "The Death of Socrates",
+    "artist": "Jacques Louis David",
+    "year": 1787
+  },
+  {
+    "id": 436440,
+    "title": "Cottage Children",
+    "artist": "Thomas Gainsborough",
+    "year": 1787
+  },
+  {
+    "id": 436106,
+    "title": "Antoine Laurent Lavoisier",
+    "artist": "Jacques Louis David",
+    "year": 1788
+  },
+  {
+    "id": 436545,
+    "title": "Manuel Osorio Manrique de Zuñiga",
+    "artist": "Goya",
+    "year": 1788
+  },
+  {
+    "id": 437900,
+    "title": "Comtesse de la Châtre",
+    "artist": "Elisabeth Louise Vigée Le Brun",
+    "year": 1789
+  },
+  {
+    "id": 436851,
+    "title": "Elizabeth Farren",
+    "artist": "Sir Thomas Lawrence",
+    "year": 1790
+  },
+  {
+    "id": 435962,
+    "title": "Hagar in the Wilderness",
+    "artist": "Camille Corot",
+    "year": 1835
+  },
+  {
+    "id": 438814,
+    "title": "The Abduction of Rebecca",
+    "artist": "Eugène Delacroix",
+    "year": 1846
+  },
+  {
+    "id": 438820,
+    "title": "Young Ladies of the Village",
+    "artist": "Gustave Courbet",
+    "year": 1852
+  },
+  {
+    "id": 435702,
+    "title": "The Horse Fair",
+    "artist": "Rosa Bonheur",
+    "year": 1855
+  },
+  {
+    "id": 436944,
+    "title": "The Spanish Singer",
+    "artist": "Edouard Manet",
+    "year": 1860
+  },
+  {
+    "id": 436095,
+    "title": "The Third-Class Carriage",
+    "artist": "Honoré Daumier",
+    "year": 1864
+  },
+  {
+    "id": 437153,
+    "title": "Oedipus and the Sphinx",
+    "artist": "Gustave Moreau",
+    "year": 1864
+  },
+  {
+    "id": 436121,
+    "title": "A Woman Seated beside a Vase of Flowers",
+    "artist": "Edgar Degas",
+    "year": 1865
+  },
+  {
+    "id": 436002,
+    "title": "Woman with a Parrot",
+    "artist": "Gustave Courbet",
+    "year": 1866
+  },
+  {
+    "id": 437299,
+    "title": "Jalais Hill, Pontoise",
+    "artist": "Camille Pissarro",
+    "year": 1867
+  },
+  {
+    "id": 440723,
+    "title": "Bashi-Bazouk",
+    "artist": "Jean-Léon Gérôme",
+    "year": 1869
+  },
+  {
+    "id": 436947,
+    "title": "Boating",
+    "artist": "Edouard Manet",
+    "year": 1874
+  },
+  {
+    "id": 438817,
+    "title": "The Dance Class",
+    "artist": "Edgar Degas",
+    "year": 1874
+  },
+  {
+    "id": 438815,
+    "title": "Madame Georges Charpentier",
+    "artist": "Auguste Renoir",
+    "year": 1878
+  },
+  {
+    "id": 435621,
+    "title": "Joan of Arc",
+    "artist": "Jules Bastien-Lepage",
+    "year": 1879
+  },
+  {
+    "id": 437430,
+    "title": "By the Seashore",
+    "artist": "Auguste Renoir",
+    "year": 1883
+  },
+  {
+    "id": 437658,
+    "title": "Study for \"A Sunday on La Grande Jatte\"",
+    "artist": "Georges Seurat",
+    "year": 1884
+  },
+  {
+    "id": 436532,
+    "title": "Self-Portrait with a Straw Hat",
+    "artist": "Vincent van Gogh",
+    "year": 1887
+  },
+  {
+    "id": 437654,
+    "title": "Circus Sideshow",
+    "artist": "Georges Seurat",
+    "year": 1888
+  },
+  {
+    "id": 436535,
+    "title": "Wheat Field with Cypresses",
+    "artist": "Vincent van Gogh",
+    "year": 1889
+  },
+  {
+    "id": 435876,
+    "title": "Madame Cézanne",
+    "artist": "Paul Cézanne",
+    "year": 1890
+  },
+  {
+    "id": 436528,
+    "title": "Irises",
+    "artist": "Vincent van Gogh",
+    "year": 1890
+  },
+  {
+    "id": 437344,
+    "title": "The Shepherd's Song",
+    "artist": "Pierre Puvis de Chavannes",
+    "year": 1891
+  },
+  {
+    "id": 438821,
+    "title": "Ia Orana Maria",
+    "artist": "Paul Gauguin",
+    "year": 1891
+  },
+  {
+    "id": 435868,
+    "title": "The Card Players",
+    "artist": "Paul Cézanne",
+    "year": 1892
+  },
+  {
+    "id": 437835,
+    "title": "The Englishman",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": 1892
+  },
+  {
+    "id": 634108,
+    "title": "The Dream of the Shepherd",
+    "artist": "Ferdinand Hodler",
+    "year": 1896
+  },
+  {
+    "id": 436819,
+    "title": "Mäda Primavesi",
+    "artist": "Gustav Klimt",
+    "year": 1913
+  }
+]

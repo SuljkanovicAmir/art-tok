@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { History } from "lucide-react";
 
 const navItems = [
   {
@@ -47,6 +48,12 @@ const navItems = [
     ),
   },
   {
+    path: "/timeline",
+    label: "Timeline game",
+    activeIcon: <History strokeWidth={2.6} />,
+    inactiveIcon: <History strokeWidth={1.8} />,
+  },
+  {
     path: "/liked",
     label: "Liked",
     activeIcon: (
@@ -64,6 +71,9 @@ const navItems = [
 
 export default function BottomNav() {
   const location = useLocation();
+
+  // The game is full screen, and the nav would sit under the card being dragged.
+  if (location.pathname.startsWith("/timeline")) return null;
 
   return (
     <nav className="bottom-nav glass-noise" aria-label="Main navigation">
