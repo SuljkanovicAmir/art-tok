@@ -7,8 +7,11 @@ import LikedPage from "./pages/LikedPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import TimelinePage from "./pages/TimelinePage";
 import BottomNav from "./components/BottomNav";
+import { usePageViewTracking } from "./hooks/usePageViewTracking";
 
 function App() {
+  usePageViewTracking();
+
   return (
     <>
       <Routes>

@@ -30,6 +30,7 @@ jobs:
       - run: npm run build
         env:
           VITE_HARVARD_API_KEY: ${{ secrets.VITE_HARVARD_API_KEY }}
+          VITE_GOATCOUNTER_CODE: ${{ vars.VITE_GOATCOUNTER_CODE }}
 
       # GitHub Pages has no server routing, so deep links need the app as a 404 fallback.
       - name: Add single-page app fallback
