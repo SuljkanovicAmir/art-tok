@@ -10024,5 +10024,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-10T15:26:53.926Z",
+    "mediaId": "17986942254104890",
+    "artKey": "harvard:229328",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Woman",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 175,
+    "cardSizeKB": 393,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
