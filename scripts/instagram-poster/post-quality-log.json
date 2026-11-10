@@ -10046,5 +10046,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-10T22:10:19.776Z",
+    "mediaId": "17914967298508452",
+    "artKey": "met:340952",
+    "source": "met",
+    "mode": "post",
+    "title": "The Entombment",
+    "artist": "Sir Edward Burne-Jones",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 377,
+    "cardSizeKB": 264,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
