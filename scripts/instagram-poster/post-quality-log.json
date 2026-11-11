@@ -10068,5 +10068,27 @@
       "hasDescription": false,
       "hasCulture": false
     }
+  },
+  {
+    "timestamp": "2026-11-11T23:21:20.656Z",
+    "mediaId": "18375247171214192",
+    "artKey": "harvard:227074",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Bell Tower at Bazancourt",
+    "artist": "Camille Pissarro",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 322,
+    "cardSizeKB": 276,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
