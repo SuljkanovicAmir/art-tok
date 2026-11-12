@@ -10090,5 +10090,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-12T15:49:04.193Z",
+    "mediaId": "18456690700193389",
+    "artKey": "harvard:311560",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Gulf Stream",
+    "artist": "Hermann Dudley Murphy",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 248,
+    "cardSizeKB": 178,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
