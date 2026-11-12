@@ -10112,5 +10112,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-12T22:36:52.454Z",
+    "mediaId": "18237506908321928",
+    "artKey": "harvard:230947",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Farm Landscape with Mountains",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 261,
+    "cardSizeKB": 274,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
