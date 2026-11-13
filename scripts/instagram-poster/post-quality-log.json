@@ -10156,5 +10156,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-13T22:24:46.889Z",
+    "mediaId": "18119164946584702",
+    "artKey": "harvard:333048",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Moose Hill from the Saco River",
+    "artist": "Russell Smith",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 138,
+    "cardSizeKB": 185,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
