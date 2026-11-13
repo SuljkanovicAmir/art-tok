@@ -10134,5 +10134,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-13T15:09:24.659Z",
+    "mediaId": "18155347459535762",
+    "artKey": "harvard:230035",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Study for \"The Sleeping Beauty\": Head of a Maiden",
+    "artist": "Edward Burne-Jones",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 368,
+    "cardSizeKB": 401,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
