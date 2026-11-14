@@ -10222,5 +10222,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-14T23:42:04.478Z",
+    "mediaId": "18130732153830810",
+    "artKey": "harvard:230550",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Toilet of Venus, after Jan van Lys",
+    "artist": "Carl Peter Teigen, Johann Liss",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 176,
+    "cardSizeKB": 195,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
