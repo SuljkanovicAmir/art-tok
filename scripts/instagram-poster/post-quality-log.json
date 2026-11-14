@@ -10178,5 +10178,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-14T13:59:11.279Z",
+    "mediaId": "17982069822138191",
+    "artKey": "harvard:318914",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Two Men",
+    "artist": "Moses B. Russell",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 132,
+    "cardSizeKB": 197,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
