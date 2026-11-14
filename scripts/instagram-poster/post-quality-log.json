@@ -10200,5 +10200,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-14T19:01:51.565Z",
+    "mediaId": "18133052581788974",
+    "artKey": "harvard:230743",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "Baptism of Christ, after Verrocchio",
+    "artist": "Robert David Gauley, Andrea del Verrocchio",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 147,
+    "cardSizeKB": 527,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
