@@ -10266,5 +10266,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-15T20:52:10.203Z",
+    "mediaId": "18128809462918099",
+    "artKey": "harvard:311159",
+    "source": "harvard",
+    "mode": "carousel",
+    "title": "Paysage Exotique",
+    "artist": "Christopher R. W. Nevinson",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 360,
+    "cardSizeKB": 0,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
