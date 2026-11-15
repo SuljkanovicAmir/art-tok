@@ -10244,5 +10244,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-15T14:33:27.308Z",
+    "mediaId": "17992926890866760",
+    "artKey": "harvard:311921",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Seascape",
+    "artist": "Robert David Gauley",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 165,
+    "cardSizeKB": 155,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
