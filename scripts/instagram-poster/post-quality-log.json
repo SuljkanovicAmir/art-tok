@@ -10288,5 +10288,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-16T16:48:22.368Z",
+    "mediaId": "18117188363110020",
+    "artKey": "harvard:228704",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Marchesa Simonetti",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 133,
+    "cardSizeKB": 175,
+    "metadataScore": 71,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": false
+    }
   }
 ]
