@@ -10332,5 +10332,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-17T16:44:42.870Z",
+    "mediaId": "17913988548577816",
+    "artKey": "harvard:227834",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Benjamin Clark (1776-1863)",
+    "artist": "Asahel Lynde Powers",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 269,
+    "cardSizeKB": 144,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
