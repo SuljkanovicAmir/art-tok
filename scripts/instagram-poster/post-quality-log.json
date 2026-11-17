@@ -10354,5 +10354,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-17T23:46:46.792Z",
+    "mediaId": "17911022289329422",
+    "artKey": "harvard:232277",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Family Home",
+    "artist": "Unidentified Artist",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 149,
+    "cardSizeKB": 323,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
