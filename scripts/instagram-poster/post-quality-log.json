@@ -10376,5 +10376,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-18T16:14:51.334Z",
+    "mediaId": "18042702395899196",
+    "artKey": "harvard:227820",
+    "source": "harvard",
+    "mode": "post",
+    "title": "The Gamesters, after Matthew William Peters",
+    "artist": "Benjamin Franklin Eddy, Matthew William Peters",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 191,
+    "cardSizeKB": 132,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
