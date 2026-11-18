@@ -10398,5 +10398,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-18T23:17:54.507Z",
+    "mediaId": "18144301345623109",
+    "artKey": "harvard:333003",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Mizhakwad (The Clear Sky), Ojibwe delegate",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 185,
+    "cardSizeKB": 282,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
