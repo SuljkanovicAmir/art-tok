@@ -10442,5 +10442,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-19T23:27:38.821Z",
+    "mediaId": "18427333921156661",
+    "artKey": "harvard:227841",
+    "source": "harvard",
+    "mode": "reel",
+    "title": "La Zingarella, after Correggio",
+    "artist": "Unidentified Artist, Correggio (Antonio Allegri)",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 199,
+    "cardSizeKB": 409,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
