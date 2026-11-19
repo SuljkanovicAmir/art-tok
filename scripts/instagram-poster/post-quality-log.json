@@ -10420,5 +10420,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-19T16:23:04.724Z",
+    "mediaId": "18137479645641643",
+    "artKey": "harvard:311061",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Clarke Gayton Pickman (1791-1860)",
+    "artist": "Albert Gallatin Hoit, Clarke Gayton Pickman",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 171,
+    "cardSizeKB": 127,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
