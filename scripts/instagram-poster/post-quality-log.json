@@ -10464,5 +10464,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-20T15:57:25.344Z",
+    "mediaId": "18130935769893926",
+    "artKey": "harvard:227822",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Still Life with Game Birds",
+    "artist": "Paul Cézanne",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 452,
+    "cardSizeKB": 194,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
