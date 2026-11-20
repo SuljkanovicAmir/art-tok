@@ -10486,5 +10486,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-20T22:58:57.900Z",
+    "mediaId": "18058939064607693",
+    "artKey": "harvard:333013",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[Wadt-he-doo-kanna]",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 133,
+    "cardSizeKB": 164,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
