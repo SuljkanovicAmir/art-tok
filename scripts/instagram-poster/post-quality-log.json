@@ -10530,5 +10530,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-21T22:03:30.387Z",
+    "mediaId": "18103396235384360",
+    "artKey": "harvard:230822",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Man",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 283,
+    "cardSizeKB": 151,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
