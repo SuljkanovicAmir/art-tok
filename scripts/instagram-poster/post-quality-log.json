@@ -10508,5 +10508,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-21T15:07:51.814Z",
+    "mediaId": "18060601259803384",
+    "artKey": "harvard:231857",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Frater Spiridion",
+    "artist": "James Naumburg Rosenberg",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 143,
+    "cardSizeKB": 375,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
