@@ -10574,5 +10574,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-22T21:36:04.995Z",
+    "mediaId": "18006638934008620",
+    "artKey": "harvard:230332",
+    "source": "harvard",
+    "mode": "carousel",
+    "title": "Nocturne in Black and Gold: Rag Shop, Chelsea",
+    "artist": "James Abbott McNeill Whistler",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 488,
+    "cardSizeKB": 0,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
