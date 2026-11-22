@@ -10552,5 +10552,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-22T15:05:14.515Z",
+    "mediaId": "18656555932034216",
+    "artKey": "harvard:230543",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Portrait of a Seated Young Man",
+    "artist": "Denman Waldo Ross",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 262,
+    "cardSizeKB": 170,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
