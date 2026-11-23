@@ -10596,5 +10596,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-23T19:01:18.089Z",
+    "mediaId": "18092161871270205",
+    "artKey": "harvard:230620",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Study for North Wall with Side Walls, Special Collection Hall, Boston Public Library",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 434,
+    "cardSizeKB": 230,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
