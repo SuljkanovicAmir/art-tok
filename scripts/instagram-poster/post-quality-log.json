@@ -10640,5 +10640,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-24T18:41:38.506Z",
+    "mediaId": "18185191474430941",
+    "artKey": "harvard:332998",
+    "source": "harvard",
+    "mode": "post",
+    "title": "[Wa-kawn] (The Snake), Winnebago Delegate",
+    "artist": "Henry Inman",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 198,
+    "cardSizeKB": 188,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
