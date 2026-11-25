@@ -10662,5 +10662,27 @@
       "hasDescription": false,
       "hasCulture": true
     }
+  },
+  {
+    "timestamp": "2026-11-25T03:24:18.673Z",
+    "mediaId": "18339010024276777",
+    "artKey": "harvard:311170",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Courtyard of the Scuola Grande di San Giovanni Evangelista, Venice, Italy.",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 403,
+    "cardSizeKB": 291,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
   }
 ]
