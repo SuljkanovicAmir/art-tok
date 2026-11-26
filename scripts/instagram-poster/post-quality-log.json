@@ -1,26 +1,5 @@
 [
   {
-    "timestamp": "2026-03-26T19:01:19.542Z",
-    "mediaId": "18070113254313881",
-    "artKey": "met:591830",
-    "source": "met",
-    "mode": "reel",
-    "title": "Architectura Curiosa Nova: Das ist, neue ergotzliche Sinn und Kunstreiche auch nutzliche Bau- und Wasser-Kunst . . .",
-    "artist": "Georg Andreas Böckler",
-    "wasSeasonal": true,
-    "captionLength": 218,
-    "cardSizeKB": 709,
-    "metadataScore": 86,
-    "metadata": {
-      "hasTitle": true,
-      "hasArtist": true,
-      "hasDated": true,
-      "hasMedium": true,
-      "hasDescription": false,
-      "hasCulture": true
-    }
-  },
-  {
     "timestamp": "2026-03-26T19:03:16.529Z",
     "mediaId": "18069214658319833",
     "artKey": "met:436947",
@@ -10677,6 +10656,28 @@
     "fallbackFrom": null,
     "captionLength": 230,
     "cardSizeKB": 368,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
+  },
+  {
+    "timestamp": "2026-11-26T17:34:17.620Z",
+    "mediaId": "18130646866861347",
+    "artKey": "harvard:230618",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Massage in a Bath House",
+    "artist": "John Singer Sargent",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 323,
+    "cardSizeKB": 184,
     "metadataScore": 86,
     "metadata": {
       "hasTitle": true,
