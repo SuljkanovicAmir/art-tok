@@ -1,26 +1,5 @@
 [
   {
-    "timestamp": "2026-03-26T11:54:40.245Z",
-    "mediaId": "17956009215083344",
-    "artKey": "met:195456",
-    "source": "met",
-    "mode": "post",
-    "title": "The Backgammon Players",
-    "artist": "Philip Webb",
-    "wasSeasonal": true,
-    "captionLength": 164,
-    "cardSizeKB": 297,
-    "metadataScore": 71,
-    "metadata": {
-      "hasTitle": true,
-      "hasArtist": true,
-      "hasDated": true,
-      "hasMedium": true,
-      "hasDescription": false,
-      "hasCulture": false
-    }
-  },
-  {
     "timestamp": "2026-03-26T19:01:19.542Z",
     "mediaId": "18070113254313881",
     "artKey": "met:591830",
@@ -10676,6 +10655,28 @@
     "fallbackFrom": null,
     "captionLength": 153,
     "cardSizeKB": 491,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
+  },
+  {
+    "timestamp": "2026-11-26T02:41:43.992Z",
+    "mediaId": "18085555412341110",
+    "artKey": "harvard:230724",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Headlands",
+    "artist": "Childe Hassam",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 230,
+    "cardSizeKB": 368,
     "metadataScore": 86,
     "metadata": {
       "hasTitle": true,
