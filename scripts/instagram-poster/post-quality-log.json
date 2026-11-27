@@ -1,26 +1,5 @@
 [
   {
-    "timestamp": "2026-03-26T19:03:16.529Z",
-    "mediaId": "18069214658319833",
-    "artKey": "met:436947",
-    "source": "met",
-    "mode": "post",
-    "title": "Boating",
-    "artist": "Edouard Manet",
-    "wasSeasonal": true,
-    "captionLength": 115,
-    "cardSizeKB": 350,
-    "metadataScore": 71,
-    "metadata": {
-      "hasTitle": true,
-      "hasArtist": true,
-      "hasDated": true,
-      "hasMedium": true,
-      "hasDescription": false,
-      "hasCulture": false
-    }
-  },
-  {
     "timestamp": "2026-03-26T22:36:12.475Z",
     "mediaId": "18099562966982153",
     "artKey": "met:437654",
@@ -10678,6 +10657,28 @@
     "fallbackFrom": null,
     "captionLength": 323,
     "cardSizeKB": 184,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
+  },
+  {
+    "timestamp": "2026-11-27T02:41:11.283Z",
+    "mediaId": "18475435309136725",
+    "artKey": "harvard:312316",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Bacino di San Marco, Venice",
+    "artist": "Félix François Georges Philibert Ziem",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 291,
+    "cardSizeKB": 96,
     "metadataScore": 86,
     "metadata": {
       "hasTitle": true,
