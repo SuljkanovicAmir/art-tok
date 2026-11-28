@@ -1,26 +1,5 @@
 [
   {
-    "timestamp": "2026-03-27T08:02:40.256Z",
-    "mediaId": "18311521678272080",
-    "artKey": "met:451332",
-    "source": "met",
-    "mode": "post",
-    "title": "\"Men Treading Grapes\", Folio from a Materia Medica of Dioscorides",
-    "artist": "Unknown artist",
-    "wasSeasonal": true,
-    "captionLength": 203,
-    "cardSizeKB": 328,
-    "metadataScore": 57,
-    "metadata": {
-      "hasTitle": true,
-      "hasArtist": false,
-      "hasDated": true,
-      "hasMedium": true,
-      "hasDescription": false,
-      "hasCulture": false
-    }
-  },
-  {
     "timestamp": "2026-03-27T11:45:45.314Z",
     "mediaId": "17883410178490191",
     "artKey": "met:38559",
@@ -10680,6 +10659,28 @@
     "fallbackFrom": null,
     "captionLength": 298,
     "cardSizeKB": 430,
+    "metadataScore": 86,
+    "metadata": {
+      "hasTitle": true,
+      "hasArtist": true,
+      "hasDated": true,
+      "hasMedium": true,
+      "hasDescription": false,
+      "hasCulture": true
+    }
+  },
+  {
+    "timestamp": "2026-11-28T02:30:49.106Z",
+    "mediaId": "18173543455480825",
+    "artKey": "harvard:228533",
+    "source": "harvard",
+    "mode": "post",
+    "title": "Edward Everett Hale (1822-1909)",
+    "artist": "William Merritt Chase",
+    "wasSeasonal": false,
+    "fallbackFrom": null,
+    "captionLength": 263,
+    "cardSizeKB": 97,
     "metadataScore": 86,
     "metadata": {
       "hasTitle": true,
